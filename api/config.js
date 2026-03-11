@@ -42,25 +42,45 @@ export const ENV = {
 
 /**
  * Send a Telegram message to the given chatId.
+ * Tries MarkdownV2 first; falls back to plain text if parsing fails (e.g. escaping issues).
  * @param {string} token
  * @param {string} chatId
- * @param {string} text      — MarkdownV2 formatted text
+ * @param {string} text      — MarkdownV2 formatted text (or plain text for fallback)
  * @returns {Promise<{ok: boolean, error?: string}>}
  */
 export async function sendTelegram(token, chatId, text) {
     if (!token || !chatId) {
         return { ok: false, error: 'Missing TELEGRAM_BOT_TOKEN or chat ID' };
     }
-    try {
+    const send = async (parseMode) => {
+        const body = parseMode
+            ? { chat_id: chatId, text, parse_mode: parseMode }
+            : { chat_id: chatId, text };
         const resp = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'MarkdownV2' }),
+            body: JSON.stringify(body),
         });
-        const data = await resp.json();
-        if (!data.ok) return { ok: false, error: JSON.stringify(data) };
+        return resp.json();
+    };
+    try {
+        let data = await send('MarkdownV2');
+        if (!data.ok) {
+            // MarkdownV2 often fails with 400 "can't parse entities" — retry as plain text
+            const isParseError = data.description?.includes("can't parse") || data.description?.includes('Bad Request');
+            if (isParseError) {
+                const plainText = text.replace(/\\([_*[\]()~`>#+\-=|{}.!])/g, '$1');
+                data = await send(null);
+            }
+        }
+        if (!data.ok) {
+            const err = JSON.stringify(data);
+            console.error('[Telegram] API error:', err);
+            return { ok: false, error: err };
+        }
         return { ok: true };
     } catch (err) {
+        console.error('[Telegram] Network/request error:', err.message);
         return { ok: false, error: err.message };
     }
 }

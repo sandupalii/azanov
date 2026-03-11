@@ -23,11 +23,18 @@ All env vars are set in **Vercel → Project → Settings → Environment Variab
 4. Set env var: `TELEGRAM_BOT_TOKEN=<your token>`
 
 ### Step 2 — Get the Chat ID
+**Option A — Group (recommended):**
 1. Create a group (or use an existing one) where leads should appear
 2. Add your bot to the group (give it admin rights so it can post)
 3. Send any message in the group
 4. Visit: `https://api.telegram.org/bot<TOKEN>/getUpdates`
 5. Find `"chat": { "id": -XXXXXXXXX }` — that negative number is your Chat ID
+
+**Option B — Personal chat:**
+1. Open your bot in Telegram and send `/start`
+2. Visit: `https://api.telegram.org/bot<TOKEN>/getUpdates`
+3. Find `"chat": { "id": 123456789 }` — that positive number is your Chat ID  
+   ⚠️ **Important:** You must send `/start` to the bot first, or Telegram will reject messages with "bot can't initiate conversation"
 
 ### Step 3 — Set Chat IDs
 ```
@@ -132,7 +139,7 @@ Expected response for all: `{ "ok": true }`
 
 | Problem | Solution |
 |---------|----------|
-| Telegram message not arriving | Check bot is in the group with admin rights; verify `TELEGRAM_BOT_TOKEN` and chat ID |
+| Telegram message not arriving | 1) Send `/start` to your bot if using personal chat ID (positive number). 2) Check bot is in the group with admin rights if using group. 3) Restart server after changing `.env` (`docker compose restart api` if using Docker). 4) Verify `TELEGRAM_BOT_TOKEN` and chat ID. |
 | `400 Bad Request` from Telegram | Usually a MarkdownV2 escaping issue — check server logs for the raw text |
 | AmoCRM 401 error | Access token expired — generate a new one or implement token refresh |
 | AmoCRM contact not created | Check `AMOCRM_DOMAIN` format (no `https://`, no trailing slash) |

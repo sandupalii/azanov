@@ -23,7 +23,7 @@ COPY api/          ./api/
 RUN addgroup -S app && adduser -S app -G app
 USER app
 
-EXPOSE 3001
+EXPOSE 3005
 
 ENV NODE_ENV=production
 ENV PORT=3001

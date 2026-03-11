@@ -1,5 +1,6 @@
 FROM node:20-alpine AS deps
 WORKDIR /app
+
 COPY package.json ./
 RUN npm install --omit=dev
 
@@ -10,12 +11,6 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY server.js ./
 COPY package.json ./
 COPY api/ ./api/
-
-# copy static site files too
-COPY index.html ./
-COPY assets ./assets
-COPY css ./css
-COPY js ./js
 
 RUN addgroup -S app && adduser -S app -G app
 USER app

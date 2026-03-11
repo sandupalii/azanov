@@ -20,7 +20,7 @@ import sendCrypto from './api/send-crypto.js';
 import sendReview from './api/send-review.js';
 
 const app = express();
-const PORT = process.env.PORT || 3005;
+const PORT = process.env.PORT || 3001;
 
 // Parse JSON bodies
 app.use(express.json());

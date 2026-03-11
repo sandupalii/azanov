@@ -435,8 +435,59 @@
         syncFloatingLabels();
     }
 
+    function sendLeadToApi() {
+        const apiUrl = window.LEAD_API_URL;
+        if (!apiUrl || typeof apiUrl !== 'string' || !apiUrl.trim()) return;
+        const payload = {
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email || '',
+            experienceType: formData.experienceType,
+            packageName: formData.packageName || '',
+            yachtPreset: formData.yachtPreset || '',
+            villaPreset: formData.villaPreset || '',
+            tourPreset: formData.tourPreset || '',
+            servicePreset: formData.servicePreset || '',
+            groupSize: formData.groupSize,
+            dateFrom: formData.dateFrom,
+            dateTo: formData.dateTo,
+            nights: formData.nights,
+            budget: formData.budget,
+            extras: formData.extras,
+            notes: formData.notes || '',
+            contactMethod: formData.contactMethod,
+            source: 'azanovretreat.com',
+        };
+        fetch(apiUrl.trim(), {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+        }).catch((err) => console.warn('Lead API send failed:', err));
+    }
+
     window.nextStep = function () {
         if (!validateStep(currentStep)) return;
+        // Step 4 = contact (name, phone): send API request when user clicks "Review"
+        if (currentStep === 4) {
+            const nameEl = document.getElementById('lead-name');
+            const phoneEl = document.getElementById('lead-phone');
+            const emailEl = document.getElementById('lead-email');
+            const notesEl = document.getElementById('lead-notes');
+            if (nameEl) formData.name = nameEl.value.trim();
+            if (phoneEl) formData.phone = phoneEl.value.trim();
+            if (emailEl) formData.email = emailEl.value.trim();
+            if (notesEl) formData.notes = notesEl.value.trim();
+            const addonBtns = document.querySelectorAll('.addon-toggle-btn.selected');
+            const addonCheckboxes = document.querySelectorAll('.lead-extra:checked');
+            formData.extras = addonBtns.length
+                ? Array.from(addonBtns).map(el => el.getAttribute('data-addon'))
+                : Array.from(addonCheckboxes).map(el => el.value);
+            formData.groupSize = document.getElementById('lead-group-size')?.value || formData.groupSize;
+            formData.dateFrom = document.getElementById('lead-date-from')?.value || formData.dateFrom || '';
+            formData.dateTo = document.getElementById('lead-date-to')?.value || formData.dateTo || '';
+            formData.nights = document.getElementById('lead-nights')?.value || '5';
+            sendLeadToApi();
+        }
         if (currentStep < TOTAL_STEPS) {
             currentStep++;
             renderStep();
@@ -722,10 +773,11 @@
                 showError(t('form.errorSelectDates')); valid = false;
             }
         }
-        if (step === 4 && !formData.budget) {
-            showError(t('form.errorSelectBudget')); valid = false;
-        }
-        if (step === 5) {
+        if (step === 4) {
+            if (!formData.budget) {
+                showError(t('form.errorSelectBudget')); valid = false;
+            }
+            // Step 4 = contact: also require name and phone before sending
             const nameEl = document.getElementById('lead-name');
             const phoneEl = document.getElementById('lead-phone');
             if (nameEl) formData.name = nameEl.value.trim();
@@ -777,35 +829,7 @@
         // Build WhatsApp message
         const waMsg = buildWAMessage();
 
-        // Fire-and-forget: send structured lead data to API (Telegram + AmoCRM)
-        const apiUrl = window.LEAD_API_URL;
-        if (apiUrl && typeof apiUrl === 'string' && apiUrl.trim()) {
-            const payload = {
-                name: formData.name,
-                phone: formData.phone,
-                email: formData.email || '',
-                experienceType: formData.experienceType,
-                packageName: formData.packageName || '',
-                yachtPreset: formData.yachtPreset || '',
-                villaPreset: formData.villaPreset || '',
-                tourPreset: formData.tourPreset || '',
-                servicePreset: formData.servicePreset || '',
-                groupSize: formData.groupSize,
-                dateFrom: formData.dateFrom,
-                dateTo: formData.dateTo,
-                nights: formData.nights,
-                budget: formData.budget,
-                extras: formData.extras,
-                notes: formData.notes || '',
-                contactMethod: formData.contactMethod,
-                source: 'azanovretreat.com',
-            };
-            fetch(apiUrl.trim(), {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload),
-            }).catch((err) => console.warn('Lead API send failed:', err));
-        }
+        // API request already sent on step 4 (contact) when user clicked "Review"
 
         // Delay auto-open WhatsApp so user sees success screen first
         setTimeout(() => {

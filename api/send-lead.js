@@ -35,11 +35,11 @@ export default async function handler(req, res) {
     ENV.TELEGRAM_BOT_TOKEN,
     ENV.TELEGRAM_LEAD_CHAT_ID,
     text,
+    'lead',
   );
 
   if (!tgResult.ok) {
-    console.error('Telegram send failed:', tgResult.error);
-    // Don't block the response — still try AmoCRM
+    console.error('[send-lead] Telegram send failed:', tgResult.error);
   }
 
   // ── AmoCRM (fire-and-forget, non-blocking) ─────────────────
@@ -49,6 +49,9 @@ export default async function handler(req, res) {
     });
   }
 
+  if (!tgResult.ok) {
+    return res.status(500).json({ ok: false, error: 'Failed to send Telegram notification', details: tgResult.error });
+  }
   return res.status(200).json({ ok: true });
 }
 

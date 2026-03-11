@@ -55,11 +55,12 @@ export default async function handler(req, res) {
     ENV.TELEGRAM_BOT_TOKEN,
     ENV.TELEGRAM_REVIEW_CHAT_ID,
     tgText,
+    'review',
   );
 
   if (!tgResult.ok) {
-    console.error('Telegram send failed (review):', tgResult.error);
-    return res.status(500).json({ error: 'Failed to send' });
+    console.error('[send-review] Telegram send failed:', tgResult.error);
+    return res.status(500).json({ ok: false, error: 'Failed to send Telegram notification', details: tgResult.error });
   }
 
   // ── AmoCRM: create/update contact with 'review' tag ────────

@@ -35,6 +35,12 @@ app.use('/api', (_req, res) => {
 // Start server LAST
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`✅ API server running on http://localhost:${PORT}`);
-  console.log(`   Telegram: ${process.env.TELEGRAM_BOT_TOKEN ? '✓ configured' : '✗ TELEGRAM_BOT_TOKEN missing'}`);
+  const hasToken = !!process.env.TELEGRAM_BOT_TOKEN;
+  console.log(`   Telegram: ${hasToken ? '✓ configured' : '✗ TELEGRAM_BOT_TOKEN missing'}`);
+  if (hasToken) {
+    console.log(`   TELEGRAM_LEAD_CHAT_ID:   ${process.env.TELEGRAM_LEAD_CHAT_ID || process.env.TELEGRAM_CHAT_ID || '✗ missing'}`);
+    console.log(`   TELEGRAM_CRYPTO_CHAT_ID: ${process.env.TELEGRAM_CRYPTO_CHAT_ID || process.env.TELEGRAM_LEAD_CHAT_ID || process.env.TELEGRAM_CHAT_ID || '○ fallback to LEAD'}`);
+    console.log(`   TELEGRAM_REVIEW_CHAT_ID: ${process.env.TELEGRAM_REVIEW_CHAT_ID || process.env.TELEGRAM_LEAD_CHAT_ID || process.env.TELEGRAM_CHAT_ID || '○ fallback to LEAD'}`);
+  }
   console.log(`   AmoCRM:   ${process.env.AMOCRM_DOMAIN && process.env.AMOCRM_ACCESS_TOKEN ? '✓ configured' : '○ not configured (optional)'}`);
 });

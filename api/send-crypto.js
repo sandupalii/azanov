@@ -46,10 +46,11 @@ export default async function handler(req, res) {
         ENV.TELEGRAM_BOT_TOKEN,
         ENV.TELEGRAM_CRYPTO_CHAT_ID,
         text,
+        'crypto',
     );
 
     if (!tgResult.ok) {
-        console.error('Telegram send failed (crypto):', tgResult.error);
+        console.error('[send-crypto] Telegram send failed:', tgResult.error);
     }
 
     // ── AmoCRM (fire-and-forget) ────────────────────────────────
@@ -69,5 +70,8 @@ export default async function handler(req, res) {
         })();
     }
 
+    if (!tgResult.ok) {
+        return res.status(500).json({ ok: false, error: 'Failed to send Telegram notification', details: tgResult.error });
+    }
     return res.status(200).json({ ok: true });
 }

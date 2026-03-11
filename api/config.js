@@ -46,41 +46,51 @@ export const ENV = {
  * @param {string} token
  * @param {string} chatId
  * @param {string} text      — MarkdownV2 formatted text (or plain text for fallback)
+ * @param {string} [source]  — optional label for debug logs (e.g. 'lead', 'crypto', 'review')
  * @returns {Promise<{ok: boolean, error?: string}>}
  */
-export async function sendTelegram(token, chatId, text) {
+export async function sendTelegram(token, chatId, text, source = 'telegram') {
     if (!token || !chatId) {
-        return { ok: false, error: 'Missing TELEGRAM_BOT_TOKEN or chat ID' };
+        const err = 'Missing TELEGRAM_BOT_TOKEN or chat ID';
+        console.error(`[Telegram:${source}] ${err} (token=${!!token}, chatId=${chatId || 'empty'})`);
+        return { ok: false, error: err };
     }
-    const send = async (parseMode) => {
+    console.log(`[Telegram:${source}] POST https://api.telegram.org/bot***/sendMessage chat_id=${chatId}`);
+
+    const send = async (parseMode, textToSend) => {
         const body = parseMode
-            ? { chat_id: chatId, text, parse_mode: parseMode }
-            : { chat_id: chatId, text };
-        const resp = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+            ? { chat_id: chatId, text: textToSend, parse_mode: parseMode }
+            : { chat_id: chatId, text: textToSend };
+        const fullUrl = `https://api.telegram.org/bot${token}/sendMessage`;
+        const resp = await fetch(fullUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body),
         });
-        return resp.json();
+        const data = await resp.json();
+        console.log(`[Telegram:${source}] Response ok=${data.ok} status=${resp.status}`, data.ok ? '' : `error=${JSON.stringify(data)}`);
+        return data;
     };
     try {
-        let data = await send('MarkdownV2');
+        let data = await send('MarkdownV2', text);
         if (!data.ok) {
             // MarkdownV2 often fails with 400 "can't parse entities" — retry as plain text
             const isParseError = data.description?.includes("can't parse") || data.description?.includes('Bad Request');
             if (isParseError) {
                 const plainText = text.replace(/\\([_*[\]()~`>#+\-=|{}.!])/g, '$1');
-                data = await send(null);
+                console.log(`[Telegram:${source}] MarkdownV2 parse failed, retrying as plain text`);
+                data = await send(null, plainText);
             }
         }
         if (!data.ok) {
             const err = JSON.stringify(data);
-            console.error('[Telegram] API error:', err);
+            console.error(`[Telegram:${source}] API error:`, err);
             return { ok: false, error: err };
         }
+        console.log(`[Telegram:${source}] Message delivered`);
         return { ok: true };
     } catch (err) {
-        console.error('[Telegram] Network/request error:', err.message);
+        console.error(`[Telegram:${source}] Network/request error:`, err.message);
         return { ok: false, error: err.message };
     }
 }

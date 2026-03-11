@@ -1,0 +1,266 @@
+{
+  "Limpopo": {
+    "price": 44000,
+    "priceLabel": "от 44 000 ฿"
+  },
+  "Lucky Star": {
+    "price": 15000,
+    "priceLabel": "от 15 000 ฿"
+  },
+  "Madam Shadow 34ft": {
+    "price": 68000,
+    "priceLabel": "от 68 000 ฿",
+    "speed": "40 кн"
+  },
+  "Na-О 29ft": {
+    "price": 52500,
+    "priceLabel": "от 52 500 ฿",
+    "speed": "40 кн"
+  },
+  "Nanea 40ft": {
+    "price": 69000,
+    "priceLabel": "от 69 000 ฿",
+    "speed": "40 кн"
+  },
+  "Ocean Safari 2": {
+    "price": 39000,
+    "priceLabel": "от 39 000 ฿"
+  },
+  "Ocean Safari 3": {
+    "price": 30000,
+    "priceLabel": "от 30 000 ฿"
+  },
+  "Sabi 375": {
+    "price": 54000,
+    "priceLabel": "от 54 000 ฿",
+    "speed": "60 кн"
+  },
+  "Cobalt Zoom 37ft": {
+    "price": 49000,
+    "priceLabel": "от 49 000 ฿",
+    "speed": "40 кн"
+  },
+  "Formula 42ft": {
+    "price": 45000,
+    "priceLabel": "от 45 000 ฿",
+    "speed": "20 кн"
+  },
+  "Di Fish": {
+    "price": 38000,
+    "priceLabel": "от 38 000 ฿"
+  },
+  "Clara": {
+    "price": 27000,
+    "priceLabel": "от 27 000 ฿"
+  },
+  "Yamela": {
+    "price": 12990,
+    "priceLabel": "от 12 990 ฿",
+    "speed": "30 кн"
+  },
+  "Yamela 15": {
+    "price": 12000,
+    "priceLabel": "от 12 000 ฿"
+  },
+  "Wave": {
+    "price": 14000,
+    "priceLabel": "от 14 000 ฿",
+    "speed": "35 кн"
+  },
+  "Wave 29 Pro Datto": {
+    "price": 14000,
+    "priceLabel": "от 14 000 ฿",
+    "speed": "35 кн"
+  },
+  "Demarest": {
+    "price": 450000,
+    "priceLabel": "от 450 000 ฿",
+    "speed": "25 кн"
+  },
+  "Princess 65 Oceana": {
+    "price": 110000,
+    "priceLabel": "от 110 000 ฿",
+    "speed": "27 кн"
+  },
+  "Lunik Floeth 48ft": {
+    "price": 35000,
+    "priceLabel": "от 35 000 ฿"
+  },
+  "Big Tuna": {
+    "price": 26000,
+    "priceLabel": "от 26 000 ฿"
+  },
+  "Lady M. Sunseeker 54ft": {
+    "price": 129000,
+    "priceLabel": "от 129 000 ฿",
+    "speed": "26 кн"
+  },
+  "Azimut 55 Black": {
+    "price": 120000,
+    "priceLabel": "от 120 000 ฿",
+    "speed": "17 кн"
+  },
+  "Voyage 500 Bon Voyage": {
+    "price": 29000,
+    "priceLabel": "от 29 000 ฿",
+    "speed": "12 кн"
+  },
+  "Ferretti 80": {
+    "price": 105000,
+    "priceLabel": "от 105 000 ฿"
+  },
+  "Indigo 53ft": {
+    "price": 59000,
+    "priceLabel": "от 59 000 ฿",
+    "speed": "22 кн"
+  },
+  "Ameray 1 37ft": {
+    "price": 26000,
+    "priceLabel": "от 26 000 ฿"
+  },
+  "Summer Leopard 47": {
+    "price": 55000,
+    "priceLabel": "от 55 000 ฿"
+  },
+  "Amore": {
+    "price": 34000,
+    "priceLabel": "от 34 000 ฿",
+    "speed": "6 кн"
+  },
+  "Kiri Vari": {
+    "price": 23900,
+    "priceLabel": "от 23 900 ฿",
+    "speed": "8 кн"
+  },
+  "Posillipo-Rizzardi Technema 89": {
+    "price": 105000,
+    "priceLabel": "от 105 000 ฿",
+    "speed": "18 кн"
+  },
+  "Born Free 86ft": {
+    "price": 99000,
+    "priceLabel": "от 99 000 ฿",
+    "speed": "10 кн"
+  },
+  "Moon Glider 90": {
+    "price": 220000,
+    "priceLabel": "от 220 000 ฿",
+    "speed": "18 кн"
+  },
+  "Sambuca": {
+    "price": 55000,
+    "priceLabel": "от 55 000 ฿",
+    "speed": "15 кн"
+  },
+  "Sambuca 53": {
+    "price": 55000,
+    "priceLabel": "от 55 000 ฿",
+    "speed": "15 кн"
+  },
+  "Lagoon 440": {
+    "price": 30000,
+    "priceLabel": "от 30 000 ฿",
+    "speed": "12 кн"
+  },
+  "Lagoon 440 Bluewings": {
+    "price": 30000,
+    "priceLabel": "от 30 000 ฿",
+    "speed": "12 кн"
+  },
+  "Lagoon 440 Lemon": {
+    "price": 30000,
+    "priceLabel": "от 30 000 ฿",
+    "speed": "12 кн"
+  },
+  "SeaExplorer": {
+    "price": 55000,
+    "priceLabel": "от 55 000 ฿",
+    "speed": "27 кн"
+  },
+  "The Origin": {
+    "price": 110000,
+    "priceLabel": "от 110 000 ฿"
+  },
+  "Fortuna": {
+    "price": 55500,
+    "priceLabel": "от 55 500 ฿"
+  },
+  "Gambit": {
+    "price": 25900,
+    "priceLabel": "от 25 900 ฿",
+    "speed": "35 кн"
+  },
+  "Marlin": {
+    "price": 29000,
+    "priceLabel": "от 29 000 ฿"
+  },
+  "Siam Princess 70": {
+    "price": 69000,
+    "priceLabel": "от 69 000 ฿",
+    "speed": "9 кн"
+  },
+  "Bertram 50": {
+    "price": 53000,
+    "priceLabel": "от 53 000 ฿",
+    "speed": "15 кн"
+  },
+  "Orange": {
+    "price": 80000,
+    "priceLabel": "от 80 000 ฿",
+    "speed": "15 кн"
+  },
+  "Orange Princess 54": {
+    "price": 80000,
+    "priceLabel": "от 80 000 ฿",
+    "speed": "15 кн"
+  },
+  "Olympia": {
+    "price": 170000,
+    "priceLabel": "от 170 000 ฿",
+    "speed": "60 кн"
+  },
+  "White Marlin": {
+    "price": 39000,
+    "priceLabel": "от 39 000 ฿",
+    "speed": "16 кн"
+  },
+  "Aria Blue Riva 70ft": {
+    "price": 155000,
+    "priceLabel": "от 155 000 ฿",
+    "speed": "32 кн"
+  },
+  "Astondoa 102 GXL": {
+    "price": 440000,
+    "priceLabel": "от 440 000 ฿",
+    "speed": "24 кн"
+  },
+  "Fountaine Pajot 75ft": {
+    "price": 70000,
+    "priceLabel": "от 70 000 ฿",
+    "speed": "16 кн"
+  },
+  "Monte Carlo 86ft": {
+    "price": 390000,
+    "priceLabel": "от 390 000 ฿",
+    "speed": "15 кн"
+  },
+  "Hakuna Matata": {
+    "price": 49000,
+    "priceLabel": "от 49 000 ฿",
+    "speed": "15 кн"
+  },
+  "Verona 3 Engines": {
+    "price": 45000,
+    "priceLabel": "от 45 000 ฿"
+  },
+  "Beach Club Yona": {
+    "price": 2000000,
+    "priceLabel": "от 2 000 000 ฿",
+    "speed": "7 кн"
+  },
+  "Pina Colada 40ft": {
+    "price": 65000,
+    "priceLabel": "от 65 000 ฿",
+    "speed": "7 кн"
+  }
+}

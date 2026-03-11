@@ -1,0 +1,67 @@
+{
+  "id": "transfer-s-pkhuketa-na-pkhi-pkhi-skorostnoy-lodke",
+  "title": "Трансфер с Пхукета на Пхи Пхи скоростной лодке",
+  "description": "Туда - обратно",
+  "price": 1600,
+  "old_price": null,
+  "url": "https://tourtourphuket.ru/phi_phi777/tproduct/790315469-306034320322-transfer-s-phuketa-na-phi-phi-skorostnoi",
+  "sku": "PPS",
+  "local_images": [
+    "images/photo-1.png",
+    "images/photo-2.jpg"
+  ],
+  "details_html": "<a href=\"//wa.me/66951905999?text=Здравствуйте,%20интересует%20*Трансфер%20с%20Пхукета%20на%20Пхи%20Пхи%20на%20скоростной%20лодке!*%20Пожалуйста,%20свяжитесь%20со%20мной!\" target=\"_blank\" rel=\"noreferrer noopener\">Быстрый заказ</a><br /><span style=\"font-size: 20px; color: rgb(0, 0, 0);\">Стоимость: Взрослый - 1600฿/ Детский - 1400฿</span><br /><strong style=\"color: rgb(52, 198, 31); font-size: 18px;\">Дети 4-11 лет</strong><br /><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Скоростная лодка идет 1 час, трансфер с основных пляжей включен в стоимость.</span><br /><br /><strong style=\"color: rgb(0, 0, 0); font-size: 18px;\">Расписание:</strong><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">С Пхукета на Пхи Пхи :</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">09.00 - 10.00</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">11.00 - 12.00</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">13.00 - 14.00</span><br /><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">С Пхи Пхи на Пхукет :</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">10.00 - 11.00</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">14.00 - 15.00</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">15.00 - 16.00</span><br /><br /><ul><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Билет туда-обратно с фиксированной датой и временем</span></li><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Трансфер бесплатно туда - обратно: Патонг, Карон , Ката, Чалонг</span></li><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Без трансфера - скидка 100 бат</span></li><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Стоимость входного билета на Пхи Пхи Дон по прибытию - 20 бат , оплачивается самостоятельно в кассу.</span></li></ul><br /><strong style=\"font-size: 18px;\">Аннуляция тура:</strong><br /><ul><li data-list=\"bullet\"><span style=\"font-size: 18px;\">За 24 часа до тура - без штрафа</span></li><li data-list=\"bullet\"><span style=\"font-size: 18px;\">В день тура - 100% штраф</span></li></ul><br /><span style=\"font-size: 18px;\">*Не подходит для беременных женщин</span>",
+  "price_adult": "1600฿",
+  "price_child": "1400฿",
+  "cancellation": [
+    "За 24 часа до тура - без штрафа",
+    "В день тура - 100% штраф",
+    "*Не подходит для беременных женщин"
+  ],
+  "full_text": "Быстрый заказ\nСтоимость: Взрослый - 1600฿/ Детский - 1400฿\nДети 4-11 лет\n\nСкоростная лодка идет 1 час, трансфер с основных пляжей включен в стоимость.\n\nРасписание:\nС Пхукета на Пхи Пхи :\n09.00 - 10.00\n11.00 - 12.00\n13.00 - 14.00\n\nС Пхи Пхи на Пхукет :\n10.00 - 11.00\n14.00 - 15.00\n15.00 - 16.00\n\n• Билет туда-обратно с фиксированной датой и временем\n• Трансфер бесплатно туда - обратно: Патонг, Карон , Ката, Чалонг\n• Без трансфера - скидка 100 бат\n• Стоимость входного билета на Пхи Пхи Дон по прибытию - 20 бат , оплачивается самостоятельно в кассу.\n\nАннуляция тура:\n• За 24 часа до тура - без штрафа\n• В день тура - 100% штраф\n\n*Не подходит для беременных женщин",
+  "title_en": "Transfer with Phuket on Пхи Пхи speedboat boat",
+  "description_en": "Round trip",
+  "cancellation_en": [
+    "24 hours before tour — no penalty",
+    "On day of tour — 100% penalty",
+    "*Not suitable for pregnant women"
+  ],
+  "itinerary": [
+    {
+      "time": "08:00",
+      "text": "Departure from Phuket → Phi Phi by speedboat (~45 min)"
+    },
+    {
+      "time": "15:00",
+      "text": "Return: Phi Phi → Phuket"
+    }
+  ],
+  "itinerary_en": [
+    {
+      "time": "08:00",
+      "text": "Departure from Phuket → Phi Phi by speedboat (~45 min)"
+    },
+    {
+      "time": "15:00",
+      "text": "Return: Phi Phi → Phuket"
+    }
+  ],
+  "included": [
+    "Трансфер: Патонг, Карон, Ката, Равай — туда обратно"
+  ],
+  "included_en": [
+    "Transfer: Patong, Karon, Kata, Rawai — round trip"
+  ],
+  "what_to_bring": [
+    "Фото паспорта в телефоне",
+    "Купальные принадлежности",
+    "Солнцезащитный крем",
+    "Личные вещи"
+  ],
+  "what_to_bring_en": [
+    "Photo of passport on phone",
+    "Swimwear",
+    "Sunscreen",
+    "Personal belongings"
+  ]
+}

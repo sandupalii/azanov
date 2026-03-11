@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  # ── Node.js API server ───────────────────────────────────────
+  api:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - PORT=3001
+    # Not exposed publicly — Nginx connects internally
+    expose:
+      - "3001"
+
+  # ── Nginx: static files + reverse proxy for /api ────────────
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # Static site files
+      - ./:/usr/share/nginx/html:ro
+      # Nginx config
+      - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      # SSL certificates (add yours here, or use Certbot — see README)
+      - ./deploy/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - api

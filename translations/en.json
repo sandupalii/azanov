@@ -1,0 +1,456 @@
+{
+  "nav": {
+    "packages": "Packages",
+    "yachts": "Yachts",
+    "villas": "Villas",
+    "tours": "Tours",
+    "services": "Services",
+    "faq": "FAQ",
+    "cta": "Concierge 24/7"
+  },
+  "hero": {
+    "badge": {
+      "sea": "Andaman Sea",
+      "min": "Min 5 nights"
+    },
+    "title": "Phuket Retreats<br><em>From A to Z.</em><br>Everything Included. Period.",
+    "sub": "Maximum quality, instant booking, zero compromise. Villas, yachts, cars, concierge — one package. No hidden fees.",
+    "stat": {
+      "yachts": "yachts in fleet",
+      "villas": "premium villas",
+      "concierge": "concierge",
+      "fees": "hidden fees"
+    },
+    "cta": {
+      "primary": "Choose Retreat",
+      "whatsapp": "WhatsApp Concierge"
+    }
+  },
+  "azbuka": {
+    "readMore": "Read more"
+  },
+  "philosophy": {
+    "label": "Azanov Retreat Philosophy",
+    "title": "Forget surcharges.<br>A to Z — it's not just words.",
+    "body": "While others bus tourists around, we build a personal leisure ecosystem where every detail is already paid for and thought through.",
+    "quote": "The entire island belongs to you alone. We erased the line between desire and reality.",
+    "cta": "I want my retreat"
+  },
+  "packages": {
+    "label": "Choose yours",
+    "title": "Azanov Retreat.<br>Sorted: from maximum to entry.",
+    "body": "Every package is a private A-to-Z retreat. Minimum 5 nights. Zero compromise.",
+    "from": "Package from",
+    "order": "Book Now"
+  },
+  "fleet": {
+    "label": "Azanov Fleet",
+    "title": "From a speedboat<br>to a club superyacht.",
+    "body": "109 vessels. Every charter — All-Inclusive: guide, drinks, snorkeling, GoPro, insurance.",
+    "filter": {
+      "type": "Type:",
+      "all": "All",
+      "speedboat": "Speedboats",
+      "catamaran": "Catamarans",
+      "motorboat": "Motor Boats",
+      "yacht": "Yachts",
+      "superyacht": "Superyachts"
+    },
+    "price": {
+      "label": "Price/day:",
+      "from": "from",
+      "to": "to"
+    },
+    "sort": {
+      "label": "Sort:",
+      "expensive": "Price: High",
+      "cheap": "Price: Low"
+    },
+    "tip": "Tip: For groups of 6 or more, private yacht charter beats a group tour on price — and the entire yacht is yours alone.",
+    "cta": "View all yachts",
+    "wantYacht": "I want this yacht",
+    "noResults": "No results match your filters",
+    "perDay": "/ day"
+  },
+  "villas": {
+    "label": "Azanov Private Villas",
+    "title": "A home where water<br>peers through the windows.",
+    "body": "Premium villa collection — from cozy 4-bedroom retreats to legendary 9-bedroom residences for 28 guests.",
+    "features": "Features",
+    "includes": {
+      "cleaning": "Housekeeping — included",
+      "wifi": "Wi-Fi — included",
+      "pool": "Pool — included",
+      "transfer": "Transfer — for orders from $3,000"
+    },
+    "cta": "View all villas"
+  },
+  "tours": {
+    "label": "Azanov — 60+ Routes",
+    "title": "Exclusive routes you won't<br>find in any guidebook.",
+    "body": "Tailored destinations. Crystal water. Zero tourist buses.",
+    "cta": "View all tours",
+    "errorLocalServer": "Tours block requires a local server.",
+    "errorLocalServerLong": "The browser blocks data loading when opening the HTML file directly. Please run the project via Live Server or localhost.",
+    "errorLoadFailed": "Failed to load tours",
+    "loading": "Loading tours...",
+    "metaDay": "1 day",
+    "metaDays2": "2 days",
+    "metaMaxPersons": "max {n} pax"
+  },
+  "concierge": {
+    "label": "Azanov Service",
+    "title": "From Fast Track<br>to your personal chef.",
+    "body": "We eliminated the limits of what's possible. Every service element is available as a standalone option or included in your package.",
+    "fasttrack": {
+      "label": "VIP Airport Fast Track",
+      "title": "Green Lane — for those who value their time",
+      "body": "Met at the aircraft door, priority passport control with no queues, VIP transfer. For groups of 10+ — premium group bus. The whole process takes 10–15 minutes.",
+      "cta": "Request Fast Track"
+    },
+    "crypto": {
+      "label": "Crypto Exchange",
+      "title": "Any crypto to cash — Thailand and worldwide",
+      "body": "We'll exchange any cryptocurrency to cash. Best rates from $10,000. For 2.5% of any amount, you get cash almost anywhere in the world.",
+      "cta": "Get details"
+    }
+  },
+  "faq": {
+    "label": "FAQ — Azanov Retreat",
+    "title": "Questions everyone<br>asks.",
+    "cats": {
+      "concept": { "line1": "A to Z", "line2": "Concept" },
+      "villas": { "line1": "Villas &", "line2": "Stays" },
+      "fleet": { "line1": "Fleet &", "line2": "Sea" },
+      "logistics": { "line1": "VIP", "line2": "Logistics" },
+      "booking": { "line1": "Book", "line2": "ing" }
+    }
+  },
+  "reviews": {
+    "label": "Guest Stories",
+    "title": "Instead of a thousand words —<br>genuine emotions.",
+    "cta": "Leave a Review",
+    "badge": "Review in Russian"
+  },
+  "footer": {
+    "cta": {
+      "label": "Azanov Retreat — Your Phuket starts here",
+      "title": "Ready for your retreat?<br>We're available 24/7.",
+      "body": "The concierge will prepare a personal no-hidden-fee proposal within 15 minutes.",
+      "whatsapp": "Message on WhatsApp",
+      "calculate": "Calculate cost"
+    },
+    "tagline": "Private Retreats from A to Z.<br>Maximum quality, zero compromise.",
+    "cols": {
+      "packages": "Packages",
+      "services": "Services",
+      "contacts": "Contacts",
+      "contactTakhir": "Takhir",
+      "contactAmin": "Amin Azanov"
+    },
+    "links": {
+      "fleet": "Yacht Fleet",
+      "villas": "Villas",
+      "tours": "Tours"
+    },
+    "copyright": "© 2026 Azanov Retreat. Phuket, Thailand.",
+    "taglineSmall": "For those who choose the maximum"
+  },
+  "modal": {
+    "close": "Close",
+    "included": "What's Included",
+    "program": "Itinerary",
+    "extras": "Add-ons",
+    "advantages": "Advantages",
+    "day": "Day",
+    "request": "Inquire",
+    "villa": "Villa",
+    "yacht": "Yacht",
+    "excursions": "Excursions",
+    "moreItems": "and {n} more items",
+    "moreDays": "and {n} more days",
+    "moreOnRequest": "and more on request",
+    "moreOf": "and {n} more",
+    "packageCost": "Package price",
+    "cost": "Price",
+    "tourCost": "Tour price",
+    "allInclusiveCost": "All-Inclusive price",
+    "yachtIncludes": "/ day • transfer, guide, drinks, fruits, snorkeling, GoPro, insurance",
+    "tourPerDay": "/ day • All-Inclusive",
+    "guests": "Guests",
+    "bedrooms": "Bedrooms",
+    "length": "Length",
+    "speed": "Speed",
+    "whatToBring": "What to bring",
+    "cancellation": "Cancellation",
+    "order": "Book Now"
+  },
+  "card": {
+    "guests": "guests",
+    "upTo": "up to",
+    "bedroom": "bedroom",
+    "bedrooms": "bedrooms",
+    "bathrooms": "bathrooms",
+    "from": "from",
+    "request": "on request",
+    "perNight": "/night",
+    "perMonth": "/mo",
+    "inquire": "Inquire",
+    "book": "Book Now",
+    "groupUpTo": "group up to",
+    "persons": "guests",
+    "exploreMore": "Learn more",
+    "order": "Book Now"
+  },
+  "form": {
+    "step1": {
+      "label": "Step 1 — Experience Type",
+      "title": "What are you looking for?",
+      "desc": "Choose a format — we'll find the best option from our fleet and villas.",
+      "retreat": "Full Retreat",
+      "villa": "Villa Only",
+      "yacht": "Yacht Only",
+      "bikes": "Car / Bikes",
+      "package": "Package",
+      "tour": "Tour",
+      "concierge": "Service"
+    },
+    "step2": {
+      "label": "Step 2 — Group Details",
+      "title": "Who's going and when?",
+      "desc": "Choose group size and dates — that's it",
+      "guestsLabel": "Number of guests",
+      "datesLabel": "Select dates",
+      "datesPlaceholder": "Select check-in and check-out dates",
+      "summary": "Your Retreat",
+      "questionYacht": "Who's going on the yacht and when?",
+      "questionVilla": "Who's going to the villa and when?",
+      "questionTour": "Who's going on the tour and when?",
+      "questionPackage": "Who's going on the retreat and when?",
+      "questionConcierge": "Who needs the service and when?",
+      "questionBikes": "Who needs transport and when?",
+      "summaryCharter": "Your charter",
+      "summaryVilla": "Your villa",
+      "summaryTour": "Your tour",
+      "summaryOrder": "Your order",
+      "yacht1day": "1 day",
+      "yacht2days": "2 days",
+      "yacht3days": "3 days",
+      "yacht5nights": "5 nights",
+      "yacht7nights": "7 nights",
+      "package5nights": "5 nights",
+      "package7nights": "7 nights",
+      "package10nights": "10 nights",
+      "package2weeks": "2 weeks",
+      "packageMonth": "Month+",
+      "departure": "Departure",
+      "tour1day": "1 day",
+      "tour2days": "2 days",
+      "tourNdays": "{n} days",
+      "guestsCount": "{n} guests",
+      "nightsFormat": "{n} nights",
+      "guests2": "2 people",
+      "guests3_4": "3–4 people",
+      "guests5_6": "5–6 people",
+      "guests7_8": "7–8 people",
+      "guests9_12": "9–12 people",
+      "guests13_16": "13–16 people",
+      "guests17_20": "17–20 people",
+      "guests21_28": "21–28 people",
+      "guestsSuffix": "guests",
+      "arrivalDateLabel": "Arrival date",
+      "arrivalTimeLabel": "Arrival time"
+    },
+    "step3": {
+      "label": "Step 3 — Budget & Preferences",
+      "title": "Your budget and wishes",
+      "desc": "Choose a price range and any add-on options.",
+      "budgetLabel": "Budget for the entire group (฿)",
+      "extrasLabel": "Additional services (select any)",
+      "photo": "Photographer",
+      "chef": "Private Chef",
+      "fasttrack": "Fast Track",
+      "fishing": "Fishing",
+      "massage": "Massage",
+      "bbq": "BBQ"
+    },
+    "step3extras": {
+      "yacht": "Complete your charter",
+      "villa": "Villa services",
+      "package": "Additional wishes"
+    },
+    "step4": {
+      "label": "Step 4 — Your Contacts",
+      "title": "How can we reach you?",
+      "desc": "The concierge will contact you personally and prepare a custom proposal.",
+      "name": "Your name *",
+      "phone": "Phone / WhatsApp *",
+      "email": "Email (optional)",
+      "contactLabel": "Preferred contact method",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram",
+      "call": "Phone Call",
+      "notes": "Notes & questions"
+    },
+    "step5": {
+      "title": "Request Sent!",
+      "sub": "Your personal Azanov Retreat concierge will contact you within 15 minutes with a custom no-hidden-fee proposal.",
+      "whatsapp": "Open WhatsApp",
+      "submit": "Send request via WhatsApp",
+      "privacy": "By clicking, you agree to the processing of your personal data to prepare a custom proposal."
+    },
+    "trust": {
+      "confidential": "Confidential",
+      "price": "Direct price",
+      "reply": "Reply in 15 min"
+    },
+    "next": "Next",
+    "back": "Back",
+    "review": "Review",
+    "stepOf": "Step {n} of 5",
+    "errorSelectExperience": "Please select experience type",
+    "errorSelectGuests": "Select number of guests",
+    "errorSelectDates": "Select check-in and check-out dates",
+    "errorSelectBudget": "Please select budget",
+    "errorEnterNamePhone": "Enter name and phone number",
+    "tourPrefix": "Tour:",
+    "monthsGenitive": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "monthsCap": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "dateRangeBy": " to "
+  },
+  "review": {
+    "title": "Leave a Review",
+    "name": "Name",
+    "phone": "Phone",
+    "rating": "Rating",
+    "text": "Review text",
+    "wishes": "Suggestions (optional)",
+    "submit": "Submit review",
+    "success": "Thank you! Review submitted.",
+    "errorNameText": "Please fill in name and review text",
+    "sending": "Sending…",
+    "errorSend": "Failed to send. Contact us on Telegram: <a href=\"https://t.me/AzanovRetreat\" target=\"_blank\" rel=\"noopener\">@AzanovRetreat</a>"
+  },
+  "crypto": {
+    "label": "Crypto Exchange",
+    "title": "Exchange Request",
+    "amount": "Amount to exchange *",
+    "amountPlaceholder": "e.g. 50000 USD",
+    "currency": "Receive in which currency *",
+    "currencyPlaceholder": "Select",
+    "other": "Other",
+    "country": "Cash delivery country *",
+    "countryPlaceholder": "e.g. Thailand",
+    "city": "City *",
+    "cityPlaceholder": "e.g. Phuket",
+    "name": "Your name *",
+    "phone": "Phone / WhatsApp *",
+    "submit": "Submit request",
+    "successTitle": "Request submitted!",
+    "successSub": "Azanov Retreat managers will contact you shortly and confirm exchange details.",
+    "urgent": "Urgent:",
+    "errorRequired": "Please fill in all required fields"
+  },
+  "meta": {
+    "index": {
+      "title": "Azanov Retreat — Private Phuket Retreats | All-Inclusive",
+      "desc": "Azanov Retreat — exclusive private retreats in Phuket. Villas, yachts, cars, concierge 24/7, Fast Track. All-inclusive from A to Z."
+    },
+    "fleet": {
+      "title": "Yachts & Boats — Azanov Retreat | Phuket Yacht Charter",
+      "desc": "109 vessels. All-Inclusive: guide, drinks, snorkeling, GoPro, insurance."
+    },
+    "villas": {
+      "title": "Villas — Azanov Retreat | Phuket Villa Rental",
+      "desc": "Rawai, Nai Harn, Bang Tao. All-Inclusive."
+    },
+    "tours": {
+      "title": "Tours & Excursions — Azanov Retreat | 60+ Phuket Routes",
+      "desc": "Phi Phi, Phang Nga, Krabi, Similan Islands. Private tours, no crowds."
+    }
+  },
+  "aria": {
+    "mainNav": "Main navigation",
+    "langRu": "Russian",
+    "langEn": "English",
+    "hero": "Hero section",
+    "philosophy": "All-Inclusive Philosophy",
+    "packages": "Azanov Retreat Packages",
+    "fleet": "Fleet catalog",
+    "fleetFilters": "Fleet filters",
+    "villas": "Villa catalog",
+    "locations": "Routes and locations",
+    "tours": "Tours",
+    "concierge": "Concierge service",
+    "faq": "Frequently asked questions",
+    "testimonials": "Guest reviews",
+    "footer": "Footer",
+    "close": "Close",
+    "prevPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "scrollLeft": "Scroll left",
+    "scrollRight": "Scroll right",
+    "reviewForm": "Review form",
+    "cryptoForm": "Crypto exchange request",
+    "leadForm": "Booking form",
+    "details": "Details",
+    "datesSelect": "Select check-in and check-out dates",
+    "stayPeriod": "Stay period",
+    "clearDates": "Clear dates",
+    "openCalendar": "Open calendar",
+    "retreatSummary": "Retreat summary",
+    "yourName": "Your name",
+    "phoneWhatsapp": "Phone / WhatsApp",
+    "email": "Email",
+    "notesQuestions": "Notes and questions",
+    "photoN": "Photo {n}",
+    "tourDetails": "Learn more about tour {name}",
+    "tourExplore": "Explore tour {name}",
+    "serviceDetails": "Learn more about {name}",
+    "minPrice": "Minimum price",
+    "maxPrice": "Maximum price",
+    "testimonialsCarousel": "Reviews carousel",
+    "reviewNumbers": "Review numbers",
+    "star1": "1 star",
+    "star2": "2 stars",
+    "star3": "3 stars",
+    "star4": "4 stars",
+    "star5": "5 stars",
+    "logoHome": "Azanov Retreat — Home"
+  },
+  "wa": {
+    "greeting": "Hello! I would like to book Azanov Retreat.",
+    "name": "Name",
+    "phone": "Phone",
+    "experienceType": "Experience type",
+    "package": "Package",
+    "yacht": "Yacht",
+    "villa": "Villa",
+    "tour": "Tour",
+    "service": "Service",
+    "guests": "Guests",
+    "guestsCount": "{n} people",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "arrival": "Arrival date",
+    "arrivalTime": "Arrival time",
+    "tbd": "TBD",
+    "duration": "Duration",
+    "nights": "Nights",
+    "priceGuide": "Price guide",
+    "budget": "Budget",
+    "extras": "Add-ons",
+    "notes": "Notes",
+    "contactMethod": "Preferred contact",
+    "call": "Phone call",
+    "sentFrom": "Sent from azanovretreat.com",
+    "budgetUp150": "up to 150,000 ฿",
+    "budget150_300": "150–300k ฿",
+    "budget300_1m": "300k – 1M ฿",
+    "budget1mPlus": "over 1M ฿"
+  },
+  "common": {
+    "backToHome": "← Back to home",
+    "viewMore": "View more ({n})"
+  }
+}

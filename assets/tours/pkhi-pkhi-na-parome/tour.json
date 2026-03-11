@@ -1,0 +1,124 @@
+{
+  "id": "pkhi-pkhi-na-parome",
+  "title": "Пхи Пхи на пароме",
+  "description": "Экскурсия не включает портовые сборы на о.Пхи Пхи Дон.",
+  "price": 1200,
+  "old_price": null,
+  "url": "https://tourtourphuket.ru/phi_phi777/tproduct/790315469-516774181172-phi-phi-na-parome",
+  "sku": "PPC",
+  "local_images": [
+    "images/photo-1.jpg",
+    "images/photo-3.jpg",
+    "images/photo-9.jpg",
+    "images/photo-14.jpg",
+    "images/photo-15.jpg"
+  ],
+  "details_html": "<a href=\"//wa.me/66951905999?text=Здравствуйте,%20интересует%20экскурсия%20ПХИ%20ПХИ%20НА%20ПАРОМЕ!%20Пожалуста,%20свяжитесь%20со%20мной!\" target=\"_blank\" rel=\"noreferrer noopener\">Быстрый заказ</a><br /><span style=\"color: rgb(0, 0, 0); font-size: 20px;\">Стоимость: Взрослый - 1200฿ / Детский - 1000฿</span><br /><strong style=\"color: rgb(86, 204, 8); font-size: 18px;\">Детский билет от 4 до 11 лет, включительно до 120см рост.</strong><br /><strong style=\"color: rgb(219, 175, 0); font-size: 18px;\">Экскурсия не включает портовые сборы на о.Пхи Пхи Дон.</strong><br /><br /><strong style=\"color: rgb(0, 0, 0); font-size: 18px;\">Без снорклинга - 1200฿ / 1000฿</strong><br /><strong style=\"color: rgb(0, 0, 0); font-size: 18px;\">С выездом на снорклинг - 1600฿ / 1200฿</strong><br /><br /><strong style=\"color: rgb(0, 0, 0); font-size: 20px;\">Программа:</strong><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">07:30 Выезды из отелей</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">08:30 - 09:00 Сбор на пирсе и отправление</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">11:00 Осмотр о.Пхи Пхи Ле (без высадки): бухты Лохсама, Майя, Пиле и пещера Викингов</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">11:30 Прибытие на о.Пхи Пхи Дон, пересадка в лодку для снорклинга и выезд на снорклинг</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">12:30 Обед на о.Пхи Пхи Дон и свободное время на острове</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">14:30 Сбор на пароме</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">15:00 Отправление на Пхукет</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">17:00 Прибытие на Пхукет и трансфер в отель</span><br /><br /><ul><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Трансфер: Патонг, Карон , Ката, Равай - туда обратно</span></li><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Стоимость входного билета на Пхи Пхи Дон по прибытию - 20 бат , оплачивается самостоятельно в кассу.</span></li></ul><br /><strong style=\"font-size: 18px;\">Аннуляция тура:</strong><br /><ul><li data-list=\"bullet\"><span style=\"font-size: 18px;\">За 24 часа до тура - без штрафа</span></li><li data-list=\"bullet\"><span style=\"font-size: 18px;\">В день тура - 100% штраф</span></li></ul><br /><strong style=\"color: rgb(0, 0, 0); font-size: 18px;\">*Подходит для беременных женщин</strong>",
+  "price_adult": "1200฿",
+  "price_child": "1000฿",
+  "itinerary": [
+    {
+      "time": "07:30",
+      "text": "Выезды из отелей"
+    },
+    {
+      "time": "08:30",
+      "text": "- 09:00 Сбор на пирсе и отправление"
+    },
+    {
+      "time": "11:00",
+      "text": "Осмотр о.Пхи Пхи Ле (без высадки): бухты Лохсама, Майя, Пиле и пещера Викингов"
+    },
+    {
+      "time": "11:30",
+      "text": "Прибытие на о.Пхи Пхи Дон, пересадка в лодку для снорклинга и выезд на снорклинг"
+    },
+    {
+      "time": "12:30",
+      "text": "Обед на о.Пхи Пхи Дон и свободное время на острове"
+    },
+    {
+      "time": "14:30",
+      "text": "Сбор на пароме"
+    },
+    {
+      "time": "15:00",
+      "text": "Отправление на Пхукет"
+    },
+    {
+      "time": "17:00",
+      "text": "Прибытие на Пхукет и трансфер в отель • Трансфер: Патонг, Карон , Ката, Равай - туда обратно • Стоимость входного билета на Пхи Пхи Дон по прибытию - 20 бат , оплачивается самостоятельно в кассу."
+    }
+  ],
+  "cancellation": [
+    "За 24 часа до тура - без штрафа",
+    "В день тура - 100% штраф",
+    "*Подходит для беременных женщин"
+  ],
+  "full_text": "Быстрый заказ\nСтоимость: Взрослый - 1200฿ / Детский - 1000฿\nДетский билет от 4 до 11 лет, включительно до 120см рост.\nЭкскурсия не включает портовые сборы на о.Пхи Пхи Дон.\n\nБез снорклинга - 1200฿ / 1000฿\nС выездом на снорклинг - 1600฿ / 1200฿\n\nПрограмма:\n07:30 Выезды из отелей\n08:30 - 09:00 Сбор на пирсе и отправление\n11:00 Осмотр о.Пхи Пхи Ле (без высадки): бухты Лохсама, Майя, Пиле и пещера Викингов\n11:30 Прибытие на о.Пхи Пхи Дон, пересадка в лодку для снорклинга и выезд на снорклинг\n12:30 Обед на о.Пхи Пхи Дон и свободное время на острове\n14:30 Сбор на пароме\n15:00 Отправление на Пхукет\n17:00 Прибытие на Пхукет и трансфер в отель\n\n• Трансфер: Патонг, Карон , Ката, Равай - туда обратно\n• Стоимость входного билета на Пхи Пхи Дон по прибытию - 20 бат , оплачивается самостоятельно в кассу.\n\nАннуляция тура:\n• За 24 часа до тура - без штрафа\n• В день тура - 100% штраф\n\n*Подходит для беременных женщин",
+  "title_en": "Пхи Пхи on ferry",
+  "itinerary_en": [
+    {
+      "time": "07:30",
+      "text": "Departures из hotels"
+    },
+    {
+      "time": "08:30",
+      "text": "- 09:00 Gathering on pier and departure"
+    },
+    {
+      "time": "11:00",
+      "text": "Sightseeing about.Пхи Пхи Ле (without высадки): bay Лохсама, Майя, Pileh and cave Viking"
+    },
+    {
+      "time": "11:30",
+      "text": "Arrival on about.Пхи Пхи Don, пересадка in boat for снорклинга and departure on snorkeling"
+    },
+    {
+      "time": "12:30",
+      "text": "Lunch on about.Пхи Пхи Don and free time on island"
+    },
+    {
+      "time": "14:30",
+      "text": "Gathering on ferry"
+    },
+    {
+      "time": "15:00",
+      "text": "Departure on Phuket"
+    },
+    {
+      "time": "17:00",
+      "text": "Arrival on Phuket and transfer in hotel • Transfer: Patong, Karon , Kata, Rawai - there back • Price входного билета on Пхи Пхи Don per прибытию - 20 THB , paid самостоятельно in каccу."
+    }
+  ],
+  "cancellation_en": [
+    "24 hours before tour — no penalty",
+    "On day of tour — 100% penalty",
+    "*Suitable for pregnant women"
+  ],
+  "description_en": "Экскурсия not includes портовые сборы on about.Пхи Пхи Don.",
+  "included": [
+    "Трансфер: Патонг, Карон, Ката, Равай — туда обратно",
+    "Стоимость входного билета на Пхи Пхи Дон по прибытию — 20 бат, оплачивается в кассу"
+  ],
+  "what_to_bring": [
+    "Фото паспорта в телефоне",
+    "Купальные принадлежности",
+    "Солнцезащитный крем",
+    "Полотенце",
+    "Фото/видео камера",
+    "Деньги на личные расходы"
+  ],
+  "included_en": [
+    "Transfer: Patong, Karon, Kata, Rawai — round trip",
+    "Стоимость входного билета on Phi Phi Don по прибытию — 20 бат, оплачивается in каccу"
+  ],
+  "what_to_bring_en": [
+    "Photo passport in phone",
+    "Swimwear items",
+    "Солнцезащитный крем",
+    "Towel",
+    "Photo/video camera",
+    "Money on personal expenses"
+  ]
+}

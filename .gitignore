@@ -1,0 +1,61 @@
+# ============================================================
+#  AZANOV RETREAT — .gitignore
+# ============================================================
+
+# ── Environment / Secrets ────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+deploy/ssl/
+
+# ── Node.js ──────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Python ───────────────────────────────────────────────────
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ── macOS ────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# ── Editor / IDE ─────────────────────────────────────────────
+.cursor/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Temporary / Build ────────────────────────────────────────
+*.zip
+*.tar.gz
+dist/
+.cache/
+
+# ── One-off scripts (не часть деплоя) ───────────────────────
+fix_translations.py
+translate_all.py
+translate_all_tours.cjs
+translate_tours.cjs
+take_azbuka_screenshot.py
+take_azbuka_screenshot_v3.py
+walkthrough-replace.py
+update_tour_images.js
+
+# ── Случайные файлы с корня ──────────────────────────────────
+5wrAn.jpg
+FCZLI.jpg
+YknSh.jpg
+ZLwWR.jpg
+cHn7S.jpg
+h5oEo.jpg

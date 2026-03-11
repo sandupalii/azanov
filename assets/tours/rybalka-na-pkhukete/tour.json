@@ -1,0 +1,97 @@
+{
+  "id": "rybalka-na-pkhukete",
+  "title": "Рыбалка на Пхукете",
+  "description": "Троллинг на рыбацкой лодке",
+  "price": 1800,
+  "old_price": null,
+  "url": "https://tourtourphuket.ru/morskaya-rybalka/tproduct/1597954881-595544595222-ribalka-na-phukete",
+  "sku": "PRST/BPF",
+  "local_images": [
+    "images/photo-1.jpg"
+  ],
+  "details_html": "<a href=\"//wa.me/66951905999?text=Здравствуйте,%20интересует%20*Рыбалка%20на%20Пхукете*!%20Пожалуйста,%20свяжитесь%20со%20мной!\" target=\"_blank\" rel=\"noreferrer noopener\">Быстрый заказ</a><br /><span style=\"font-size: 20px;\">Стоимость:</span><br /><strong style=\"font-size: 18px;\">Программа без снорклинга:</strong><br /><ul><li data-list=\"bullet\"><strong style=\"color: rgb(0, 0, 0); font-size: 18px;\">Рыбак - 1800฿</strong></li><li data-list=\"bullet\"><strong style=\"color: rgb(0, 0, 0); font-size: 18px;\">Не рыбак - 1400฿</strong></li></ul><br /><strong style=\"font-size: 18px;\">Программа с снорклингом:</strong><br /><ul><li data-list=\"bullet\"><strong style=\"font-size: 18px; color: rgb(0, 0, 0);\">Рыбак - 1900฿</strong></li><li data-list=\"bullet\"><strong style=\"font-size: 18px; color: rgb(0, 0, 0);\">Не рыбак - 1600฿</strong></li></ul><br /><strong style=\"color: rgb(236, 11, 11); font-size: 18px;\">*Без русского гида, группа интернациональная</strong><br /><br /><strong style=\"font-size: 18px;\">Программа:</strong><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">07:30 - 08:30 Выезды из отелей.</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">09:00 - 10:00 Отправление в сторону о.Рача Яй и троллинг по пути.</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">12:00 Обед на лодке.</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">13:00 Время для купания (или снорклинга с лодки)</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">14:00 Донная рыбалка и отправление в обратную сторону, троллинг по пути.</span><br /><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">16:30 - 17:00 Прибытие на пирс и трансфер в отель.</span><br /><br /><strong style=\"font-size: 18px; color: rgb(0, 0, 0);\">Примечание:</strong><br /><ul><li data-list=\"bullet\"><span style=\"font-size: 18px;\">Тянется жребий, для определения последовательности очереди вытягивать рыбу</span></li><li data-list=\"bullet\"><span style=\"font-size: 18px; color: rgb(0, 0, 0);\">Программа может меняться в связи с погодными условиями или другими непредвиденными обстоятельствами</span></li></ul><br /><strong style=\"color: rgb(0, 0, 0); font-size: 18px;\">Включено: </strong><br /><ul><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Транспорт (автобус и лодка) с основных пляжей</span></li><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Обед, прохладительные напитки и свежие фрукты на борту</span></li><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Маски, трубки, спасательные жилеты</span></li><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Страховка</span></li></ul><br /><strong style=\"color: rgb(0, 0, 0); font-size: 18px;\">Что взять с собой:</strong><span style=\"color: rgb(0, 0, 0); font-size: 18px;\"> </span><br /><ul><li data-list=\"bullet\"><span style=\"font-size: 18px;\">Фото паспорта в телефоне</span></li><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Купальные принадлежности</span></li><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Солнцезащитные крема, кепки, шляпы</span></li><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Полотенце</span></li><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Фото/видео камера</span></li><li data-list=\"bullet\"><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Деньги на сувениры и личные расходы</span></li></ul>",
+  "itinerary": [
+    {
+      "time": "07:30",
+      "text": "- 08:30 Выезды из отелей."
+    },
+    {
+      "time": "09:00",
+      "text": "- 10:00 Отправление в сторону о.Рача Яй и троллинг по пути."
+    },
+    {
+      "time": "12:00",
+      "text": "Обед на лодке."
+    },
+    {
+      "time": "13:00",
+      "text": "Время для купания (или снорклинга с лодки)"
+    },
+    {
+      "time": "14:00",
+      "text": "Донная рыбалка и отправление в обратную сторону, троллинг по пути."
+    },
+    {
+      "time": "16:30",
+      "text": "- 17:00 Прибытие на пирс и трансфер в отель."
+    }
+  ],
+  "notes": "• Тянется жребий, для определения последовательности очереди вытягивать рыбу\n• Программа может меняться в связи с погодными условиями или другими непредвиденными обстоятельствами",
+  "included": [
+    "Транспорт (автобус и лодка) с основных пляжей",
+    "Обед, прохладительные напитки и свежие фрукты на борту",
+    "Маски, трубки, спасательные жилеты",
+    "Страховка"
+  ],
+  "what_to_bring": [
+    "Фото паспорта в телефоне",
+    "Купальные принадлежности",
+    "Солнцезащитные крема, кепки, шляпы",
+    "Полотенце",
+    "Фото/видео камера",
+    "Деньги на сувениры и личные расходы"
+  ],
+  "full_text": "Быстрый заказ\nСтоимость:\nПрограмма без снорклинга:\n• Рыбак - 1800฿\n• Не рыбак - 1400฿\n\nПрограмма с снорклингом:\n• Рыбак - 1900฿\n• Не рыбак - 1600฿\n\n*Без русского гида, группа интернациональная\n\nПрограмма:\n07:30 - 08:30 Выезды из отелей.\n09:00 - 10:00 Отправление в сторону о.Рача Яй и троллинг по пути.\n12:00 Обед на лодке.\n13:00 Время для купания (или снорклинга с лодки)\n14:00 Донная рыбалка и отправление в обратную сторону, троллинг по пути.\n16:30 - 17:00 Прибытие на пирс и трансфер в отель.\n\nПримечание:\n• Тянется жребий, для определения последовательности очереди вытягивать рыбу\n• Программа может меняться в связи с погодными условиями или другими непредвиденными обстоятельствами\n\nВключено: \n• Транспорт (автобус и лодка) с основных пляжей\n• Обед, прохладительные напитки и свежие фрукты на борту\n• Маски, трубки, спасательные жилеты\n• Страховка\n\nЧто взять с собой: \n• Фото паспорта в телефоне\n• Купальные принадлежности\n• Солнцезащитные крема, кепки, шляпы\n• Полотенце\n• Фото/видео камера\n• Деньги на сувениры и личные расходы",
+  "title_en": "Fishing in Phuket",
+  "description_en": "Trolling on рыбацкой boat",
+  "itinerary_en": [
+    {
+      "time": "07:30",
+      "text": "- 08:30 Departures из hotels."
+    },
+    {
+      "time": "09:00",
+      "text": "- 10:00 Departure in way about.Racha Яй and trolling per пути."
+    },
+    {
+      "time": "12:00",
+      "text": "Lunch on boat."
+    },
+    {
+      "time": "13:00",
+      "text": "Time for купания (or снорклинга with boat)"
+    },
+    {
+      "time": "14:00",
+      "text": "Донная fishing and departure in обратную way, trolling per пути."
+    },
+    {
+      "time": "16:30",
+      "text": "- 17:00 Arrival on pier and transfer in hotel."
+    }
+  ],
+  "included_en": [
+    "Transport (bus and boat) from main beaches",
+    "Lunch, soft drinks and fresh fruits on board",
+    "Masks, snorkels, life jackets",
+    "Insurance"
+  ],
+  "what_to_bring_en": [
+    "Photo of passport on phone",
+    "Swimwear",
+    "Sunscreen, caps, hats",
+    "Towel",
+    "Photo/video camera",
+    "Money for souvenirs and personal expenses"
+  ]
+}

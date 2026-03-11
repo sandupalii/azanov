@@ -1,0 +1,26 @@
+{
+  "id": "4-zhemchuzhiny-andamana-variant-1",
+  "title": "4 Жемчужины Андамана - Вариант 1",
+  "description": "Andaman Beach Resort - Промо",
+  "price": 4500,
+  "old_price": 4700,
+  "currency": "THB",
+  "currency_symbol": "฿",
+  "sku": "AT",
+  "source_url": "https://tourtourphuket.ru/dzhejms-bond-phi-phi-krabi777/tproduct/778717282-596497303382-4-zhemchuzhini-andamana",
+  "source_images": [
+    "https://static.tildacdn.com/stor3565-6536-4639-b663-306664323238/43227674.jpg",
+    "https://static.tildacdn.com/stor3066-3962-4862-b863-353566303462/47906781.jpg"
+  ],
+  "local_images": [
+    "images/photo-1.jpg",
+    "images/photo-2.jpg"
+  ],
+  "rating": 5.0,
+  "reviews_count": 3,
+  "partner": "TourTour Phuket",
+  "partner_url": "https://tourtourphuket.ru",
+  "category": "Морские экскурсии",
+  "title_en": "4 Жемчужины Андамана - Вариант 1",
+  "description_en": "Andaman Beach Resort - Promo"
+}

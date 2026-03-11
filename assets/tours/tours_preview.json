@@ -1,0 +1,92 @@
+[
+  {
+    "id": "11-ostrovov-variant-1",
+    "name": "11 островов - Вариант 1",
+    "name_en": "11 Islands — Option 1",
+    "desc": "Пхи Пхи + Краби + Джеймс Бонд - 1 день",
+    "desc_en": "Phi Phi + Krabi + James Bond — 1 day",
+    "tag": "AT",
+    "img": "assets/tours/11-ostrovov-variant-1/images/photo-1.jpg",
+    "priceLabel": "from 3600 ฿"
+  },
+  {
+    "id": "11-ostrovov-variant-2",
+    "name": "11 островов - Вариант 2",
+    "name_en": "11 Islands — Option 2",
+    "desc": "Пхи Пхи + Краби + Джеймс Бонд - 1 день",
+    "desc_en": "Phi Phi + Krabi + James Bond — 1 day",
+    "tag": "B",
+    "img": "assets/tours/11-ostrovov-variant-2/images/photo-1.jpg",
+    "priceLabel": "from 4100 ฿"
+  },
+  {
+    "id": "4-zhemchuzhiny-andamana",
+    "name": "4 Жемчужины Андамана",
+    "name_en": "4 Pearls of Andaman",
+    "desc": "Вариант 1 - Andaman Beach Resort - Промо",
+    "desc_en": "Option 1 - Andaman Beach Resort - Promo",
+    "tag": "AT",
+    "img": "assets/tours/4-zhemchuzhiny-andamana/images/photo-2.jpg",
+    "priceLabel": "from 4500 ฿"
+  },
+  {
+    "id": "5-zhemchuzhin-andamana",
+    "name": "5 Жемчужин Андамана",
+    "name_en": "5 Pearls of Andaman",
+    "desc": "Andaman Beach Resort",
+    "desc_en": "Andaman Beach Resort",
+    "tag": "B",
+    "img": "assets/tours/5-zhemchuzhin-andamana/images/photo-1.jpg",
+    "priceLabel": "from 5500 ฿"
+  },
+  {
+    "id": "pkhi-pkhi-na-parome",
+    "name": "Пхи Пхи на пароме",
+    "name_en": "Phi Phi by Ferry",
+    "desc": "",
+    "desc_en": "Excursion does not include port fees on Koh Phi Phi Don.",
+    "tag": "PPC",
+    "img": "assets/tours/pkhi-pkhi-na-parome/images/photo-1.jpg",
+    "priceLabel": "from 1200 ฿"
+  },
+  {
+    "id": "pkhi-pkhi-kay",
+    "name": "Пхи Пхи + Kай",
+    "name_en": "Phi Phi + Khai",
+    "desc": "",
+    "desc_en": "Phi Phi Islands and Khai Island day trip.",
+    "tag": "ST",
+    "img": "assets/tours/pkhi-pkhi-kay/images/photo-2.png",
+    "priceLabel": "from 1500 ฿"
+  },
+  {
+    "id": "pkhi-pkhi-kay-individualnyy-tur",
+    "name": "Пхи Пхи + Kай Индивидуальный тур",
+    "name_en": "Phi Phi + Khai Private Tour",
+    "desc": "",
+    "desc_en": "Maximum 30 persons",
+    "tag": "ST",
+    "img": "assets/tours/pkhi-pkhi-kay-individualnyy-tur/images/photo-2.jpg",
+    "priceLabel": "from 31500 ฿"
+  },
+  {
+    "id": "pkhi-pkhi-kay-mayton-snorkling",
+    "name": "Пхи Пхи + Kай + Maйтон снорклинг",
+    "name_en": "Phi Phi + Khai + Maiton Snorkeling",
+    "desc": "",
+    "desc_en": "Three island snorkeling tour.",
+    "tag": "SDT",
+    "img": "assets/tours/pkhi-pkhi-kay-mayton-snorkling/images/photo-1.jpg",
+    "priceLabel": "from 1550 ฿"
+  },
+  {
+    "id": "pkhi-pkhi-bambu-kay-mayton-snorkling",
+    "name": "Пхи Пхи + Бамбу + Kай + Maйтон снорклинг",
+    "name_en": "Phi Phi + Bamboo + Khai + Maiton Snorkeling",
+    "desc": "",
+    "desc_en": "Daily tours with English speaking guide from 10 persons",
+    "tag": "AT",
+    "img": "assets/tours/pkhi-pkhi-bambu-kay-mayton-snorkling/images/photo-1.jpg",
+    "priceLabel": "from 1800 ฿"
+  }
+]

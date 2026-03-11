@@ -45,3 +45,11 @@ app.listen(PORT, () => {
     console.log(`   Telegram: ${process.env.TELEGRAM_BOT_TOKEN ? '✓ configured' : '✗ TELEGRAM_BOT_TOKEN missing'}`);
     console.log(`   AmoCRM:   ${process.env.AMOCRM_DOMAIN && process.env.AMOCRM_ACCESS_TOKEN ? '✓ configured' : '○ not configured (optional)'}`);
 });
+
+app.get("/", (req, res) => {
+  res.send("Azanov Retreat API is working");
+});
+
+app.get("/api", (req, res) => {
+  res.json({ ok: true, message: "API is working" });
+});

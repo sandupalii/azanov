@@ -1,17 +1,3 @@
-/**
- * ============================================================
- *  AZANOV RETREAT — Self-Hosted API Server
- *
- *  Replaces Vercel serverless functions with a plain
- *  Express.js server. Nginx proxies /api/* here;
- *  static files are served directly by Nginx.
- *
- *  Usage:
- *    node server.js          (production)
- *    node --watch server.js  (dev, Node 18+)
- * ============================================================
- */
-
 import 'dotenv/config';
 import express from 'express';
 
@@ -25,31 +11,30 @@ const PORT = process.env.PORT || 3001;
 // Parse JSON bodies
 app.use(express.json());
 
-// Serve static HTML/CSS/JS files from the root directory
+// Serve static files from project root
 app.use(express.static(process.cwd()));
 
-// ── API routes ────────────────────────────────────────────────
+// API routes
 app.post('/api/send-lead', sendLead);
 app.post('/api/send-crypto', sendCrypto);
 app.post('/api/send-review', sendReview);
 
-// Health check (useful for Docker / uptime monitors)
-app.get('/api/health', (_req, res) => res.json({ ok: true, ts: new Date().toISOString() }));
-
-// 404 for anything else on /api
-app.use('/api', (_req, res) => res.status(404).json({ error: 'Not found' }));
-
-// Start
-app.listen(PORT, () => {
-    console.log(`✅ API server running on http://localhost:${PORT}`);
-    console.log(`   Telegram: ${process.env.TELEGRAM_BOT_TOKEN ? '✓ configured' : '✗ TELEGRAM_BOT_TOKEN missing'}`);
-    console.log(`   AmoCRM:   ${process.env.AMOCRM_DOMAIN && process.env.AMOCRM_ACCESS_TOKEN ? '✓ configured' : '○ not configured (optional)'}`);
+app.get('/api/health', (_req, res) => {
+  res.json({ ok: true, ts: new Date().toISOString() });
 });
 
-app.get("/", (req, res) => {
-  res.send("Azanov Retreat API is working");
+app.get('/api', (_req, res) => {
+  res.json({ ok: true, message: 'API is working' });
 });
 
-app.get("/api", (req, res) => {
-  res.json({ ok: true, message: "API is working" });
+// 404 only for unknown /api routes
+app.use('/api', (_req, res) => {
+  res.status(404).json({ error: 'Not found' });
+});
+
+// Start server LAST
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`✅ API server running on http://localhost:${PORT}`);
+  console.log(`   Telegram: ${process.env.TELEGRAM_BOT_TOKEN ? '✓ configured' : '✗ TELEGRAM_BOT_TOKEN missing'}`);
+  console.log(`   AmoCRM:   ${process.env.AMOCRM_DOMAIN && process.env.AMOCRM_ACCESS_TOKEN ? '✓ configured' : '○ not configured (optional)'}`);
 });

@@ -396,7 +396,52 @@
                 updateDateClearVisibility();
             }
 
-            // Dynamic Step 4 Context (Budget & Extras)
+            // Step 3: Show package price OR budget selector depending on experience type
+            if (currentStep === 3) {
+                const isPackage = formData.experienceType === 'package';
+                const packagePriceBlock = document.getElementById('lead-step3-package-price');
+                const budgetBlock = document.getElementById('lead-step3-budget');
+                const step3Title = document.getElementById('lead-step3-title');
+                const step3Desc = document.getElementById('lead-step3-desc');
+
+                if (isPackage) {
+                    // Show fixed price block, hide budget selector
+                    if (packagePriceBlock) packagePriceBlock.style.display = '';
+                    if (budgetBlock) budgetBlock.style.display = 'none';
+                    // Clear any previously selected budget — it doesn't apply to packages
+                    formData.budget = null;
+                    document.querySelectorAll('.budget-option').forEach(b => b.classList.remove('selected'));
+                    // Update title/desc
+                    if (step3Title) step3Title.textContent = t('form.step3.titlePackage') || 'Допуслуги к пакету';
+                    if (step3Desc) step3Desc.textContent = t('form.step3.descPackage') || 'Цена пакета фиксирована. Вы можете добавить дополнительные сервисы.';
+                    // Render scaled price
+                    const scaledPrice = getPackageScaledPrice();
+                    const priceAmountEl = document.getElementById('lead-step3-price-amount');
+                    if (priceAmountEl) {
+                        if (scaledPrice != null) {
+                            const nights = parseInt(formData.nights, 10) || 5;
+                            const nightsLabel = getNightsLabel();
+                            priceAmountEl.textContent = `${t('card.from') || 'от'} ${formatPrice(scaledPrice)} — ${nightsLabel}`;
+                        } else {
+                            priceAmountEl.textContent = '—';
+                        }
+                    }
+                } else {
+                    // Show budget selector, hide package price block
+                    if (packagePriceBlock) packagePriceBlock.style.display = 'none';
+                    if (budgetBlock) budgetBlock.style.display = '';
+                    // Restore default title/desc
+                    if (step3Title && !step3Title.dataset.i18nSet) {
+                        step3Title.textContent = t('form.step3.title') || 'Ваш бюджет и желания';
+                    }
+                    if (step3Desc && !step3Desc.dataset.i18nSet) {
+                        step3Desc.textContent = t('form.step3.desc') || 'Выберите ценовой диапазон и дополнительные опции.';
+                    }
+                }
+                updateAddonPrices();
+            }
+
+            // Dynamic Step 4 Context (Budget & Extras) — kept for backwards compat
             if (currentStep === 4) {
                 const extrasTitle = activeEl.querySelector('.lead-step__title');
                 if (formData.experienceType === 'yacht') {
@@ -774,7 +819,8 @@
             }
         }
         if (step === 4) {
-            if (!formData.budget) {
+            // Packages have fixed prices — budget selection is not required
+            if (!formData.budget && formData.experienceType !== 'package') {
                 showError(t('form.errorSelectBudget')); valid = false;
             }
             // Step 4 = contact: also require name and phone before sending
@@ -882,8 +928,10 @@
         if (formData.experienceType === 'package') {
             const scaledPrice = getPackageScaledPrice();
             if (scaledPrice != null) msg += `💰 ${t('wa.priceGuide')}: ${t('card.from')} ${formatPrice(scaledPrice)}\n`;
+        } else {
+            // For non-package orders — show user-selected budget range
+            msg += `💰 ${t('wa.budget')}: ${budgetMap[formData.budget] || t('wa.tbd')}\n`;
         }
-        msg += `💰 ${t('wa.budget')}: ${budgetMap[formData.budget] || t('wa.tbd')}\n`;
         if (formData.extras.length > 0) {
             const extraKeys = { photo: 'form.step3.photo', chef: 'form.step3.chef', fasttrack: 'form.step3.fasttrack', fishing: 'form.step3.fishing', massage: 'form.step3.massage', bbq: 'form.step3.bbq' };
             const extrasWithPrices = formData.extras.map(id => {

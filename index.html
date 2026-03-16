@@ -999,10 +999,21 @@
 
         <!-- STEP 3: Budget & Extras -->
         <div class="lead-step" id="lead-step-3">
-          <div class="lead-step__label label-upper" data-i18n="form.step3.label">Шаг 3 — Бюджет и предпочтения</div>
-          <h3 class="lead-step__title" data-i18n="form.step3.title">Ваш бюджет и желания</h3>
-          <p class="lead-step__desc" data-i18n="form.step3.desc">Выберите ценовой диапазон и дополнительные опции.</p>
-          <div class="form-group">
+          <div class="lead-step__label label-upper" id="lead-step3-label" data-i18n="form.step3.label">Шаг 3 — Бюджет и предпочтения</div>
+          <h3 class="lead-step__title" id="lead-step3-title" data-i18n="form.step3.title">Ваш бюджет и желания</h3>
+          <p class="lead-step__desc" id="lead-step3-desc" data-i18n="form.step3.desc">Выберите ценовой диапазон и дополнительные опции.</p>
+
+          <!-- Блок цены пакета (показывается только при заказе пакета) -->
+          <div class="form-group" id="lead-step3-package-price" style="display:none">
+            <div class="form-label" data-i18n="form.step3.packagePriceLabel">Стоимость пакета</div>
+            <div class="package-price-display">
+              <div class="package-price-display__amount" id="lead-step3-price-amount">—</div>
+              <div class="package-price-display__note" id="lead-step3-price-note" data-i18n="form.step3.packagePriceNote">Цена фиксирована. Ниже вы можете добавить допуслуги.</div>
+            </div>
+          </div>
+
+          <!-- Блок выбора бюджета (показывается только НЕ для пакетов) -->
+          <div class="form-group" id="lead-step3-budget">
             <div class="form-label" data-i18n="form.step3.budgetLabel">Бюджет на всю группу (฿)</div>
             <div class="budget-options">
               <div class="budget-option" onclick="selectBudget('150000',this)">
@@ -1023,6 +1034,7 @@
               </div>
             </div>
           </div>
+
           <div class="form-group">
             <div class="form-label" data-i18n="form.step3.extrasLabel">Дополнительные сервисы (можно несколько)</div>
             <div class="checkbox-group">

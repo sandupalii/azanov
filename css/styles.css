@@ -2922,6 +2922,31 @@ html[lang="ru"] .hero__badge-row {
   color: var(--teal);
 }
 
+/* Package price display (Step 3 — shown instead of budget selector for package orders) */
+.package-price-display {
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-md);
+  background: rgba(64, 224, 208, 0.07);
+  border: 1px solid rgba(64, 224, 208, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.package-price-display__amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--teal);
+  font-family: var(--font-head);
+  letter-spacing: -0.02em;
+}
+
+.package-price-display__note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 /* Addon toggle buttons (Step 4) */
 .addon-toggle-group {
   display: grid;

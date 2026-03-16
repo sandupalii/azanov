@@ -2271,4 +2271,7 @@ function initComponents() {
   setNavActive();
   window.addEventListener('scroll', setNavActive, { passive: true });
   window.addEventListener('hashchange', setNavActive);
+
+  // Signal preloader: all components rendered (stage 4 → 100%)
+  if (typeof window.__plDone === 'function') window.__plDone();
 }

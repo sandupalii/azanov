@@ -33,21 +33,107 @@
   --font-body: 'PT Sans', system-ui, sans-serif;
 }
 
-/* ---- i18n FOUC PREVENTION ---- */
-/* Hide translatable content until i18n has applied translations.
-   body gets .i18n-ready class from applyAll() in i18n.js */
-[data-i18n-html],
-[data-i18n] {
+/* ---- i18n FOUC PREVENTION (targeted) ---- */
+/* Only the hero title flashes visibly — hide just that element.
+   Global visibility:hidden on all [data-i18n] hurts LCP score. */
+.hero__title {
   visibility: hidden;
 }
-body.i18n-ready [data-i18n-html],
-body.i18n-ready [data-i18n] {
+body.i18n-ready .hero__title {
   visibility: visible;
-  animation: i18n-fadein 0.2s ease both;
+  animation: i18n-fadein 0.15s ease both;
 }
 @keyframes i18n-fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+/* ============================================================
+   PRELOADER — full-screen overlay (SEO-safe: content is in DOM
+   underneath, crawlers read it via <noscript> or headless mode)
+   ============================================================ */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.45s ease;
+  pointer-events: all;
+}
+#preloader.pl-done {
+  opacity: 0;
+  pointer-events: none;
+}
+.pl-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  width: min(400px, 88vw);
+}
+.pl-logo {
+  height: 6rem;
+  width: auto;
+  opacity: 0.92;
+  animation: pl-pulse 2.2s ease-in-out infinite alternate;
+}
+@keyframes pl-pulse {
+  from { opacity: 0.75; transform: translateY(0); }
+  to   { opacity: 1;    transform: translateY(-4px); }
+}
+.pl-bar-wrap {
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.pl-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--teal-dim), var(--teal));
+  border-radius: 99px;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 12px rgba(64, 224, 208, 0.5);
+}
+.pl-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+}
+.pl-status {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  flex: 1;
+}
+.pl-speed {
+  font-size: 0.72rem;
+  color: var(--teal-dim);
+  font-variant-numeric: tabular-nums;
+  min-width: 5rem;
+  text-align: center;
+}
+.pl-pct {
+  font-size: 0.78rem;
+  color: var(--teal);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  min-width: 2.5rem;
+  text-align: right;
+}
+/* Reduced motion: skip animation, hide immediately */
+@media (prefers-reduced-motion: reduce) {
+  #preloader { transition: none; }
+  .pl-logo   { animation: none; }
+  #preloader.pl-done { display: none; }
 }
 
 /* ---- RESET & BASE ---- */

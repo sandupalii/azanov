@@ -179,10 +179,10 @@ export async function amoCrmUpsertContact({ name, phone, email }) {
 
 /**
  * Create a lead in AmoCRM.
- * @param {{ name: string, price?: number, contactId?: number, tags?: string[], pipelineId?: number, statusId?: number }} lead
+ * @param {{ name: string, price?: number, contactId?: number, tags?: string[], customFields?: Array<{field_id: number, values: Array<{value: any}>}>, pipelineId?: number, statusId?: number }} lead
  * Returns the lead id, or null on failure.
  */
-export async function amoCrmCreateLead({ name, price, contactId, tags = [], pipelineId, statusId }) {
+export async function amoCrmCreateLead({ name, price, contactId, tags = [], customFields = [], pipelineId, statusId }) {
     // Build _embedded carefully — both tags and contacts must be in ONE _embedded object
     const embedded = {};
     if (tags.length) {
@@ -201,6 +201,7 @@ export async function amoCrmCreateLead({ name, price, contactId, tags = [], pipe
     if (resolvedPipelineId) leadObj.pipeline_id = resolvedPipelineId;
     if (resolvedStatusId) leadObj.status_id = resolvedStatusId;
     if (Object.keys(embedded).length) leadObj._embedded = embedded;
+    if (customFields.length) leadObj.custom_fields_values = customFields;
 
     const result = await amoCrmRequest('/api/v4/leads', 'POST', [leadObj]);
     if (result.ok && result.data?._embedded?.leads?.length) {

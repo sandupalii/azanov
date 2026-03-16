@@ -160,6 +160,26 @@ async function amoCrmCreateLeadFromBody(d) {
   const tags = ['website'];
   if (experienceType) tags.push(experienceType);
 
+  // ── Custom fields for amoCRM ──────────────────────────────────
+  // Field IDs are defined in amoCRM account settings
+  const CF = [
+    { field_id: 1581989, value: experienceType },
+    { field_id: 1581991, value: packageName },
+    { field_id: 1581993, value: yachtPreset },
+    { field_id: 1581995, value: villaPreset },
+    { field_id: 1581997, value: tourPreset },
+    { field_id: 1581999, value: servicePreset },
+    { field_id: 1576421, value: groupSize },
+    { field_id: 1574879, value: dateFrom },
+    { field_id: 1574881, value: dateTo },
+    { field_id: 1582001, value: nights },
+    { field_id: 1582003, value: extras && extras.length ? extras.join(', ') : null },
+    { field_id: 1582005, value: notes },
+  ];
+  const customFields = CF
+    .filter(f => f.value !== undefined && f.value !== null && f.value !== '')
+    .map(f => ({ field_id: f.field_id, values: [{ value: String(f.value) }] }));
+
   // ── Budget ───────────────────────────────────────────────────
   const budgetLabel = {
     '150000': 'до 150 000 ฿',
@@ -175,6 +195,7 @@ async function amoCrmCreateLeadFromBody(d) {
     price,
     contactId,
     tags,
+    customFields,
   });
 
   // ── Note: full form data ─────────────────────────────────────

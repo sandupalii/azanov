@@ -69,11 +69,15 @@ export default async function handler(req, res) {
       try {
         const contactId = await amoCrmUpsertContact({ name, phone });
         if (contactId) {
+          const customFields = [
+            { field_id: 1582015, values: [{ value: String(safeRating) }] },
+          ];
           await amoCrmCreateLead({
             name: `${name} — Отзыв (${safeRating}★)`,
             price: 0,
             contactId,
             tags: ['website', 'review', `rating-${safeRating}`],
+            customFields,
           });
         }
       } catch (err) {

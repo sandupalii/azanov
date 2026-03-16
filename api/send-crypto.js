@@ -58,11 +58,21 @@ export default async function handler(req, res) {
         (async () => {
             try {
                 const contactId = await amoCrmUpsertContact({ name, phone });
+                const CF = [
+                    { field_id: 1582007, value: amount },
+                    { field_id: 1582009, value: currency },
+                    { field_id: 1582011, value: country },
+                    { field_id: 1582013, value: city },
+                ];
+                const customFields = CF
+                    .filter(f => f.value !== undefined && f.value !== null && f.value !== '')
+                    .map(f => ({ field_id: f.field_id, values: [{ value: String(f.value) }] }));
                 await amoCrmCreateLead({
                     name: `${name} — Crypto Exchange`,
                     price: 0,
                     contactId,
                     tags: ['website', 'crypto-exchange'],
+                    customFields,
                 });
             } catch (err) {
                 console.error('AmoCRM error (crypto):', err);

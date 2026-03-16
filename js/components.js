@@ -1837,18 +1837,79 @@ function closeItemModal() {
 /* ============================================================
    GALLERY JS LOGIC
    ============================================================ */
-function setGalleryImage(idx) {
+/* Gallery slide animation state */
+let _galleryAnimating = false;
+
+function setGalleryImage(idx, direction) {
   currentGalleryIndex = idx;
-  document.getElementById('item-gallery-main-img').src = ImgUtils.toMedium(currentGalleryImages[idx]);
 
-  // Update active state on thumbs
-  const thumbs = document.querySelectorAll('.gallery-thumb');
-  thumbs.forEach((t, i) => {
-    if (i === idx) t.classList.add('active');
-    else t.classList.remove('active');
+  const img       = document.getElementById('item-gallery-main-img');
+  const container = img?.closest('.item-gallery-main');
+  if (!img) return;
+
+  // ── Update active thumb state immediately ────────────────────
+  document.querySelectorAll('.gallery-thumb').forEach((t, i) => {
+    t.classList.toggle('active', i === idx);
   });
-
   scrollThumbIntoView(idx);
+
+  // ── No animation if direction unknown or already animating ───
+  if (!direction || _galleryAnimating) {
+    img.src = ImgUtils.toMedium(currentGalleryImages[idx]);
+    return;
+  }
+
+  _galleryAnimating = true;
+
+  // ── Show skeleton loading state ──────────────────────────────
+  container?.classList.add('gallery-loading');
+
+  // Create outgoing clone for exit animation
+  const clone = img.cloneNode(true);
+  clone.removeAttribute('id');
+  clone.style.position = 'absolute';
+  clone.style.inset = '0';
+  clone.style.width = '100%';
+  clone.style.height = '100%';
+  clone.style.objectFit = 'cover';
+  clone.style.zIndex = '2';
+  const exitClass = direction === 'next' ? 'gallery-exit-left' : 'gallery-exit-right';
+  clone.classList.add(exitClass);
+  container?.appendChild(clone);
+
+  // Prepare incoming image (hidden, entering from correct side)
+  const enterClass = direction === 'next' ? 'gallery-enter-right' : 'gallery-enter-left';
+  img.classList.add(enterClass);
+  img.style.zIndex = '1';
+
+  // Set new src and wait for load
+  const newSrc = ImgUtils.toMedium(currentGalleryImages[idx]);
+
+  function onReady() {
+    container?.classList.remove('gallery-loading');
+    // Trigger enter animation
+    requestAnimationFrame(() => {
+      img.classList.remove(enterClass);
+      img.classList.add(enterClass + '--active');
+
+      // Clean up after animations complete
+      setTimeout(() => {
+        img.classList.remove(enterClass + '--active');
+        img.style.zIndex = '';
+        if (clone.parentNode) clone.parentNode.removeChild(clone);
+        _galleryAnimating = false;
+      }, 350);
+    });
+  }
+
+  if (img.complete && img.src === newSrc && img.naturalWidth > 0) {
+    img.src = newSrc;
+    onReady();
+  } else {
+    img.onload  = onReady;
+    img.onerror = onReady;
+    img.src = newSrc;
+  }
 }
 
 function scrollThumbIntoView(idx) {
@@ -1870,12 +1931,12 @@ function scrollThumbsRight() {
 
 function itemGalleryPrev() {
   currentGalleryIndex = (currentGalleryIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
-  setGalleryImage(currentGalleryIndex);
+  setGalleryImage(currentGalleryIndex, 'prev');
 }
 
 function itemGalleryNext() {
   currentGalleryIndex = (currentGalleryIndex + 1) % currentGalleryImages.length;
-  setGalleryImage(currentGalleryIndex);
+  setGalleryImage(currentGalleryIndex, 'next');
 }
 
 function openFullscreenGallery() {

@@ -4655,6 +4655,8 @@ html[lang="ru"] .hero__badge-row {
   background: #0D1E2A;
 }
 
+/* Disable the ken-burns scale while slide animation is active
+   (the clone handles the exit, main img handles the enter) */
 .item-gallery-main img {
   width: 100%;
   height: 100%;
@@ -4664,6 +4666,66 @@ html[lang="ru"] .hero__badge-row {
 
 .item-gallery-main:hover img {
   transform: scale(1.03);
+}
+
+/* ── Skeleton shimmer while new photo loads ── */
+.item-gallery-main.gallery-loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(
+    90deg,
+    rgba(13, 30, 42, 0.0) 0%,
+    rgba(64, 224, 208, 0.06) 40%,
+    rgba(64, 224, 208, 0.12) 50%,
+    rgba(64, 224, 208, 0.06) 60%,
+    rgba(13, 30, 42, 0.0) 100%
+  );
+  background-size: 200% 100%;
+  animation: gallery-shimmer 1s linear infinite;
+  pointer-events: none;
+}
+@keyframes gallery-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Slide exit animations (outgoing clone) ── */
+.gallery-exit-left {
+  animation: gallery-slide-out-left 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.gallery-exit-right {
+  animation: gallery-slide-out-right 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes gallery-slide-out-left {
+  from { transform: translateX(0);     opacity: 1; }
+  to   { transform: translateX(-60px); opacity: 0; }
+}
+@keyframes gallery-slide-out-right {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(60px); opacity: 0; }
+}
+
+/* ── Slide enter animations (incoming image) ── */
+/* Initial hidden position */
+.gallery-enter-right {
+  transform: translateX(60px);
+  opacity: 0;
+  transition: none;
+}
+.gallery-enter-left {
+  transform: translateX(-60px);
+  opacity: 0;
+  transition: none;
+}
+/* Active: slide into place */
+.gallery-enter-right--active,
+.gallery-enter-left--active {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.3s ease !important;
 }
 
 .item-gallery-zoom-icon {

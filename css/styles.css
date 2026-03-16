@@ -424,24 +424,25 @@ textarea {
 }
 
 .nav__inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   padding: 1.25rem 32px;
   width: 100%;
   box-sizing: border-box;
-  /* без position: relative — меню центрируется относительно .nav (центр сайта) */
+  /* Grid 1fr-auto-1fr: left and right columns are equal, so center is always
+     the true visual center of the viewport regardless of logo/button widths */
 }
 
-/* Меню центрируем по центру сайта (относительно .nav), лого и кнопка не влияют */
+/* Grid center column — always perfectly centered between logo and buttons */
 .nav__menu-wrap {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  transform: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 2px;
-  margin: 0 -1rem;
+  margin: 0;
   border-radius: 24px;
   min-height: 3.5rem;
   transition: background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
@@ -519,6 +520,7 @@ textarea {
   align-items: center;
   gap: 1rem;
   flex-shrink: 0;
+  justify-self: end; /* Grid: push to far right of the 3rd column */
 }
 
 .nav__cta {

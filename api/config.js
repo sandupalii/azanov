@@ -143,7 +143,7 @@ export async function amoCrmRequest(path, method = 'GET', body) {
  * @param {{ name: string, phone?: string, email?: string }} contact
  */
 export async function amoCrmUpsertContact({ name, phone, email }) {
-    // Search for existing contact by phone
+    // 1. Search by phone
     if (phone) {
         const search = await amoCrmRequest(`/api/v4/contacts?query=${encodeURIComponent(phone)}&limit=1`);
         if (search.ok && search.data?._embedded?.contacts?.length) {
@@ -151,7 +151,15 @@ export async function amoCrmUpsertContact({ name, phone, email }) {
         }
     }
 
-    // Build custom fields
+    // 2. Fallback: search by email
+    if (email) {
+        const searchByEmail = await amoCrmRequest(`/api/v4/contacts?query=${encodeURIComponent(email)}&limit=1`);
+        if (searchByEmail.ok && searchByEmail.data?._embedded?.contacts?.length) {
+            return searchByEmail.data._embedded.contacts[0].id;
+        }
+    }
+
+    // 3. Create new contact
     const customFields = [];
     if (phone) {
         customFields.push({ field_code: 'PHONE', values: [{ value: phone, enum_code: 'WORK' }] });
@@ -175,19 +183,44 @@ export async function amoCrmUpsertContact({ name, phone, email }) {
  * Returns the lead id, or null on failure.
  */
 export async function amoCrmCreateLead({ name, price, contactId, tags = [], pipelineId, statusId }) {
-    const body = [{
+    // Build _embedded carefully — both tags and contacts must be in ONE _embedded object
+    const embedded = {};
+    if (tags.length) {
+        embedded.tags = tags.map(t => ({ name: t }));
+    }
+    if (contactId) {
+        embedded.contacts = [{ id: contactId }];
+    }
+
+    const leadObj = {
         name,
         price: price || 0,
-        ...(pipelineId || ENV.AMOCRM_PIPELINE_ID ? { pipeline_id: pipelineId || ENV.AMOCRM_PIPELINE_ID } : {}),
-        ...(statusId || ENV.AMOCRM_STATUS_ID ? { status_id: statusId || ENV.AMOCRM_STATUS_ID } : {}),
-        ...(tags.length ? { _embedded: { tags: tags.map(t => ({ name: t })) } } : {}),
-        ...(contactId ? { _embedded: { contacts: [{ id: contactId }] } } : {}),
-    }];
+    };
+    const resolvedPipelineId = pipelineId || ENV.AMOCRM_PIPELINE_ID;
+    const resolvedStatusId = statusId || ENV.AMOCRM_STATUS_ID;
+    if (resolvedPipelineId) leadObj.pipeline_id = resolvedPipelineId;
+    if (resolvedStatusId) leadObj.status_id = resolvedStatusId;
+    if (Object.keys(embedded).length) leadObj._embedded = embedded;
 
-    const result = await amoCrmRequest('/api/v4/leads', 'POST', body);
+    const result = await amoCrmRequest('/api/v4/leads', 'POST', [leadObj]);
     if (result.ok && result.data?._embedded?.leads?.length) {
         return result.data._embedded.leads[0].id;
     }
     console.error('AmoCRM lead creation failed:', result);
     return null;
+}
+
+/**
+ * Add a plain-text note to a lead.
+ * @param {number} leadId
+ * @param {string} text
+ */
+export async function amoCrmAddNote(leadId, text) {
+    if (!leadId || !text) return;
+    const body = [{ note_type: 'common', params: { text } }];
+    const result = await amoCrmRequest(`/api/v4/leads/${leadId}/notes`, 'POST', body);
+    if (!result.ok) {
+        console.error('AmoCRM note creation failed:', result);
+    }
+    return result;
 }

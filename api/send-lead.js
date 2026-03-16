@@ -11,7 +11,7 @@
  * ============================================================
  */
 
-import { ENV, sendTelegram, esc, isAmoCrmConfigured, amoCrmUpsertContact, amoCrmCreateLead } from './config.js';
+import { ENV, sendTelegram, esc, isAmoCrmConfigured, amoCrmUpsertContact, amoCrmCreateLead, amoCrmAddNote } from './config.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -139,28 +139,88 @@ function buildLeadMessage(d) {
 // ── AmoCRM lead creation ──────────────────────────────────────
 
 async function amoCrmCreateLeadFromBody(d) {
-  const { name, phone, email, experienceType, packageName, yachtPreset, villaPreset, tourPreset, budget } = d;
+  const {
+    name, phone, email, experienceType,
+    packageName, yachtPreset, villaPreset, tourPreset, servicePreset,
+    groupSize, dateFrom, dateTo, nights, budget, extras = [],
+    notes, contactMethod, source,
+  } = d;
 
+  // ── Contact (upsert by phone, then email) ────────────────────
   const contactId = await amoCrmUpsertContact({
     name: name || 'Неизвестный клиент',
     phone,
     email,
   });
 
-  const presetName = packageName || yachtPreset || villaPreset || tourPreset || '';
-  const leadName = [name, capitalize(experienceType), presetName].filter(Boolean).join(' — ');
+  // ── Lead name & tags ─────────────────────────────────────────
+  const presetName = packageName || yachtPreset || villaPreset || tourPreset || servicePreset || '';
+  const leadName = [name, capitalizeType(experienceType), presetName].filter(Boolean).join(' — ');
 
   const tags = ['website'];
   if (experienceType) tags.push(experienceType);
 
+  // ── Budget ───────────────────────────────────────────────────
+  const budgetLabel = {
+    '150000': 'до 150 000 ฿',
+    '300000': '150 000 – 300 000 ฿',
+    '1000000': '300 000 – 1 000 000 ฿',
+    '9999999': 'от 1 000 000 ฿',
+  }[String(budget)] || budget || '—';
   const price = parseInt(budget) < 9999999 ? parseInt(budget) || 0 : 0;
 
-  await amoCrmCreateLead({
+  // ── Create lead ──────────────────────────────────────────────
+  const leadId = await amoCrmCreateLead({
     name: leadName || 'Заявка с сайта',
     price,
     contactId,
     tags,
   });
+
+  // ── Note: full form data ─────────────────────────────────────
+  if (leadId) {
+    const noteLines = [
+      'Новая заявка с сайта',
+      '',
+      `Форма: ${experienceType || '—'}`,
+      `Имя: ${name || '—'}`,
+      `Телефон: ${phone || '—'}`,
+      `Email: ${email || '—'}`,
+    ];
+    if (presetName) noteLines.push(`Объект/услуга: ${presetName}`);
+    noteLines.push(
+      '',
+      `Гостей: ${groupSize || '—'}`,
+      `Заезд: ${dateFrom || '—'}`,
+      `Выезд: ${dateTo || '—'}`,
+      `Ночей: ${nights || '—'}`,
+      `Бюджет: ${budgetLabel}`,
+    );
+    if (extras && extras.length) {
+      noteLines.push(`Доп. услуги: ${extras.join(', ')}`);
+    }
+    if (notes) noteLines.push('', `Комментарий: ${notes}`);
+    noteLines.push(
+      '',
+      `Способ связи: ${contactMethod || '—'}`,
+      `Источник: ${source || 'azanovretreat.com'}`,
+      `Дата: ${new Date().toLocaleString('ru-RU', { timeZone: 'Asia/Bangkok' })}`,
+    );
+    await amoCrmAddNote(leadId, noteLines.join('\n'));
+  }
+}
+
+function capitalizeType(str) {
+  const labels = {
+    villa: 'Вилла',
+    yacht: 'Яхта',
+    tour: 'Тур',
+    package: 'Пакет',
+    retreat: 'Пакет',
+    concierge: 'Консьерж',
+    bikes: 'Байки',
+  };
+  return labels[str] || (str ? str.charAt(0).toUpperCase() + str.slice(1) : '');
 }
 
 function capitalize(str) {

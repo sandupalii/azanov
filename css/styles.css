@@ -4120,10 +4120,11 @@ html[lang="ru"] .hero__badge-row {
 
 /* Included items as button grid (no scroll, one template) */
 .included-buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
   margin-top: 0.5rem;
+  width: 100%;
 }
 
 .included-btn {
@@ -4157,9 +4158,9 @@ html[lang="ru"] .hero__badge-row {
 .included-btn__label {
   flex: 1;
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.35;
 }
 
 .included-btn__chevron {
@@ -4226,6 +4227,7 @@ html[lang="ru"] .hero__badge-row {
   min-height: 0;
   flex: 1;
   overflow-y: auto;
+  max-height: 420px;
 }
 
 .package-accordion__panel {

@@ -81,6 +81,9 @@
     document.querySelectorAll('.lang-btn').forEach(function (btn) {
       btn.classList.toggle('lang-btn--active', btn.dataset.lang === window.i18n.lang);
     });
+
+    // Signal CSS that translations are applied — removes FOUC
+    document.body.classList.add('i18n-ready');
   }
 
   async function _loadDict(lang) {

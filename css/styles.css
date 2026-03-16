@@ -33,6 +33,23 @@
   --font-body: 'PT Sans', system-ui, sans-serif;
 }
 
+/* ---- i18n FOUC PREVENTION ---- */
+/* Hide translatable content until i18n has applied translations.
+   body gets .i18n-ready class from applyAll() in i18n.js */
+[data-i18n-html],
+[data-i18n] {
+  visibility: hidden;
+}
+body.i18n-ready [data-i18n-html],
+body.i18n-ready [data-i18n] {
+  visibility: visible;
+  animation: i18n-fadein 0.2s ease both;
+}
+@keyframes i18n-fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 /* ---- RESET & BASE ---- */
 *,
 *::before,

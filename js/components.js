@@ -37,14 +37,15 @@ const PACKAGES = [
     yacht: 'Катамаран Dolphin 50ft',
     yachtIds: ['pkg-dolphin'],
     excursion: 'Катамаран Пхи-Пхи + Майтон, Пханг Нга + Стеклянный мост, Hanuman World',
-    excursionIds: ['pkhi-pkhi-bambu-kay-mayton-na-katamarane', '11-ostrovov-variant-1'],
+    excursionIds: ['pkhi-pkhi-bambu-kay-mayton-na-katamarane', '4-zhemchuzhiny-andamana-variant-1'],
     excursionImages: [
       'assets/tours/pkhi-pkhi-bambu-kay-mayton-na-katamarane/images/photo-1.jpg',
       'assets/tours/pkhi-pkhi-bambu-kay-mayton-na-katamarane/images/photo-3.jpg',
       'assets/tours/pkhi-pkhi-bambu-kay-mayton-na-katamarane/images/photo-9.jpg',
       'assets/tours/pkhi-pkhi-bambu-kay-mayton-na-katamarane/images/photo-11.jpg',
       'assets/tours/pkhi-pkhi-bambu-kay-mayton-na-katamarane/images/photo-13.jpg',
-      'assets/tours/11-ostrovov-variant-1/images/photo-1.jpg'
+      'assets/tours/4-zhemchuzhiny-andamana-variant-1/images/photo-1.jpg',
+      'assets/tours/4-zhemchuzhiny-andamana-variant-1/images/photo-2.jpg'
     ],
     img: 'assets/houses/V-008/img_01.jpg',
     images: [...Array.from({length: 7}, (_, i) => `assets/houses/V-008/img_${String(i+1).padStart(2,'0')}.jpg`), ...Array.from({length: 20}, (_, i) => `assets/houses/V-008/img_${String(i+9).padStart(2,'0')}.jpg`)],
@@ -108,9 +109,9 @@ const PACKAGES = [
       'assets/tours/pkhi-pkhi-bambu-kay-mayton-na-katamarane/images/photo-1.jpg',
       'assets/tours/pkhi-pkhi-bambu-kay-mayton-na-katamarane/images/photo-9.jpg',
       'assets/tours/pkhi-pkhi-bambu-kay-mayton-na-katamarane/images/photo-11.jpg',
+      'assets/tours/pkhi-pkhi-bambu-kay-mayton-na-katamarane/images/photo-13.jpg',
       'assets/tours/4-zhemchuzhiny-andamana/images/photo-2.jpg',
-      'assets/tours/4-zhemchuzhiny-andamana/images/photo-6.jpg',
-      'assets/tours/pkhi-pkhi-bambu-kay-mayton-na-katamarane/images/photo-13.jpg'
+      'assets/tours/4-zhemchuzhiny-andamana/images/photo-6.jpg'
     ],
     img: 'assets/houses/V-016/img_01.jpg',
     images: villaImages('V-016', 25),
@@ -1030,8 +1031,8 @@ function renderFAQ() {
   tabsEl.innerHTML = cats.map(([key, cat], i) => {
     const l1 = _t('faq.cats.' + key + '.line1') || cat.labelLine1 || cat.label;
     const l2 = _t('faq.cats.' + key + '.line2') || cat.labelLine2 || '';
-    return `<button class="faq-tab faq-tab--square ${i === 0 ? 'active' : ''}" onclick="switchFAQTab('${key}',this)">
-      <span class="faq-tab__icon"><i data-lucide="${cat.icon || 'circle'}"></i></span>
+    return `<button class="faq-tab faq-tab--square ${i === 0 ? 'active' : ''}" role="tab" aria-selected="${i === 0 ? 'true' : 'false'}" onclick="switchFAQTab('${key}',this)">
+      <span class="faq-tab__icon"><i data-lucide="${cat.icon || 'circle'}" aria-hidden="true"></i></span>
       <span class="faq-tab__text"><span class="faq-tab__line1">${l1}</span>${l2 ? `<span class="faq-tab__line2">${l2}</span>` : ''}</span>
     </button>`;
   }).join('');
@@ -1052,9 +1053,13 @@ function renderFAQ() {
 }
 
 function switchFAQTab(key, btn) {
-  document.querySelectorAll('.faq-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.faq-tab').forEach(t => {
+    t.classList.remove('active');
+    t.setAttribute('aria-selected', 'false');
+  });
   document.querySelectorAll('.faq-category').forEach(c => c.classList.remove('active'));
   btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
   document.querySelector(`.faq-category[data-cat="${key}"]`)?.classList.add('active');
 }
 function toggleFAQ(el) {
@@ -1350,7 +1355,7 @@ function closeIncludedItemPopover() {
   if (popover) popover.classList.remove('open');
 }
 
-function openObjectInfoPopover(pkgId, kind) {
+async function openObjectInfoPopover(pkgId, kind) {
   const pkg = PACKAGES.find(p => p.id === pkgId);
   if (!pkg) return;
   const popover = document.getElementById('object-info-popover');
@@ -1368,25 +1373,101 @@ function openObjectInfoPopover(pkgId, kind) {
     title = v ? v.name : (pkg.villa || _t('modal.villa'));
     desc = v ? _d(v, 'highlight') : (pkg.villa || '');
     images = v && v.images?.length ? v.images : (pkg.images || [pkg.img] || []);
+    titleEl.textContent = title;
+    bodyEl.textContent = desc;
+    const imgs = Array.isArray(images) ? images.slice(0, 6) : [];
+    galleryEl.innerHTML = imgs.map((src, i) =>
+      `<img src="${ImgUtils.toThumb(src)}" alt="" loading="lazy" onclick="objectInfoGalleryExpand(${i})">`
+    ).join('');
+    objectInfoPopoverImages = imgs;
   } else if (kind === 'yacht') {
     const y = pkg.yachtIds?.length ? FLEET.find(x => x.id === pkg.yachtIds[0]) : null;
     title = y ? y.name : (pkg.yacht || _t('modal.yacht'));
     desc = y ? `${fleetVibe(y)}. ${_t('card.upTo')} ${y.guests} ${_t('card.guests')}, ${y.length}, ${y.speed}.` : (pkg.yacht || '');
     images = (y && y.images?.length) ? y.images : (pkg.yachtImages || []);
+    titleEl.textContent = title;
+    bodyEl.textContent = desc;
+    const imgs = Array.isArray(images) ? images.slice(0, 6) : [];
+    galleryEl.innerHTML = imgs.map((src, i) =>
+      `<img src="${ImgUtils.toThumb(src)}" alt="" loading="lazy" onclick="objectInfoGalleryExpand(${i})">`
+    ).join('');
+    objectInfoPopoverImages = imgs;
   } else if (kind === 'excursion') {
     title = _t('modal.excursions');
-    desc = pkg.excursion || _t('modal.excursions');
-    // Use pre-defined excursion images to avoid showing villa photos
-    images = pkg.excursionImages || [];
+    titleEl.textContent = title;
+
+    // If package has excursionIds, load tour data and show clickable cards
+    if (pkg.excursionIds && pkg.excursionIds.length > 0) {
+      bodyEl.innerHTML = '<div class="package-detail-popover__loading" style="color:var(--text-muted);font-size:0.85rem;padding:0.5rem 0">Загружаем туры...</div>';
+      galleryEl.innerHTML = '';
+      popover.classList.add('open');
+
+      // Load tour data for each excursionId
+      const tourPromises = pkg.excursionIds.map(async (tourId) => {
+        // Check if already in LOCATIONS
+        let t = LOCATIONS.find(l => l.id === tourId);
+        if (!t) {
+          t = await fetchTourById(tourId);
+          if (t) LOCATIONS.push(t);
+        }
+        return t;
+      });
+      const tours = (await Promise.all(tourPromises)).filter(Boolean);
+
+      if (tours.length > 0) {
+        // Collect all images from all tours (up to 3 per tour)
+        const allImages = [];
+        tours.forEach(t => {
+          const tourImgs = (t.images && t.images.length ? t.images : [t.img]).slice(0, 3);
+          allImages.push(...tourImgs);
+        });
+        // Fallback to pre-defined excursionImages
+        images = allImages.length ? allImages : (pkg.excursionImages || []);
+
+        // Render clickable tour cards
+        bodyEl.innerHTML = tours.map(t => {
+          const safeName = (_d(t, 'name') || t.name || '').replace(/"/g, '&quot;').replace(/'/g, "&#39;");
+          const safeId = t.id.replace(/'/g, "&#39;");
+          const tourImg = (t.images && t.images.length ? t.images[0] : t.img) || '';
+          const tourDesc = (_d(t, 'desc') || '').replace(/<[^>]*>/g, '').slice(0, 80);
+          return `
+            <div class="package-detail-card package-detail-card--clickable" onclick="closeObjectInfoPopover();openItemModal('tour','${safeId}')" style="cursor:pointer;margin-bottom:0.75rem">
+              ${tourImg ? `<img src="${ImgUtils.toThumb(tourImg)}" alt="${safeName}" class="package-detail-card__img" loading="lazy">` : ''}
+              <div class="package-detail-card__title">${_d(t, 'name') || t.name}</div>
+              ${tourDesc ? `<div class="package-detail-card__desc" style="font-size:0.78rem;color:var(--text-muted);margin-top:0.2rem">${tourDesc}…</div>` : ''}
+              <div class="body-sm" style="margin-top:0.4rem;color:var(--teal);font-weight:600">${_t('card.inquire')} →</div>
+            </div>
+          `;
+        }).join('');
+
+        const imgs = images.slice(0, 8);
+        galleryEl.innerHTML = imgs.map((src, i) =>
+          `<img src="${ImgUtils.toThumb(src)}" alt="" loading="lazy" onclick="objectInfoGalleryExpand(${i})">`
+        ).join('');
+        objectInfoPopoverImages = imgs;
+      } else {
+        // Fallback if tours couldn't be loaded
+        bodyEl.textContent = pkg.excursion || _t('modal.excursions');
+        images = pkg.excursionImages || [];
+        const imgs = Array.isArray(images) ? images.slice(0, 6) : [];
+        galleryEl.innerHTML = imgs.map((src, i) =>
+          `<img src="${ImgUtils.toThumb(src)}" alt="" loading="lazy" onclick="objectInfoGalleryExpand(${i})">`
+        ).join('');
+        objectInfoPopoverImages = imgs;
+      }
+    } else {
+      // No excursionIds — show static text and pre-defined images
+      desc = pkg.excursion || _t('modal.excursions');
+      bodyEl.textContent = desc;
+      images = pkg.excursionImages || [];
+      const imgs = Array.isArray(images) ? images.slice(0, 6) : [];
+      galleryEl.innerHTML = imgs.map((src, i) =>
+        `<img src="${ImgUtils.toThumb(src)}" alt="" loading="lazy" onclick="objectInfoGalleryExpand(${i})">`
+      ).join('');
+      objectInfoPopoverImages = imgs;
+    }
   }
 
-  titleEl.textContent = title;
-  bodyEl.textContent = desc;
-  const imgs = Array.isArray(images) ? images.slice(0, 6) : [];
-  galleryEl.innerHTML = imgs.map((src, i) =>
-    `<img src="${ImgUtils.toThumb(src)}" alt="" loading="lazy" onclick="objectInfoGalleryExpand(${i})">`
-  ).join('');
-  objectInfoPopoverImages = imgs;
   popover.classList.add('open');
   if (window.lucide) lucide.createIcons();
 }
@@ -1812,6 +1893,9 @@ async function openItemModal(type, id) {
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
   if (window.lucide) lucide.createIcons();
+
+  // Keyboard navigation: ←/→ to browse photos, ESC to close
+  document.addEventListener('keydown', handleItemModalKeyboard);
 }
 
 function closeItemModal() {
@@ -1820,6 +1904,7 @@ function closeItemModal() {
   closeObjectInfoPopover();
   document.getElementById('item-modal-overlay').classList.remove('open');
   document.body.style.overflow = '';
+  document.removeEventListener('keydown', handleItemModalKeyboard);
   if (itemModalStep === 2) {
     const leadWrapper = document.querySelector('.lead-form-wrapper');
     const leadModalInner = document.querySelector('.lead-modal-inner');
@@ -1937,6 +2022,17 @@ function itemGalleryPrev() {
 function itemGalleryNext() {
   currentGalleryIndex = (currentGalleryIndex + 1) % currentGalleryImages.length;
   setGalleryImage(currentGalleryIndex, 'next');
+}
+
+function handleItemModalKeyboard(e) {
+  const overlay = document.getElementById('item-modal-overlay');
+  if (!overlay || !overlay.classList.contains('open')) return;
+  // Don't hijack keyboard when fullscreen gallery is open
+  const fsOverlay = document.getElementById('fullscreen-gallery-overlay');
+  if (fsOverlay && fsOverlay.classList.contains('open')) return;
+  if (e.key === 'Escape') { e.preventDefault(); closeItemModal(); }
+  if (e.key === 'ArrowRight' && currentGalleryImages.length > 1) { e.preventDefault(); itemGalleryNext(); }
+  if (e.key === 'ArrowLeft' && currentGalleryImages.length > 1) { e.preventDefault(); itemGalleryPrev(); }
 }
 
 function openFullscreenGallery() {

@@ -101,8 +101,12 @@
     if (!LANGS.includes(lang)) return;
     window.i18n.lang = lang;
     localStorage.setItem(STORAGE_KEY, lang);
+    // Show preloader immediately on lang switch
+    if (typeof window.__plLangSwitch === 'function') window.__plLangSwitch(lang);
     await _loadDict(lang);
     applyAll();
+    // Signal preloader that lang switch is done
+    if (typeof window.__plLangDone === 'function') window.__plLangDone();
   }
 
   async function init() {

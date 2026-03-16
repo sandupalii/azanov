@@ -3,7 +3,7 @@
    Private Retreats from A to Z
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;0,700;1,400&family=PT+Sans:wght@400;700&display=swap');
+/* Google Fonts loaded async via <head> in HTML to avoid render-blocking */
 
 /* ---- TOKENS ---- */
 :root {
@@ -1133,6 +1133,8 @@ html[lang="ru"] .hero__badge-row {
   flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
+  /* Reserve height to prevent CLS when web fonts load */
+  min-height: 60px;
 }
 
 .hero-retreat-btn {
@@ -3279,7 +3281,8 @@ html[lang="ru"] .hero__badge-row {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--text-dim);
+  /* Improved contrast: #7A9BA8 (4.5:1 on dark bg) instead of #3A5A68 */
+  color: var(--text-muted);
   margin-bottom: 1rem;
 }
 
@@ -3444,6 +3447,8 @@ html[lang="ru"] .hero__badge-row {
   width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
+  /* Reserve height to prevent CLS when fonts load */
+  min-height: 90px;
 }
 
 .stat-item {
@@ -4744,8 +4749,13 @@ html[lang="ru"] .hero__badge-row {
   color: #fff;
 }
 
+/* Show zoom only when hovering the photo itself — not the arrow buttons */
 .item-gallery-main:hover .item-gallery-zoom-icon {
   opacity: 1;
+}
+/* Hide zoom when hovering over the nav arrows */
+.item-gallery-main:has(.item-gallery-arrow:hover) .item-gallery-zoom-icon {
+  opacity: 0;
 }
 
 .item-gallery-zoom-icon svg {
@@ -6511,7 +6521,7 @@ html[lang="ru"] .hero__badge-row {
   padding: 1rem !important;
   margin-top: 0.5rem !important;
   z-index: 2500 !important;
-  max-width: min(340px, calc(100vw - 2rem)) !important;
+  max-width: min(380px, calc(100vw - 2rem)) !important;
   width: 100% !important;
   overflow: visible !important;
 }
@@ -6640,8 +6650,8 @@ span.flatpickr-weekday {
   border-radius: 100px !important;
   padding: 0 !important;
   margin-left: 0 !important;
-  width: 9rem !important;
-  min-width: 9rem !important;
+  width: 7.5rem !important;
+  min-width: 7.5rem !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;

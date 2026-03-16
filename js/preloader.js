@@ -247,9 +247,123 @@
     runNext();
   }
 
-  /* ── Public callbacks ────────────────────────────────────── */
+
+  /* ── Lang-switch overlay ─────────────────────────────────── */
+  var LANG_LABELS = {
+    ru: {
+      loading:    'Переключаем язык...',
+      translating:'Переводим...',
+      rendering:  'Обновляем страницу...',
+      done:       'Готово ✓'
+    },
+    en: {
+      loading:    'Switching language...',
+      translating:'Translating...',
+      rendering:  'Updating page...',
+      done:       'Done ✓'
+    }
+  };
+
+  var _langOverlay = null;
+  var _langBar     = null;
+  var _langStatus  = null;
+  var _langRaf     = null;
+  var _langPct     = 0;
+  var _langTarget  = 0;
+
+  function _langSetPct(target, text) {
+    _langTarget = Math.min(100, Math.max(_langTarget, target));
+    if (text && _langStatus) _langStatus.textContent = text;
+    if (!_langRaf) _langRaf = requestAnimationFrame(_langAnimate);
+  }
+
+  function _langAnimate() {
+    _langRaf = null;
+    var diff = _langTarget - _langPct;
+    if (diff > 0.2) {
+      _langPct += diff * 0.14;
+      if (_langBar) _langBar.style.width = _langPct.toFixed(2) + '%';
+      _langRaf = requestAnimationFrame(_langAnimate);
+    } else {
+      _langPct = _langTarget;
+      if (_langBar) _langBar.style.width = _langPct.toFixed(2) + '%';
+      if (_langPct >= 100) _langFinish();
+    }
+  }
+
+  function _langFinish() {
+    if (!_langOverlay) return;
+    var labels = LANG_LABELS[window.i18n && window.i18n.lang] || LANG_LABELS.ru;
+    if (_langStatus) _langStatus.textContent = labels.done;
+    setTimeout(function () {
+      if (_langOverlay) _langOverlay.style.opacity = '0';
+      setTimeout(function () {
+        if (_langOverlay && _langOverlay.parentNode) {
+          _langOverlay.parentNode.removeChild(_langOverlay);
+        }
+        _langOverlay = null;
+        _langBar = null;
+        _langStatus = null;
+        _langPct = 0;
+        _langTarget = 0;
+      }, 400);
+    }, 200);
+  }
+
+  window.__plLangSwitch = function (lang) {
+    var labels = LANG_LABELS[lang] || LANG_LABELS.ru;
+
+    // Remove any existing lang overlay
+    var existing = document.getElementById('pl-lang-overlay');
+    if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+    _langPct = 0; _langTarget = 0;
+
+    // Build overlay (same look as main preloader)
+    var ov = document.createElement('div');
+    ov.id = 'pl-lang-overlay';
+    ov.style.cssText = [
+      'position:fixed', 'inset:0', 'z-index:99999',
+      'background:rgba(0,18,30,0.92)', 'backdrop-filter:blur(6px)',
+      'display:flex', 'align-items:center', 'justify-content:center',
+      'flex-direction:column', 'gap:1.25rem',
+      'transition:opacity 0.4s ease', 'opacity:0'
+    ].join(';');
+    ov.innerHTML =
+      '<img src="assets/svg/Azanov-retreat-white.svg" style="width:120px;opacity:0.9" alt="" aria-hidden="true">' +
+      '<div style="width:220px;max-width:80vw;background:rgba(255,255,255,0.08);border-radius:99px;height:3px;overflow:hidden">' +
+        '<div id="pl-lang-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#40E0D0,#C9A84C);border-radius:99px;transition:width 0.1s linear"></div>' +
+      '</div>' +
+      '<span id="pl-lang-status" style="color:rgba(255,255,255,0.7);font-size:0.8rem;letter-spacing:0.05em">' + labels.loading + '</span>';
+
+    document.body.appendChild(ov);
+    _langOverlay = ov;
+    _langBar     = ov.querySelector('#pl-lang-bar');
+    _langStatus  = ov.querySelector('#pl-lang-status');
+
+    // Fade in
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { ov.style.opacity = '1'; });
+    });
+
+    // Animate: 0→40% while fetching JSON
+    _langSetPct(40, labels.loading);
+  };
+
   window.__plTranslations = function () {
-    setProgress(65, 'Строим компоненты...');
+    var labels = LANG_LABELS[window.i18n && window.i18n.lang] || LANG_LABELS.ru;
+    // If lang-switch overlay is active — advance it
+    if (_langOverlay) {
+      _langSetPct(70, labels.translating);
+    } else {
+      setProgress(65, 'Строим компоненты...');
+    }
+  };
+
+  window.__plLangDone = function () {
+    var labels = LANG_LABELS[window.i18n && window.i18n.lang] || LANG_LABELS.ru;
+    if (_langOverlay) {
+      _langSetPct(100, labels.rendering);
+    }
   };
 
   window.__plDone = function () {
@@ -273,3 +387,4 @@
   setTimeout(function () { if (!phase1Done) setProgress(100); }, GLOBAL_SAFETY);
 
 })();
+

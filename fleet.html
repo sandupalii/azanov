@@ -253,14 +253,98 @@
     </div>
   </section>
 
-  <footer class="footer" style="margin-top:4rem">
+  <footer class="footer" id="footer" data-i18n-aria="aria.footer">
     <div class="container">
+      <!-- Mega CTA -->
+      <div class="footer__cta-mega">
+        <img src="assets/svg/Azanov-retreat-colored.svg" alt="Azanov Retreat" class="footer__cta-mega-logo"
+          loading="lazy" width="200" height="60">
+        <div class="label-upper" style="margin-bottom:0.75rem" data-i18n="footer.cta.label">Azanov Retreat — Ваш Пхукет
+          начинается здесь</div>
+        <h2 class="h2" style="margin-bottom:1rem" data-i18n-html="footer.cta.title">Готовы к своему ретриту?<br>Мы на
+          связи 24/7.</h2>
+        <p data-i18n="footer.cta.body">Консьерж подготовит персональное предложение без скрытых платежей в течение 15
+          минут.</p>
+        <div class="footer__cta-row">
+          <a href="https://wa.me/66635412949?text=Привет!%20Хочу%20заказать%20Azanov%20Retreat" target="_blank"
+            rel="noopener" class="btn btn-primary-lg">
+            <i data-lucide="message-square" class="mr-2"></i> <span data-i18n="footer.cta.whatsapp">Написать в
+              WhatsApp</span>
+          </a>
+          <button class="btn btn-gold btn-primary-lg" onclick="openLeadForm('retreat')"
+            data-i18n="footer.cta.calculate">
+            Рассчитать стоимость
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer grid -->
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo nav__logo--footer" style="margin-bottom:1rem;display:inline-flex" aria-label="Azanov Retreat — На главную">
+            <img src="assets/svg/Azanov-retreat-white.svg" alt="Azanov Retreat" class="nav__logo-img" loading="lazy"
+              width="160" height="60">
+          </a>
+          <p class="footer__tagline" data-i18n-html="footer.tagline">Private Retreats from A to Z.<br>Максимальное
+            качество, ноль компромиссов.</p>
+          <div style="display:flex;gap:0.75rem;margin-top:1rem">
+            <a href="https://wa.me/66635412949" target="_blank" rel="noopener"
+              class="btn btn-whatsapp btn-sm">WhatsApp</a>
+            <a href="https://t.me/AzanovRetreatx" target="_blank" rel="noopener"
+              class="btn btn-ghost btn-sm">Telegram</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title" data-i18n="footer.cols.packages">Пакеты</div>
+          <ul class="footer__links">
+            <li><a href="index.html#packages">Regent Bang Tao</a></li>
+            <li><a href="index.html#packages">Laguna Private Haven</a></li>
+            <li><a href="index.html#packages">Rock Pool Premium</a></li>
+            <li><a href="index.html#packages">Quick Escape</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title" data-i18n="footer.cols.services">Сервисы</div>
+          <ul class="footer__links">
+            <li><a href="fleet.html" data-i18n="footer.links.fleet">Флот яхт</a></li>
+            <li><a href="villas.html" data-i18n="footer.links.villas">Виллы</a></li>
+            <li><a href="tours.html" data-i18n="footer.links.tours">Туры</a></li>
+            <li><a href="index.html#concierge">Fast Track</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer__col-title" data-i18n="footer.cols.contacts">Контакты</div>
+          <div class="footer__contact">
+            <div class="footer__contact-item">
+              <span><i data-lucide="phone" class="icon-sm teal"></i></span>
+              <div>
+                <strong data-i18n="footer.cols.contactTakhir">Тахиржан</strong>
+                <a href="tel:+66635412949">+66 6-3541-2949</a>
+              </div>
+            </div>
+            <div class="footer__contact-item">
+              <span><i data-lucide="phone" class="icon-sm teal"></i></span>
+              <div>
+                <strong data-i18n="footer.cols.contactAmin">Амин Азанов</strong>
+                <a href="tel:+79131280088">+7 913 128-00-88</a>
+              </div>
+            </div>
+            <div class="footer__contact-item">
+              <span><i data-lucide="send" class="icon-sm teal"></i></span>
+              <div>
+                <strong>Telegram</strong>
+                <a href="https://t.me/AzanovRetreat" target="_blank" rel="noopener noreferrer">@AzanovRetreat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="footer__bottom">
-        <a href="index.html" class="nav__logo" style="display:inline-flex;margin-bottom:1rem">
-          <img src="assets/svg/Azanov-retreat-white.svg" alt="Azanov Retreat" class="nav__logo-img">
-        </a>
-        <a href="index.html" class="btn btn-ghost btn-sm" data-i18n="common.backToHome">← На главную</a>
         <span data-i18n="footer.copyright">© 2026 Azanov Retreat. Пхукет, Таиланд.</span>
+        <span data-i18n="footer.taglineSmall">Только для тех, кто выбирает максимум <i data-lucide="sparkle"
+            class="icon-xs"></i></span>
       </div>
     </div>
   </footer>

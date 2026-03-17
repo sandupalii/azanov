@@ -170,14 +170,14 @@ async function amoCrmCreateLeadFromBody(d) {
     { field_id: 1581997, value: tourPreset },
     { field_id: 1581999, value: servicePreset },
     { field_id: 1576421, value: groupSize },
-    { field_id: 1574879, value: dateFrom },
-    { field_id: 1574881, value: dateTo },
+    { field_id: 1574879, value: parseDateToUnix(dateFrom) },
+    { field_id: 1574881, value: parseDateToUnix(dateTo) },
     { field_id: 1582001, value: nights },
     { field_id: 1582003, value: extras && extras.length ? extras.join(', ') : null },
     { field_id: 1582005, value: notes },
   ];
   const customFields = CF
-    .filter(f => f.value !== undefined && f.value !== null && f.value !== '')
+    .filter(f => f.value !== undefined && f.value !== null && f.value !== '' && !Number.isNaN(f.value))
     .map(f => ({ field_id: f.field_id, values: [{ value: String(f.value) }] }));
 
   // ── Budget ───────────────────────────────────────────────────
@@ -247,4 +247,23 @@ function capitalizeType(str) {
 function capitalize(str) {
   if (!str) return '';
   return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+/**
+ * Parses 'dd.mm.yyyy' to a UNIX timestamp in seconds for AmoCRM date fields.
+ * Returns null if the format is invalid.
+ */
+function parseDateToUnix(dateStr) {
+  if (!dateStr || typeof dateStr !== 'string') return null;
+  const parts = dateStr.split('.');
+  if (parts.length === 3) {
+    const day = parseInt(parts[0], 10);
+    const month = parseInt(parts[1], 10) - 1; // 0-indexed
+    const year = parseInt(parts[2], 10);
+    const date = new Date(Date.UTC(year, month, day, 0, 0, 0));
+    if (!Number.isNaN(date.getTime())) {
+      return Math.floor(date.getTime() / 1000);
+    }
+  }
+  return null;
 }

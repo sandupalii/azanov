@@ -1,6 +1,6 @@
 {
     "name": "azanovretreat-server",
-    "version": "1.0.0",
+    "version": "3.0.0",
     "description": "API server for Azanov Retreat website",
     "type": "module",
     "main": "server.js",

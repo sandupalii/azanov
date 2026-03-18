@@ -42,17 +42,24 @@ export default async function handler(req, res) {
     console.error('[send-lead] Telegram send failed:', tgResult.error);
   }
 
-  // ── AmoCRM (fire-and-forget, non-blocking) ─────────────────
+  // ── AmoCRM (awaited to ensure Vercel does not kill the function early) ─────
+  let amoCrmOk = false;
   if (isAmoCrmConfigured()) {
-    amoCrmCreateLeadFromBody(body).catch(err => {
+    try {
+      await amoCrmCreateLeadFromBody(body);
+      amoCrmOk = true;
+    } catch (err) {
       console.error('AmoCRM integration error:', err);
-    });
+    }
   }
 
-  if (!tgResult.ok) {
+  // Return 200 if at least one channel succeeded.
+  // Only return 500 if Telegram failed AND AmoCRM is not configured (nothing worked).
+  const isTelegramConfigured = !!(ENV.TELEGRAM_BOT_TOKEN && ENV.TELEGRAM_LEAD_CHAT_ID);
+  if (!tgResult.ok && isTelegramConfigured && !amoCrmOk) {
     return res.status(500).json({ ok: false, error: 'Failed to send Telegram notification', details: tgResult.error });
   }
-  return res.status(200).json({ ok: true });
+  return res.status(200).json({ ok: true, telegram: tgResult.ok, amocrm: amoCrmOk });
 }
 
 // ── Telegram message builder ──────────────────────────────────

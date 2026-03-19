@@ -88,7 +88,7 @@
 
   async function _loadDict(lang) {
     try {
-      const r = await fetch('translations/' + lang + '.json?v=2');
+      const r = await fetch('translations/' + lang + '.json?v=3');
       _dict = await r.json();
       // Signal preloader: translations loaded (stage 3 → 80%)
       if (typeof window.__plTranslations === 'function') window.__plTranslations();

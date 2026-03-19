@@ -472,9 +472,7 @@
         const storiesEl = document.querySelector('.lead-progress-stories');
         if (storiesEl) storiesEl.setAttribute('aria-valuenow', currentStep);
 
-        // Update step counter
-        const counter = document.querySelector('.step-counter');
-        if (counter) counter.textContent = t('form.stepOf').replace('{n}', currentStep);
+        // Update step counter (handled statically via data-i18n now)
 
         if (window.lucide) lucide.createIcons();
         syncFloatingLabels();

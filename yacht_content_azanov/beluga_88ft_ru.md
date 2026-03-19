@@ -37,4 +37,4 @@ Beluga — это 88-футовая моторная яхта, которая м
 
 ---
 
-*Azanov Retreat — консьерж 24/7 · All-Inclusive · Без скрытых платежей*
+*Azanov Travel — консьерж 24/7 · All-Inclusive · Без скрытых платежей*

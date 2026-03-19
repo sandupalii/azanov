@@ -1,5 +1,5 @@
 /* ============================================================
-   AZANOV RETREAT — Visual Preloader (Two-Phase)
+   AZANOV TRAVEL — Visual Preloader (Two-Phase)
 
    PHASE 1 — Main overlay (existing behaviour, with limit)
    ─────────────────────────────────────────────────────────

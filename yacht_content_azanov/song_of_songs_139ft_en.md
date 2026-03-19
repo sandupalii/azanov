@@ -35,4 +35,4 @@ Multi-day cruising is Song of Songs' speciality. Onboard service matches a five-
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

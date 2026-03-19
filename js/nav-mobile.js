@@ -1,5 +1,5 @@
 /**
- * AZANOV RETREAT — Mobile nav: burger menu toggle, overlay close, body scroll lock
+ * AZANOV TRAVEL — Mobile nav: burger menu toggle, overlay close, body scroll lock
  */
 (function () {
   function getNav() { return document.querySelector('.nav'); }

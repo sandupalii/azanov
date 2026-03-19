@@ -29,4 +29,4 @@ Tough, stable, fully equipped. Comfortable deck, storage for the catch. Fishing 
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

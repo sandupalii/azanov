@@ -36,4 +36,4 @@ Sailing is a different tempo. If Beach Club Yona is a party, Cloud Dancer is a m
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

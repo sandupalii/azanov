@@ -31,4 +31,4 @@ Ko Lon, Ko Racha, Maiton, Ko Phi Phi — the standard island set in a single day
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

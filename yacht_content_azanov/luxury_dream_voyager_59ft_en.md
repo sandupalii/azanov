@@ -36,4 +36,4 @@ Four cabins make overnight stays possible: wake up anchored at the next island. 
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

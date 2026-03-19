@@ -1,5 +1,5 @@
 /* ============================================================
-   AZANOV RETREAT — i18n ENGINE
+   AZANOV TRAVEL — i18n ENGINE
    RU/EN bilingual, auto-detect, localStorage persistence
    ============================================================ */
 

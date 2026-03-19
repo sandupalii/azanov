@@ -29,4 +29,4 @@ Flying Fin — рыболовная лодка для больших групп.
 
 ---
 
-*Azanov Retreat — консьерж 24/7 · All-Inclusive · Без скрытых платежей*
+*Azanov Travel — консьерж 24/7 · All-Inclusive · Без скрытых платежей*

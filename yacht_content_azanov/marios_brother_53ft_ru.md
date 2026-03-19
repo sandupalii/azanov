@@ -33,4 +33,4 @@ Mario's Brother — новый моторный катамаран с прост
 
 ---
 
-*Azanov Retreat — консьерж 24/7 · All-Inclusive · Без скрытых платежей*
+*Azanov Travel — консьерж 24/7 · All-Inclusive · Без скрытых платежей*

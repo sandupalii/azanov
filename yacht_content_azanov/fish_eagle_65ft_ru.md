@@ -37,4 +37,4 @@ Fish Eagle — это не прогулочная лодка с удочками
 
 ---
 
-*Azanov Retreat — консьерж 24/7 · All-Inclusive · Без скрытых платежей*
+*Azanov Travel — консьерж 24/7 · All-Inclusive · Без скрытых платежей*

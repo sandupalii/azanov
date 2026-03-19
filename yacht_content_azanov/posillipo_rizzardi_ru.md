@@ -34,4 +34,4 @@ Posillipo-Rizzardi Technema 89 — одна из самых узнаваемых
 
 ---
 
-*Azanov Retreat — консьерж 24/7 · All-Inclusive · Без скрытых платежей*
+*Azanov Travel — консьерж 24/7 · All-Inclusive · Без скрытых платежей*

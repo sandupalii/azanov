@@ -31,4 +31,4 @@ Up to 8 guests. Small, fast, nimble — it gets into bays where larger boats can
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

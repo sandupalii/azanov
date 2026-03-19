@@ -37,4 +37,4 @@ Chartering an Azimut 60ft isn't just a day on the water. It's a statement about 
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

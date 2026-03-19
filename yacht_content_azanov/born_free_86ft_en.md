@@ -36,4 +36,4 @@ Ko Racha, Maiton, Ko Kai — wind-dependent routes. Quiet, unhurried, total rela
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

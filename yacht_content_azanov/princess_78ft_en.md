@@ -37,4 +37,4 @@ This is a yacht that requires no explanation. One call to your concierge — dep
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

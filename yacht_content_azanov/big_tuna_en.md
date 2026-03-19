@@ -30,4 +30,4 @@ Up to 8 guests. Open ocean beyond Ko Racha — where proper trolling fishing sta
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

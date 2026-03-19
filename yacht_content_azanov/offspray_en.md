@@ -33,4 +33,4 @@ Snorkelling, fishing, just floating — Offspray doesn't limit the agenda. Hotel
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

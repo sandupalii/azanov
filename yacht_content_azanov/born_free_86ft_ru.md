@@ -36,4 +36,4 @@ Born Free 86 ft — парусная яхта с впечатляющими ра
 
 ---
 
-*Azanov Retreat — консьерж 24/7 · All-Inclusive · Без скрытых платежей*
+*Azanov Travel — консьерж 24/7 · All-Inclusive · Без скрытых платежей*

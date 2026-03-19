@@ -1,6 +1,6 @@
 /**
  * ============================================================
- *  AZANOV RETREAT — Review Handler
+ *  AZANOV TRAVEL — Review Handler
  *  POST /api/send-review
  *
  *  Accepts a review submission, then:

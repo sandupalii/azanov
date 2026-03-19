@@ -34,4 +34,4 @@ Phi Phi, Phang Nga, Krabi — routes that become events on a yacht like this. Di
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

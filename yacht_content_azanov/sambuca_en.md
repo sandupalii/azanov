@@ -34,4 +34,4 @@ Classic routes: Phi Phi, Ko Kai, Phang Nga. Sambuca delivers steady handling and
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

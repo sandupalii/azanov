@@ -1,5 +1,5 @@
 /* ============================================================
-   AZANOV RETREAT — MULTI-STEP LEAD GENERATION FORM
+   AZANOV TRAVEL — MULTI-STEP LEAD GENERATION FORM
    5-step form with WhatsApp pre-fill & lead capture
 
    To duplicate leads to Telegram, set before loading this script:

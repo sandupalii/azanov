@@ -37,4 +37,4 @@ Professional crew, full onboard service. Your Azanov concierge sets the route an
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

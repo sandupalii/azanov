@@ -36,4 +36,4 @@ Your Azanov concierge books the departure point, route, and extras in advance. Y
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

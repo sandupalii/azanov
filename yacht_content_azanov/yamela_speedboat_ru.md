@@ -34,4 +34,4 @@ Yamela — спидбот для тех, кто не хочет ждать. Тр
 
 ---
 
-*Azanov Retreat — консьерж 24/7 · All-Inclusive · Без скрытых платежей*
+*Azanov Travel — консьерж 24/7 · All-Inclusive · Без скрытых платежей*

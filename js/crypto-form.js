@@ -1,5 +1,5 @@
 /* ============================================================
-   AZANOV RETREAT — CRYPTO EXCHANGE MODAL
+   AZANOV TRAVEL — CRYPTO EXCHANGE MODAL
    2-step: form (amount, currency, country, city) → success
 
    To enable Telegram + AmoCRM notifications, set before loading:

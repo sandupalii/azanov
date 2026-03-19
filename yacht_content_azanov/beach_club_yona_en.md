@@ -39,4 +39,4 @@ Seven hours on the open sea: you choose the route, the pace, the vibe. Snorkelli
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

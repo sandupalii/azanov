@@ -34,4 +34,4 @@ Snorkelling gear and chilled drinks are onboard. Hotel transfer is included. One
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

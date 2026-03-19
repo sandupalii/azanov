@@ -32,4 +32,4 @@ The right pick for a group that doesn't want the tightness of a small boat but h
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

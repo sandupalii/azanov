@@ -36,4 +36,4 @@ Booking a Sunreef is choosing to be ahead by one step. Luxury that leaves no tra
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

@@ -36,4 +36,4 @@ Phuket — Phi Phi — Phang Nga. 18 knots. Up to 150 guests per day. This isn't
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

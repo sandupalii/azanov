@@ -1,6 +1,6 @@
 /**
  * ============================================================
- *  AZANOV RETREAT — Centralized Integration Config
+ *  AZANOV TRAVEL — Centralized Integration Config
  *  ============================================================
  *
  *  All environment variable names live here.

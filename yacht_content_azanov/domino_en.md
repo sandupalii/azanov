@@ -30,4 +30,4 @@ Snorkelling, fishing, or just island-hopping at pace — Domino doesn't ask unne
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

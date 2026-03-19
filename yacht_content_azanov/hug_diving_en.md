@@ -33,4 +33,4 @@ Compact and functional — exactly what a serious dive day calls for.
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

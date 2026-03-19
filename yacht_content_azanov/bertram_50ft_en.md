@@ -35,4 +35,4 @@ Open ocean, offshore fishing, long-range routes — Bertram 50ft is built precis
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

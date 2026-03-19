@@ -1,5 +1,5 @@
 /* ============================================================
-   AZANOV RETREAT — IMAGE OPTIMIZATION
+   AZANOV TRAVEL — IMAGE OPTIMIZATION
    Thumb (cards, thumbs) / Medium (modal) / Full (fullscreen only)
    Reduces memory and bandwidth — full-size loads ONLY in fullscreen
    ============================================================ */

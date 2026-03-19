@@ -34,4 +34,4 @@ Ko Kai, Ko He, Phang Nga — Dolphin covers all of Phuket's classic routes with 
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

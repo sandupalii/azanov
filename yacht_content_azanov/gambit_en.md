@@ -33,4 +33,4 @@ Chilled drinks and water onboard, hotel transfer included. One call to your conc
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

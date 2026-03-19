@@ -34,4 +34,4 @@ Ko Racha Yai, Ko Kai, Phang Nga — Shaina handles the classic routes with confi
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

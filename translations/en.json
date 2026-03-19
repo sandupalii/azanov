@@ -22,7 +22,7 @@
       "fees": "hidden fees"
     },
     "cta": {
-      "primary": "Choose Retreat",
+      "primary": "Choose Tour",
       "whatsapp": "Contact via WhatsApp"
     }
   },
@@ -30,16 +30,16 @@
     "readMore": "Read more"
   },
   "philosophy": {
-    "label": "Azanov Retreat Philosophy",
+    "label": "Azanov Travel Philosophy",
     "title": "Forget surcharges.<br>A to Z — it's not just words.",
     "body": "While others bus tourists around, we build a personal leisure ecosystem where every detail is already paid for and thought through.",
     "quote": "The entire island belongs to you alone. We erased the line between desire and reality.",
-    "cta": "I want my retreat"
+    "cta": "I want my tour"
   },
   "packages": {
     "label": "Choose yours",
-    "title": "Azanov Retreat.<br>Sorted: from maximum to entry.",
-    "body": "Every package is a private A-to-Z retreat. Minimum 5 nights. Zero compromise.",
+    "title": "Azanov Travel.<br>Sorted: from maximum to entry.",
+    "body": "Every package is a private A-to-Z tour. Minimum 5 nights. Zero compromise.",
     "from": "Package from",
     "order": "Book Now"
   },
@@ -75,7 +75,7 @@
   "villas": {
     "label": "Azanov Private Villas",
     "title": "A home where water<br>peers through the windows.",
-    "body": "Premium villa collection — from cozy 4-bedroom retreats to legendary 9-bedroom residences for 28 guests.",
+    "body": "Premium villa collection — from cozy 4-bedroom villas to legendary 9-bedroom residences for 28 guests.",
     "features": "Features",
     "includes": {
       "cleaning": "Housekeeping — included",
@@ -116,7 +116,7 @@
     }
   },
   "faq": {
-    "label": "FAQ — Azanov Retreat",
+    "label": "FAQ — Azanov Travel",
     "title": "Questions everyone<br>asks.",
     "cats": {
       "concept": { "line1": "A to Z", "line2": "Concept" },
@@ -134,13 +134,13 @@
   },
   "footer": {
     "cta": {
-      "label": "Azanov Retreat — Your Phuket starts here",
-      "title": "Ready for your retreat?<br>We're available 24/7.",
+      "label": "Azanov Travel — Your Phuket starts here",
+      "title": "Ready for your tour?<br>We're available 24/7.",
       "body": "The concierge will prepare a personal no-hidden-fee proposal within 15 minutes.",
       "whatsapp": "Message on WhatsApp",
       "calculate": "Calculate cost"
     },
-    "tagline": "Private Retreats from A to Z.<br>Maximum quality, zero compromise.",
+    "tagline": "Private Tours from A to Z.<br>Maximum quality, zero compromise.",
     "cols": {
       "packages": "Packages",
       "services": "Services",
@@ -153,7 +153,7 @@
       "villas": "Villas",
       "tours": "Tours"
     },
-    "copyright": "© 2026 Azanov Retreat. Phuket, Thailand.",
+    "copyright": "© 2026 Azanov Travel. Phuket, Thailand.",
     "taglineSmall": "For those who choose the maximum"
   },
   "modal": {
@@ -209,7 +209,7 @@
       "label": "Step 1 — Experience Type",
       "title": "What are you looking for?",
       "desc": "Choose a format — we'll find the best option from our fleet and villas.",
-      "retreat": "Full Retreat",
+      "retreat": "Full Tour",
       "villa": "Villa Only",
       "yacht": "Yacht Only",
       "bikes": "Car / Bikes",
@@ -224,11 +224,11 @@
       "guestsLabel": "Number of guests",
       "datesLabel": "Select dates",
       "datesPlaceholder": "Select check-in and check-out dates",
-      "summary": "Your Retreat",
+      "summary": "Your Tour",
       "questionYacht": "Who's going on the yacht and when?",
       "questionVilla": "Who's going to the villa and when?",
       "questionTour": "Who's going on the tour and when?",
-      "questionPackage": "Who's going on the retreat and when?",
+      "questionPackage": "Who's going on the tour and when?",
       "questionConcierge": "Who needs the service and when?",
       "questionBikes": "Who needs transport and when?",
       "summaryCharter": "Your charter",
@@ -296,7 +296,7 @@
     },
     "step5": {
       "title": "Request Sent!",
-      "sub": "Your personal Azanov Retreat concierge will contact you within 15 minutes with a custom no-hidden-fee proposal.",
+      "sub": "Your personal Azanov Travel concierge will contact you within 15 minutes with a custom no-hidden-fee proposal.",
       "whatsapp": "Open WhatsApp",
       "submit": "Send request via WhatsApp",
       "privacy": "By clicking, you agree to the processing of your personal data to prepare a custom proposal."
@@ -349,25 +349,25 @@
     "phone": "Phone / WhatsApp *",
     "submit": "Submit request",
     "successTitle": "Request submitted!",
-    "successSub": "Azanov Retreat managers will contact you shortly and confirm exchange details.",
+    "successSub": "Azanov Travel managers will contact you shortly and confirm exchange details.",
     "urgent": "Urgent:",
     "errorRequired": "Please fill in all required fields"
   },
   "meta": {
     "index": {
-      "title": "Azanov Retreat — Private Phuket Retreats | All-Inclusive",
-      "desc": "Azanov Retreat — exclusive private retreats in Phuket. Villas, yachts, cars, concierge 24/7, Fast Track. All-inclusive from A to Z."
+      "title": "Azanov Travel — Private Phuket Tours | All-Inclusive",
+      "desc": "Azanov Travel — exclusive Private Tours in Phuket. Villas, yachts, cars, concierge 24/7, Fast Track. All-inclusive from A to Z."
     },
     "fleet": {
-      "title": "Yachts & Boats — Azanov Retreat | Phuket Yacht Charter",
+      "title": "Yachts & Boats — Azanov Travel | Phuket Yacht Charter",
       "desc": "109 vessels. All-Inclusive: guide, drinks, snorkeling, GoPro, insurance."
     },
     "villas": {
-      "title": "Villas — Azanov Retreat | Phuket Villa Rental",
+      "title": "Villas — Azanov Travel | Phuket Villa Rental",
       "desc": "Rawai, Nai Harn, Bang Tao. All-Inclusive."
     },
     "tours": {
-      "title": "Tours & Excursions — Azanov Retreat | 60+ Phuket Routes",
+      "title": "Tours & Excursions — Azanov Travel | 60+ Phuket Routes",
       "desc": "Phi Phi, Phang Nga, Krabi, Similan Islands. Private tours, no crowds."
     }
   },
@@ -377,7 +377,7 @@
     "langEn": "English",
     "hero": "Hero section",
     "philosophy": "All-Inclusive Philosophy",
-    "packages": "Azanov Retreat Packages",
+    "packages": "Azanov Travel Packages",
     "fleet": "Fleet catalog",
     "fleetFilters": "Fleet filters",
     "villas": "Villa catalog",
@@ -400,7 +400,7 @@
     "stayPeriod": "Stay period",
     "clearDates": "Clear dates",
     "openCalendar": "Open calendar",
-    "retreatSummary": "Retreat summary",
+    "retreatSummary": "Tour summary",
     "yourName": "Your name",
     "phoneWhatsapp": "Phone / WhatsApp",
     "email": "Email",
@@ -418,10 +418,10 @@
     "star3": "3 stars",
     "star4": "4 stars",
     "star5": "5 stars",
-    "logoHome": "Azanov Retreat — Home"
+    "logoHome": "Azanov Travel — Home"
   },
   "wa": {
-    "greeting": "Hello! I would like to book Azanov Retreat.",
+    "greeting": "Hello! I would like to book Azanov Travel.",
     "name": "Name",
     "phone": "Phone",
     "experienceType": "Experience type",

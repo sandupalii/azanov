@@ -31,4 +31,4 @@ Diverse routes: nearby islands, white-sand beaches, and the crystal-clear water 
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

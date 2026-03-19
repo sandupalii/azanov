@@ -31,4 +31,4 @@ Ko Kai, Maiton, Ko Racha — routes built to order. The boat handles well whatev
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

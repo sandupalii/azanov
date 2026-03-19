@@ -37,4 +37,4 @@ Bon Bon — моторный катамаран, у которого есть в
 
 ---
 
-*Azanov Retreat — консьерж 24/7 · All-Inclusive · Без скрытых платежей*
+*Azanov Travel — консьерж 24/7 · All-Inclusive · Без скрытых платежей*

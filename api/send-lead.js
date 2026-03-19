@@ -1,6 +1,6 @@
 /**
  * ============================================================
- *  AZANOV RETREAT — Lead API Handler
+ *  AZANOV TRAVEL — Lead API Handler
  *  POST /api/send-lead
  *
  *  Accepts structured lead data, then:
@@ -185,7 +185,10 @@ async function amoCrmCreateLeadFromBody(d) {
   ];
   const customFields = CF
     .filter(f => f.value !== undefined && f.value !== null && f.value !== '' && !Number.isNaN(f.value))
-    .map(f => ({ field_id: f.field_id, values: [{ value: String(f.value) }] }));
+    .map(f => {
+      const isDate = f.field_id === 1574879 || f.field_id === 1574881;
+      return { field_id: f.field_id, values: [{ value: isDate ? f.value : String(f.value) }] };
+    });
 
   // ── Budget ───────────────────────────────────────────────────
   const budgetLabel = {

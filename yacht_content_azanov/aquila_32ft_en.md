@@ -31,4 +31,4 @@ Up to 8 guests. Nearby islands, steady and confident pace. The right call for th
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

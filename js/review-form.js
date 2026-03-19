@@ -1,5 +1,5 @@
 /* ============================================================
-   AZANOV RETREAT — REVIEW FORM
+   AZANOV TRAVEL — REVIEW FORM
    Sends review submissions to Telegram
    ============================================================ */
 

@@ -37,4 +37,4 @@ Three en-suite cabins open the door to multi-day cruising. Your concierge will s
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

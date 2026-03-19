@@ -34,4 +34,4 @@ Up to 15 guests per day. Ko Racha, Phang Nga, Phi Phi — standard routes covere
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

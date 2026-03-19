@@ -1,5 +1,5 @@
 # Self-Hosted Deployment Guide
-## Azanov Retreat Website — Docker + Nginx
+## Azanov Travel Website — Docker + Nginx
 
 No Vercel needed. This guide deploys the full site on any Linux VPS using Docker Compose.
 

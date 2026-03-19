@@ -34,4 +34,4 @@ Ko Kai, Ko He, Ko Racha — anchored at the right spot with the right sunset. Mu
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

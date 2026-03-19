@@ -1,5 +1,5 @@
 /* ============================================================
-   AZANOV RETREAT — SCROLL MANAGER (Virtual Fold Loading)
+   AZANOV TRAVEL — SCROLL MANAGER (Virtual Fold Loading)
    Loads sections fold-by-fold with skeleton → content transition
    Removes upper sections from DOM to keep memory minimal
    ============================================================ */

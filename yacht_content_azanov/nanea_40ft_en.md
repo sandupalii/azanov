@@ -36,4 +36,4 @@ The right yacht for a small group that wants their own experience, not a shared 
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

@@ -1,4 +1,4 @@
-# Azanov Retreat — Website
+# Azanov Travel — Website
 
 Static marketing website with a Node.js API backend for form submissions (Telegram + AmoCRM integration).
 

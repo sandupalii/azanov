@@ -39,4 +39,4 @@ Thai lunch cooked by the onboard chef, beer, soft drinks, gear, SUP boards, kaya
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

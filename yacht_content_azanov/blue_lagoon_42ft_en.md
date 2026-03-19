@@ -33,4 +33,4 @@ Up to 28 guests per day, 4 overnight. Ko He, Maiton, Ko Racha, Ko Phi Phi — Bl
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

@@ -39,4 +39,4 @@ Hakuna Matata — круизная яхта 52 фута с тремя двухм
 
 ---
 
-*Azanov Retreat — консьерж 24/7 · All-Inclusive · Без скрытых платежей*
+*Azanov Travel — консьерж 24/7 · All-Inclusive · Без скрытых платежей*

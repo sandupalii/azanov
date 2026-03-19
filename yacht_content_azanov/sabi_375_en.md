@@ -30,4 +30,4 @@ Up to 6 guests. Trolling, jigging, bottom fishing — the captain builds the pro
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

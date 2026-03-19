@@ -35,4 +35,4 @@ Up to 12 guests. Three cabins, open flybridge with loungers and a bar, wide swim
 
 ---
 
-*Azanov Retreat — Concierge 24/7 · All-Inclusive · Zero hidden fees*
+*Azanov Travel — Concierge 24/7 · All-Inclusive · Zero hidden fees*

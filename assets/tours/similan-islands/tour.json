@@ -1,0 +1,121 @@
+{
+  "id": "similan-islands",
+  "title": "Симиланские острова",
+  "description": "Экскурсия на Симиланские острова на скоростном катере и катамаране - 1 день",
+  "price": 2500,
+  "old_price": null,
+  "sku": "SIM",
+  "local_images": [
+    "images/page_01_img_03.jpeg",
+    "images/page_03_img_05.jpeg",
+    "images/page_04_img_02.jpeg",
+    "images/page_04_img_03.jpeg"
+  ],
+  "details_html": "<a href=\"https://wa.me/66951905999?text=Здравствуйте,%20интересует%20экскурсия%20*Симиланские%20острова*,%20пожалуйста,%20свяжитесь%20со%20мной\" target=\"_blank\" rel=\"noreferrer noopener\">Быстрый заказ</a><br /><br /><strong style=\"font-size: 20px;\">Скоростной катер (с русским гидом)</strong><br /><span style=\"font-size: 18px;\">Взрослый: 2500฿ / Детский: 2300฿</span><br /><br /><strong style=\"font-size: 20px;\">Скоростной катамаран (с англоговорящим гидом)</strong><br /><span style=\"font-size: 18px;\">Взрослый: 3000฿ / Детский: 2800฿</span><br /><br /><strong style=\"font-size: 18px; color: rgb(52, 198, 31);\">Детский билет с 3 до 11 лет</strong><br /><br /><strong style=\"font-size: 20px;\">Программа тура:</strong><br /><span style=\"font-size: 18px;\">06:00 Встреча в отеле. Трансфер к пирсу, регистрация и знакомство с гидом. Подготовка к отплытию.</span><br /><span style=\"font-size: 18px;\">Остров Ба Нгу (Ко №9): Погружение в подводный мир: сноркелинг среди кораллов и ярких тропических рыб (30–40 минут).</span><br /><span style=\"font-size: 18px;\">Остров Симилан (Ко №8): Знаковое место архипелага, знаменитое своими белоснежными пляжами и скалой «Парус». Здесь вас ждет вкусный тайский обед и время для отдыха под солнцем.</span><br /><span style=\"font-size: 18px;\">Остров Паю (Ко №7): Второе погружение с маской и трубкой, чтобы увидеть другие уголки подводного царства (30–40 минут).</span><br /><span style=\"font-size: 18px;\">Остров Миенг (Ко №4): Отдых на пляже, купание в бирюзовой воде и свободное время для фотографий и прогулок.</span><br /><span style=\"font-size: 18px;\">16:30–17:00 Возвращение на пирс.</span><br /><span style=\"font-size: 18px;\">18:00–18:30 Трансфер обратно в отель.</span><br /><br /><strong style=\"font-size: 20px; color: rgb(0, 0, 0);\">Примечание:</strong><strong style=\"color: rgb(0, 0, 0);\"> </strong><span style=\"color: rgb(0, 0, 0); font-size: 18px;\">Программа может меняться в связи с погодными условиями или другими непредвиденными обстоятельствами. Так же программа не рекомендована беременным женщинам.</span><br /><br /><strong style=\"font-size: 20px; color: rgb(0, 0, 0);\">В тур включено:</strong><span style=\"font-size: 20px; color: rgb(0, 0, 0);\"> </span><br /><ul><li data-list=\"bullet\"><span style=\"font-size: 18px; color: rgb(0, 0, 0);\">Англоговорящий и русскоговорящий гиды</span></li><li data-list=\"bullet\"><span style=\"font-size: 18px; color: rgb(0, 0, 0);\">Морская страховка и оплаты в национальные парки</span></li><li data-list=\"bullet\"><span style=\"font-size: 18px; color: rgb(0, 0, 0);\">Трансфер на комфортабельном микроавтобусе туда и обратно</span></li><li data-list=\"bullet\"><span style=\"font-size: 18px; color: rgb(0, 0, 0);\">Оборудование для снорклинга (маски, трубки, жилеты)</span></li><li data-list=\"bullet\"><span style=\"font-size: 18px; color: rgb(0, 0, 0);\">Завтрак (легкий перекус), обед, послеобеденный перекус с фруктами на пирсе по возвращению</span></li><li data-list=\"bullet\"><span style=\"font-size: 18px; color: rgb(0, 0, 0);\">Фрукты и безалкогольные напитки на борту</span></li></ul><br /><strong style=\"font-size: 20px; color: rgb(0, 0, 0);\">Что взять с собой:</strong><span style=\"font-size: 20px; color: rgb(0, 0, 0);\"> </span><br /><ul><li data-list=\"bullet\"><span style=\"font-size: 18px; line-height: 18px;\">Фотоаппарат, видеокамера</span></li><li data-list=\"bullet\"><span style=\"font-size: 18px; line-height: 18px; color: rgb(0, 0, 0);\">Наличные деньги</span></li><li data-list=\"bullet\"><span style=\"font-size: 18px; line-height: 18px; color: rgb(0, 0, 0);\">Солнцезащитный крем и очки</span></li><li data-list=\"bullet\"><span style=\"font-size: 18px; line-height: 18px; color: rgb(0, 0, 0);\">Купальная одежда</span></li><li data-list=\"bullet\"><span style=\"font-size: 18px; line-height: 18px; color: rgb(0, 0, 0);\">Полотенце, сменная одежда</span></li></ul>",
+  "price_adult": "2500฿",
+  "price_child": "2300฿",
+  "child_age": "3 - 11 лет",
+  "extra_charges": [
+    "Скоростной катамаран: Взр. 3000฿ / Дет. 2800฿"
+  ],
+  "days": "Ежедневно",
+  "itinerary": [
+    {
+      "time": "06:00",
+      "text": "Встреча в отеле. Трансфер к пирсу, регистрация и знакомство с гидом."
+    },
+    {
+      "time": "",
+      "text": "Остров Ба Нгу (Ко №9): Погружение в подводный мир: сноркелинг среди кораллов и ярких тропических рыб (30–40 минут)."
+    },
+    {
+      "time": "",
+      "text": "Остров Симилан (Ко №8): Знаковое место архипелага, знаменитое своими белоснежными пляжами и скалой «Парус». Вкусный тайский обед и время для отдыха под солнцем."
+    },
+    {
+      "time": "",
+      "text": "Остров Паю (Ко №7): Второе погружение с маской и трубкой, чтобы увидеть другие уголки подводного царства (30–40 минут)."
+    },
+    {
+      "time": "",
+      "text": "Остров Миенг (Ко №4): Отдых на пляже, купание в бирюзовой воде и свободное время для фотографий и прогулок."
+    },
+    {
+      "time": "16:30",
+      "text": "— 17:00 Возвращение на пирс."
+    },
+    {
+      "time": "18:00",
+      "text": "— 18:30 Трансфер обратно в отель."
+    }
+  ],
+  "notes": "Программа может меняться в связи с погодными условиями или другими непредвиденными обстоятельствами. Так же программа не рекомендована беременным женщинам.",
+  "included": [
+    "Англоговорящий и русскоговорящий гиды",
+    "Морская страховка и оплаты в национальные парки",
+    "Трансфер на комфортабельном микроавтобусе туда и обратно",
+    "Оборудование для снорклинга (маски, трубки, жилеты)",
+    "Завтрак (легкий перекус), обед, послеобеденный перекус с фруктами",
+    "Фрукты и безалкогольные напитки на борту"
+  ],
+  "cancellation": [],
+  "what_to_bring": [
+    "Фотоаппарат, видеокамера",
+    "Наличные деньги",
+    "Солнцезащитный крем и очки",
+    "Купальная одежда",
+    "Полотенце, сменная одежда"
+  ],
+  "title_en": "Similan Islands",
+  "description_en": "Speedboat and High-speed Catamaran Tour - 1 Day",
+  "itinerary_en": [
+    {
+      "time": "06:00",
+      "text": "Hotel pickup. Transfer to the pier, registration, and meeting with the guide."
+    },
+    {
+      "time": "",
+      "text": "Ba Ngu Island (Koh No. 9): Dive into the underwater world: snorkeling among corals and bright tropical fish (30–40 minutes)."
+    },
+    {
+      "time": "",
+      "text": "Similan Island (Koh No. 8): A landmark of the archipelago, famous for its white beaches and the 'Sail' rock. Thai lunch and relaxation under the sun."
+    },
+    {
+      "time": "",
+      "text": "Payu Island (Koh No. 7): Second snorkeling session to see other corners of the underwater kingdom (30–40 minutes)."
+    },
+    {
+      "time": "",
+      "text": "Mieng Island (Koh No. 4): Relaxation on the beach, swimming in turquoise water, and free time for photos."
+    },
+    {
+      "time": "16:30",
+      "text": "— 17:00 Return to the pier."
+    },
+    {
+      "time": "18:00",
+      "text": "— 18:30 Transfer back to the hotel."
+    }
+  ],
+  "included_en": [
+    "English and Russian-speaking guides",
+    "Marine insurance and national park fees",
+    "Round-trip transfer by comfortable minibus",
+    "Snorkeling equipment (masks, snorkels, life jackets)",
+    "Breakfast (light snack), lunch, afternoon fruit snack",
+    "Fruits and non-alcoholic beverages on board"
+  ],
+  "what_to_bring_en": [
+    "Camera, video camera",
+    "Cash",
+    "Sunscreen and sunglasses",
+    "Swimwear",
+    "Towel, spare clothes"
+  ],
+  "cancellation_en": [],
+  "child_age_en": "3–11 years old",
+  "extra_charges_en": [
+    "High-speed Catamaran: Adult 3000฿ / Child 2800฿"
+  ]
+}

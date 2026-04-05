@@ -1,0 +1,145 @@
+{
+  "id": "phi-phi-bamboo",
+  "title": "Острова Пхи Пхи + Бамбу",
+  "description": "Однодневная экскурсия Комфорт++ на острова архипелага Пхи Пхи",
+  "price": 2800,
+  "old_price": null,
+  "sku": "PPB",
+  "local_images": [
+    "images/page_01_img_02.jpeg",
+    "images/page_03_img_05.jpeg",
+    "images/page_04_img_02.jpeg",
+    "images/page_04_img_03.jpeg",
+    "images/page_05_img_02.jpeg",
+    "images/page_05_img_03.jpeg",
+    "images/page_06_img_02.jpeg",
+    "images/page_06_img_03.jpeg",
+    "images/page_07_img_02.jpeg",
+    "images/page_07_img_03.jpeg",
+    "images/page_08_img_02.jpeg",
+    "images/page_08_img_03.jpeg",
+    "images/page_09_img_02.jpeg",
+    "images/page_09_img_03.jpeg",
+    "images/page_10_img_02.jpeg",
+    "images/page_11_img_02.jpeg",
+    "images/page_12_img_02.jpeg",
+    "images/page_12_img_03.jpeg",
+    "images/page_13_img_02.jpeg",
+    "images/page_13_img_03.jpeg",
+    "images/page_14_img_02.jpeg",
+    "images/page_14_img_03.jpeg",
+    "images/page_15_img_02.jpeg",
+    "images/page_15_img_03.jpeg",
+    "images/page_16_img_02.jpeg",
+    "images/page_16_img_03.jpeg",
+    "images/page_17_img_02.jpeg",
+    "images/page_17_img_03.jpeg",
+    "images/page_18_img_02.jpeg",
+    "images/page_18_img_03.jpeg",
+    "images/page_19_img_02.jpeg",
+    "images/page_19_img_03.jpeg",
+    "images/page_20_img_02.jpeg",
+    "images/page_20_img_03.jpeg",
+    "images/page_21_img_02.jpeg",
+    "images/page_21_img_03.jpeg"
+  ],
+  "details_html": "<a href=\"https://wa.me/66951905999?text=Здравствуйте,%20интересует%20тур%20*Пхи%20Пхи%20+%20Бамбу*,%20пожалуйста,%20свяжитесь%20со%20мной\" target=\"_blank\" rel=\"noreferrer noopener\">Быстрый заказ</a><br /><br /><strong style=\"font-size: 20px;\">Острова Пхи Пхи + Бамбу (Комфорт ++):</strong><br /><span style=\"font-size: 18px;\">Архипелаг Пхи Пхи состоит из 6 островов. Во время экскурсии вы посетите достопримечательности самых крупных островов — Пхи Пхи Дон, Пхи Пхи Ле и Бамбу. Вас ждут пляжи с белым песком, великолепный подводный мир, озорные обезьяны, бухты с лазурной водой и другие достопримечательности архипелага.</span><br /><br /><strong style=\"font-size: 20px;\">Программа экскурсий (7:00 - 17:00):</strong><br /><span style=\"font-size: 18px;\">07.00-8.00 Встреча в отеле и трансфер на пирс.</span><br /><span style=\"font-size: 18px;\">08.30 Регистрация, встреча с гидом, кофебрейк (легкий завтрак).</span><br /><span style=\"font-size: 18px;\">09.00 Отправление от пирса на остров Кхай. Остров Кай: расслабьтесь, сфотографируйтесь, купание с пляжа. Сноркелинг на рифе.</span><br /><span style=\"font-size: 18px;\">Обед на острове Бамбу.</span><br /><span style=\"font-size: 18px;\">Осмотр пляжа обезьян. Осмотр лагуны Пиле и пещеры Викингов.</span><br /><span style=\"font-size: 18px;\">Майя Бэй и Лосама: Расслабьтесь и сфотографируйтесь на пляже.</span><br /><span style=\"font-size: 18px;\">17.00-17.30 Прибытие на причал и трансфер обратно в отель.</span><br /><br /><strong style=\"font-size: 20px; color: rgb(0, 0, 0);\">В стоимость включено:</strong><span style=\"font-size: 20px; color: rgb(0, 0, 0);\"> </span><br /><ul><li><span style=\"font-size: 18px;\">Трансфер отель-порт-отель</span></li><li><span style=\"font-size: 18px;\">Обед, фрукты</span></li><li><span style=\"font-size: 18px;\">Гид, Спасательный жилет, Маска и трубка</span></li><li><span style=\"font-size: 18px;\">Страховка</span></li></ul>",
+  "price_adult": "от 2800฿",
+  "price_child": "По запросу",
+  "child_age": "",
+  "extra_charges": [],
+  "days": "Ежедневно",
+  "itinerary": [
+    {
+      "time": "07:00",
+      "text": "— 08:00 Встреча в отеле и трансфер на пирс"
+    },
+    {
+      "time": "08:30",
+      "text": "Регистрация, встреча с гидом, кофебрейк"
+    },
+    {
+      "time": "09:00",
+      "text": "Отправление на остров Кхай. Купание и снорклинг."
+    },
+    {
+      "time": "",
+      "text": "Обед на острове Бамбу"
+    },
+    {
+      "time": "",
+      "text": "Осмотр достопримечательностей: пляж обезьян, лагуна Пиле, пещера Викингов"
+    },
+    {
+      "time": "",
+      "text": "Отдых в бухте Майя Бэй и Лосама"
+    },
+    {
+      "time": "17:00",
+      "text": "— 17:30 Прибытие на причал и возвращение в отель"
+    }
+  ],
+  "notes": "Программа может меняться в связи с погодными условиями или другими непредвиденными обстоятельствами.",
+  "included": [
+    "Трансфер отель - порт - отель",
+    "Легкий завтрак, Обед и свежие фрукты",
+    "Профессиональный гид",
+    "Спасательный жилет, маска и трубка",
+    "Морская страховка"
+  ],
+  "cancellation": [],
+  "what_to_bring": [
+    "Удобную обувь и Купальный костюм",
+    "Солнцезащитный крем, Очки, Головной убор",
+    "Полотенце",
+    "Камеру и Карманные деньги"
+  ],
+  "title_en": "Phi Phi Islands + Bamboo",
+  "description_en": "1-Day Comfort++ Tour to the Phi Phi Archipelago",
+  "itinerary_en": [
+    {
+      "time": "07:00",
+      "text": "— 08:00 Hotel pickup and transfer to the pier"
+    },
+    {
+      "time": "08:30",
+      "text": "Registration, meet the guide, coffee break"
+    },
+    {
+      "time": "09:00",
+      "text": "Departure to Khai Island. Swimming and snorkeling."
+    },
+    {
+      "time": "",
+      "text": "Lunch on Bamboo Island"
+    },
+    {
+      "time": "",
+      "text": "Sightseeing: Monkey Beach, Pileh Lagoon, Viking Cave"
+    },
+    {
+      "time": "",
+      "text": "Relaxation at Maya Bay and Losama Bay"
+    },
+    {
+      "time": "17:00",
+      "text": "— 17:30 Arrival at the pier and transfer back to the hotel"
+    }
+  ],
+  "included_en": [
+    "Round-trip hotel transfer",
+    "Light breakfast, lunch, and fresh fruits",
+    "Professional guide",
+    "Life jacket and snorkeling equipment",
+    "Marine insurance"
+  ],
+  "what_to_bring_en": [
+    "Comfortable shoes and Swimwear",
+    "Sunscreen, Sunglasses, Hat",
+    "Towel",
+    "Camera and Pocket money"
+  ],
+  "cancellation_en": [],
+  "child_age_en": "",
+  "extra_charges_en": []
+}

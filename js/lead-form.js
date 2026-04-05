@@ -396,49 +396,82 @@
                 updateDateClearVisibility();
             }
 
-            // Step 3: Show package price OR budget selector depending on experience type
+            // Step 3: Smart logic — show price summary OR budget selector based on whether
+            // the user arrived from a specific item (package/yacht/villa/tour) or generic CTA
             if (currentStep === 3) {
-                const isPackage = formData.experienceType === 'package';
+                const estimatedPrice = getEstimatedPrice();
+                const hasFixedPrice = typeof estimatedPrice === 'number' && estimatedPrice > 0;
+                
                 const packagePriceBlock = document.getElementById('lead-step3-package-price');
                 const budgetBlock = document.getElementById('lead-step3-budget');
                 const step3Title = document.getElementById('lead-step3-title');
                 const step3Desc = document.getElementById('lead-step3-desc');
+                const step3Label = document.getElementById('lead-step3-label');
 
-                if (isPackage) {
-                    // Show fixed price block, hide budget selector
+                if (hasFixedPrice) {
+                    // ── SPECIFIC ITEM FLOW: show price card, hide budget ──────────────
                     if (packagePriceBlock) packagePriceBlock.style.display = '';
                     if (budgetBlock) budgetBlock.style.display = 'none';
-                    // Clear any previously selected budget — it doesn't apply to packages
+                    // Clear any previously-selected budget — it doesn't apply here
                     formData.budget = null;
                     document.querySelectorAll('.budget-option').forEach(b => b.classList.remove('selected'));
-                    // Update title/desc
-                    if (step3Title) step3Title.textContent = t('form.step3.titlePackage') || 'Допуслуги к пакету';
-                    if (step3Desc) step3Desc.textContent = t('form.step3.descPackage') || 'Цена пакета фиксирована. Вы можете добавить дополнительные сервисы.';
-                    // Render scaled price
-                    const scaledPrice = getPackageScaledPrice();
+
+                    // Dynamic title based on experience type
+                    const titleMap = {
+                        package: t('form.step3.titlePackage') || 'Допуслуги и пожелания',
+                        yacht:   t('form.step3.titleYacht')   || 'Аренда яхты + допуслуги',
+                        villa:   t('form.step3.titleVilla')   || 'Аренда виллы + допуслуги',
+                        tour:    t('form.step3.titleTour')    || 'Экскурсия + допуслуги',
+                    };
+                    const descMap = {
+                        package: t('form.step3.descPackage') || 'Стоимость пакета рассчитана. Добавьте дополнительные услуги при желании.',
+                        yacht:   t('form.step3.descYacht')   || 'Стоимость чартера определена. Вы можете добавить фотографа, рыбалку и другие опции.',
+                        villa:   t('form.step3.descVilla')   || 'Стоимость виллы рассчитана. Добавьте шеф-повара, массаж или другие сервисы.',
+                        tour:    t('form.step3.descTour')    || 'Стоимость экскурсии рассчитана на группу. Добавьте дополнительные услуги.',
+                    };
+                    const labelMap = {
+                        package: t('form.step3.labelPackage') || 'Шаг 3 — Стоимость и допуслуги',
+                        yacht:   t('form.step3.labelYacht')   || 'Шаг 3 — Стоимость чартера',
+                        villa:   t('form.step3.labelVilla')   || 'Шаг 3 — Стоимость виллы',
+                        tour:    t('form.step3.labelTour')    || 'Шаг 3 — Стоимость тура',
+                    };
+                    if (step3Title) step3Title.textContent = titleMap[formData.experienceType] || titleMap.package;
+                    if (step3Desc)  step3Desc.textContent  = descMap[formData.experienceType]  || descMap.package;
+                    if (step3Label) step3Label.textContent = labelMap[formData.experienceType] || labelMap.package;
+
+                    // Render the known item price with nights context
                     const priceAmountEl = document.getElementById('lead-step3-price-amount');
+                    const priceNoteEl   = document.getElementById('lead-step3-price-note');
                     if (priceAmountEl) {
-                        if (scaledPrice != null) {
-                            const nights = parseInt(formData.nights, 10) || 5;
-                            const nightsLabel = getNightsLabel();
-                            priceAmountEl.textContent = `${t('card.from') || 'от'} ${formatPrice(scaledPrice)} — ${nightsLabel}`;
+                        priceAmountEl.textContent = `${t('card.from') || 'от'} ${formatPrice(estimatedPrice)}`;
+                    }
+                    if (priceNoteEl) {
+                        const nightsLabel = getNightsLabel();
+                        if (formData.experienceType === 'tour') {
+                            const guests = parseInt(formData.groupSize, 10) || 1;
+                            priceNoteEl.textContent = `${guests} ${t('form.step3.guestSuffix') || 'чел.'} × ${formatPrice(Math.round(estimatedPrice / guests))} ${t('form.step3.perPerson') || 'на человека'}`;
+                        } else if (formData.experienceType !== 'concierge') {
+                            priceNoteEl.textContent = nightsLabel ? `${nightsLabel} — ${t('form.step3.priceFixed') || 'цена фиксирована'}` : (t('form.step3.packagePriceNote') || 'Цена фиксирована. Ниже вы можете добавить допуслуги.');
                         } else {
-                            priceAmountEl.textContent = '—';
+                            priceNoteEl.textContent = t('form.step3.packagePriceNote') || 'Цена фиксирована. Ниже вы можете добавить допуслуги.';
                         }
                     }
                 } else {
-                    // Show budget selector, hide package price block
+                    // ── GENERIC / RETREAT FLOW: show budget selector ──────────────────
                     if (packagePriceBlock) packagePriceBlock.style.display = 'none';
                     if (budgetBlock) budgetBlock.style.display = '';
-                    // Restore default title/desc
-                    if (step3Title && !step3Title.dataset.i18nSet) {
-                        step3Title.textContent = t('form.step3.title') || 'Ваш бюджет и желания';
-                    }
-                    if (step3Desc && !step3Desc.dataset.i18nSet) {
-                        step3Desc.textContent = t('form.step3.desc') || 'Выберите ценовой диапазон и дополнительные опции.';
-                    }
+                    if (step3Title) step3Title.textContent = t('form.step3.title') || 'Ваш бюджет и желания';
+                    if (step3Desc)  step3Desc.textContent  = t('form.step3.desc')  || 'Выберите ценовой диапазон и дополнительные опции.';
+                    if (step3Label) step3Label.textContent = t('form.step3.label') || 'Шаг 3 — Бюджет и предпочтения';
                 }
+
+                // Always update addon prices and total counter when entering step 3
                 updateAddonPrices();
+                // Reset total price display (will re-calculate via updateAddonPrices)
+                const totalEl = document.getElementById('lead-step3-total-price');
+                if (totalEl) totalEl.style.display = 'none';
+                // Update total based on current base price (even before any addon is selected)
+                updateTotalPrice();
             }
 
             // Dynamic Step 4 Context (Budget & Extras) — kept for backwards compat
@@ -481,6 +514,18 @@
     function sendLeadToApi() {
         const apiUrl = window.LEAD_API_URL;
         if (!apiUrl || typeof apiUrl !== 'string' || !apiUrl.trim()) return;
+
+        // Collect extras from both button-style (fleet/villas) and checkbox-style (index)
+        const addonBtns = document.querySelectorAll('.addon-toggle-btn.selected');
+        const addonCheckboxes = document.querySelectorAll('.lead-extra:checked');
+        const extras = addonBtns.length
+            ? Array.from(addonBtns).map(el => el.getAttribute('data-addon')).filter(Boolean)
+            : Array.from(addonCheckboxes).map(el => el.value).filter(Boolean);
+        formData.extras = extras;
+
+        // Calculate estimated price to send to CRM (overrides budget for specific items)
+        const estimatedPrice = getEstimatedPrice();
+
         const payload = {
             name: formData.name,
             phone: formData.phone,
@@ -496,21 +541,35 @@
             dateTo: formData.dateTo,
             nights: formData.nights,
             budget: formData.budget,
+            estimatedPrice: estimatedPrice || null,
             extras: formData.extras,
             notes: formData.notes || '',
             contactMethod: formData.contactMethod,
             source: 'azanovretreat.com',
         };
+
+        // Show subtle loading state on submit button if present
+        const submitBtns = document.querySelectorAll('#lead-step-4 .btn-primary, #lead-step-5 .btn-primary-lg');
+        submitBtns.forEach(btn => { btn.disabled = true; btn._originalText = btn.textContent; });
+
         fetch(apiUrl.trim(), {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
-        }).catch((err) => console.warn('Lead API send failed:', err));
+        })
+        .then(r => r.json())
+        .then(r => {
+            if (!r.ok) console.warn('[lead-form] API returned not-ok:', r);
+        })
+        .catch((err) => console.warn('[lead-form] Lead API send failed:', err))
+        .finally(() => {
+            submitBtns.forEach(btn => { btn.disabled = false; });
+        });
     }
 
     window.nextStep = function () {
         if (!validateStep(currentStep)) return;
-        // Step 4 = contact (name, phone): send API request when user clicks "Review"
+        // Step 4 = contact (name, phone): collect fields then fire lead to API
         if (currentStep === 4) {
             const nameEl = document.getElementById('lead-name');
             const phoneEl = document.getElementById('lead-phone');
@@ -520,15 +579,11 @@
             if (phoneEl) formData.phone = phoneEl.value.trim();
             if (emailEl) formData.email = emailEl.value.trim();
             if (notesEl) formData.notes = notesEl.value.trim();
-            const addonBtns = document.querySelectorAll('.addon-toggle-btn.selected');
-            const addonCheckboxes = document.querySelectorAll('.lead-extra:checked');
-            formData.extras = addonBtns.length
-                ? Array.from(addonBtns).map(el => el.getAttribute('data-addon'))
-                : Array.from(addonCheckboxes).map(el => el.value);
+            // Always sync hidden inputs before sending
             formData.groupSize = document.getElementById('lead-group-size')?.value || formData.groupSize;
             formData.dateFrom = document.getElementById('lead-date-from')?.value || formData.dateFrom || '';
             formData.dateTo = document.getElementById('lead-date-to')?.value || formData.dateTo || '';
-            formData.nights = document.getElementById('lead-nights')?.value || '5';
+            formData.nights = document.getElementById('lead-nights')?.value || formData.nights || '5';
             sendLeadToApi();
         }
         if (currentStep < TOTAL_STEPS) {
@@ -581,10 +636,56 @@
             const price = calcAddonPrice(addonId);
             el.textContent = formatPrice(price);
         });
+        updateTotalPrice();
     };
+
+    function updateTotalPrice() {
+        const base = getEstimatedPrice() || 0;
+        // Collect all selected addons from both button-style and checkbox-style
+        const selectedAddons = [
+            ...Array.from(document.querySelectorAll('.addon-toggle-btn.selected')).map(el => el.getAttribute('data-addon')),
+            ...Array.from(document.querySelectorAll('.lead-extra:checked')).map(el => el.value)
+        ].filter(Boolean);
+
+        const addonsSum = selectedAddons.reduce((acc, id) => acc + calcAddonPrice(id), 0);
+        const total = base + addonsSum;
+
+        const totalEl = document.getElementById('lead-step3-total-price');
+        if (totalEl) {
+            if (total > 0) {
+                totalEl.style.display = '';
+                const amountEl = totalEl.querySelector('.total-price__amount');
+                const addonsEl = totalEl.querySelector('.total-price__addons');
+                
+                // If base is known, total is base + addons. We can show "+ X extras"
+                // If base is 0 (generic flow), total is just extras. Just show total.
+                if (amountEl) {
+                  amountEl.textContent = base > 0 
+                     ? `${window.t ? window.t('card.from') || 'от' : 'от'} ${formatPrice(total)}`
+                     : `${formatPrice(total)}`;
+                }
+                if (addonsEl) {
+                  if (base > 0 && addonsSum > 0) {
+                     addonsEl.style.display = '';
+                     addonsEl.textContent = `(+ ${formatPrice(addonsSum)} ${window.t ? window.t('form.step3.addonsTag') || 'доп. услуги' : 'доп. услуги'})`;
+                  } else {
+                     addonsEl.style.display = 'none';
+                  }
+                }
+            } else {
+                totalEl.style.display = 'none';
+            }
+        }
+    }
 
     window.toggleAddon = function (addonId, el) {
         el.classList.toggle('selected');
+        // Sync to formData.extras immediately so downstream (WA message, API) see it
+        formData.extras = [
+            ...Array.from(document.querySelectorAll('.addon-toggle-btn.selected')).map(b => b.getAttribute('data-addon')),
+            ...Array.from(document.querySelectorAll('.lead-extra:checked')).map(b => b.value)
+        ].filter(Boolean);
+        updateTotalPrice();
     };
 
     window.selectContactMethod = function (method, el) {
@@ -704,13 +805,43 @@
         return formData.experienceType ? (typeLabels[formData.experienceType] || formData.experienceType) : null;
     }
 
-    function getPackageScaledPrice() {
-        if (formData.experienceType !== 'package' || !formData.packageId) return null;
-        const pkg = window.PACKAGES?.find(p => p.id === formData.packageId);
-        if (!pkg || typeof pkg.price !== 'number') return null;
-        const baseNights = parsePackageBaseNights(pkg.nights);
-        const selectedNights = parseInt(formData.nights, 10) || baseNights;
-        return Math.round(pkg.price * (selectedNights / baseNights));
+    function getEstimatedPrice() {
+        const nightsStr = formData.nights || '5';
+        const nights = parseInt(nightsStr, 10) || 5;
+        const groupSize = parseInt(formData.groupSize, 10) || 1;
+
+        if (formData.experienceType === 'package' && formData.packageId) {
+            const pkg = window.PACKAGES?.find(p => p.id === formData.packageId);
+            if (!pkg || typeof pkg.price !== 'number') return null;
+            const baseNights = parsePackageBaseNights(pkg.nights);
+            const selectedNights = parseInt(nightsStr, 10) || baseNights;
+            return Math.round(pkg.price * (selectedNights / baseNights));
+        }
+
+        if (formData.experienceType === 'yacht' && formData.yachtPreset) {
+            const yacht = window.FLEET?.find(y => y.name === formData.yachtPreset || y.id === formData.yachtPreset);
+            if (!yacht || typeof yacht.price !== 'number' || yacht.price <= 0) return null;
+            const yachtNights = nightsStr === '0' ? 1 : Math.max(1, nights);
+            return yacht.price * yachtNights;
+        }
+
+        if (formData.experienceType === 'villa' && formData.villaPreset) {
+            const villas = typeof VILLAS !== 'undefined' ? VILLAS : (window.VILLAS || []);
+            const villa = villas.find(v => v.name === formData.villaPreset || v.code === formData.villaPreset);
+            if (!villa || !villa.price) return null;
+            const priceNum = parseInt(villa.price.replace(/[^\d]/g, ''), 10);
+            if (isNaN(priceNum) || priceNum <= 0) return null;
+            return priceNum * Math.max(1, nights);
+        }
+
+        if (formData.experienceType === 'tour' && formData.tourPreset) {
+            const tours = typeof LOCATIONS !== 'undefined' ? LOCATIONS : (window.LOCATIONS || []);
+            const tour = tours.find(t => t.name === formData.tourPreset || t.id === formData.tourPreset);
+            if (!tour || typeof tour.rawPrice !== 'number' || tour.rawPrice <= 0) return null;
+            return tour.rawPrice * groupSize;
+        }
+
+        return null;
     }
 
     function getNightsLabel() {
@@ -749,8 +880,9 @@
         }
 
         if (priceEl) {
-            const scaledPrice = getPackageScaledPrice();
-            if (formData.experienceType === 'package' && scaledPrice != null) {
+            // getPackageScaledPrice alias → getEstimatedPrice (was never defined, fixed)
+            const scaledPrice = getEstimatedPrice();
+            if (scaledPrice != null && formData.experienceType === 'package') {
                 priceEl.textContent = `${t('card.from')} ${formatPrice(scaledPrice)}`;
                 priceEl.style.display = '';
             } else {
@@ -816,12 +948,16 @@
                 showError(t('form.errorSelectDates')); valid = false;
             }
         }
-        if (step === 4) {
-            // Packages have fixed prices — budget selection is not required
-            if (!formData.budget && formData.experienceType !== 'package') {
-                showError(t('form.errorSelectBudget')); valid = false;
+        // Step 3: budget is only required when we don't have a fixed/known price
+        if (step === 3) {
+            const estPrice = getEstimatedPrice();
+            const hasFixedPrice = typeof estPrice === 'number' && estPrice > 0;
+            if (!formData.budget && !hasFixedPrice) {
+                showError(t('form.errorSelectBudget') || 'Пожалуйста, выберите бюджет'); valid = false;
             }
-            // Step 4 = contact: also require name and phone before sending
+        }
+        // Step 4 = contact: require name and phone before sending
+        if (step === 4) {
             const nameEl = document.getElementById('lead-name');
             const phoneEl = document.getElementById('lead-phone');
             if (nameEl) formData.name = nameEl.value.trim();
@@ -842,7 +978,7 @@
     }
 
     window.submitLeadForm = function () {
-        // Collect final fields
+        // Collect final fields (may differ if user went back)
         const nameEl = document.getElementById('lead-name');
         const phoneEl = document.getElementById('lead-phone');
         const emailEl = document.getElementById('lead-email');
@@ -859,26 +995,28 @@
             showError(t('form.errorEnterNamePhone')); return;
         }
 
-        // Collect extras (from addon toggle buttons)
-        formData.extras = Array.from(document.querySelectorAll('.addon-toggle-btn.selected')).map(el => el.getAttribute('data-addon'));
+        // Re-collect extras in case user went back and changed them
+        const addonBtns = document.querySelectorAll('.addon-toggle-btn.selected');
+        const addonCheckboxes = document.querySelectorAll('.lead-extra:checked');
+        formData.extras = addonBtns.length
+            ? Array.from(addonBtns).map(el => el.getAttribute('data-addon')).filter(Boolean)
+            : Array.from(addonCheckboxes).map(el => el.value).filter(Boolean);
         formData.groupSize = document.getElementById('lead-group-size')?.value || formData.groupSize;
         formData.dateFrom = document.getElementById('lead-date-from')?.value || formData.dateFrom || '';
         formData.dateTo = document.getElementById('lead-date-to')?.value || formData.dateTo || '';
-        formData.nights = document.getElementById('lead-nights')?.value || '5';
+        formData.nights = document.getElementById('lead-nights')?.value || formData.nights || '5';
 
-        // Show success step
-        currentStep = 6;
-        renderStep();
+        // Close form modal (was incorrectly referencing non-existent closeLeadForm)
+        window.closeLeadModal();
 
         // Build WhatsApp message
         const waMsg = buildWAMessage();
 
-        // API request already sent on step 4 (contact) when user clicked "Review"
-
-        // Delay auto-open WhatsApp so user sees success screen first
+        // Note: API lead was already fired on step 4 (contact step confirmation)
+        // Open WhatsApp after a brief delay so user sees the success state
         setTimeout(() => {
             window.open(`https://wa.me/66635412949?text=${encodeURIComponent(waMsg)}`, '_blank');
-        }, 1500);
+        }, 1200);
     };
 
     function buildWAMessage() {
@@ -923,11 +1061,11 @@
         } else {
             msg += `🌙 ${t('wa.nights')}: ${formData.nights}\n`;
         }
-        if (formData.experienceType === 'package') {
-            const scaledPrice = getPackageScaledPrice();
-            if (scaledPrice != null) msg += `💰 ${t('wa.priceGuide')}: ${t('card.from')} ${formatPrice(scaledPrice)}\n`;
-        } else {
-            // For non-package orders — show user-selected budget range
+        const estPrice = getEstimatedPrice();
+        if (typeof estPrice === 'number' && estPrice > 0) {
+            msg += `💰 ${t('wa.priceGuide') || 'Ориентировочная цена'}: ${t('card.from') || 'от'} ${formatPrice(estPrice)}\n`;
+        } else if (formData.experienceType !== 'package' && formData.experienceType !== 'concierge') {
+            // For orders without fixed price — show user-selected budget range
             msg += `💰 ${t('wa.budget')}: ${budgetMap[formData.budget] || t('wa.tbd')}\n`;
         }
         if (formData.extras.length > 0) {

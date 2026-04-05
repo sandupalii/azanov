@@ -1,0 +1,85 @@
+{
+  "id": "phi-phi-khai",
+  "title": "Острова Пхи Пхи + Кхай",
+  "description": "Экскурсия на скоростном катере или катамаране на 1 день",
+  "price": 1700,
+  "old_price": null,
+  "sku": "PP_KH",
+  "local_images": [
+    "images/page_01_img_06.jpeg",
+    "images/page_05_img_02.jpeg",
+    "images/page_05_img_03.jpeg"
+  ],
+  "details_html": "<a href=\"https://wa.me/66951905999?text=Здравствуйте,%20интересует%20тур%20*Пхи%20Пхи%20+%20Кхай*,%20пожалуйста,%20свяжитесь%20со%20мной\" target=\"_blank\" rel=\"noreferrer noopener\">Быстрый заказ</a><br /><br /><strong style=\"font-size: 20px;\">Скоростной катер (Англоговорящий гид):</strong><br /><span style=\"font-size: 18px;\">Взрослый: 1700฿ / Детский (3-11 лет): 1500฿</span><br /><br /><strong style=\"font-size: 20px;\">Скоростной катер (Русский гид):</strong><br /><span style=\"font-size: 18px;\">Взрослый: 1900฿ / Детский (3-11 лет): 1700฿</span><br /><br /><strong style=\"font-size: 20px;\">Скоростной катамаран (Англоговорящий гид):</strong><br /><span style=\"font-size: 18px;\">Взрослый: 2100฿ / Детский (3-11 лет): 1900฿</span><br /><br /><strong style=\"font-size: 20px;\">О туре:</strong><br /><span style=\"font-size: 18px;\">Идеальное сочетание приключений, отдыха и красоты тропического моря. Вас ждут лазурные лагуны, белоснежные пляжи острова Кхай, Майя Бэй, лагуна Пиле, Пещера Викингов, Пляж обезьян, сноркелинг среди кораллов и вкусный обед.</span>",
+  "price_adult": "от 1700฿",
+  "price_child": "от 1500฿",
+  "child_age": "3 - 11 лет",
+  "extra_charges": [
+    "Катер (RU-гид): 1900฿ взр / 1700฿ дет",
+    "Катамаран (EN-гид): 2100฿ взр / 1900฿ дет"
+  ],
+  "days": "Ежедневно",
+  "itinerary": [
+    {
+      "time": "07:00",
+      "text": "— 08:00 Трансфер из отеля на пирс; кофе, чай и легкие закуски"
+    },
+    {
+      "time": "",
+      "text": "Остров Кхай: Безмятежность, белоснежный песок, сноркелинг и купание"
+    },
+    {
+      "time": "",
+      "text": "Остров Пхи-Пхи Дон: Вкусный тайский обед и свободное время"
+    },
+    {
+      "time": "",
+      "text": "Майя Бэй: Легендарная бухта, потрясающие виды"
+    },
+    {
+      "time": "",
+      "text": "Продолжение: Лагуна Пиле (купание), Пещера Викингов, Пляж Обезьян"
+    },
+    {
+      "time": "17:00",
+      "text": "— 17:30 Возвращение на пирс и трансфер в отель"
+    }
+  ],
+  "notes": "Экскурсия, расписание и маршрут могут быть изменены из-за погодных условий без предварительного уведомления.",
+  "included": [
+    "Обед, угощение фруктами на борту",
+    "Транспорт (автобус и лодка)",
+    "Входные билеты в нац. парки",
+    "Прохладительные безалкогольные напитки",
+    "Гид, страховка, спасательные жилеты, маски, трубки"
+  ],
+  "cancellation": [],
+  "what_to_bring": [
+    "Купальные принадлежности, полотенце",
+    "Солнцезащитные крема, головные уборы",
+    "Фото/видео камера",
+    "Деньги на сувениры и личные расходы"
+  ],
+  "title_en": "Phi Phi Islands + Khai Island",
+  "description_en": "1-Day Speedboat or Catamaran Tour",
+  "itinerary_en": [],
+  "included_en": [
+    "Lunch, fresh fruits on board",
+    "Round-trip transfer",
+    "National park entrance fees",
+    "Soft drinks",
+    "Guide, insurance, snorkeling gear"
+  ],
+  "what_to_bring_en": [
+    "Swimwear, towel",
+    "Sunscreen, hat",
+    "Camera",
+    "Pocket money"
+  ],
+  "cancellation_en": [],
+  "child_age_en": "3-11 years old",
+  "extra_charges_en": [
+    "RU-Guide Speedboat: 1900฿ adult",
+    "Catamaran EN-Guide: 2100฿ adult"
+  ]
+}

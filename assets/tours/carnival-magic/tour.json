@@ -1,0 +1,78 @@
+{
+  "id": "carnival-magic",
+  "title": "Магия карнавала (Carnival Magic)",
+  "description": "Вечернее шоу Карнавал на Пхукете — 50 минут захватывающего действа",
+  "price": 2100,
+  "old_price": null,
+  "sku": "CM",
+  "local_images": [
+    "images/page_01_img_02.jpeg",
+    "images/page_03_img_02.jpeg",
+    "images/page_03_img_03.jpeg",
+    "images/page_04_img_02.jpeg",
+    "images/page_04_img_03.jpeg",
+    "images/page_05_img_02.jpeg",
+    "images/page_05_img_03.jpeg",
+    "images/page_06_img_02.jpeg",
+    "images/page_06_img_03.jpeg",
+    "images/page_07_img_02.jpeg",
+    "images/page_07_img_03.jpeg",
+    "images/page_08_img_02.jpeg",
+    "images/page_08_img_03.jpeg",
+    "images/page_09_img_02.jpeg",
+    "images/page_09_img_03.jpeg",
+    "images/page_10_img_02.jpeg",
+    "images/page_10_img_03.jpeg",
+    "images/page_11_img_02.jpeg",
+    "images/page_11_img_03.jpeg",
+    "images/page_12_img_02.jpeg",
+    "images/page_12_img_03.jpeg",
+    "images/page_13_img_02.jpeg",
+    "images/page_13_img_03.jpeg",
+    "images/page_14_img_02.jpeg",
+    "images/page_14_img_03.jpeg",
+    "images/page_15_img_02.jpeg",
+    "images/page_15_img_03.jpeg",
+    "images/page_16_img_02.jpeg",
+    "images/page_16_img_03.jpeg"
+  ],
+  "details_html": "<a href=\"https://wa.me/66951905999?text=Здравствуйте,%20интересует%20шоу%20*Магия%20карнавала*,%20пожалуйста,%20свяжитесь%20со%20мной\" target=\"_blank\" rel=\"noreferrer noopener\">Быстрый заказ</a><br /><br /><strong style=\"font-size: 20px;\">Только шоу:</strong><br /><span style=\"font-size: 18px;\">Стандартные места: Взрослый - 2100฿ / Детский - 2100฿</span><br /><br /><strong style=\"font-size: 20px;\">Шоу с ужином:</strong><br /><span style=\"font-size: 18px;\">Взрослый - 2500฿ / Детский - 2400฿</span><br /><br /><strong style=\"font-size: 18px;\">Доплаты:</strong><br /><ul><li><span style=\"font-size: 18px;\">Королевские места: +350฿</span></li><li><span style=\"font-size: 18px;\">Трансфер Пхукет: +450฿</span></li><li><span style=\"font-size: 18px;\">Трансфер Кхао Лак: +800฿</span></li></ul><br /><strong style=\"font-size: 20px;\">О шоу:</strong><br /><span style=\"font-size: 18px;\">Вечернее шоу Карнавал на Пхукете - это жемчужина развлекательного комплекса Carnival Magic Phuket. Погружение в мир тайских легенд со спецэффектами и аниматроникой. В масштабном параде участвуют 88 речных лодок в крытом театре площадью 16 гектаров. Продолжительность - 50 минут.</span>",
+  "price_adult": "2100฿",
+  "price_child": "2100฿",
+  "child_age": "",
+  "extra_charges": [
+    "Шоу с ужином: 2500฿ взр / 2400฿ дет",
+    "Королевские места: +350฿",
+    "Трансфер: от +450฿"
+  ],
+  "days": "По расписанию парка",
+  "itinerary": [],
+  "notes": "Парк занимает 160 гектаров, рекомендуем приходить заранее, чтобы успеть осмотреть все зоны до начала шоу.",
+  "included": [
+    "Билет на шоу",
+    "Доступ на территорию парка",
+    "Ужин (если забронирован соответствующий пакет)"
+  ],
+  "cancellation": [],
+  "what_to_bring": [
+    "Фотоаппарат / телефон"
+  ],
+  "title_en": "Carnival Magic",
+  "description_en": "Evening Carnival Show in Phuket — 50 minutes of spectacular performance",
+  "itinerary_en": [],
+  "included_en": [
+    "Show ticket",
+    "Park admission",
+    "Dinner (if dinner package is booked)"
+  ],
+  "what_to_bring_en": [
+    "Camera / Smartphone"
+  ],
+  "cancellation_en": [],
+  "child_age_en": "",
+  "extra_charges_en": [
+    "Show with dinner: 2500฿ adult / 2400฿ child",
+    "Royal seats: +350฿",
+    "Transfer: from +450฿"
+  ]
+}

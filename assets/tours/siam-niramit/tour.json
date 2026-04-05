@@ -1,0 +1,107 @@
+{
+  "id": "siam-niramit",
+  "title": "Парк и шоу Сиам Нирамит",
+  "description": "Погружение в культуру Таиланда, парк, шведский стол и грандиозное шоу",
+  "price": 2300,
+  "old_price": null,
+  "sku": "SIAM",
+  "local_images": [
+    "images/page_01_img_02.jpeg",
+    "images/page_04_img_02.jpeg",
+    "images/page_04_img_03.jpeg",
+    "images/page_05_img_02.jpeg",
+    "images/page_05_img_03.jpeg",
+    "images/page_06_img_02.jpeg",
+    "images/page_06_img_03.jpeg",
+    "images/page_07_img_02.jpeg",
+    "images/page_07_img_03.jpeg",
+    "images/page_08_img_02.jpeg",
+    "images/page_08_img_03.jpeg",
+    "images/page_09_img_02.jpeg",
+    "images/page_09_img_03.jpeg",
+    "images/page_10_img_02.jpeg",
+    "images/page_10_img_03.jpeg",
+    "images/page_11_img_02.jpeg",
+    "images/page_11_img_03.jpeg",
+    "images/page_12_img_02.jpeg",
+    "images/page_12_img_03.jpeg",
+    "images/page_13_img_02.jpeg",
+    "images/page_13_img_03.jpeg",
+    "images/page_14_img_02.jpeg",
+    "images/page_14_img_03.jpeg",
+    "images/page_15_img_02.jpeg",
+    "images/page_15_img_03.jpeg",
+    "images/page_16_img_02.jpeg",
+    "images/page_16_img_03.jpeg",
+    "images/page_17_img_02.jpeg",
+    "images/page_18_img_02.jpeg",
+    "images/page_18_img_03.jpeg"
+  ],
+  "details_html": "<a href=\"https://wa.me/66951905999?text=Здравствуйте,%20интересует%20Шоу%20*Сиам%20Нирамит*,%20пожалуйста,%20свяжитесь%20со%20мной\" target=\"_blank\" rel=\"noreferrer noopener\">Быстрый заказ</a><br /><br /><strong style=\"font-size: 20px;\">Стоимость (Шоу с ужином и трансфером):</strong><br /><span style=\"font-size: 18px;\">Места Серебряные: Взрослые - 2300฿ / Детские - 1900฿</span><br /><span style=\"font-size: 18px;\">Места Золотые: Взрослые - 2400฿ / Детские - 2000฿</span><br /><span style=\"font-size: 18px;\">Места Платиновые: Взрослые - 2600฿ / Детские - 2200฿</span><br /><br /><strong style=\"font-size: 20px;\">О шоу:</strong><br /><span style=\"font-size: 18px;\">Парк и шоу Сиам Нирамит познакомят вас с историей и культурой Таиланда. В парке воссоздана живая тайская деревня с мастерами (шелк, батик, зонтики), плавучий рынок и рисовые поля. Перед началом шоу вас ждет ужин по системе «шведский стол». Само шоу насыщено спецэффектами и дублировано субтитрами на русском языке. Работает: с 17:15 до 22:00. Выходной день: Вторник.</span>",
+  "price_adult": "от 2300฿",
+  "price_child": "от 1900฿",
+  "child_age": "",
+  "extra_charges": [
+    "Золотые места: 2400฿/взр",
+    "Платиновые места: 2600฿/взр"
+  ],
+  "days": "Кроме Вторников",
+  "itinerary": [
+    {
+      "time": "17:15",
+      "text": "— Сбор из отеля. Прибытие на шоу, ужин (шведский стол). Прогулка по территории парка и деревне мастеров."
+    },
+    {
+      "time": "",
+      "text": "Начало грандиозного представления."
+    },
+    {
+      "time": "22:00",
+      "text": "— Возвращение в отель."
+    }
+  ],
+  "notes": "Фото- и видеосъёмка во время представления строго запрещена. Выходной день парка: Вторник.",
+  "included": [
+    "Входной билет в парк и на шоу",
+    "Ужин (шведский стол)",
+    "Трансфер туда и обратно"
+  ],
+  "cancellation": [],
+  "what_to_bring": [
+    "Фотоаппарат для съемок в парке",
+    "Деньги на сувениры",
+    "Повседневный элегантный стиль одежды (дресс-код)"
+  ],
+  "title_en": "Siam Niramit Phuket",
+  "description_en": "An immersive Thai cultural park, buffet dinner, and a spectacular show",
+  "itinerary_en": [
+    {
+      "time": "17:15",
+      "text": "Hotel pickup, arrival at the park, buffet dinner, and park exploration."
+    },
+    {
+      "time": "",
+      "text": "Siam Niramit Show performance."
+    },
+    {
+      "time": "22:00",
+      "text": "Transfer back to the hotel."
+    }
+  ],
+  "included_en": [
+    "Show & Park admission ticket",
+    "Dinner (Buffet)",
+    "Round-trip transfer"
+  ],
+  "what_to_bring_en": [
+    "Camera for park pictures",
+    "Money for souvenirs",
+    "Smart casual dress code"
+  ],
+  "cancellation_en": [],
+  "child_age_en": "",
+  "extra_charges_en": [
+    "Gold seats: 2400฿/adult",
+    "Platinum seats: 2600฿/adult"
+  ]
+}

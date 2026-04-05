@@ -1,0 +1,128 @@
+{
+  "id": "phi-phi-maya-bamboo",
+  "title": "Острова Пхи-Пхи - Майя Бэй - Остров Бамбу",
+  "description": "Ранний и стандартный выезд на острова Пхи Пхи, Майя Бэй и Бамбу (комфорт) • Взрослый 2600 бат, Детский 2400 бат",
+  "price": 2600,
+  "old_price": null,
+  "sku": "PP_MB",
+  "local_images": [
+    "images/page_01_img_02.jpeg",
+    "images/page_07_img_02.jpeg",
+    "images/page_07_img_03.jpeg",
+    "images/page_08_img_02.jpeg",
+    "images/page_08_img_03.jpeg",
+    "images/page_09_img_02.jpeg",
+    "images/page_09_img_03.jpeg",
+    "images/page_10_img_02.jpeg",
+    "images/page_10_img_03.jpeg",
+    "images/page_11_img_02.jpeg",
+    "images/page_11_img_03.jpeg",
+    "images/page_12_img_02.jpeg",
+    "images/page_12_img_03.jpeg",
+    "images/page_13_img_02.jpeg",
+    "images/page_13_img_03.jpeg",
+    "images/page_14_img_02.jpeg",
+    "images/page_14_img_03.jpeg",
+    "images/page_15_img_02.jpeg",
+    "images/page_15_img_03.jpeg",
+    "images/page_16_img_02.jpeg",
+    "images/page_16_img_03.jpeg",
+    "images/page_17_img_02.jpeg",
+    "images/page_17_img_03.jpeg",
+    "images/page_18_img_02.jpeg",
+    "images/page_18_img_03.jpeg",
+    "images/page_19_img_02.jpeg",
+    "images/page_19_img_03.jpeg",
+    "images/page_20_img_02.jpeg",
+    "images/page_20_img_03.jpeg",
+    "images/page_21_img_02.jpeg",
+    "images/page_21_img_03.jpeg",
+    "images/page_22_img_02.jpeg",
+    "images/page_23_img_02.jpeg"
+  ],
+  "details_html": "<a href=\"https://wa.me/66951905999?text=Здравствуйте,%20интересует%20тур%20*Пхи-Пхи%20-%20Майя%20Бэй%20-%20Бамбу*,%20пожалуйста,%20свяжитесь%20со%20мной\" target=\"_blank\" rel=\"noreferrer noopener\">Быстрый заказ</a><br /><br /><strong style=\"font-size: 20px;\">Острова Пхи-Пхи - Майя Бэй - Бамбу (Ранний и стандартный выезд):</strong><br /><span style=\"font-size: 18px;\">Отправьтесь в незабываемое тропическое путешествие по двум самым потрясающим островам Таиланда. Идеально подходит для любителей природы и снорклинга. Базовая цена: Взрослый 2600฿ / Детский 2400฿.</span><br /><br /><strong style=\"font-size: 18px;\">Дополнительно оплачивается:</strong><br /><span style=\"font-size: 18px;\">Катание на традиционной лодке в Лагуне Пи Ле: 500฿ с чел в группе или 2500฿ индивидуально.</span><br /><br /><strong style=\"font-size: 20px;\">Программа стандартного выезда:</strong><br /><span style=\"font-size: 18px;\">07:00-07:45 Трансфер из отеля.</span><br /><span style=\"font-size: 18px;\">08:00 Регистрация на пирсе Love Andaman, завтрак.</span><br /><span style=\"font-size: 18px;\">09:00 Отправление на скоростной лодке.</span><br /><span style=\"font-size: 18px;\">09:45 Бухта Майя Бэй (съемки фильма \"Пляж\").</span><br /><span style=\"font-size: 18px;\">10:45 Лагуна Пи Ле (купание).</span><br /><span style=\"font-size: 18px;\">12:15 Пещера Викингов, снорклинг.</span><br /><span style=\"font-size: 18px;\">13:30 Скала Обезьян, обед в бухте Тон Сай.</span><br /><span style=\"font-size: 18px;\">14:30 Остров Бамбу (пляжный отдых).</span><br /><span style=\"font-size: 18px;\">16:15 Прибытие на пирс и трансфер.</span><br /><br /><strong style=\"font-size: 20px;\">Программа раннего выезда:</strong><br /><span style=\"font-size: 18px;\">Старт с 05:00-05:45, возвращение на Пхукет в 14:00 (прибытие на пирс в 15:00).</span>",
+  "price_adult": "2600฿",
+  "price_child": "2400฿",
+  "child_age": "",
+  "extra_charges": [
+    "Длиннохвостая лодка: 500฿/чел или 2500฿ индив."
+  ],
+  "days": "Ежедневно",
+  "itinerary": [
+    {
+      "time": "07:00",
+      "text": "— 07:45 Трансфер из отеля (для стандартного выезда)"
+    },
+    {
+      "time": "08:00",
+      "text": "— Завтрак на пирсе"
+    },
+    {
+      "time": "09:00",
+      "text": "— Отправление к островам Пхи-Пхи"
+    },
+    {
+      "time": "09:45",
+      "text": "— Бухта Майя Бэй"
+    },
+    {
+      "time": "10:45",
+      "text": "— Лагуна Пи Ле, купание"
+    },
+    {
+      "time": "12:15",
+      "text": "— Пещера Викингов, снорклинг на коралловом рифе"
+    },
+    {
+      "time": "13:30",
+      "text": "— Скала Обезьян, Обед в Тон Сай"
+    },
+    {
+      "time": "14:30",
+      "text": "— Отдых на Острове Бамбу"
+    },
+    {
+      "time": "16:15",
+      "text": "— Возвращение на остров Пхукет"
+    }
+  ],
+  "notes": "Программа может меняться в связи с погодными условиями. Для раннего выезда расписание сдвинуто на 2 часа назад.",
+  "included": [
+    "Транспорт (автобус и лодка)",
+    "Вход в национальные парки",
+    "Питание, прохладительные напитки и фрукты",
+    "Русскоговорящий и англоговорящий гиды",
+    "Маски, трубки, спасательные жилеты",
+    "Страховка"
+  ],
+  "cancellation": [],
+  "what_to_bring": [
+    "Купальные принадлежности, Солнцезащитные крема",
+    "Кепки, шляпы",
+    "Полотенце",
+    "Фото/видео камера",
+    "Деньги на сувениры и катание на местной лодке (по желанию)"
+  ],
+  "title_en": "Phi-Phi Islands - Maya Bay - Bamboo Island",
+  "description_en": "Early and Standard Departure to Phi Phi, Maya Bay and Bamboo",
+  "itinerary_en": [],
+  "included_en": [
+    "Transfer (minibus and speedboat)",
+    "National park entrance fees",
+    "Meals, soft drinks, and fruits on board",
+    "English and Russian speaking guides",
+    "Snorkeling equipment and life jackets",
+    "Insurance"
+  ],
+  "what_to_bring_en": [
+    "Swimwear, Sunscreen",
+    "Hats, Towel",
+    "Camera",
+    "Pocket money"
+  ],
+  "cancellation_en": [],
+  "child_age_en": "",
+  "extra_charges_en": [
+    "Longtail boat: 500฿/pax or 2500฿ private"
+  ]
+}

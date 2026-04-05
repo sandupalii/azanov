@@ -42,14 +42,16 @@
         e.preventDefault();
 
         const amount = document.getElementById('crypto-amount')?.value?.trim();
-        const currency = document.getElementById('crypto-currency')?.value;
+        const sendCurrency = document.getElementById('crypto-send')?.value;
+        const receiveCurrency = document.getElementById('crypto-receive')?.value;
+        
         const country = document.getElementById('crypto-country')?.value?.trim();
         const city = document.getElementById('crypto-city')?.value?.trim();
         const name = document.getElementById('crypto-name')?.value?.trim();
         const phone = document.getElementById('crypto-phone')?.value?.trim();
 
         const errEl = document.getElementById('crypto-error');
-        if (!amount || !currency || !country || !city || !name || !phone) {
+        if (!amount || !sendCurrency || !receiveCurrency || !country || !city || !name || !phone) {
             if (errEl) {
                 errEl.textContent = t('crypto.errorRequired');
                 errEl.style.display = 'block';
@@ -72,8 +74,10 @@
         const msg = [
             'Здравствуйте! Заявка на обмен криптовалюты.',
             '',
-            '💰 Сумма: ' + amount,
-            '💵 Валюту получать: ' + currency,
+            '📤 Отправляет: ' + sendCurrency,
+            '💰 Сумма к обмену: ' + amount,
+            '📥 Получает: ' + receiveCurrency,
+            '',
             '🌍 Страна выдачи: ' + country,
             '🏙️ Город: ' + city,
             '',
@@ -93,7 +97,8 @@
                     name: name,
                     phone: phone,
                     amount: amount,
-                    currency: currency,
+                    sendCurrency: sendCurrency,
+                    receiveCurrency: receiveCurrency,
                     country: country,
                     city: city,
                     source: 'azanovretreat.com',
@@ -115,6 +120,51 @@
         const overlay = document.getElementById('crypto-modal-overlay');
         overlay?.addEventListener('click', function (ev) {
             if (ev.target === this) closeCryptoModal();
+        });
+
+        // Setup Custom Dropdowns
+        const customDropdowns = document.querySelectorAll('.custom-dropdown');
+        
+        customDropdowns.forEach(dropdown => {
+            const btn = dropdown.querySelector('.custom-dropdown-btn');
+            const textSpan = dropdown.querySelector('.custom-dropdown-text');
+            const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+            const items = dropdown.querySelectorAll('.custom-dropdown-item');
+
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Close other open dropdowns first
+                document.querySelectorAll('.custom-dropdown.is-open').forEach(openDb => {
+                    if (openDb !== dropdown) openDb.classList.remove('is-open');
+                });
+                dropdown.classList.toggle('is-open');
+            });
+
+            items.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const value = item.getAttribute('data-value');
+                    const text = item.textContent;
+                    
+                    // Update UI
+                    textSpan.textContent = text;
+                    dropdown.classList.remove('is-open');
+                    
+                    // Update Hidden Input
+                    if (hiddenInput) {
+                        hiddenInput.value = value;
+                    }
+                });
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.custom-dropdown')) {
+                document.querySelectorAll('.custom-dropdown.is-open').forEach(dropdown => {
+                    dropdown.classList.remove('is-open');
+                });
+            }
         });
     });
 })();

@@ -74,68 +74,84 @@ const EXPERIENCE_ICONS = {
   concierge: '🛠️',
 };
 
+function formatTgPrice(val) {
+  if (!val || isNaN(val)) return null;
+  const n = Math.round(Number(val));
+  if (n >= 1000000) return `${(n / 1000000).toFixed(1).replace('.', ',')}M \u0E3F`;
+  if (n >= 1000) return `${(n / 1000).toFixed(0)}k \u0E3F`;
+  return `${n} \u0E3F`;
+}
+
 function buildLeadMessage(d) {
   const {
     name, phone, email, experienceType, packageName, yachtPreset, villaPreset,
     tourPreset, servicePreset, groupSize, dateFrom, dateTo, nights, budget,
-    extras = [], notes, contactMethod, source,
+    estimatedPrice, extras = [], notes, contactMethod, source,
   } = d;
 
-  const icon = EXPERIENCE_ICONS[experienceType] || '📋';
-  const expLabel = experienceType ? `${icon} ${capitalize(experienceType)}` : '—';
+  const icon = EXPERIENCE_ICONS[experienceType] || '\u{1F4CB}';
+  const expLabel = experienceType ? `${icon} ${capitalize(experienceType)}` : '\u2014';
 
   const budgetLabel = {
-    '150000': 'до 150 000 ฿',
-    '300000': '150 000 – 300 000 ฿',
-    '1000000': '300 000 – 1 000 000 ฿',
-    '9999999': 'от 1 000 000 ฿',
-  }[String(budget)] || budget || '—';
+    '150000': '\u0434\u043e 150 000 \u0E3F',
+    '300000': '150 000 \u2013 300 000 \u0E3F',
+    '1000000': '300 000 \u2013 1 000 000 \u0E3F',
+    '9999999': '\u043e\u0442 1 000 000 \u0E3F',
+  }[String(budget)] || budget || null;
 
   const contactLabel = {
     whatsapp: 'WhatsApp',
     telegram: 'Telegram',
-    call: 'Звонок',
-  }[contactMethod] || contactMethod || '—';
+    call: '\u0417\u0432\u043e\u043d\u043e\u043a',
+  }[contactMethod] || contactMethod || '\u2014';
 
   const lines = [
-    `🔔 *Новая заявка с сайта*`,
+    `\u{1F514} *\u041d\u043e\u0432\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430 \u0441 \u0441\u0430\u0439\u0442\u0430*`,
     ``,
-    `👤 *Имя:* ${esc(name || '—')}`,
-    `📱 *Телефон:* ${esc(phone || '—')}`,
+    `\u{1F464} *\u0418\u043c\u044f:* ${esc(name || '\u2014')}`,
+    `\u{1F4F1} *\u0422\u0435\u043b\u0435\u0444\u043e\u043d:* ${esc(phone || '\u2014')}`,
   ];
 
-  if (email) lines.push(`📧 *Email:* ${esc(email)}`);
+  if (email) lines.push(`\u{1F4E7} *Email:* ${esc(email)}`);
 
   lines.push(
     ``,
-    `🎯 *Тип:* ${esc(expLabel)}`,
+    `\u{1F3AF} *\u0422\u0438\u043f:* ${esc(expLabel)}`,
   );
 
-  if (packageName) lines.push(`📦 *Пакет:* ${esc(packageName)}`);
-  if (yachtPreset) lines.push(`⛵ *Яхта:* ${esc(yachtPreset)}`);
-  if (villaPreset) lines.push(`🏡 *Вилла:* ${esc(villaPreset)}`);
-  if (tourPreset) lines.push(`🎫 *Тур:* ${esc(tourPreset)}`);
-  if (servicePreset && !tourPreset) lines.push(`🛠️ *Услуга:* ${esc(servicePreset)}`);
+  if (packageName) lines.push(`\u{1F4E6} *\u041f\u0430\u043a\u0435\u0442:* ${esc(packageName)}`);
+  if (yachtPreset) lines.push(`\u26F5 *\u042f\u0445\u0442\u0430:* ${esc(yachtPreset)}`);
+  if (villaPreset) lines.push(`\u{1F3E1} *\u0412\u0438\u043b\u043b\u0430:* ${esc(villaPreset)}`);
+  if (tourPreset) lines.push(`\u{1F3AB} *\u0422\u0443\u0440:* ${esc(tourPreset)}`);
+  if (servicePreset && !tourPreset) lines.push(`\u{1F6E0}\uFE0F *\u0423\u0441\u043b\u0443\u0433\u0430:* ${esc(servicePreset)}`);
 
   lines.push(
     ``,
-    `👥 *Гостей:* ${esc(groupSize || '—')}`,
-    `📅 *Дата заезда:* ${esc(dateFrom || '—')}`,
-    `📅 *Дата выезда:* ${esc(dateTo || '—')}`,
-    `🌙 *Ночей:* ${esc(nights || '—')}`,
+    `\u{1F465} *\u0413\u043e\u0441\u0442\u0435\u0439:* ${esc(groupSize || '\u2014')}`,
+    `\u{1F4C5} *\u0414\u0430\u0442\u0430 \u0437\u0430\u0435\u0437\u0434\u0430:* ${esc(dateFrom || '\u2014')}`,
+    `\u{1F4C5} *\u0414\u0430\u0442\u0430 \u0432\u044b\u0435\u0437\u0434\u0430:* ${esc(dateTo || '\u2014')}`,
+    `\u{1F319} *\u041d\u043e\u0447\u0435\u0439:* ${esc(nights || '\u2014')}`,
     ``,
-    `💰 *Бюджет:* ${esc(budgetLabel)}`,
   );
 
-  if (extras && extras.length > 0) {
-    lines.push(`✨ *Допуслуги:* ${esc(extras.join(', '))}`);
+  // ── Price block: prefer estimated price over budget range ────
+  const tgPrice = estimatedPrice ? formatTgPrice(estimatedPrice) : null;
+  if (tgPrice) {
+    lines.push(`\u{1F4B0} *\u0426\u0435\u043d\u0430 (\u043e\u0440\u0438\u0435\u043d\u0442\u0438\u0440):* ${esc(tgPrice)}`);
+    if (budgetLabel) lines.push(`\u{1F4CA} *\u0411\u044e\u0434\u0436\u0435\u0442 \u043a\u043b\u0438\u0435\u043d\u0442\u0430:* ${esc(budgetLabel)}`);
+  } else {
+    lines.push(`\u{1F4B0} *\u0411\u044e\u0434\u0436\u0435\u0442:* ${esc(budgetLabel || '\u2014')}`);
   }
 
-  if (notes) lines.push(``, `💬 *Комментарий:* ${esc(notes)}`);
+  if (extras && extras.length > 0) {
+    lines.push(`\u2728 *\u0414\u043e\u043f\u0443\u0441\u043b\u0443\u0433\u0438:* ${esc(extras.join(', '))}`);
+  }
+
+  if (notes) lines.push(``, `\u{1F4AC} *\u041a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439:* ${esc(notes)}`);
 
   lines.push(
     ``,
-    `📲 *Связь через:* ${esc(contactLabel)}`,
+    `\u{1F4F2} *\u0421\u0432\u044f\u0437\u044c \u0447\u0435\u0440\u0435\u0437:* ${esc(contactLabel)}`,
     ``,
     `_${esc(source || 'azanovretreat.com')}_`,
   );
@@ -190,14 +206,19 @@ async function amoCrmCreateLeadFromBody(d) {
       return { field_id: f.field_id, values: [{ value: isDate ? f.value : String(f.value) }] };
     });
 
-  // ── Budget ───────────────────────────────────────────────────
+  // ── Budget / Price ───────────────────────────────────────────
   const budgetLabel = {
     '150000': 'до 150 000 ฿',
     '300000': '150 000 – 300 000 ฿',
     '1000000': '300 000 – 1 000 000 ฿',
     '9999999': 'от 1 000 000 ฿',
   }[String(budget)] || budget || '—';
-  const price = parseInt(budget) < 9999999 ? parseInt(budget) || 0 : 0;
+  // Use estimated price (for specific yacht/villa/package/tour orders) as the
+  // CRM lead value; fall back to the selected budget bracket, with 9999999 treated as 0.
+  const estimatedPrice = d.estimatedPrice ? Math.round(Number(d.estimatedPrice)) : null;
+  const price = estimatedPrice && estimatedPrice > 0
+    ? estimatedPrice
+    : (parseInt(budget) < 9999999 ? parseInt(budget) || 0 : 0);
 
   // ── Create lead ──────────────────────────────────────────────
   const leadId = await amoCrmCreateLead({

@@ -1082,6 +1082,157 @@ body.scrolled-past-hero .hero__bg-img {
   margin-inline: auto;
   padding-inline: clamp(0.75rem, 3vw, 2.5rem);
   width: 100%;
+  flex: 1; /* Expand into available space in hero */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: end;
+}
+
+@media (min-width: 992px) {
+  .hero__content {
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center; /* center the items vertically in grid on desktop */
+  }
+}
+
+.hero__content-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%; /* Push text to bottom on desktop */
+}
+
+@media (min-width: 992px) {
+  .hero__content-left {
+    padding-top: 8rem; /* give some space to not overlap with nav */
+  }
+}
+
+.hero__content-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+@media (min-width: 992px) {
+  .hero__content-right {
+    justify-content: flex-end;
+  }
+}
+
+/* Hero Crypto Banner (Premium Vertical Glass Card) */
+.hero-crypto-banner {
+  background: linear-gradient(160deg, rgba(16, 22, 28, 0.9) 0%, rgba(6, 16, 26, 0.98) 100%);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  width: 100%;
+  width: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-crypto-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%; right: -50%; bottom: -50%;
+  background: radial-gradient(circle at center, rgba(201, 168, 76, 0.15), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+.hero-crypto-banner:hover {
+  transform: translateY(-12px);
+  border-color: rgba(201, 168, 76, 0.7);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.hero-crypto-banner:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-crypto-banner__icon {
+  width: 5rem;
+  height: 5rem;
+  background: rgba(201, 168, 76, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+
+.hero-crypto-banner__icon i {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.hero-crypto-banner__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hero-crypto-banner__title {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin-top: 0.25rem;
+}
+
+.hero-crypto-banner__desc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.hero-crypto-banner__action {
+  margin-top: 1rem;
+}
+
+@media (max-width: 991px) {
+  .hero-crypto-banner {
+    padding: 1.5rem;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    max-width: none;
+  }
+  
+  .hero-crypto-banner__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  
+  .hero-crypto-banner__icon i {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  
+  .hero-crypto-banner__title {
+    font-size: 1.4rem;
+  }
+  
+  .hero-crypto-banner__action {
+    width: 100%;
+    margin-top: 0;
+  }
 }
 
 .hero__badge-row {
@@ -1108,7 +1259,7 @@ html[lang="ru"] .hero__badge-row {
 
 .hero__title {
   font-family: var(--font-head);
-  font-size: clamp(2.8rem, 6.5vw, 6.5rem);
+  font-size: 5rem;
   font-weight: 700;
   line-height: 1.02;
   letter-spacing: -0.03em;
@@ -1817,7 +1968,7 @@ html[lang="ru"] .hero__badge-row {
 .yacht-card__name {
   font-family: var(--font-head);
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .yacht-card__specs {
@@ -3106,6 +3257,59 @@ html[lang="ru"] .hero__badge-row {
   line-height: 1.5;
 }
 
+/* Live total price counter (Step 3 — shows running total: base + selected addons) */
+.total-price-counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(64, 224, 208, 0.1) 0%, rgba(64, 224, 208, 0.04) 100%);
+  border: 1px solid rgba(64, 224, 208, 0.3);
+  animation: total-price-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes total-price-in {
+  from { opacity: 0; transform: translateY(6px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.total-price-counter__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.total-price-counter__value {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.total-price__amount {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--teal);
+  font-family: var(--font-head);
+  letter-spacing: -0.02em;
+}
+
+.total-price__addons {
+  font-size: 0.75rem;
+  color: var(--teal);
+  opacity: 0.75;
+  background: rgba(64, 224, 208, 0.12);
+  padding: 0.2rem 0.5rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
 /* Addon toggle buttons (Step 4) */
 .addon-toggle-group {
   display: grid;
@@ -3740,7 +3944,7 @@ html[lang="ru"] .hero__badge-row {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 480px;
+  max-width: 560px;
   max-height: 95svh;
   overflow: hidden;
   display: flex;
@@ -3798,6 +4002,16 @@ html[lang="ru"] .hero__badge-row {
   gap: 0.75rem;
 }
 
+.crypto-form .form-row--3 {
+  grid-template-columns: 1.2fr 1fr 1.2fr;
+}
+
+@media (max-width: 768px) {
+  .crypto-form .form-row--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 480px) {
   .crypto-form .form-row {
     grid-template-columns: 1fr;
@@ -3820,6 +4034,85 @@ html[lang="ru"] .hero__badge-row {
 .crypto-form select.form-input {
   appearance: auto;
   cursor: pointer;
+}
+
+/* Custom Dropdown Styles */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.custom-dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.custom-dropdown-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(201, 168, 76, 0.4);
+}
+
+.custom-dropdown-btn.is-open {
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.2);
+}
+
+.custom-dropdown-btn svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--gold);
+  transition: transform 0.2s ease;
+}
+
+.custom-dropdown-btn.is-open svg {
+  transform: rotate(180deg);
+}
+
+.custom-dropdown-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background: #112738;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0;
+  list-style: none;
+  margin: 0;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.2s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.custom-dropdown.is-open .custom-dropdown-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.custom-dropdown-item {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.custom-dropdown-item:hover {
+  background: rgba(201, 168, 76, 0.15);
+  color: var(--gold);
 }
 
 .crypto-form-error {

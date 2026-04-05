@@ -66,7 +66,7 @@
   <link rel="preload" as="image" href="assets/hero-bg.webp" type="image/webp">
 
   <!-- Site CSS (minified: 136KB → 100KB) -->
-  <link rel="stylesheet" href="css/styles.min.css?v=4">
+  <link rel="stylesheet" href="css/styles.min.css?v=13">
 
   <!-- Rich Structured Data: TravelAgency + FAQ + Breadcrumb -->
   <script type="application/ld+json">
@@ -326,52 +326,73 @@
     <div class="hero__overlay" aria-hidden="true"></div>
 
     <div class="hero__content">
-      <div class="hero__badge-row">
-        <span class="badge badge-teal"><i data-lucide="sparkles" class="icon-sm"></i> Private Tours from A to
-          Z</span>
-        <span class="badge badge-white"><i data-lucide="waves" class="icon-sm"></i> <span
-            data-i18n="hero.badge.sea">Андаманское море</span></span>
-        <span class="badge badge-gold"><span data-i18n="hero.badge.min">Min 5 ночей</span></span>
+      <div class="hero__content-left">
+        <div class="hero__badge-row">
+          <span class="badge badge-teal"><i data-lucide="sparkles" class="icon-sm"></i> Private Tours from A to
+            Z</span>
+          <span class="badge badge-white"><i data-lucide="waves" class="icon-sm"></i> <span
+              data-i18n="hero.badge.sea">Андаманское море</span></span>
+          <span class="badge badge-gold"><span data-i18n="hero.badge.min">Min 5 ночей</span></span>
+        </div>
+
+        <h1 class="hero__title" data-i18n-html="hero.title">
+          Туры на Пхукете<br>
+          <em>от А до Я.</em><br>
+          Включено всё и точка.
+        </h1>
+
+        <p class="hero__sub" data-i18n="hero.sub">
+          Максимальное качество, мгновенный заказ, полное отсутствие компромиссов.
+          Виллы, яхты, авто, консьерж — одним пакетом. Без скрытых доплат.
+        </p>
+
+        <div class="hero__ctas">
+          <a href="#packages" class="btn btn-primary-lg">
+            <span data-i18n="hero.cta.primary">Выбрать тур</span> <i data-lucide="chevron-down" class="ml-2"></i>
+          </a>
+          <a href="https://wa.me/66635412949?text=Привет!%20Расскажите%20про%20Azanov%20Travel" target="_blank"
+            rel="noopener" class="btn btn-ghost-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#25D366" style="flex-shrink:0;margin-right:0.5rem" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.031-.967-.273-.099-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.57 12.57 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            <span data-i18n="hero.cta.whatsapp">Связаться в WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-number">100+</span>
+            <span class="stat-label" data-i18n="hero.stat.yachts">яхт в каталоге</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100+</span>
+            <span class="stat-label" data-i18n="hero.stat.villas">премиальных вилл</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label" data-i18n="hero.stat.concierge">консьерж</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label" data-i18n="hero.stat.fees">скрытых доплат</span>
+          </div>
+        </div>
       </div>
 
-      <h1 class="hero__title" data-i18n-html="hero.title">
-        Туры на Пхукете<br>
-        <em>от А до Я.</em><br>
-        Включено всё и точка.
-      </h1>
+      <div class="hero__content-right">
+        <!-- Crypto exchange tall banner -->
+        <div class="hero-crypto-banner" role="button" tabindex="0" onclick="openCryptoModal()" onkeydown="if(event.key==='Enter'||event.key===' ')openCryptoModal()">
+          <div class="hero-crypto-banner__icon">
+            <i data-lucide="wallet"></i>
+          </div>
+          
+          <div class="hero-crypto-banner__content">
+            <div class="label-upper hero-crypto-banner__label" data-i18n="concierge.crypto.label">Обмен криптовалюты</div>
+            <h3 class="hero-crypto-banner__title" data-i18n="concierge.crypto.title">Любая крипта в наличные —<br>Таиланд и весь мир</h3>
+            <p class="hero-crypto-banner__desc" data-i18n="concierge.crypto.body">Поможем обменять любую криптовалюту на наличные. Лучшие курсы от $10&nbsp;000. За 2,5% с любой суммы вы получите кеш почти в любой точке мира.</p>
+          </div>
 
-      <p class="hero__sub" data-i18n="hero.sub">
-        Максимальное качество, мгновенный заказ, полное отсутствие компромиссов.
-        Виллы, яхты, авто, консьерж — одним пакетом. Без скрытых доплат.
-      </p>
-
-      <div class="hero__ctas">
-        <a href="#packages" class="btn btn-primary-lg">
-          <span data-i18n="hero.cta.primary">Выбрать тур</span> <i data-lucide="chevron-down" class="ml-2"></i>
-        </a>
-        <a href="https://wa.me/66635412949?text=Привет!%20Расскажите%20про%20Azanov%20Travel" target="_blank"
-          rel="noopener" class="btn btn-ghost-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#25D366" style="flex-shrink:0;margin-right:0.5rem" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.031-.967-.273-.099-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.57 12.57 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-          <span data-i18n="hero.cta.whatsapp">Связаться в WhatsApp</span>
-        </a>
-      </div>
-
-      <div class="stats-row">
-        <div class="stat-item">
-          <span class="stat-number">100+</span>
-          <span class="stat-label" data-i18n="hero.stat.yachts">яхт в каталоге</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">100+</span>
-          <span class="stat-label" data-i18n="hero.stat.villas">премиальных вилл</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">24/7</span>
-          <span class="stat-label" data-i18n="hero.stat.concierge">консьерж</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">0</span>
-          <span class="stat-label" data-i18n="hero.stat.fees">скрытых доплат</span>
+          <div class="hero-crypto-banner__action">
+            <span class="btn btn-gold btn-full" data-i18n="concierge.crypto.cta">Узнать детали</span>
+          </div>
         </div>
       </div>
     </div>
@@ -633,25 +654,7 @@
         </div>
       </div>
 
-      <!-- Crypto exchange highlight (кликабелен целиком) -->
-      <div class="fold-section crypto-block-clickable" role="button" tabindex="0" onclick="openCryptoModal()"
-        onkeydown="if(event.key==='Enter'||event.key===' ')openCryptoModal()"
-        style="margin-top:2rem;padding:2.5rem;background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(0,51,68,0.5));border:1px solid rgba(201,168,76,0.2);border-radius:var(--radius-lg);display:flex;gap:2rem;align-items:center;flex-wrap:wrap;cursor:pointer">
-        <div style="font-size:4rem;flex-shrink:0"><i data-lucide="wallet"
-            style="width:64px;height:64px;color:var(--gold)"></i></div>
-        <div style="flex:1;min-width:280px">
-          <div class="label-upper" style="color:var(--gold-light);margin-bottom:0.5rem"
-            data-i18n="concierge.crypto.label">Обмен криптовалюты</div>
-          <h3 class="h3" data-i18n="concierge.crypto.title">Любая крипта в наличные — Таиланд и весь мир</h3>
-          <p class="body-sm muted" style="margin-top:0.5rem" data-i18n="concierge.crypto.body">Поможем обменять любую
-            криптовалюту на наличные. Лучшие
-            курсы от $10&nbsp;000. За 2,5% с любой суммы вы получите кеш почти в любой точке мира. Напишите нашим
-            менеджерам — узнаете детали.</p>
-        </div>
-        <div style="flex-shrink:0">
-          <span class="btn btn-gold" data-i18n="concierge.crypto.cta">Узнать детали</span>
-        </div>
-      </div>
+
     </div>
   </section>
 
@@ -764,23 +767,47 @@
           </div>
         </div>
         <form id="crypto-form" class="crypto-form" onsubmit="return submitCryptoForm(event)">
-          <div class="form-row">
+          <div class="form-row form-row--3">
             <div class="form-group">
-              <label class="form-label" for="crypto-amount" data-i18n="crypto.amount">Сумма к обмену *</label>
-              <input type="text" id="crypto-amount" class="form-input" data-i18n-placeholder="crypto.amountPlaceholder"
-                placeholder="Например: 50000 USD" required>
+              <label class="form-label" data-i18n="crypto.sendCurrency">Что отправляете *</label>
+              <div class="custom-dropdown" id="crypto-send-dropdown">
+                <div class="custom-dropdown-btn form-input" tabindex="0">
+                  <span class="custom-dropdown-text" data-i18n="crypto.dropdownPlaceholder">Выберите</span>
+                  <i data-lucide="chevron-down"></i>
+                </div>
+                <ul class="custom-dropdown-list">
+                  <li class="custom-dropdown-item" data-value="USDT">USDT</li>
+                  <li class="custom-dropdown-item" data-value="BTC">BTC</li>
+                  <li class="custom-dropdown-item" data-value="ETH">ETH</li>
+                  <li class="custom-dropdown-item" data-value="RUB">RUB</li>
+                  <li class="custom-dropdown-item" data-value="KZT">KZT</li>
+                  <li class="custom-dropdown-item" data-value="Другое" data-i18n="crypto.other">Другое</li>
+                </ul>
+                <input type="hidden" id="crypto-send" name="crypto-send" required>
+              </div>
             </div>
             <div class="form-group">
-              <label class="form-label" for="crypto-currency" data-i18n="crypto.currency">В какую валюту получать
-                *</label>
-              <select id="crypto-currency" class="form-input" required>
-                <option value="" data-i18n="crypto.currencyPlaceholder">Выберите</option>
-                <option value="USD">USD</option>
-                <option value="THB">THB (бат)</option>
-                <option value="EUR">EUR</option>
-                <option value="RUB">RUB</option>
-                <option value="другое" data-i18n="crypto.other">Другое</option>
-              </select>
+              <label class="form-label" for="crypto-amount" data-i18n="crypto.amount">Сумма *</label>
+              <input type="text" id="crypto-amount" class="form-input" data-i18n-placeholder="crypto.amountPlaceholder"
+                placeholder="Например: 50000" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="crypto.receiveCurrency">Что получаете *</label>
+              <div class="custom-dropdown" id="crypto-receive-dropdown">
+                <div class="custom-dropdown-btn form-input" tabindex="0">
+                  <span class="custom-dropdown-text" data-i18n="crypto.dropdownPlaceholder">Выберите</span>
+                  <i data-lucide="chevron-down"></i>
+                </div>
+                <ul class="custom-dropdown-list">
+                  <li class="custom-dropdown-item" data-value="THB">THB</li>
+                  <li class="custom-dropdown-item" data-value="USD">USD</li>
+                  <li class="custom-dropdown-item" data-value="EUR">EUR</li>
+                  <li class="custom-dropdown-item" data-value="RUB">RUB</li>
+                  <li class="custom-dropdown-item" data-value="KZT">KZT</li>
+                  <li class="custom-dropdown-item" data-value="Другое" data-i18n="crypto.other">Другое</li>
+                </ul>
+                <input type="hidden" id="crypto-receive" name="crypto-receive" required>
+              </div>
             </div>
           </div>
           <div class="form-row">
@@ -1066,43 +1093,47 @@
 
           <div class="form-group">
             <div class="form-label" data-i18n="form.step3.extrasLabel">Дополнительные сервисы (можно несколько)</div>
-            <div class="checkbox-group">
-              <label class="checkbox-item">
-                <input type="checkbox" class="lead-extra" value="photo">
-                <span class="checkbox-custom"></span>
-                <span class="checkbox-text"><i data-lucide="camera" class="icon-xs"></i> <span
-                    data-i18n="form.step3.photo">Фотограф</span></span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" class="lead-extra" value="chef">
-                <span class="checkbox-custom"></span>
-                <span class="checkbox-text"><i data-lucide="utensils" class="icon-xs"></i> <span
-                    data-i18n="form.step3.chef">Шеф-повар</span></span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" class="lead-extra" value="fasttrack">
-                <span class="checkbox-custom"></span>
-                <span class="checkbox-text"><i data-lucide="plane" class="icon-xs"></i> <span
-                    data-i18n="form.step3.fasttrack">Fast Track</span></span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" class="lead-extra" value="fishing">
-                <span class="checkbox-custom"></span>
-                <span class="checkbox-text"><i data-lucide="anchor" class="icon-xs"></i> <span
-                    data-i18n="form.step3.fishing">Рыбалка</span></span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" class="lead-extra" value="massage">
-                <span class="checkbox-custom"></span>
-                <span class="checkbox-text"><i data-lucide="hand" class="icon-xs"></i> <span
-                    data-i18n="form.step3.massage">Массаж</span></span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" class="lead-extra" value="bbq">
-                <span class="checkbox-custom"></span>
-                <span class="checkbox-text"><i data-lucide="flame" class="icon-xs"></i> <span
-                    data-i18n="form.step3.bbq">Барбекю</span></span>
-              </label>
+
+            <!-- Live total price counter — shown when base or addon price is known -->
+            <div id="lead-step3-total-price" class="total-price-counter" style="display:none">
+              <div class="total-price-counter__label" data-i18n="form.step3.totalLabel">Итого</div>
+              <div class="total-price-counter__value">
+                <span class="total-price__amount">—</span>
+                <span class="total-price__addons" style="display:none"></span>
+              </div>
+            </div>
+
+            <div class="addon-toggle-group">
+              <button type="button" class="addon-toggle-btn" data-addon="photo" onclick="toggleAddon('photo', this)">
+                <span class="addon-toggle-btn__icon"><i data-lucide="camera"></i></span>
+                <span class="addon-toggle-btn__label" data-i18n="form.step3.photo">Фотограф</span>
+                <span class="addon-toggle-btn__price" data-addon-price="photo">—</span>
+              </button>
+              <button type="button" class="addon-toggle-btn" data-addon="chef" onclick="toggleAddon('chef', this)">
+                <span class="addon-toggle-btn__icon"><i data-lucide="utensils"></i></span>
+                <span class="addon-toggle-btn__label" data-i18n="form.step3.chef">Шеф-повар</span>
+                <span class="addon-toggle-btn__price" data-addon-price="chef">—</span>
+              </button>
+              <button type="button" class="addon-toggle-btn" data-addon="fasttrack" onclick="toggleAddon('fasttrack', this)">
+                <span class="addon-toggle-btn__icon"><i data-lucide="plane"></i></span>
+                <span class="addon-toggle-btn__label" data-i18n="form.step3.fasttrack">Fast Track</span>
+                <span class="addon-toggle-btn__price" data-addon-price="fasttrack">—</span>
+              </button>
+              <button type="button" class="addon-toggle-btn" data-addon="fishing" onclick="toggleAddon('fishing', this)">
+                <span class="addon-toggle-btn__icon"><i data-lucide="anchor"></i></span>
+                <span class="addon-toggle-btn__label" data-i18n="form.step3.fishing">Рыбалка</span>
+                <span class="addon-toggle-btn__price" data-addon-price="fishing">—</span>
+              </button>
+              <button type="button" class="addon-toggle-btn" data-addon="massage" onclick="toggleAddon('massage', this)">
+                <span class="addon-toggle-btn__icon"><i data-lucide="hand"></i></span>
+                <span class="addon-toggle-btn__label" data-i18n="form.step3.massage">Массаж</span>
+                <span class="addon-toggle-btn__price" data-addon-price="massage">—</span>
+              </button>
+              <button type="button" class="addon-toggle-btn" data-addon="bbq" onclick="toggleAddon('bbq', this)">
+                <span class="addon-toggle-btn__icon"><i data-lucide="flame"></i></span>
+                <span class="addon-toggle-btn__label" data-i18n="form.step3.bbq">Барбекю</span>
+                <span class="addon-toggle-btn__price" data-addon-price="bbq">—</span>
+              </button>
             </div>
           </div>
           <div class="lead-nav">
@@ -1277,9 +1308,13 @@
             качество, ноль компромиссов.</p>
           <div style="display:flex;gap:0.75rem;margin-top:1rem">
             <a href="https://wa.me/66635412949" target="_blank" rel="noopener"
-              class="btn btn-whatsapp btn-sm">WhatsApp</a>
+              class="btn btn-whatsapp" style="display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.6rem 1.25rem">
+              <i data-lucide="message-circle" style="width:16px;height:16px"></i> WhatsApp
+            </a>
             <a href="https://t.me/AzanovRetreatx" target="_blank" rel="noopener"
-              class="btn btn-ghost btn-sm">Telegram</a>
+              class="btn btn-ghost" style="display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.6rem 1.25rem">
+              <i data-lucide="send" style="width:16px;height:16px"></i> Telegram
+            </a>
           </div>
         </div>
         <div>
@@ -1459,7 +1494,7 @@
   <script>window.LEAD_API_URL = '/api/send-lead'; window.CRYPTO_API_URL = '/api/send-crypto';</script>
   <script src="js/min/lead-form.js?v=2" defer></script>
   <script src="js/min/review-form.js" defer></script>
-  <script src="js/min/crypto-form.js" defer></script>
+  <script src="js/min/crypto-form.js?v=2" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
       await window.i18n.init();

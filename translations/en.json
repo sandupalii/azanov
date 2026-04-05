@@ -111,7 +111,7 @@
     "crypto": {
       "label": "Crypto Exchange",
       "title": "Any crypto to cash — Thailand and worldwide",
-      "body": "We'll exchange any cryptocurrency to cash. Best rates from $10,000. For 2.5% of any amount, you get cash almost anywhere in the world.",
+      "body": "We'll help you exchange any cryptocurrency for cash. Best rates from $10,000. Get cash almost anywhere in the world.",
       "cta": "Get details"
     }
   },
@@ -273,6 +273,8 @@
       "packagePriceNote": "Final price depends on selected dates and add-ons.",
       "budgetLabel": "Budget for the entire group (฿)",
       "extrasLabel": "Additional services (select any)",
+      "totalLabel": "Total",
+      "addonsTag": "extras",
       "photo": "Photographer",
       "chef": "Private Chef",
       "fasttrack": "Fast Track",
@@ -345,10 +347,11 @@
   "crypto": {
     "label": "Crypto Exchange",
     "title": "Exchange Request",
-    "amount": "Amount to exchange *",
-    "amountPlaceholder": "e.g. 50000 USD",
-    "currency": "Receive in which currency *",
-    "currencyPlaceholder": "Select",
+    "sendCurrency": "What you send *",
+    "receiveCurrency": "What you receive *",
+    "amount": "Amount *",
+    "amountPlaceholder": "e.g. 50000",
+    "dropdownPlaceholder": "Select",
     "other": "Other",
     "country": "Cash delivery country *",
     "countryPlaceholder": "e.g. Thailand",

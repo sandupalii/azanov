@@ -82,7 +82,7 @@
       rating: selectedRating,
       text,
       wishes: wishes || '',
-      source: 'azanovretreat.com',
+      source: 'azanovtravel.com',
       timestamp: new Date().toISOString(),
     };
 

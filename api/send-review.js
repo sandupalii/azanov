@@ -46,7 +46,7 @@ export default async function handler(req, res) {
   if (wishes) lines.push(``, `📋 *Пожелания:* ${esc(wishes)}`);
 
   const ts = timestamp ? new Date(timestamp).toLocaleString('ru-RU') : new Date().toLocaleString('ru-RU');
-  lines.push(``, `_${esc(source || 'azanovretreat.com')} • ${esc(ts)}_`);
+  lines.push(``, `_${esc(source || 'azanovtravel.com')} • ${esc(ts)}_`);
 
   const tgText = lines.join('\n');
 

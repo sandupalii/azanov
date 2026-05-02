@@ -59,19 +59,19 @@ docker compose version
 # From your local machine, sync the project to the server
 # (replace user@YOUR_SERVER_IP with your actual details)
 rsync -avz --exclude='.git' --exclude='node_modules' --exclude='*.zip' \
-  /Users/designer/PROJECTS/azanovretreat/ \
-  user@YOUR_SERVER_IP:/srv/azanovretreat/
+  /Users/designer/PROJECTS/azanovtravel/ \
+  user@YOUR_SERVER_IP:/srv/azanovtravel/
 ```
 
 Or clone from Git if you have a repo:
 ```bash
-git clone https://github.com/YOUR_ORG/azanovretreat.git /srv/azanovretreat
+git clone https://github.com/YOUR_ORG/azanovtravel.git /srv/azanovtravel
 ```
 
 ### 3 — Create the .env File
 
 ```bash
-cd /srv/azanovretreat
+cd /srv/azanovtravel
 cp .env.example .env
 nano .env   # Fill in your tokens
 ```
@@ -90,15 +90,15 @@ TELEGRAM_LEAD_CHAT_ID=-100your_chat_id
 sudo apt install certbot -y
 
 # Get certificate (point your domain DNS to this server IP first!)
-sudo certbot certonly --standalone -d azanovretreat.com -d www.azanovretreat.com
+sudo certbot certonly --standalone -d azanovtravel.com -d www.azanovtravel.com
 
-# Certs will be at /etc/letsencrypt/live/azanovretreat.com/
+# Certs will be at /etc/letsencrypt/live/azanovtravel.com/
 # Link them into the deploy/ssl folder:
-sudo mkdir -p /srv/azanovretreat/deploy/ssl
-sudo ln -sf /etc/letsencrypt/live/azanovretreat.com/fullchain.pem \
-            /srv/azanovretreat/deploy/ssl/fullchain.pem
-sudo ln -sf /etc/letsencrypt/live/azanovretreat.com/privkey.pem \
-            /srv/azanovretreat/deploy/ssl/privkey.pem
+sudo mkdir -p /srv/azanovtravel/deploy/ssl
+sudo ln -sf /etc/letsencrypt/live/azanovtravel.com/fullchain.pem \
+            /srv/azanovtravel/deploy/ssl/fullchain.pem
+sudo ln -sf /etc/letsencrypt/live/azanovtravel.com/privkey.pem \
+            /srv/azanovtravel/deploy/ssl/privkey.pem
 ```
 
 **Option B — HTTP only (for testing without a domain):**
@@ -126,16 +126,16 @@ server {
 ### 5 — Update nginx.conf Domain
 
 ```bash
-nano /srv/azanovretreat/deploy/nginx.conf
+nano /srv/azanovtravel/deploy/nginx.conf
 # Replace both occurrences of:
-#   azanovretreat.com www.azanovretreat.com
+#   azanovtravel.com www.azanovtravel.com
 # with your actual domain (or server IP for testing)
 ```
 
 ### 6 — Launch with Docker Compose
 
 ```bash
-cd /srv/azanovretreat
+cd /srv/azanovtravel
 
 # Build and start everything
 docker compose up -d --build
@@ -153,12 +153,12 @@ The site is now live on ports 80 and 443.
 
 ```bash
 # API health check
-curl https://azanovretreat.com/api/health
+curl https://azanovtravel.com/api/health
 
 # Expected: {"ok":true,"ts":"2026-..."}
 
 # Test lead endpoint
-curl -X POST https://azanovretreat.com/api/send-lead \
+curl -X POST https://azanovtravel.com/api/send-lead \
   -H "Content-Type: application/json" \
   -d '{"name":"Test","phone":"+66123","experienceType":"villa","groupSize":2,"dateFrom":"20.03.2026","dateTo":"25.03.2026","nights":"5","budget":"150000"}'
 
@@ -172,7 +172,7 @@ curl -X POST https://azanovretreat.com/api/send-lead \
 ### Update the site (redeploy)
 
 ```bash
-cd /srv/azanovretreat
+cd /srv/azanovtravel
 
 # Pull latest code / rsync new files
 git pull    # or rsync again
@@ -188,7 +188,7 @@ docker compose down && docker compose up -d --build
 
 ```bash
 # Certbot auto-renew via cron (add this to crontab):
-0 3 * * * certbot renew --quiet && docker compose -f /srv/azanovretreat/docker-compose.yml restart nginx
+0 3 * * * certbot renew --quiet && docker compose -f /srv/azanovtravel/docker-compose.yml restart nginx
 ```
 
 ### View logs

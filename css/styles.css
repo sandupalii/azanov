@@ -1212,7 +1212,9 @@ body.scrolled-past-hero .hero__bg-img {
     align-items: center;
     flex-wrap: wrap;
     gap: 1.25rem;
-    max-width: none;
+    width: 100%;
+    margin: 0 auto;
+    max-width: calc(100vw - 80px); /* 40px side margins on raw view */
   }
   
   .hero-crypto-banner__icon {
@@ -5810,9 +5812,13 @@ html[lang="ru"] .hero__badge-row {
     margin: 0 !important;
     align-items: flex-end;
     justify-content: stretch;
+    position: fixed !important;
+    top: 0 !important;
     left: 0 !important;
     right: 0 !important;
+    bottom: 0 !important;
     width: 100% !important;
+    height: 100% !important;
     max-width: 100vw;
   }
 
@@ -5822,20 +5828,35 @@ html[lang="ru"] .hero__badge-row {
     min-width: 0;
     margin: 0 !important;
     padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    max-height: 95vh;
   }
 
+  /* Target the actual glass-card element that IS the modal card — direct child only */
+  .lead-modal-overlay .lead-form-wrapper > .glass-card,
   .lead-modal-overlay .lead-modal-card {
     width: 100% !important;
     max-width: none !important;
     box-sizing: border-box;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-radius: 20px 20px 0 0;
     padding: 1.25rem 20px 0 20px !important;
-    padding-bottom: env(safe-area-inset-bottom, 0) !important;
-    max-height: 94vh;
+    padding-bottom: 0 !important;
+    height: 95vh !important;
+    max-height: 95vh !important;
     display: flex;
     flex-direction: column;
     min-height: 0;
-    margin: 10px 0 0 0 !important;
+    flex: 1;
+    margin: 0 !important;
+    overflow: hidden;
+    animation: slideUpSheet 0.38s cubic-bezier(0.32, 0.72, 0, 1) both;
+  }
+
+  @keyframes slideUpSheet {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
   }
 
   .lead-modal-card .lead-progress-stories {
@@ -5939,26 +5960,34 @@ html[lang="ru"] .hero__badge-row {
     order: -1;
   }
 
-  /* Sticky nav: ONE ROW, 20px from edges, back = icon only, Next = compact */
+  /* Sticky nav: transparent row, just 2 buttons — no background, no border */
   #lead-modal-overlay .lead-nav {
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: column !important;
     flex-wrap: nowrap !important;
+    align-items: stretch;
+    gap: 0;
+    margin: 0 -20px 0 -20px;
+    padding: 0;
+    margin-top: auto;
+    flex-shrink: 0;
+    background: transparent;
+    border-top: none;
+    position: sticky;
+    bottom: 0;
+    width: calc(100% + 40px);
+  }
+
+  /* Buttons row: clean horizontal row, transparent */
+  #lead-modal-overlay .lead-nav-buttons {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
-    margin: 0 -20px 0 -20px;
     padding: 0.75rem 20px;
     padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
-    margin-top: auto;
-    flex-shrink: 0;
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
+    background: transparent;
   }
 
   #lead-modal-overlay .lead-nav .btn,
@@ -5970,30 +5999,32 @@ html[lang="ru"] .hero__badge-row {
 
   #lead-modal-overlay .lead-nav .btn-ghost {
     flex: 0 0 auto !important;
+    padding: 0.6rem 0.75rem;
+    min-width: 44px;
   }
 
   #lead-modal-overlay .lead-nav .btn-ghost span {
     display: none;
   }
 
-  #lead-modal-overlay .lead-nav .btn-ghost {
-    padding: 0.6rem 0.75rem;
-    min-width: 44px;
-  }
-
   #lead-modal-overlay .lead-nav .btn-ghost .mr-2 {
     margin-right: 0;
   }
 
+  /* Step counter: between the 2 buttons */
   #lead-modal-overlay .lead-nav .step-counter {
-    display: none;
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-align: center;
+    flex: 1;
   }
 
-  /* Next button: compact, not full-width */
+  /* Next button */
   #lead-modal-overlay .lead-nav .btn-primary {
-    flex: 0 0 auto;
-    min-width: 100px;
-    max-width: 140px;
+    flex: 1;
+    max-width: 160px;
     justify-content: center;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -6007,11 +6038,24 @@ html[lang="ru"] .hero__badge-row {
     overflow-y: hidden;
     gap: 0.5rem;
     margin-bottom: 1rem;
-    padding: 0.5rem 12px 0.75rem;
+    padding: 0.5rem 20px 0.75rem;
     scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+  }
+  
+  /* Add safe padding at the end of the scroll container to ensure the last element has trailing space */
+  #lead-modal-overlay #lead-step-3 .budget-options::after {
+    content: '';
+    display: block;
+    flex: 0 0 4px; /* padding right substitute */
+    width: 4px;
+    height: 1px;
+  }
+  
+  #lead-modal-overlay .lead-step {
+    padding-bottom: 80px; /* Clearance for the transparent sticky nav row */
   }
 
   #lead-modal-overlay #lead-step-3 .budget-options::-webkit-scrollbar {
@@ -6036,13 +6080,22 @@ html[lang="ru"] .hero__badge-row {
     min-width: 0;
   }
 
-  /* Step content + sticky nav */
+  /* Step content: scrollable, nav always at bottom */
   #lead-modal-overlay .lead-step.active {
     display: flex;
     flex-direction: column;
+    flex: 1;
     min-height: 0;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
     padding-bottom: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  #lead-modal-overlay .lead-step.active::-webkit-scrollbar {
+    display: none;
   }
 
   #lead-modal-overlay .lead-step.active>*:not(.lead-nav) {
@@ -6170,6 +6223,33 @@ html[lang="ru"] .hero__badge-row {
   border-top: 1px solid var(--border);
 }
 
+/* Trust row — hidden on desktop (was in lead-modal-footer), shown in mobile sticky nav */
+.lead-trust-row {
+  display: none;
+}
+
+/* Individual trust item */
+.lead-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.lead-trust-item i {
+  width: 13px;
+  height: 13px;
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+/* Buttons row wrapper — on desktop just inherits flex from lead-nav */
+.lead-nav-buttons {
+  display: contents; /* invisible wrapper on desktop, buttons lay out normally */
+}
+
 .step-counter {
   font-size: 0.85rem;
   color: var(--text-muted);
@@ -6224,15 +6304,9 @@ html[lang="ru"] .hero__badge-row {
 
 .addon-toggle-group {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
   gap: 0.75rem;
   margin-top: 0.5rem;
-}
-
-@media (min-width: 480px) {
-  .addon-toggle-group {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .contact-methods {
@@ -6804,7 +6878,7 @@ html[lang="ru"] .hero__badge-row {
   }
 }
 
-/* Flatpickr — Azanov Retreat theme (our colors & fonts, fits viewport) */
+/* Flatpickr — Azanov Travel theme (our colors & fonts, fits viewport) */
 .flatpickr-calendar {
   font-family: var(--font-body) !important;
   background: var(--bg-2) !important;
@@ -7338,4 +7412,176 @@ span.flatpickr-weekday {
   color: var(--gold);
   line-height: 1;
   margin-bottom: 0.5rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE CALENDAR PANEL — slides in from right inside the modal
+═══════════════════════════════════════════════════════════ */
+
+/* Hidden by default, shown only on mobile */
+#mobile-cal-panel {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* The sliding calendar panel — positioned inside lead-modal-card */
+  #mobile-cal-panel {
+    display: block;
+    position: absolute;
+    inset: 0;
+    border-radius: 20px 20px 0 0;
+    background: var(--bg-2);
+    z-index: 10;
+    overflow: hidden;
+    transform: translateX(100%);
+    transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
+    pointer-events: none;
+  }
+
+  #mobile-cal-panel.open {
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  /* Header: title + close button */
+  .mobile-cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 20px 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mobile-cal-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  .mobile-cal-close {
+    background: rgba(255,255,255,0.07);
+    border: none;
+    color: var(--text);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .mobile-cal-close:hover {
+    background: rgba(255,255,255,0.14);
+  }
+
+  /* Body: scrollable area containing the calendar */
+  .mobile-cal-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem 12px 1.5rem;
+    overflow-y: auto;
+  }
+
+  /* ─── Make flatpickr full-width & transparent inside the panel ─── */
+  #mobile-cal-body .flatpickr-calendar {
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Larger touch-friendly day cells */
+  #mobile-cal-body .flatpickr-day {
+    height: 46px !important;
+    line-height: 46px !important;
+    font-size: 0.95rem !important;
+    border-radius: 10px !important;
+    margin: 2px 1px !important;
+  }
+
+  /* Past dates: already disabled by minDate — just style them as truly muted */
+  #mobile-cal-body .flatpickr-day.flatpickr-disabled,
+  #mobile-cal-body .flatpickr-day.prevMonthDay,
+  #mobile-cal-body .flatpickr-day.nextMonthDay {
+    opacity: 0.2 !important;
+    cursor: not-allowed !important;
+    color: var(--text-muted) !important;
+  }
+
+  /* Selected day */
+  #mobile-cal-body .flatpickr-day.selected {
+    background: var(--teal) !important;
+    color: var(--bg) !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
+  }
+
+  /* Today indicator */
+  #mobile-cal-body .flatpickr-day.today:not(.selected) {
+    border: 1.5px solid var(--teal) !important;
+    color: var(--teal) !important;
+    background: transparent !important;
+  }
+
+  /* Hover state */
+  #mobile-cal-body .flatpickr-day:hover:not(.selected):not(.flatpickr-disabled) {
+    background: rgba(100, 220, 200, 0.12) !important;
+    color: var(--text) !important;
+  }
+
+  /* Month header — bigger, centered */
+  #mobile-cal-body .flatpickr-months {
+    padding: 0.5rem 0 1rem;
+  }
+
+  #mobile-cal-body .flatpickr-month {
+    height: 44px !important;
+  }
+
+  #mobile-cal-body .flatpickr-current-month {
+    font-size: 1.1rem !important;
+    padding-top: 6px !important;
+  }
+
+  /* Week day labels */
+  #mobile-cal-body span.flatpickr-weekday {
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted) !important;
+  }
+
+  /* Nav arrows */
+  #mobile-cal-body .flatpickr-prev-month,
+  #mobile-cal-body .flatpickr-next-month {
+    padding: 8px !important;
+  }
+
+  #mobile-cal-body .flatpickr-prev-month svg,
+  #mobile-cal-body .flatpickr-next-month svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* Remove the default flatpickr triangle arrow */
+  #mobile-cal-body .flatpickr-calendar::before,
+  #mobile-cal-body .flatpickr-calendar::after {
+    display: none !important;
+  }
 }

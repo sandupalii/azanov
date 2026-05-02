@@ -4,6 +4,7 @@ import express from 'express';
 import sendLead from './api/send-lead.js';
 import sendCrypto from './api/send-crypto.js';
 import sendReview from './api/send-review.js';
+import { isAmoCrmConfigured, amoCrmGetLeadFields, amoCrmGetPipelines, ENV } from './api/config.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -20,11 +21,42 @@ app.post('/api/send-crypto', sendCrypto);
 app.post('/api/send-review', sendReview);
 
 app.get('/api/health', (_req, res) => {
-  res.json({ ok: true, ts: new Date().toISOString() });
+  const tgOk = !!(ENV.TELEGRAM_BOT_TOKEN && ENV.TELEGRAM_LEAD_CHAT_ID);
+  const crmOk = isAmoCrmConfigured();
+  res.json({
+    ok: true,
+    ts: new Date().toISOString(),
+    telegram: tgOk ? '✓ configured' : '✗ missing TELEGRAM_BOT_TOKEN or TELEGRAM_LEAD_CHAT_ID',
+    amocrm: crmOk ? `✓ configured (${ENV.AMOCRM_DOMAIN})` : '✗ missing AMOCRM_DOMAIN or AMOCRM_ACCESS_TOKEN',
+  });
+});
+
+// Diagnostic: returns real AmoCRM custom field IDs and pipeline IDs
+// Use this to verify the hardcoded field IDs in send-lead.js are correct
+app.get('/api/health-crm', async (_req, res) => {
+  if (!isAmoCrmConfigured()) {
+    return res.status(503).json({ ok: false, error: 'AmoCRM not configured — set AMOCRM_DOMAIN and AMOCRM_ACCESS_TOKEN env vars' });
+  }
+  try {
+    const [fields, pipelines] = await Promise.all([
+      amoCrmGetLeadFields(),
+      amoCrmGetPipelines(),
+    ]);
+    return res.json({
+      ok: true,
+      domain: ENV.AMOCRM_DOMAIN,
+      leadFields: fields.data?._embedded?.custom_fields || fields.data || fields,
+      pipelines: pipelines.data?._embedded?.pipelines || pipelines.data || pipelines,
+      configuredPipelineId: ENV.AMOCRM_PIPELINE_ID,
+      configuredStatusId: ENV.AMOCRM_STATUS_ID,
+    });
+  } catch (err) {
+    return res.status(500).json({ ok: false, error: err.message });
+  }
 });
 
 app.get('/api', (_req, res) => {
-  res.json({ ok: true, message: 'API is working' });
+  res.json({ ok: true, message: 'API is working. Routes: POST /api/send-lead, GET /api/health, GET /api/health-crm' });
 });
 
 // 404 only for unknown /api routes
@@ -35,12 +67,8 @@ app.use('/api', (_req, res) => {
 // Start server LAST
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`✅ API server running on http://localhost:${PORT}`);
-  const hasToken = !!process.env.TELEGRAM_BOT_TOKEN;
-  console.log(`   Telegram: ${hasToken ? '✓ configured' : '✗ TELEGRAM_BOT_TOKEN missing'}`);
-  if (hasToken) {
-    console.log(`   TELEGRAM_LEAD_CHAT_ID:   ${process.env.TELEGRAM_LEAD_CHAT_ID || process.env.TELEGRAM_CHAT_ID || '✗ missing'}`);
-    console.log(`   TELEGRAM_CRYPTO_CHAT_ID: ${process.env.TELEGRAM_CRYPTO_CHAT_ID || process.env.TELEGRAM_LEAD_CHAT_ID || process.env.TELEGRAM_CHAT_ID || '○ fallback to LEAD'}`);
-    console.log(`   TELEGRAM_REVIEW_CHAT_ID: ${process.env.TELEGRAM_REVIEW_CHAT_ID || process.env.TELEGRAM_LEAD_CHAT_ID || process.env.TELEGRAM_CHAT_ID || '○ fallback to LEAD'}`);
-  }
-  console.log(`   AmoCRM:   ${process.env.AMOCRM_DOMAIN && process.env.AMOCRM_ACCESS_TOKEN ? '✓ configured' : '○ not configured (optional)'}`);
+  const tgOk = !!(ENV.TELEGRAM_BOT_TOKEN && ENV.TELEGRAM_LEAD_CHAT_ID);
+  console.log(`   Telegram: ${tgOk ? '✓ configured' : '✗ TELEGRAM_BOT_TOKEN or TELEGRAM_LEAD_CHAT_ID missing'}`);
+  console.log(`   AmoCRM:   ${isAmoCrmConfigured() ? `✓ ${ENV.AMOCRM_DOMAIN}` : '✗ not configured'}`);
+  console.log(`   Diagnostic: GET http://localhost:${PORT}/api/health-crm`);
 });

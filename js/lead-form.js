@@ -22,6 +22,7 @@
         tourPreset: null,
         tourDurationDays: 1,
         servicePreset: null,
+        bikeType: null,
         maxGuests: null,
         groupSize: 6,
         fastTrackGuests: 2,
@@ -40,8 +41,33 @@
     };
 
     let currentStep = 1;
-    const TOTAL_STEPS = 5;
     let leadDateRangePicker = null;
+
+    // ── Flow helpers ──────────────────────────────────────────────
+    // Returns true when a specific item (yacht/villa/tour/package) was pre-selected.
+    // In this mode we skip group-size and budget — just dates → contacts.
+    function isSpecificPreset() {
+        return !!(formData.yachtPreset || formData.villaPreset || formData.tourPreset || formData.packageName);
+    }
+
+    // Returns ordered HTML step IDs for the current wizard context.
+    // Step 5 = success screen (always last, never counted in the progress counter).
+    function getFlowSteps() {
+        if (isSpecificPreset()) {
+            // Specific item: dates (2) → contacts (4) → success (5)
+            return [2, 4, 5];
+        }
+        // Generic: type (1) → group+dates (2) → budget (3) → contacts (4) → success (5)
+        return [1, 2, 3, 4, 5];
+    }
+
+    // Returns "X / Y" label for the step counter (excludes success step).
+    function getStepCounter() {
+        const steps = getFlowSteps().filter(s => s < 5);
+        const idx = steps.indexOf(currentStep);
+        if (idx < 0) return '';
+        return `${idx + 1} / ${steps.length}`;
+    }
 
     function updateDateTriggerText(dateStr) {
         const trigger = document.getElementById('lead-date-trigger');
@@ -51,14 +77,13 @@
         if (trigger) trigger.classList.toggle('has-value', !!(dateStr && dateStr.trim()));
     }
 
-    // Цены допуслуг: { perNight: X } = X * nights, { fixed: X } = фикс. сумма
+    // Addon prices: { perNight: X } = X × nights, { fixed: X } = flat fee
     const ADDON_PRICES = {
-        photo: { perNight: 12000 },
-        chef: { perNight: 15000 },
+        photo:     { perNight: 12000 },
+        chef:      { perNight: 15000 },
         fasttrack: { fixed: 8000 },
-        fishing: { fixed: 25000 },
-        massage: { perNight: 6000 },
-        bbq: { perNight: 10000 },
+        fishing:   { fixed: 25000 },
+        massage:   { perNight: 6000 },
     };
 
     function syncFloatingLabels() {
@@ -97,6 +122,7 @@
         formData.tourPreset = null;
         formData.tourDurationDays = 1;
         formData.servicePreset = null;
+        formData.bikeType = null;
         formData.maxGuests = null;
         formData.fastTrackGuests = 2;
         formData.fastTrackTime = '09:00';
@@ -137,6 +163,11 @@
             formData.nights = '5';
         } else {
             formData.experienceType = null;
+        }
+
+        // Bikes default to 1 day
+        if (formData.experienceType === 'bikes') {
+            formData.nights = formData.nights || '1';
         }
 
         currentStep = formData.experienceType && formData.experienceType !== 'retreat' ? 2 : 1;
@@ -198,6 +229,7 @@
         formData.tourPreset = null;
         formData.tourDurationDays = 1;
         formData.servicePreset = null;
+        formData.bikeType = null;
         formData.maxGuests = null;
 
         document.querySelectorAll('.choice-btn, .choice-btn--sm').forEach(b => b.classList.remove('selected'));
@@ -248,6 +280,7 @@
             // Step 2: sync guests + nights, default dates, update sidebar summary
             if (currentStep === 2) {
                 // Dynamic title and summary label by experience type
+                const step2Label = activeEl.querySelector('.lead-step__label');
                 const step2Title = activeEl.querySelector('.lead-step__title');
                 const summaryTitle = document.querySelector('#lead-step-2-summary .lead-step-2-summary__title');
                 const step2Titles = {
@@ -262,12 +295,25 @@
                 const step2TitleSet = step2Titles[formData.experienceType] || step2Titles.retreat;
                 if (step2Title) step2Title.textContent = step2TitleSet.question;
                 if (summaryTitle) summaryTitle.textContent = step2TitleSet.summary;
+                // Update step label: for specific presets, don't say "детали группы"
+                if (step2Label) {
+                    const stepNum = getStepCounter();
+                    const isSpec = isSpecificPreset();
+                    const labelText = isSpec ? `${stepNum ? stepNum + ' — ' : ''}Дата заказа` : (t('form.step2.label') || 'Шаг 2 — Детали группы');
+                    step2Label.textContent = labelText;
+                }
 
                 // Toggle between tile grid (default) and stepper (Fast Track / concierge)
                 const isConcierge = formData.experienceType === 'concierge';
+                const specificPreset = isSpecificPreset();
                 const guestsGrid = document.getElementById('lead-step-2-guests');
+                const guestsLabel = activeEl.querySelector('.lead-step-2-main > .form-group > .form-label');
                 const stepperWrap = document.getElementById('lead-step-2-guests-stepper-wrap');
-                if (guestsGrid) guestsGrid.style.display = isConcierge ? 'none' : '';
+                // Hide group size section ONLY for villa/yacht/package (price per unit, not per person)
+                // Tours still need guest count — price is per person
+                const hideGuests = isConcierge || (!!(formData.yachtPreset || formData.villaPreset || formData.packageName));
+                if (guestsGrid) guestsGrid.style.display = hideGuests ? 'none' : '';
+                if (guestsLabel) guestsLabel.style.display = hideGuests ? 'none' : '';
                 if (stepperWrap) stepperWrap.classList.toggle('visible', isConcierge);
 
                 if (isConcierge) {
@@ -279,7 +325,7 @@
                     formData.groupSize = formData.fastTrackGuests;
                     const hiddenGroup = document.getElementById('lead-group-size');
                     if (hiddenGroup) hiddenGroup.value = formData.fastTrackGuests;
-                } else {
+                } else if (!hideGuests) {
                     const maxGuests = formData.experienceType === 'yacht' && formData.maxGuests ? formData.maxGuests : 28;
                     const g = Math.max(2, Math.min(maxGuests, parseInt(formData.groupSize, 10) || 6));
                     formData.groupSize = g;
@@ -291,30 +337,34 @@
                     });
                 }
 
-                // Toggle time selector for Fast Track
+                // Toggle time selector for Fast Track + contextual date label by type
                 const ftTimeWrap = document.getElementById('lead-ft-time-wrap');
                 const datesLabel = activeEl.querySelector('.lead-step-2-dates-main .form-label');
                 if (isConcierge) {
                     if (ftTimeWrap) ftTimeWrap.style.display = 'block';
                     if (datesLabel) datesLabel.textContent = t('form.step2.arrivalDateLabel');
-                    // Populate time options if empty
                     const ftSel = document.getElementById('lead-ft-time-select');
-                    if (ftSel && ftSel.options.length === 0) {
-                        buildTimeOptions(ftSel);
-                    }
+                    if (ftSel && ftSel.options.length === 0) buildTimeOptions(ftSel);
                     if (ftSel) ftSel.value = formData.fastTrackTime;
                 } else {
                     if (ftTimeWrap) ftTimeWrap.style.display = 'none';
-                    if (datesLabel) datesLabel.setAttribute('data-i18n', 'form.step2.datesLabel');
-                    if (datesLabel) datesLabel.textContent = t('form.step2.datesLabel');
+                    // Context-aware date label
+                    const dateLabelMap = {
+                        villa:     'Дата заезда — дата выезда',
+                        package:   'Дата заезда — дата выезда',
+                        retreat:   'Дата заезда — дата выезда',
+                        yacht:     'Дата аренды яхты',
+                        bikes:     'Дата начала аренды',
+                        tour:      'Дата тура (старт)',
+                    };
+                    if (datesLabel) datesLabel.textContent = dateLabelMap[formData.experienceType] || 'Выберите даты';
                 }
 
-                // Show nights chips for package and yacht (different chip sets)
+                // Show nights chips for package, yacht, bikes (different chip sets per type)
                 const nightsSection = document.getElementById('lead-nights-section');
                 const chipsContainer = document.querySelector('#lead-step-2 .lead-nights-chips');
                 if (nightsSection) {
-                    // Hide nights chips for concierge/Fast Track (no nights concept) and for retreat/villa/bikes/tour
-                    const showNights = (formData.experienceType === 'package' || formData.experienceType === 'yacht') && !isConcierge;
+                    const showNights = (formData.experienceType === 'package' || formData.experienceType === 'yacht' || formData.experienceType === 'bikes') && !isConcierge;
                     nightsSection.classList.toggle('lead-nights-section--hidden', !showNights);
                 }
                 if (chipsContainer) {
@@ -344,6 +394,21 @@
                         `;
                         chipsContainer.querySelectorAll('.choice-btn--sm').forEach(btn => {
                             btn.classList.toggle('selected', String(btn.getAttribute('data-nights')) === String(formData.nights));
+                        });
+                    } else if (formData.experienceType === 'bikes') {
+                        const bikeDayChips = [
+                            { n: '1', label: t('form.step2.bikes1day')   || '1 день' },
+                            { n: '2', label: t('form.step2.bikes2days')  || '2 дня' },
+                            { n: '3', label: t('form.step2.bikes3days')  || '3 дня' },
+                            { n: '5', label: t('form.step2.bikes5days')  || '5 дней' },
+                            { n: '7', label: t('form.step2.bikes1week')  || '1 неделя' },
+                            { n: '30', label: t('form.step2.bikesMonth') || 'Месяц' },
+                        ];
+                        chipsContainer.innerHTML = bikeDayChips.map(c =>
+                            `<button type="button" class="choice-btn choice-btn--sm" data-nights="${c.n}" onclick="setNightsFromChip(${c.n}, this)">${c.label}</button>`
+                        ).join('');
+                        chipsContainer.querySelectorAll('.choice-btn--sm').forEach(btn => {
+                            btn.classList.toggle('selected', String(btn.getAttribute('data-nights')) === String(formData.nights || '1'));
                         });
                     }
                 }
@@ -381,16 +446,35 @@
                         if (fromInput) fromInput.value = formData.dateFrom;
                         if (toInput) toInput.value = formData.dateTo;
                         leadDateRangePicker.setDate(today);
-                        // Display: single date for concierge, range for others
-                        if (isConcierge) {
+                        // Display: single date for tour/concierge, range for others
+                        const isTour = formData.experienceType === 'tour';
+                        if (isConcierge || isTour) {
                             if (dateRangeInput) dateRangeInput.value = formatDateSingle(today);
                         } else {
                             if (dateRangeInput) dateRangeInput.value = formatDateRangeDisplay(today, end);
                         }
                     }
                 }
+                // Show / hide bike-type selector
+                const bikeTypeWrap = document.getElementById('lead-step-2-bike-type');
+                if (bikeTypeWrap) {
+                    bikeTypeWrap.style.display = formData.experienceType === 'bikes' ? '' : 'none';
+                    // Sync selected state
+                    bikeTypeWrap.querySelectorAll('[data-bike-type]').forEach(btn => {
+                        btn.classList.toggle('selected', btn.getAttribute('data-bike-type') === formData.bikeType);
+                    });
+                }
+
                 const step2Next = document.getElementById('lead-step-2-next');
-                if (step2Next) step2Next.disabled = isConcierge ? !formData.dateFrom : !(formData.dateFrom && formData.dateTo);
+                if (step2Next) {
+                    // For specific presets + tours: only start date needed
+                    // For concierge: only arrival date needed
+                    // For all others (generic): both dateFrom and dateTo required
+                    const needsBothDates = !specificPreset && !isConcierge && formData.experienceType !== 'tour';
+                    step2Next.disabled = needsBothDates
+                        ? !(formData.dateFrom && formData.dateTo)
+                        : !formData.dateFrom;
+                }
                 updateStep2Summary();
                 updateStep3State();
                 updateDateClearVisibility();
@@ -467,10 +551,25 @@
 
                 // Always update addon prices and total counter when entering step 3
                 updateAddonPrices();
-                // Reset total price display (will re-calculate via updateAddonPrices)
-                const totalEl = document.getElementById('lead-step3-total-price');
-                if (totalEl) totalEl.style.display = 'none';
-                // Update total based on current base price (even before any addon is selected)
+                // Filter addons by experience type
+                const ADDON_TYPES = {
+                    photo:     ['package', 'retreat', 'yacht', 'villa', 'tour', 'bikes', null],
+                    chef:      ['package', 'retreat', 'villa', null],
+                    fasttrack: ['package', 'retreat', 'bikes', 'concierge', null],
+                    fishing:   ['package', 'retreat', 'yacht', null],
+                    massage:   ['package', 'retreat', 'villa', null],
+                    // bbq removed — handled separately in conversation
+                };
+                document.querySelectorAll('.addon-toggle-btn[data-addon]').forEach(btn => {
+                    const addon = btn.getAttribute('data-addon');
+                    const allowed = ADDON_TYPES[addon] || [];
+                    const show = allowed.includes(formData.experienceType);
+                    btn.style.display = show ? '' : 'none';
+                    if (!show && btn.classList.contains('selected')) {
+                        btn.classList.remove('selected');
+                    }
+                });
+                // Reset total based on current base price
                 updateTotalPrice();
             }
 
@@ -498,14 +597,18 @@
             }
         }
 
-        // Update progress (story-style segments)
+        // Update progress segments
         document.querySelectorAll('.lead-progress-segment').forEach((seg, i) => {
             seg.classList.toggle('filled', i + 1 <= currentStep);
         });
         const storiesEl = document.querySelector('.lead-progress-stories');
         if (storiesEl) storiesEl.setAttribute('aria-valuenow', currentStep);
 
-        // Update step counter (handled statically via data-i18n now)
+        // Dynamic step counter (X / Y)
+        const counter = getStepCounter();
+        document.querySelectorAll('.step-counter').forEach(el => {
+            if (counter) el.textContent = counter;
+        });
 
         if (window.lucide) lucide.createIcons();
         syncFloatingLabels();
@@ -536,6 +639,7 @@
             villaPreset: formData.villaPreset || '',
             tourPreset: formData.tourPreset || '',
             servicePreset: formData.servicePreset || '',
+            bikeType: formData.bikeType || '',
             groupSize: formData.groupSize,
             dateFrom: formData.dateFrom,
             dateTo: formData.dateTo,
@@ -545,7 +649,7 @@
             extras: formData.extras,
             notes: formData.notes || '',
             contactMethod: formData.contactMethod,
-            source: 'azanovretreat.com',
+            source: 'azanovtravel.com',
         };
 
         // Show subtle loading state on submit button if present
@@ -569,7 +673,7 @@
 
     window.nextStep = function () {
         if (!validateStep(currentStep)) return;
-        // Step 4 = contact (name, phone): collect fields then fire lead to API
+        // Collect contact fields + fire API when leaving the contacts step (4)
         if (currentStep === 4) {
             const nameEl = document.getElementById('lead-name');
             const phoneEl = document.getElementById('lead-phone');
@@ -579,23 +683,25 @@
             if (phoneEl) formData.phone = phoneEl.value.trim();
             if (emailEl) formData.email = emailEl.value.trim();
             if (notesEl) formData.notes = notesEl.value.trim();
-            // Always sync hidden inputs before sending
             formData.groupSize = document.getElementById('lead-group-size')?.value || formData.groupSize;
             formData.dateFrom = document.getElementById('lead-date-from')?.value || formData.dateFrom || '';
             formData.dateTo = document.getElementById('lead-date-to')?.value || formData.dateTo || '';
-            formData.nights = document.getElementById('lead-nights')?.value || formData.nights || '5';
+            formData.nights = document.getElementById('lead-nights')?.value || formData.nights || '1';
             sendLeadToApi();
         }
-        if (currentStep < TOTAL_STEPS) {
-            currentStep++;
+        const steps = getFlowSteps();
+        const idx = steps.indexOf(currentStep);
+        if (idx >= 0 && idx < steps.length - 1) {
+            currentStep = steps[idx + 1];
             renderStep();
         }
     };
 
     window.prevStep = function () {
-        // If we skipped step 1, prev from 2 goes back to 1 to allow choice change
-        if (currentStep > 1) {
-            currentStep--;
+        const steps = getFlowSteps();
+        const idx = steps.indexOf(currentStep);
+        if (idx > 0) {
+            currentStep = steps[idx - 1];
             renderStep();
         }
     };
@@ -604,6 +710,14 @@
         formData.experienceType = type;
         document.querySelectorAll('.choice-btn').forEach(b => b.classList.remove('selected'));
         el.classList.add('selected');
+    };
+
+    window.setBikeType = function (type, el) {
+        formData.bikeType = type;
+        const grid = document.getElementById('lead-step-2-bike-type');
+        if (grid) grid.querySelectorAll('[data-bike-type]').forEach(b => b.classList.remove('selected'));
+        if (el) el.classList.add('selected');
+        updateStep2Summary();
     };
 
     window.selectBudget = function (val, el) {
@@ -791,7 +905,7 @@
     function formatDateRangeDisplay(fromD, toD) {
         const monthsCap = (window.i18n && window.i18n.t('form.monthsCap')) || ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
         const monthsLower = (window.i18n && window.i18n.t('form.monthsGenitive')) || ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-        const by = t('form.dateRangeBy');
+        const by = (t('form.dateRangeBy') || '').startsWith('form.') ? ' — ' : t('form.dateRangeBy');
         return `${fromD.getDate()} ${monthsCap[fromD.getMonth()]} ${fromD.getFullYear()}${by}${toD.getDate()} ${monthsLower[toD.getMonth()]} ${toD.getFullYear()}`;
     }
 
@@ -852,6 +966,11 @@
             const yachtLabels = { 0: t('form.step2.yacht1day'), 1: t('form.step2.yacht2days'), 2: t('form.step2.yacht3days'), 5: t('form.step2.yacht5nights'), 7: t('form.step2.yacht7nights') };
             return yachtLabels[parseInt(formData.nights, 10)] ?? t('form.step2.nightsFormat').replace('{n}', formData.nights);
         }
+        if (formData.experienceType === 'bikes') {
+            const bikeLabels = { 1: t('form.step2.bikes1day') || '1 день', 2: t('form.step2.bikes2days') || '2 дня', 3: t('form.step2.bikes3days') || '3 дня', 5: t('form.step2.bikes5days') || '5 дней', 7: t('form.step2.bikes1week') || '1 неделя', 30: t('form.step2.bikesMonth') || 'Месяц' };
+            const n = parseInt(formData.nights, 10);
+            return bikeLabels[n] || (t('form.step2.bikesDaysFormat') || '{n} дн.').replace('{n}', formData.nights);
+        }
         const nightsLabels = { 5: t('form.step2.package5nights'), 7: t('form.step2.package7nights'), 10: t('form.step2.package10nights'), 14: t('form.step2.package2weeks'), 30: t('form.step2.packageMonth') };
         return nightsLabels[parseInt(formData.nights, 10)] || t('form.step2.nightsFormat').replace('{n}', formData.nights);
     }
@@ -868,7 +987,17 @@
             itemEl.classList.toggle('has-value', !!itemName);
         }
         const effectiveGuests = formData.experienceType === 'concierge' ? formData.fastTrackGuests : formData.groupSize;
-        if (guestsEl) guestsEl.textContent = effectiveGuests ? t('form.step2.guestsCount').replace('{n}', effectiveGuests) : '—';
+        if (guestsEl) {
+            const specificPreset = isSpecificPreset();
+            const guestsRow = guestsEl.closest('.lead-step-2-summary__row, li, p') || guestsEl.parentElement;
+            if (specificPreset) {
+                guestsEl.textContent = '—';
+                if (guestsRow) guestsRow.style.display = 'none';
+            } else {
+                if (guestsRow) guestsRow.style.display = '';
+                guestsEl.textContent = effectiveGuests ? t('form.step2.guestsCount').replace('{n}', effectiveGuests) : '—';
+            }
+        }
 
         if (nightsEl) {
             if (formData.experienceType === 'concierge') {
@@ -937,26 +1066,28 @@
             showError(t('form.errorSelectExperience')); valid = false;
         }
         if (step === 2) {
-            if (formData.experienceType !== 'concierge' && !formData.groupSize) {
+            // For specific presets: only dates required (no group size check)
+            const specificPreset = isSpecificPreset();
+            if (!specificPreset && formData.experienceType !== 'concierge' && !formData.groupSize) {
                 showError(t('form.errorSelectGuests')); valid = false;
             }
             if (formData.experienceType === 'concierge') {
                 if (!formData.dateFrom) {
                     showError(t('form.errorSelectDates')); valid = false;
                 }
-            } else if (!formData.dateFrom || !formData.dateTo) {
+            } else if (!formData.dateFrom) {
                 showError(t('form.errorSelectDates')); valid = false;
             }
         }
-        // Step 3: budget is only required when we don't have a fixed/known price
-        if (step === 3) {
+        // Step 3 (budget) — skip entirely for specific presets (they never hit this step)
+        if (step === 3 && !isSpecificPreset()) {
             const estPrice = getEstimatedPrice();
             const hasFixedPrice = typeof estPrice === 'number' && estPrice > 0;
             if (!formData.budget && !hasFixedPrice) {
                 showError(t('form.errorSelectBudget') || 'Пожалуйста, выберите бюджет'); valid = false;
             }
         }
-        // Step 4 = contact: require name and phone before sending
+        // Step 4 = contacts: require name + phone
         if (step === 4) {
             const nameEl = document.getElementById('lead-name');
             const phoneEl = document.getElementById('lead-phone');
@@ -1045,20 +1176,33 @@
         if (formData.villaPreset) msg += `🏡 ${t('wa.villa')}: ${formData.villaPreset}\n`;
         if (formData.tourPreset) msg += `🎫 ${t('wa.tour')}: ${formData.tourPreset}\n`;
         if (formData.servicePreset && !formData.tourPreset) msg += `🛠️ ${t('wa.service')}: ${formData.servicePreset}\n`;
-        msg += `\n👥 ${t('wa.guests')}: ${t('wa.guestsCount').replace('{n}', formData.groupSize)}\n`;
+        if (formData.experienceType === 'bikes' && formData.bikeType) {
+            const bikeLabels = { scooter: '🛵 Скутер', motorbike: '🏍️ Мотобайк', car: '🚗 Автомобиль', atv: '🏕️ Квадроцикл' };
+            msg += `🛵 ${t('wa.bikeType') || 'Тип ТС'}: ${bikeLabels[formData.bikeType] || formData.bikeType}\n`;
+        }
+        if (formData.groupSize && formData.experienceType !== 'concierge') {
+            msg += `\n👥 ${t('wa.guests')}: ${t('wa.guestsCount').replace('{n}', formData.groupSize)}\n`;
+        }
         if (formData.experienceType === 'concierge') {
             msg += `🗓️ ${t('wa.arrival')}: ${formData.dateFrom || t('wa.tbd')}\n`;
             msg += `🕐 ${t('wa.arrivalTime')}: ${formData.fastTrackTime || t('wa.tbd')}\n`;
-        } else {
-            msg += `🗓️ ${t('wa.checkIn')}: ${formData.dateFrom || t('wa.tbd')} → ${t('wa.checkOut')}: ${formData.dateTo || t('wa.tbd')}\n`;
-        }
-        if (formData.experienceType === 'tour') {
-            const durLabel = formData.tourDurationDays === 1 ? t('form.step2.tour1day') : (formData.tourDurationDays === 2 ? t('form.step2.tour2days') : t('form.step2.tourNdays').replace('{n}', formData.tourDurationDays));
-            msg += `📅 ${t('wa.duration')}: ${durLabel}\n`;
+        } else if (formData.experienceType === 'bikes') {
+            msg += `📅 Начало аренды: ${formData.dateFrom || t('wa.tbd')}\n`;
+            msg += `📅 Возврат: ${formData.dateTo || formData.dateFrom || t('wa.tbd')}\n`;
+            const bikeLabels = { 1: '1 день', 2: '2 дня', 3: '3 дня', 5: '5 дней', 7: '1 неделя', 30: 'Месяц' };
+            const n = parseInt(formData.nights, 10);
+            msg += `⏱️ Срок: ${bikeLabels[n] || `${formData.nights} дн.`}\n`;
+        } else if (formData.experienceType === 'tour') {
+            msg += `📅 Дата тура: ${formData.dateFrom || t('wa.tbd')}\n`;
+            if (formData.tourDurationDays > 1) {
+                msg += `⏱️ Длительность: ${formData.tourDurationDays} дня\n`;
+            }
         } else if (formData.experienceType === 'yacht') {
             const yachtLabels = { 0: t('form.step2.yacht1day'), 1: t('form.step2.yacht2days'), 2: t('form.step2.yacht3days'), 5: t('form.step2.yacht5nights'), 7: t('form.step2.yacht7nights') };
+            msg += `🗓️ Дата аренды: ${formData.dateFrom || t('wa.tbd')}\n`;
             msg += `📅 ${t('wa.duration')}: ${yachtLabels[parseInt(formData.nights, 10)] ?? t('form.step2.nightsFormat').replace('{n}', formData.nights)}\n`;
         } else {
+            msg += `🗓️ ${t('wa.checkIn')}: ${formData.dateFrom || t('wa.tbd')} → ${t('wa.checkOut')}: ${formData.dateTo || t('wa.tbd')}\n`;
             msg += `🌙 ${t('wa.nights')}: ${formData.nights}\n`;
         }
         const estPrice = getEstimatedPrice();
@@ -1144,68 +1288,145 @@
                         }
                     }
 
+                    const isMobileDevice = () => window.innerWidth <= 768;
+
+                    // ─── Shared onChange handler (desktop + mobile inline) ───────────────
+                    function handleDateSelection(selectedDates) {
+                        if (selectedDates.length !== 1) return;
+                        const checkIn = selectedDates[0];
+                        let checkOut;
+                        if (formData.experienceType === 'concierge') {
+                            checkOut = new Date(checkIn);
+                        } else if (formData.experienceType === 'tour') {
+                            const days = formData.tourDurationDays || 1;
+                            checkOut = new Date(checkIn);
+                            checkOut.setDate(checkOut.getDate() + Math.max(0, days - 1));
+                            formData.nights = days === 1 ? '0' : String(days - 1);
+                        } else if (formData.experienceType === 'yacht' && (parseInt(formData.nights, 10) || 0) === 0) {
+                            checkOut = new Date(checkIn);
+                        } else {
+                            const nights = parseInt(formData.nights, 10) || 5;
+                            checkOut = new Date(checkIn);
+                            checkOut.setDate(checkOut.getDate() + nights);
+                        }
+                        formData.dateFrom = formatDateDMY(checkIn);
+                        formData.dateTo = formatDateDMY(checkOut);
+                        const fromInput = document.getElementById('lead-date-from');
+                        const toInput = document.getElementById('lead-date-to');
+                        if (fromInput) fromInput.value = formData.dateFrom;
+                        if (toInput) toInput.value = formData.dateTo;
+                        const showSingle = formData.experienceType === 'concierge' || formData.experienceType === 'tour';
+                        dateRangeInput.value = showSingle
+                            ? formatDateSingle(checkIn)
+                            : formatDateRangeDisplay(checkIn, checkOut);
+                        updateStep2Summary();
+                        updateStep3State();
+                        const step2Next = document.getElementById('lead-step-2-next');
+                        if (step2Next) {
+                            const specificPreset = isSpecificPreset();
+                            const needsBothDates = !specificPreset && formData.experienceType !== 'concierge' && formData.experienceType !== 'tour';
+                            step2Next.disabled = needsBothDates
+                                ? !(formData.dateFrom && formData.dateTo)
+                                : !formData.dateFrom;
+                        }
+                        updateDateClearVisibility();
+                    }
+
+                    // ─── Desktop flatpickr (dropdown) ────────────────────────────────────
                     leadDateRangePicker = flatpickr(dateRangeInput, {
                         mode: 'single',
                         minDate: 'today',
                         maxDate: maxDate,
                         dateFormat: 'd.m.Y',
                         locale: (window.i18n && window.i18n.lang) || 'ru',
-                        clickOpens: true,
+                        clickOpens: false,  // we control open manually
                         allowInput: false,
                         appendTo: document.body,
                         position: 'below center',
-                        onReady: function (_, __, fp) {
-                            syncYearArrows(fp);
-                        },
+                        onReady: function (_, __, fp) { syncYearArrows(fp); },
                         onYearChange: function (_, __, fp) {
-                            // Clamp year within allowed range
                             if (fp.currentYear < minYear) { fp.changeYear(minYear); return; }
                             if (fp.currentYear > maxYear) { fp.changeYear(maxYear); return; }
                             syncYearArrows(fp);
                         },
-                        onMonthChange: function (_, __, fp) {
-                            syncYearArrows(fp);
-                        },
-                        onChange: function (selectedDates, dateStr) {
-                            if (selectedDates.length === 1) {
-                                const checkIn = selectedDates[0];
-                                let checkOut;
-                                if (formData.experienceType === 'concierge') {
-                                    checkOut = new Date(checkIn); // same day
-                                } else if (formData.experienceType === 'tour') {
-                                    const days = formData.tourDurationDays || 1;
-                                    checkOut = new Date(checkIn);
-                                    checkOut.setDate(checkOut.getDate() + Math.max(0, days - 1));
-                                    formData.nights = days === 1 ? '0' : String(days - 1);
-                                } else if (formData.experienceType === 'yacht' && (parseInt(formData.nights, 10) || 0) === 0) {
-                                    checkOut = new Date(checkIn);
-                                } else {
-                                    const nights = parseInt(formData.nights, 10) || 5;
-                                    checkOut = new Date(checkIn);
-                                    checkOut.setDate(checkOut.getDate() + nights);
-                                }
-                                formData.dateFrom = formatDateDMY(checkIn);
-                                formData.dateTo = formatDateDMY(checkOut);
-                                const fromInput = document.getElementById('lead-date-from');
-                                const toInput = document.getElementById('lead-date-to');
-                                if (fromInput) fromInput.value = formData.dateFrom;
-                                if (toInput) toInput.value = formData.dateTo;
-                                // Display: single date for concierge, range for others
-                                if (formData.experienceType === 'concierge') {
-                                    dateRangeInput.value = formatDateSingle(checkIn);
-                                } else {
-                                    dateRangeInput.value = formatDateRangeDisplay(checkIn, checkOut);
-                                }
-                                updateStep2Summary();
-                                updateStep3State();
-                                const step2Next = document.getElementById('lead-step-2-next');
-                                if (step2Next) step2Next.disabled = formData.experienceType === 'concierge'
-                                    ? !formData.dateFrom
-                                    : !(formData.dateFrom && formData.dateTo);
-                                updateDateClearVisibility();
-                            }
-                        }
+                        onMonthChange: function (_, __, fp) { syncYearArrows(fp); },
+                        onChange: function (selectedDates) { handleDateSelection(selectedDates); }
                     });
+
+                    // ─── Mobile inline flatpickr (inside slide panel) ────────────────────
+                    let mobileCalPicker = null;
+
+                    function openMobileCalendar() {
+                        // Lazy-create the panel
+                        let panel = document.getElementById('mobile-cal-panel');
+                        if (!panel) {
+                            const modalCard = document.querySelector('.lead-modal-card');
+                            if (!modalCard) return;
+                            panel = document.createElement('div');
+                            panel.id = 'mobile-cal-panel';
+                            panel.innerHTML = `
+                                <div class="mobile-cal-header">
+                                    <span class="mobile-cal-title">ВЫБЕРИТЕ ДАТУ</span>
+                                    <button type="button" class="mobile-cal-close" id="mobile-cal-close-btn">✕</button>
+                                </div>
+                                <div class="mobile-cal-body">
+                                    <input type="text" id="mobile-cal-input" style="position:absolute;opacity:0;pointer-events:none;width:1px;height:1px">
+                                </div>
+                            `;
+                            modalCard.appendChild(panel);
+
+                            document.getElementById('mobile-cal-close-btn').addEventListener('click', () => {
+                                closeMobileCalendar();
+                            });
+
+                            // Init inline flatpickr inside the panel body
+                            const mobileInput = document.getElementById('mobile-cal-input');
+                            mobileCalPicker = flatpickr(mobileInput, {
+                                mode: 'single',
+                                inline: true,
+                                minDate: 'today',
+                                maxDate: maxDate,
+                                dateFormat: 'd.m.Y',
+                                locale: (window.i18n && window.i18n.lang) || 'ru',
+                                appendTo: panel.querySelector('.mobile-cal-body'),
+                                onChange: function (selectedDates) {
+                                    handleDateSelection(selectedDates);
+                                    // Sync to desktop picker so it shows the selected date
+                                    if (leadDateRangePicker && selectedDates[0]) {
+                                        leadDateRangePicker.setDate(selectedDates[0], false);
+                                    }
+                                    // Close panel after short delay (let user see highlight)
+                                    setTimeout(closeMobileCalendar, 220);
+                                }
+                            });
+                        }
+
+                        // Sync current date selection to mobile picker
+                        if (mobileCalPicker && formData.dateFrom) {
+                            const [d, m, y] = formData.dateFrom.split('.');
+                            mobileCalPicker.setDate(`${y}-${m}-${d}`, false);
+                        }
+
+                        // Update title
+                        const titleEl = panel.querySelector('.mobile-cal-title');
+                        if (titleEl) {
+                            const labels = {
+                                bikes: 'ДАТА НАЧАЛА АРЕНДЫ',
+                                tour: 'ДАТА ТУРА',
+                                villa: 'ДАТА ЗАЕЗДА',
+                                yacht: 'ДАТА АРЕНДЫ ЯХТЫ',
+                            };
+                            titleEl.textContent = labels[formData.experienceType] || 'ВЫБЕРИТЕ ДАТУ';
+                        }
+
+                        panel.classList.add('open');
+                    }
+
+                    function closeMobileCalendar() {
+                        const panel = document.getElementById('mobile-cal-panel');
+                        if (panel) panel.classList.remove('open');
+                    }
+
                 } catch (e) {
                     console.warn('Flatpickr init failed (e.g. missing locale):', e);
                 }
@@ -1214,11 +1435,31 @@
                 if (wrapper && leadDateRangePicker) {
                     wrapper.addEventListener('click', function (e) {
                         e.preventDefault();
-                        leadDateRangePicker.open();
+                        if (isMobileDevice()) {
+                            openMobileCalendar();
+                        } else {
+                            leadDateRangePicker.open();
+                        }
                     });
                     wrapper.addEventListener('keydown', function (e) {
                         if (e.key === 'Enter' || e.key === ' ') {
                             e.preventDefault();
+                            if (isMobileDevice()) {
+                                openMobileCalendar();
+                            } else {
+                                leadDateRangePicker.open();
+                            }
+                        }
+                    });
+                }
+                // Also make the raw input field itself open the calendar on click
+                if (dateRangeInput && leadDateRangePicker) {
+                    dateRangeInput.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (isMobileDevice()) {
+                            openMobileCalendar();
+                        } else {
                             leadDateRangePicker.open();
                         }
                     });

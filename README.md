@@ -14,7 +14,7 @@ Static marketing website with a Node.js API backend for form submissions (Telegr
 ## Project Structure
 
 ```
-azanovretreat/
+azanovtravel/
 ├── index.html          # Main landing page
 ├── tours.html          # Tours page
 ├── fleet.html          # Fleet / vehicles page
@@ -40,8 +40,8 @@ azanovretreat/
 
 ```bash
 # 1. Clone
-git clone https://github.com/YOUR_ORG/azanovretreat.git
-cd azanovretreat
+git clone https://github.com/YOUR_ORG/azanovtravel.git
+cd azanovtravel
 
 # 2. Install dependencies
 npm install
@@ -63,7 +63,7 @@ See **[DEPLOY.md](./DEPLOY.md)** for the full step-by-step guide to deploying wi
 
 Summary:
 1. Install Docker + Docker Compose on the server
-2. Clone this repo: `git clone ... /srv/azanovretreat`
+2. Clone this repo: `git clone ... /srv/azanovtravel`
 3. Copy `.env.example` → `.env` and fill in secrets
 4. Set up SSL certificates (Let's Encrypt / Certbot)
 5. Run `docker compose up -d --build`

@@ -342,7 +342,7 @@
     "success": "Спасибо! Отзыв отправлен.",
     "errorNameText": "Заполните имя и текст отзыва",
     "sending": "Отправка…",
-    "errorSend": "Не удалось отправить. Напишите нам в Telegram: <a href=\"https://t.me/AzanovRetreat\" target=\"_blank\" rel=\"noopener\">@AzanovRetreat</a>"
+    "errorSend": "Не удалось отправить. Напишите нам в Telegram: <a href=\"https://t.me/AzanovTravel\" target=\"_blank\" rel=\"noopener\">@AzanovTravel</a>"
   },
   "crypto": {
     "label": "Обмен криптовалюты",
@@ -457,7 +457,7 @@
     "notes": "Пожелания",
     "contactMethod": "Предпочтительная связь",
     "call": "Звонок",
-    "sentFrom": "Отправлено с сайта azanovretreat.com",
+    "sentFrom": "Отправлено с сайта azanovtravel.com",
     "budgetUp150": "до 150 000 ฿",
     "budget150_300": "150–300 тыс. ฿",
     "budget300_1m": "300 тыс. – 1 млн ฿",

@@ -329,7 +329,7 @@
       'transition:opacity 0.4s ease', 'opacity:0'
     ].join(';');
     ov.innerHTML =
-      '<img src="assets/svg/Azanov-retreat-white.svg" style="width:120px;opacity:0.9" alt="" aria-hidden="true">' +
+      '<img src="assets/svg/Azanov-travel-white.svg" style="width:120px;opacity:0.9" alt="" aria-hidden="true">' +
       '<div style="width:220px;max-width:80vw;background:rgba(255,255,255,0.08);border-radius:99px;height:3px;overflow:hidden">' +
         '<div id="pl-lang-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#40E0D0,#C9A84C);border-radius:99px;transition:width 0.1s linear"></div>' +
       '</div>' +

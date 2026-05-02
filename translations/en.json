@@ -342,7 +342,7 @@
     "success": "Thank you! Review submitted.",
     "errorNameText": "Please fill in name and review text",
     "sending": "Sending…",
-    "errorSend": "Failed to send. Contact us on Telegram: <a href=\"https://t.me/AzanovRetreat\" target=\"_blank\" rel=\"noopener\">@AzanovRetreat</a>"
+    "errorSend": "Failed to send. Contact us on Telegram: <a href=\"https://t.me/AzanovTravel\" target=\"_blank\" rel=\"noopener\">@AzanovTravel</a>"
   },
   "crypto": {
     "label": "Crypto Exchange",
@@ -457,7 +457,7 @@
     "notes": "Notes",
     "contactMethod": "Preferred contact",
     "call": "Phone call",
-    "sentFrom": "Sent from azanovretreat.com",
+    "sentFrom": "Sent from azanovtravel.com",
     "budgetUp150": "up to 150,000 ฿",
     "budget150_300": "150–300k ฿",
     "budget300_1m": "300k – 1M ฿",

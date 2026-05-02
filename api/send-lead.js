@@ -53,11 +53,12 @@ export default async function handler(req, res) {
     }
   }
 
-  // Return 200 if at least one channel succeeded.
-  // Only return 500 if Telegram failed AND AmoCRM is not configured (nothing worked).
+  // Return 500 if NOTHING worked — at least one channel must succeed.
   const isTelegramConfigured = !!(ENV.TELEGRAM_BOT_TOKEN && ENV.TELEGRAM_LEAD_CHAT_ID);
-  if (!tgResult.ok && isTelegramConfigured && !amoCrmOk) {
-    return res.status(500).json({ ok: false, error: 'Failed to send Telegram notification', details: tgResult.error });
+  const nothingWorked = !tgResult.ok && !amoCrmOk;
+  if (nothingWorked) {
+    console.error('[send-lead] Both Telegram and AmoCRM failed — lead lost!', { telegram: tgResult.error, telegramConfigured: isTelegramConfigured, amoCrmConfigured: isAmoCrmConfigured() });
+    return res.status(500).json({ ok: false, error: 'Failed to send lead via any channel', telegram: tgResult.error });
   }
   return res.status(200).json({ ok: true, telegram: tgResult.ok, amocrm: amoCrmOk });
 }
@@ -74,6 +75,13 @@ const EXPERIENCE_ICONS = {
   concierge: '🛠️',
 };
 
+const BIKE_TYPE_LABELS = {
+  scooter: '🛵 Скутер',
+  motorbike: '🏍️ Мотобайк',
+  car: '🚗 Автомобиль',
+  atv: '🏕️ Квадроцикл',
+};
+
 function formatTgPrice(val) {
   if (!val || isNaN(val)) return null;
   const n = Math.round(Number(val));
@@ -85,7 +93,7 @@ function formatTgPrice(val) {
 function buildLeadMessage(d) {
   const {
     name, phone, email, experienceType, packageName, yachtPreset, villaPreset,
-    tourPreset, servicePreset, groupSize, dateFrom, dateTo, nights, budget,
+    tourPreset, servicePreset, bikeType, groupSize, dateFrom, dateTo, nights, budget,
     estimatedPrice, extras = [], notes, contactMethod, source,
   } = d;
 
@@ -124,13 +132,15 @@ function buildLeadMessage(d) {
   if (villaPreset) lines.push(`\u{1F3E1} *\u0412\u0438\u043b\u043b\u0430:* ${esc(villaPreset)}`);
   if (tourPreset) lines.push(`\u{1F3AB} *\u0422\u0443\u0440:* ${esc(tourPreset)}`);
   if (servicePreset && !tourPreset) lines.push(`\u{1F6E0}\uFE0F *\u0423\u0441\u043b\u0443\u0433\u0430:* ${esc(servicePreset)}`);
+  if (experienceType === 'bikes' && bikeType) lines.push(`\u{1F6F5} *\u0422\u0438\u043f \u0422\u0426:* ${esc(BIKE_TYPE_LABELS[bikeType] || bikeType)}`);
 
+  const durationLabel = experienceType === 'bikes' ? '\u{1F4C6} *Дней:*' : '\u{1F319} *Ночей:*';
   lines.push(
     ``,
     `\u{1F465} *\u0413\u043e\u0441\u0442\u0435\u0439:* ${esc(groupSize || '\u2014')}`,
     `\u{1F4C5} *\u0414\u0430\u0442\u0430 \u0437\u0430\u0435\u0437\u0434\u0430:* ${esc(dateFrom || '\u2014')}`,
     `\u{1F4C5} *\u0414\u0430\u0442\u0430 \u0432\u044b\u0435\u0437\u0434\u0430:* ${esc(dateTo || '\u2014')}`,
-    `\u{1F319} *\u041d\u043e\u0447\u0435\u0439:* ${esc(nights || '\u2014')}`,
+    `${durationLabel} ${esc(nights || '\u2014')}`,
     ``,
   );
 
@@ -153,7 +163,7 @@ function buildLeadMessage(d) {
     ``,
     `\u{1F4F2} *\u0421\u0432\u044f\u0437\u044c \u0447\u0435\u0440\u0435\u0437:* ${esc(contactLabel)}`,
     ``,
-    `_${esc(source || 'azanovretreat.com')}_`,
+    `_${esc(source || 'azanovtravel.com')}_`,
   );
 
   return lines.join('\n');
@@ -164,7 +174,7 @@ function buildLeadMessage(d) {
 async function amoCrmCreateLeadFromBody(d) {
   const {
     name, phone, email, experienceType,
-    packageName, yachtPreset, villaPreset, tourPreset, servicePreset,
+    packageName, yachtPreset, villaPreset, tourPreset, servicePreset, bikeType,
     groupSize, dateFrom, dateTo, nights, budget, extras = [],
     notes, contactMethod, source,
   } = d;
@@ -184,41 +194,61 @@ async function amoCrmCreateLeadFromBody(d) {
   if (experienceType) tags.push(experienceType);
 
   // ── Custom fields for amoCRM ──────────────────────────────────
-  // Field IDs are defined in amoCRM account settings
-  const CF = [
-    { field_id: 1581989, value: experienceType },
-    { field_id: 1581991, value: packageName },
-    { field_id: 1581993, value: yachtPreset },
-    { field_id: 1581995, value: villaPreset },
-    { field_id: 1581997, value: tourPreset },
-    { field_id: 1581999, value: servicePreset },
-    { field_id: 1576421, value: groupSize },
-    { field_id: 1574879, value: parseDateToUnix(dateFrom) },
-    { field_id: 1574881, value: parseDateToUnix(dateTo) },
-    { field_id: 1582001, value: nights },
-    { field_id: 1582003, value: extras && extras.length ? extras.join(', ') : null },
-    { field_id: 1582005, value: notes },
-  ];
-  const customFields = CF
-    .filter(f => f.value !== undefined && f.value !== null && f.value !== '' && !Number.isNaN(f.value))
-    .map(f => {
-      const isDate = f.field_id === 1574879 || f.field_id === 1574881;
-      return { field_id: f.field_id, values: [{ value: isDate ? f.value : String(f.value) }] };
-    });
+  // Field IDs verified from /api/health-crm on 2026-05-02
+  const presetLabel = packageName || yachtPreset || villaPreset || tourPreset || servicePreset || '';
+  const bikeLabel = bikeType ? ({ scooter: '🛵 Скутер', motorbike: '🏍️ Мотобайк', car: '🚗 Авто', atv: '🏕️ Квадроцикл' }[bikeType] || bikeType) : null;
 
-  // ── Budget / Price ───────────────────────────────────────────
+  // Budget / Price — must be defined before CF array
   const budgetLabel = {
     '150000': 'до 150 000 ฿',
     '300000': '150 000 – 300 000 ฿',
     '1000000': '300 000 – 1 000 000 ฿',
     '9999999': 'от 1 000 000 ฿',
   }[String(budget)] || budget || '—';
-  // Use estimated price (for specific yacht/villa/package/tour orders) as the
-  // CRM lead value; fall back to the selected budget bracket, with 9999999 treated as 0.
   const estimatedPrice = d.estimatedPrice ? Math.round(Number(d.estimatedPrice)) : null;
   const price = estimatedPrice && estimatedPrice > 0
     ? estimatedPrice
     : (parseInt(budget) < 9999999 ? parseInt(budget) || 0 : 0);
+
+  // Map our addon keys → AmoCRM enum IDs for field 1576361 (multiselect)
+  const EXTRAS_ENUM = {
+    photo:     2923883, // Фотограф
+    fasttrack: 2923885, // Fast track
+    massage:   2923887, // Массаж
+    chef:      2923889, // Шеф-повар
+    fishing:   2923891, // Рыбалка
+  };
+  const extrasEnumValues = (extras || [])
+    .map(key => EXTRAS_ENUM[key])
+    .filter(Boolean)
+    .map(enumId => ({ enum_id: enumId }));
+
+  const CF = [
+    { field_id: 1581989, value: experienceType },                   // Тип заявки
+    { field_id: 1581991, value: presetLabel || bikeLabel },         // Название пакета / объект
+    { field_id: 1581995, value: villaPreset },                      // Название виллы
+    { field_id: 1576421, value: groupSize },                        // Кол-во человек
+    { field_id: 1594019, value: parseDateToUnix(dateFrom) },        // Дата начала
+    { field_id: 1594021, value: parseDateToUnix(dateTo) },          // Дата окончания
+    { field_id: 1582001, value: nights },                           // Количество ночей / дней
+    { field_id: 1574875, value: budget ? (budgetLabel !== '—' ? budgetLabel : null) : null }, // Предполагаемый бюджет
+    { field_id: 1582005, value: notes },                            // Комментарий
+  ];
+  const customFields = CF
+    .filter(f => f.value !== undefined && f.value !== null && f.value !== '' && !Number.isNaN(f.value))
+    .map(f => {
+      const isDate = f.field_id === 1594019 || f.field_id === 1594021;
+      const val = isDate ? Number(f.value) : String(f.value);
+      return { field_id: f.field_id, values: [{ value: val }] };
+    });
+
+  // Append extras as multiselect (separate structure with enum_id values)
+  if (extrasEnumValues.length) {
+    customFields.push({ field_id: 1576361, values: extrasEnumValues });
+  }
+
+
+
 
   // ── Create lead ──────────────────────────────────────────────
   const leadId = await amoCrmCreateLead({
@@ -240,12 +270,14 @@ async function amoCrmCreateLeadFromBody(d) {
       `Email: ${email || '—'}`,
     ];
     if (presetName) noteLines.push(`Объект/услуга: ${presetName}`);
+    if (experienceType === 'bikes' && bikeType) noteLines.push(`Тип ТС: ${BIKE_TYPE_LABELS[bikeType] || bikeType}`);
+    const durationKey = experienceType === 'bikes' ? 'Дней' : 'Ночей';
     noteLines.push(
       '',
       `Гостей: ${groupSize || '—'}`,
       `Заезд: ${dateFrom || '—'}`,
       `Выезд: ${dateTo || '—'}`,
-      `Ночей: ${nights || '—'}`,
+      `${durationKey}: ${nights || '—'}`,
       `Бюджет: ${budgetLabel}`,
     );
     if (extras && extras.length) {
@@ -255,7 +287,7 @@ async function amoCrmCreateLeadFromBody(d) {
     noteLines.push(
       '',
       `Способ связи: ${contactMethod || '—'}`,
-      `Источник: ${source || 'azanovretreat.com'}`,
+      `Источник: ${source || 'azanovtravel.com'}`,
       `Дата: ${new Date().toLocaleString('ru-RU', { timeZone: 'Asia/Bangkok' })}`,
     );
     await amoCrmAddNote(leadId, noteLines.join('\n'));

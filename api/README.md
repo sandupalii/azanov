@@ -1,6 +1,6 @@
 # API Integration Guide — Azanov Travel
 
-This guide explains how to configure **Telegram notifications** and **AmoCRM** lead creation for the three lead-generation forms on azanovretreat.com.
+This guide explains how to configure **Telegram notifications** and **AmoCRM** lead creation for the three lead-generation forms on azanovtravel.com.
 
 ## Overview
 

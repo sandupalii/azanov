@@ -36,7 +36,7 @@ export default async function handler(req, res) {
         `🌍 *Страна:* ${esc(country || '—')}`,
         `🏙️ *Город:* ${esc(city || '—')}`,
         ``,
-        `_${esc(source || 'azanovretreat.com')}_`,
+        `_${esc(source || 'azanovtravel.com')}_`,
     ];
 
     const text = lines.join('\n');

@@ -207,7 +207,10 @@ export async function amoCrmCreateLead({ name, price, contactId, tags = [], cust
     if (result.ok && result.data?._embedded?.leads?.length) {
         return result.data._embedded.leads[0].id;
     }
-    console.error('AmoCRM lead creation failed:', result);
+    console.error('AmoCRM lead creation failed:', JSON.stringify(result, null, 2));
+    if (result.data?.['validation-errors']) {
+        console.error('Validation errors:', JSON.stringify(result.data['validation-errors'], null, 2));
+    }
     return null;
 }
 
@@ -223,5 +226,22 @@ export async function amoCrmAddNote(leadId, text) {
     if (!result.ok) {
         console.error('AmoCRM note creation failed:', result);
     }
+    return result;
+}
+
+/**
+ * Fetch all custom fields for leads — use this to discover real field IDs.
+ * GET /api/health-crm will call this and return the list.
+ */
+export async function amoCrmGetLeadFields() {
+    const result = await amoCrmRequest('/api/v4/leads/custom_fields');
+    return result;
+}
+
+/**
+ * Fetch current account pipelines & statuses.
+ */
+export async function amoCrmGetPipelines() {
+    const result = await amoCrmRequest('/api/v4/leads/pipelines');
     return result;
 }

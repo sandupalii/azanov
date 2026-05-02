@@ -84,7 +84,7 @@
             '👤 Имя: ' + name,
             '📱 Телефон: ' + phone,
             '',
-            '— Отправлено с сайта azanovretreat.com'
+            '— Отправлено с сайта azanovtravel.com'
         ].join('\n');
 
         // Fire-and-forget: send to Telegram + AmoCRM via API
@@ -101,7 +101,7 @@
                     receiveCurrency: receiveCurrency,
                     country: country,
                     city: city,
-                    source: 'azanovretreat.com',
+                    source: 'azanovtravel.com',
                 }),
             }).catch(function (err) {
                 console.warn('Crypto API send failed:', err);

@@ -1831,15 +1831,13 @@ async function openItemModal(type, id) {
       <div class="package-accordion">
         <div class="package-accordion__tabs">
           <button type="button" class="package-accordion__tab active" onclick="setPackageAccordionTab(0)" data-tab="0">${_t('modal.included')}</button>
-          <button type="button" class="package-accordion__tab" onclick="setPackageAccordionTab(1)" data-tab="1">${_t('modal.program')}</button>
-          <button type="button" class="package-accordion__tab" onclick="setPackageAccordionTab(2)" data-tab="2">${_t('modal.whatToBring')}</button>
-          <button type="button" class="package-accordion__tab" onclick="setPackageAccordionTab(3)" data-tab="3">${_t('modal.cancellation')}</button>
+          <button type="button" class="package-accordion__tab" onclick="setPackageAccordionTab(1)" data-tab="1">${_t('modal.whatToBring')}</button>
+          <button type="button" class="package-accordion__tab" onclick="setPackageAccordionTab(2)" data-tab="2">${_t('modal.cancellation')}</button>
         </div>
         <div class="package-accordion__content">
           <div class="package-accordion__panel active" data-panel="0">${panelIncluded}</div>
-          <div class="package-accordion__panel" data-panel="1">${panelProgram}</div>
-          <div class="package-accordion__panel" data-panel="2">${panelBring}</div>
-          <div class="package-accordion__panel" data-panel="3">${panelCancel}</div>
+          <div class="package-accordion__panel" data-panel="1">${panelBring}</div>
+          <div class="package-accordion__panel" data-panel="2">${panelCancel}</div>
         </div>
       </div>
     `;

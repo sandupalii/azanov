@@ -1493,7 +1493,54 @@ async function fetchTourById(id) {
   }
 }
 
+/** Fetch a single tour by id from the full tours_index.json (fallback for new-style tours) */
+async function fetchTourFromIndex(id) {
+  try {
+    const cb = window.AZANOV_VERSION || Math.random().toString(36).substring(7);
+    const res = await fetch(`assets/tours/tours_index.json?v=${cb}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const tour = data.find(t => t.id === id);
+    if (!tour) return null;
+    const basePath = `assets/tours/${tour.id}/`;
+    const durationDays = parseTourDurationDays(tour);
+    const maxPersons = parseTourMaxPersons(tour);
+    const metaLabel = getTourMetaLabel(tour);
+    const imgSrc = tour.local_images && tour.local_images[0]
+      ? (tour.local_images[0].startsWith('..') ? `assets/tours/${tour.local_images[0].replace(/^\.\.\//, '')}` : basePath + tour.local_images[0])
+      : 'assets/tours/azanvtravel-tours/01.jpg';
+    return {
+      id: tour.id,
+      name: tour.title,
+      name_en: tour.title_en || tour.title,
+      desc: tour.description,
+      desc_en: tour.description_en || tour.description,
+      tag: tour.sku || 'Tour',
+      durationDays,
+      maxPersons,
+      metaLabel,
+      img: imgSrc,
+      images: [imgSrc],
+      priceLabel: tour.price_adult || (tour.price ? `от ${tour.price} ฿` : 'По запросу'),
+      rawPrice: tour.price,
+      featured: (tour.price || 0) > 3000,
+      included: tour.included || [],
+      included_en: tour.included_en || [],
+      itinerary: tour.itinerary || [],
+      itinerary_en: tour.itinerary_en || [],
+      what_to_bring: tour.what_to_bring || [],
+      what_to_bring_en: tour.what_to_bring_en || [],
+      cancellation: tour.cancellation || [],
+      cancellation_en: tour.cancellation_en || [],
+      details_html: tour.details_html || ''
+    };
+  } catch {
+    return null;
+  }
+}
+
 async function openItemModal(type, id) {
+
   let item;
   let titleHTML = '';
   let infoHTML = '';
@@ -1712,13 +1759,27 @@ async function openItemModal(type, id) {
     // Fetch full data if it's a partial "preview" item or missing entirely
     if (!item || !item.itinerary || item.itinerary.length === 0) {
       const fullItem = await fetchTourById(id);
-      if (!fullItem) return;
-      if (item) {
-        // Merge full data into existing location object (to keep _en fields if we added them to preview)
-        Object.assign(item, fullItem);
+      if (fullItem) {
+        if (item) {
+          Object.assign(item, fullItem);
+        } else {
+          item = fullItem;
+          LOCATIONS.push(item);
+        }
       } else {
-        item = fullItem;
-        LOCATIONS.push(item);
+        // No individual tour.json — try tours_index.json (new 2026 tours)
+        const indexItem = await fetchTourFromIndex(id);
+        if (indexItem) {
+          if (item) {
+            Object.assign(item, indexItem);
+          } else {
+            item = indexItem;
+            LOCATIONS.push(item);
+          }
+        } else if (!item) {
+          return; // Nothing found anywhere
+        }
+        // item exists in LOCATIONS with full data — use it as-is
       }
     }
     titleHTML = `

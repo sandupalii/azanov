@@ -1,82 +1,92 @@
 [
   {
-    "id": "similan-islands",
+    "id": "t01-phi-phi-islands-khai-islands",
+    "name": "Острова Пхи Пхи + Кхай",
+    "name_en": "Phi Phi Islands + Khai Islands",
+    "desc": "Однодневная морская экскурсия на легендарные острова Пхи-Пхи и Кхай с купанием и снорклингом.",
+    "desc_en": "One-day sea tour to iconic Phi Phi Islands and Khai Island with swimming and snorkeling.",
+    "tag": "T01",
+    "img": "assets/tours/azanvtravel-tours/01.jpg",
+    "priceLabel": "от 1700 ฿"
+  },
+  {
+    "id": "t04-james-bond-islands-phang-nga-bay",
+    "name": "Острова Джеймса Бонда (Залив Пханг Нга)",
+    "name_en": "James Bond Islands (Phang Nga Bay)",
+    "desc": "Классическая экскурсия в залив Пханг Нга с островами Джеймса Бонда и каякингом.",
+    "desc_en": "Classic Phang Nga Bay tour featuring James Bond Island and kayaking.",
+    "tag": "T04",
+    "img": "assets/tours/azanvtravel-tours/04.jpg",
+    "priceLabel": "от 1900 ฿"
+  },
+  {
+    "id": "t17-ko-rok-ko-haa-islands",
+    "name": "Острова Ко Рок и Ко Хаа",
+    "name_en": "Ko Rok & Ko Haa Islands",
+    "desc": "Экскурсия на удалённые острова Ко Рок и Ко Хаа с лучшим снорклингом.",
+    "desc_en": "Tour to remote Ko Rok and Ko Haa islands with world-class snorkeling.",
+    "tag": "T17",
+    "img": "assets/tours/azanvtravel-tours/17.jpg",
+    "priceLabel": "от 3700 ฿"
+  },
+  {
+    "id": "t20-similan-islands",
     "name": "Симиланские острова",
     "name_en": "Similan Islands",
-    "desc": "Экскурсия на Симиланские острова на скоростном катере и катамаране - 1 день",
-    "desc_en": "Speedboat and High-speed Catamaran Tour - 1 Day",
-    "tag": "SIM",
-    "img": "assets/tours/similan-islands/images/page_01_img_03.jpeg",
+    "desc": "Экскурсия на знаменитые Симиланские острова — одно из лучших мест для снорклинга в мире.",
+    "desc_en": "Tour to the world-famous Similan Islands — one of the best snorkeling destinations on the planet.",
+    "tag": "T20",
+    "img": "assets/tours/azanvtravel-tours/20.jpg",
     "priceLabel": "от 2500 ฿"
   },
   {
-    "id": "exploring",
-    "name": "EXPLORING (Sawanu Premium Travel)",
-    "name_en": "EXPLORING (Sawanu Premium Travel)",
-    "desc": "Сборник премиальных однодневных туров от Sawanu Travel (Цены и программа по запросу)",
-    "desc_en": "Premium Day Tours by Sawanu Travel (Details on request)",
-    "tag": "SAWANU",
-    "img": "assets/tours/exploring/images/page_01_img_01.jpeg",
-    "priceLabel": "от 3600 ฿"
+    "id": "t35-avatar-world-sunset-jungle-elephants-hot",
+    "name": "Мир аватара: Закат, джунгли, слоны и настоящие горячие источники",
+    "name_en": "Avatar World: Sunset, Jungle, Elephants & Hot Springs",
+    "desc": "Невероятная экскурсия в мир «Аватара» с джунглями, слонами и горячими источниками.",
+    "desc_en": "Incredible “Avatar” world tour with jungle, elephants and natural hot springs.",
+    "tag": "T35",
+    "img": "assets/tours/azanvtravel-tours/35.jpg",
+    "priceLabel": "от 3200 ฿"
   },
   {
-    "id": "carnival-magic",
-    "name": "Магия карнавала (Carnival Magic)",
-    "name_en": "Carnival Magic",
-    "desc": "Вечернее шоу Карнавал на Пхукете — 50 минут захватывающего действа",
-    "desc_en": "Evening Carnival Show in Phuket — 50 minutes of spectacular performance",
-    "tag": "CM",
-    "img": "assets/tours/carnival-magic/images/page_01_img_02.jpeg",
-    "priceLabel": "от 2100 ฿"
+    "id": "t37-sunrise-adventure-samet-nangshe-viewpoin",
+    "name": "Рассветное приключение: Смотровая площадка Самет Нангше, о. Джеймса Бонда, пляж с самолётами и кувшинки Ma Doo Bua",
+    "name_en": "Sunrise Adventure: Samet Nangshe Viewpoint, James Bond Island, Airplane Beach & Ma Doo Bua Lotus Lake",
+    "desc": "Раннее приключение с рассветом на смотровой Самет Нангше и другими топ-локациями.",
+    "desc_en": "Early morning adventure with sunrise at Samet Nangshe viewpoint and other highlights.",
+    "tag": "T37",
+    "img": "assets/tours/azanvtravel-tours/37.jpg",
+    "priceLabel": "от 2200 ฿"
   },
   {
-    "id": "phi-phi-bamboo",
-    "name": "Острова Пхи Пхи + Бамбу",
-    "name_en": "Phi Phi Islands + Bamboo",
-    "desc": "Однодневная экскурсия Комфорт++ на острова архипелага Пхи Пхи",
-    "desc_en": "1-Day Comfort++ Tour to the Phi Phi Archipelago",
-    "tag": "PPB",
-    "img": "assets/tours/phi-phi-bamboo/images/page_01_img_02.jpeg",
-    "priceLabel": "от 2800 ฿"
+    "id": "t15-ombr-catamaran-tour-racha-yai-coral",
+    "name": "Экскурсия на катамаране Ombré (Рача Яй — Корал)",
+    "name_en": "Ombré Catamaran Tour (Racha Yai — Coral)",
+    "desc": "Премиум-экскурсия на стильном катамаране Ombré (без русского гида).",
+    "desc_en": "Premium catamaran tour on stylish Ombré (no Russian guide).",
+    "tag": "T15",
+    "img": "assets/tours/azanvtravel-tours/15.jpg",
+    "priceLabel": "от 3700 ฿"
   },
   {
-    "id": "phi-phi-maiton",
-    "name": "Острова Пхи Пхи + Майтон",
-    "name_en": "Phi Phi Islands + Maiton",
-    "desc": "Однодневный круиз Phi Phi & Maiton на катамаране NOAH",
-    "desc_en": "1-Day Phi Phi & Maiton Cruise on NOAH Catamaran",
-    "tag": "NOAH",
-    "img": "assets/tours/phi-phi-maiton/images/page_01_img_03.jpeg",
-    "priceLabel": "от 5900 ฿"
+    "id": "t23-surin-islands",
+    "name": "Острова Сурин",
+    "name_en": "Surin Islands",
+    "desc": "Экскурсия на архипелаг Сурин — одно из самых красивых и менее посещаемых мест Андаманского моря.",
+    "desc_en": "Tour to the Surin Islands archipelago — one of the most beautiful and less crowded spots in the Andaman Sea.",
+    "tag": "T23",
+    "img": "assets/tours/azanvtravel-tours/23.jpg",
+    "priceLabel": "от 3500 ฿"
   },
   {
-    "id": "phi-phi-maya-bamboo",
-    "name": "Острова Пхи-Пхи - Майя Бэй - Остров Бамбу",
-    "name_en": "Phi-Phi Islands - Maya Bay - Bamboo Island",
-    "desc": "Ранний и стандартный выезд на острова Пхи Пхи, Майя Бэй и Бамбу (комфорт) • Взрослый 2600 бат, Детский 2400 бат",
-    "desc_en": "Early and Standard Departure to Phi Phi, Maya Bay and Bamboo",
-    "tag": "PP_MB",
-    "img": "assets/tours/phi-phi-maya-bamboo/images/page_01_img_02.jpeg",
-    "priceLabel": "от 2600 ฿"
-  },
-  {
-    "id": "siam-niramit",
-    "name": "Парк и шоу Сиам Нирамит",
-    "name_en": "Siam Niramit Phuket",
-    "desc": "Погружение в культуру Таиланда, парк, шведский стол и грандиозное шоу",
-    "desc_en": "An immersive Thai cultural park, buffet dinner, and a spectacular show",
-    "tag": "SIAM",
-    "img": "assets/tours/siam-niramit/images/page_01_img_02.jpeg",
-    "priceLabel": "от 2300 ฿"
-  },
-  {
-    "id": "phi-phi-khai",
-    "name": "Острова Пхи Пхи + Кхай",
-    "name_en": "Phi Phi Islands + Khai Island",
-    "desc": "Экскурсия на скоростном катере или катамаране на 1 день",
-    "desc_en": "1-Day Speedboat or Catamaran Tour",
-    "tag": "PP_KH",
-    "img": "assets/tours/phi-phi-khai/images/page_01_img_06.jpeg",
-    "priceLabel": "от 1700 ฿"
+    "id": "t54-hanuman-world-zip-line-flying-hanuman-zi",
+    "name": "Канатная дорога «Мир Ханумана» / «Полёт гиббона»",
+    "name_en": "Hanuman World Zip Line / Flying Hanuman Zip Line",
+    "desc": "Адреналиновые зиплайн-парки Пхукета.",
+    "desc_en": "Thrilling zip line parks in Phuket.",
+    "tag": "T54",
+    "img": "assets/tours/azanvtravel-tours/54.jpg",
+    "priceLabel": "от 3490 ฿"
   }
 ]

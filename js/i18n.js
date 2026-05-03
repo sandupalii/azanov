@@ -88,7 +88,7 @@
 
   async function _loadDict(lang) {
     try {
-      const r = await fetch('translations/' + lang + '.json?v=3');
+      const r = await fetch('translations/' + lang + '.json?v=5');
       _dict = await r.json();
       // Signal preloader: translations loaded (stage 3 → 80%)
       if (typeof window.__plTranslations === 'function') window.__plTranslations();
@@ -99,8 +99,8 @@
 
   async function setLang(lang) {
     if (!LANGS.includes(lang)) return;
-    window.i18n.lang = lang;
     localStorage.setItem(STORAGE_KEY, lang);
+    if (window.i18n) window.i18n.lang = lang;
     // Show preloader immediately on lang switch
     if (typeof window.__plLangSwitch === 'function') window.__plLangSwitch(lang);
     await _loadDict(lang);

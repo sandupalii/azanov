@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#003344">
 
   <!-- Primary SEO -->
@@ -870,12 +870,8 @@
       <div class="glass-card lead-modal-card" style="padding:3.5rem 2.5rem 2.5rem 2.5rem;position:relative">
         <button class="lead-modal-close" onclick="closeLeadModal()" aria-label="Закрыть форму">✕</button>
         <div class="lead-progress-stories" role="progressbar" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1" aria-label="Прогресс заполнения формы">
-          <div class="lead-progress-segment" data-step="1"></div>
-          <div class="lead-progress-segment" data-step="2"></div>
-          <div class="lead-progress-segment" data-step="3"></div>
-          <div class="lead-progress-segment" data-step="4"></div>
-          <div class="lead-progress-segment" data-step="5"></div>
-          <div class="lead-progress-segment" data-step="6"></div>
+          <div class="lead-progress-segment"></div>
+          <div class="lead-progress-segment"></div>
         </div>
         <div id="lead-error"
           style="display:none;color:#ff6b6b;font-size:0.875rem;margin-bottom:1rem;padding:0.75rem;background:rgba(255,107,107,0.1);border-radius:var(--radius-sm);border:1px solid rgba(255,107,107,0.2)">
@@ -992,7 +988,7 @@
                   <div class="form-group">
                     <label class="form-label" data-i18n="form.step2.datesLabel">Выберите даты</label>
                     <div class="date-field-trigger input-with-clear" id="lead-date-field-trigger" role="button"
-                      tabindex="0" data-i18n-aria="aria.datesSelect">
+                      tabindex="0" data-i18n-aria="aria.datesSelect" onclick="openLeadDatePicker(event)">
                       <input type="text" class="form-input" id="lead-date-range"
                         data-i18n-placeholder="form.step2.datesPlaceholder" placeholder="Выберите даты заезда и выезда"
                         data-i18n-aria="aria.stayPeriod" readonly>
@@ -1005,7 +1001,8 @@
                       </span>
                     </div>
                     <p class="lead-date-summary" id="lead-date-summary" aria-live="polite"></p>
-                    <div class="lead-nights-section" id="lead-nights-section">
+                    <div class="lead-nights-section" id="lead-nights-section" style="margin-top:1.25rem">
+                      <label class="form-label" data-i18n="form.step2.durationTitle">Продолжительность</label>
                       <div class="choice-grid choice-grid--sm lead-nights-chips" style="margin-top:0.75rem">
                         <button type="button" class="choice-btn choice-btn--sm" data-nights="5"
                           onclick="setNightsFromChip(5, this)" data-i18n="form.step2.package5nights">5 ночей</button>
@@ -1073,7 +1070,7 @@
             <div class="lead-nav-buttons">
 
             <button class="btn btn-ghost" onclick="prevStep()"><i data-lucide="arrow-left" class="mr-2"></i>
-              <span data-i18n="form.back">Назад</span></button>
+              <span class="back-label" data-i18n="form.back">Назад</span></button>
             <span class="step-counter" data-i18n="form.step2of5">Шаг 2 из 5</span>
             <button class="btn btn-primary lead-step-2-next" id="lead-step-2-next" onclick="nextStep()" disabled><span
                 data-i18n="form.next">Далее</span>
@@ -1083,7 +1080,7 @@
 
         <!-- STEP 3: Budget & Extras -->
         <div class="lead-step" id="lead-step-3">
-          <div class="lead-step__label label-upper" id="lead-step3-label" data-i18n="form.step3.label">Шаг 3 — Бюджет и предпочтения</div>
+          <div class="lead-step__label label-upper" id="lead-step3-label">Шаг 3 — Бюджет и предпочтения</div>
           <h3 class="lead-step__title" id="lead-step3-title" data-i18n="form.step3.title">Ваш бюджет и желания</h3>
           <p class="lead-step__desc" id="lead-step3-desc" data-i18n="form.step3.desc">Выберите ценовой диапазон и дополнительные опции.</p>
 
@@ -1234,29 +1231,42 @@
           </div></div>
         </div>
 
+        <!-- STEP CALENDAR: Mobile Date Selection -->
+        <div class="lead-step" id="lead-step-cal">
+          <div class="lead-step__label label-upper" data-i18n="form.step2.label">Шаг 2 — Детали группы</div>
+          <h3 class="lead-step__title mobile-cal-title" data-i18n="form.step2.datesLabel">Выберите даты</h3>
+          <p class="lead-step__desc" data-i18n="form.step2.datesPlaceholder">Выберите даты заезда и выезда</p>
+          
+          <div class="lead-step-cal-body" id="custom-mobile-cal-body" style="flex:1;overflow-y:auto;margin:0 -20px;padding:0 20px;"></div>
+          
+          <div class="lead-nav">
+            <div class="lead-nav-buttons">
+              <button class="btn btn-ghost" onclick="goToStep(2)"><i data-lucide="arrow-left" class="mr-2"></i>
+                <span class="back-label" data-i18n="form.back">Назад</span></button>
+              <span class="step-counter">Даты</span>
+              <button class="btn btn-primary" onclick="goToStep(2)"><span data-i18n="form.confirm">Готово</span>
+                <i data-lucide="check" class="ml-2"></i></button>
+            </div>
+          </div>
+        </div>
+
         <!-- STEP 5: Confirmation / Success -->
         <div class="lead-step" id="lead-step-5">
-          <div class="form-success">
-            <div class="form-success__icon"><i data-lucide="party-popper"
-                style="width:64px;height:64px;color:var(--teal)"></i></div>
-            <h3 class="form-success__title" data-i18n="form.step5.title">Запрос отправлен!</h3>
-            <p class="form-success__sub" data-i18n="form.step5.sub">Личный консьерж Azanov Travel свяжется с вами в
-              течение 15 минут и подготовит
-              индивидуальное предложение без скрытых доплат.</p>
-            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-              <a href="https://wa.me/66635412949" target="_blank" rel="noopener" class="btn btn-whatsapp">
-                <i data-lucide="message-square" class="mr-2"></i> <span data-i18n="form.step5.whatsapp">Открыть
-                  WhatsApp</span>
-              </a>
-              <a href="https://t.me/AzanovTravel" target="_blank" rel="noopener" class="btn btn-ghost">Telegram</a>
-            </div>
-            <p class="body-sm muted" style="margin-top:1.5rem"> <i data-lucide="phone" class="mr-2"></i> <span
-                data-i18n="crypto.urgent">Срочно:</span> <a href="tel:+66635412949" style="color:var(--teal)">+66
-                6-3541-2949</a> (Пхукет, 24/7)</p>
+          <div class="form-success" style="padding-bottom:0.5rem">
+            <div class="form-success__icon"><i data-lucide="check-circle-2"
+                style="width:56px;height:56px;color:var(--teal)"></i></div>
+            <h3 class="form-success__title" data-i18n="form.step5.title">Подтвердите заказ</h3>
+            <p class="form-success__sub" data-i18n="form.step5.sub">Проверьте детали. После нажатия кнопки откроется WhatsApp с готовым сообщением.</p>
           </div>
-          <div style="text-align:center;margin-top:2rem">
-            <button class="btn btn-primary-lg" onclick="submitLeadForm()" data-i18n="form.step5.submit">
-              Отправить заявку в WhatsApp
+          <!-- Summary card populated by buildStep5Summary() -->
+          <div class="lead-step5-summary">
+            <div class="lead-step5-summary__title" data-i18n="form.step5.summaryTitle">Ваш заказ</div>
+            <div id="lead-step5-summary-body"></div>
+          </div>
+          <div style="text-align:center">
+            <button class="btn btn-primary-lg" onclick="submitLeadForm()" id="lead-submit-btn">
+              <i data-lucide="message-square" class="mr-2"></i>
+              <span data-i18n="form.step5.submit">Отправить заявку в WhatsApp</span>
             </button>
           </div>
           <p class="body-sm muted" style="text-align:center;margin-top:1rem;font-size:0.78rem"

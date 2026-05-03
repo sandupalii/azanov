@@ -51,22 +51,55 @@
     }
 
     // Returns ordered HTML step IDs for the current wizard context.
-    // Step 5 = success screen (always last, never counted in the progress counter).
+    // Step 5 = confirm/review screen (always last, never counted in the progress counter).
     function getFlowSteps() {
-        if (isSpecificPreset()) {
-            // Specific item: dates (2) → contacts (4) → success (5)
+        const isConcierge = formData.experienceType === 'concierge';
+        const isTour = formData.experienceType === 'tour';
+        if (isConcierge || isTour) {
+            // Short flow: dates/details (2) → contacts (4) → confirm (5)
             return [2, 4, 5];
         }
-        // Generic: type (1) → group+dates (2) → budget (3) → contacts (4) → success (5)
+        if (isSpecificPreset()) {
+            // Specific item (yacht/villa/package): dates (2) → extras+price (3) → contacts (4) → confirm (5)
+            return [2, 3, 4, 5];
+        }
+        // Generic: type (1) → group+dates (2) → budget (3) → contacts (4) → confirm (5)
         return [1, 2, 3, 4, 5];
     }
 
-    // Returns "X / Y" label for the step counter (excludes success step).
+    // Returns "X / Y" label for the step counter (excludes confirm step).
     function getStepCounter() {
         const steps = getFlowSteps().filter(s => s < 5);
-        const idx = steps.indexOf(currentStep);
+        const mappedStep = currentStep === 'cal' ? 2 : currentStep;
+        const idx = steps.indexOf(mappedStep);
         if (idx < 0) return '';
         return `${idx + 1} / ${steps.length}`;
+    }
+
+    // Dynamically rebuild progress bar segments to match actual flow step count
+    function updateProgressBar() {
+        const storiesEl = document.querySelector('.lead-progress-stories');
+        if (!storiesEl) return;
+        const steps = getFlowSteps().filter(s => s < 5);
+        const total = steps.length;
+        const mappedStep = currentStep === 'cal' ? 2 : currentStep;
+        const idx = steps.indexOf(mappedStep);
+        const filled = idx >= 0 ? idx + 1 : (mappedStep === 5 ? total : 0);
+        // Rebuild only if count changed
+        const existing = storiesEl.querySelectorAll('.lead-progress-segment');
+        if (existing.length !== total) {
+            storiesEl.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const seg = document.createElement('div');
+                seg.className = 'lead-progress-segment';
+                storiesEl.appendChild(seg);
+            }
+        }
+        storiesEl.querySelectorAll('.lead-progress-segment').forEach((seg, i) => {
+            seg.classList.toggle('filled', i < filled);
+        });
+        storiesEl.setAttribute('aria-valuemax', total);
+        storiesEl.setAttribute('aria-valuenow', filled);
     }
 
     function updateDateTriggerText(dateStr) {
@@ -198,7 +231,15 @@
 
     window.openLeadDatePicker = function (e) {
         if (e) e.stopPropagation();
-        if (leadDateRangePicker) leadDateRangePicker.open();
+        const isMobileDevice = () => window.innerWidth <= 768;
+        if (isMobileDevice()) {
+            const openMobileCalendar = window.openMobileCalendarInternal;
+            if (openMobileCalendar) {
+                openMobileCalendar();
+            }
+        } else if (leadDateRangePicker) {
+            leadDateRangePicker.open();
+        }
     };
 
     window.clearLeadDates = function (e) {
@@ -299,7 +340,11 @@
                 if (step2Label) {
                     const stepNum = getStepCounter();
                     const isSpec = isSpecificPreset();
-                    const labelText = isSpec ? `${stepNum ? stepNum + ' — ' : ''}Дата заказа` : (t('form.step2.label') || 'Шаг 2 — Детали группы');
+                    const isConcierge2 = formData.experienceType === 'concierge';
+                    const dateOrderLbl = t('form.step2.dateOrderLabel') || 'Дата заказа';
+                    const labelText = isSpec || isConcierge2
+                        ? `${stepNum ? stepNum + ' — ' : ''}${dateOrderLbl}`
+                        : (t('form.step2.label') || 'Шаг 2 — Детали группы');
                     step2Label.textContent = labelText;
                 }
 
@@ -309,9 +354,8 @@
                 const guestsGrid = document.getElementById('lead-step-2-guests');
                 const guestsLabel = activeEl.querySelector('.lead-step-2-main > .form-group > .form-label');
                 const stepperWrap = document.getElementById('lead-step-2-guests-stepper-wrap');
-                // Hide group size section ONLY for villa/yacht/package (price per unit, not per person)
-                // Tours still need guest count — price is per person
-                const hideGuests = isConcierge || (!!(formData.yachtPreset || formData.villaPreset || formData.packageName));
+                // Hide group size section ONLY for concierge (which uses its own stepper)
+                const hideGuests = isConcierge;
                 if (guestsGrid) guestsGrid.style.display = hideGuests ? 'none' : '';
                 if (guestsLabel) guestsLabel.style.display = hideGuests ? 'none' : '';
                 if (stepperWrap) stepperWrap.classList.toggle('visible', isConcierge);
@@ -397,12 +441,12 @@
                         });
                     } else if (formData.experienceType === 'bikes') {
                         const bikeDayChips = [
-                            { n: '1', label: t('form.step2.bikes1day')   || '1 день' },
-                            { n: '2', label: t('form.step2.bikes2days')  || '2 дня' },
-                            { n: '3', label: t('form.step2.bikes3days')  || '3 дня' },
-                            { n: '5', label: t('form.step2.bikes5days')  || '5 дней' },
-                            { n: '7', label: t('form.step2.bikes1week')  || '1 неделя' },
-                            { n: '30', label: t('form.step2.bikesMonth') || 'Месяц' },
+                            { n: '1', label: t('form.step2.bikes1day') },
+                            { n: '2', label: t('form.step2.bikes2days') },
+                            { n: '3', label: t('form.step2.bikes3days') },
+                            { n: '5', label: t('form.step2.bikes5days') },
+                            { n: '7', label: t('form.step2.bikes1week') },
+                            { n: '30', label: t('form.step2.bikesMonth') },
                         ];
                         chipsContainer.innerHTML = bikeDayChips.map(c =>
                             `<button type="button" class="choice-btn choice-btn--sm" data-nights="${c.n}" onclick="setNightsFromChip(${c.n}, this)">${c.label}</button>`
@@ -467,13 +511,18 @@
 
                 const step2Next = document.getElementById('lead-step-2-next');
                 if (step2Next) {
-                    // For specific presets + tours: only start date needed
-                    // For concierge: only arrival date needed
-                    // For all others (generic): both dateFrom and dateTo required
                     const needsBothDates = !specificPreset && !isConcierge && formData.experienceType !== 'tour';
+                    // If dateFrom is already pre-filled (auto-set), enable Next immediately
                     step2Next.disabled = needsBothDates
                         ? !(formData.dateFrom && formData.dateTo)
                         : !formData.dateFrom;
+                }
+
+                // Fix #9: Hide sidebar on mobile for specific/concierge presets
+                const sidebar = document.querySelector('.lead-step-2-sidebar');
+                if (sidebar) {
+                    const hideSidebar = (specificPreset || isConcierge || formData.experienceType === 'tour') && window.innerWidth <= 768;
+                    sidebar.classList.toggle('lead-step-2-sidebar--hidden-mobile', hideSidebar);
                 }
                 updateStep2Summary();
                 updateStep3State();
@@ -502,26 +551,31 @@
 
                     // Dynamic title based on experience type
                     const titleMap = {
-                        package: t('form.step3.titlePackage') || 'Допуслуги и пожелания',
-                        yacht:   t('form.step3.titleYacht')   || 'Аренда яхты + допуслуги',
-                        villa:   t('form.step3.titleVilla')   || 'Аренда виллы + допуслуги',
-                        tour:    t('form.step3.titleTour')    || 'Экскурсия + допуслуги',
+                        package: t('form.step3.titlePackage'),
+                        yacht:   t('form.step3.titleYacht'),
+                        villa:   t('form.step3.titleVilla'),
+                        tour:    t('form.step3.titleTour'),
+                        bikes:   t('form.step3.titleBikes'),
                     };
                     const descMap = {
-                        package: t('form.step3.descPackage') || 'Стоимость пакета рассчитана. Добавьте дополнительные услуги при желании.',
-                        yacht:   t('form.step3.descYacht')   || 'Стоимость чартера определена. Вы можете добавить фотографа, рыбалку и другие опции.',
-                        villa:   t('form.step3.descVilla')   || 'Стоимость виллы рассчитана. Добавьте шеф-повара, массаж или другие сервисы.',
-                        tour:    t('form.step3.descTour')    || 'Стоимость экскурсии рассчитана на группу. Добавьте дополнительные услуги.',
+                        package: t('form.step3.descPackage'),
+                        yacht:   t('form.step3.descYacht'),
+                        villa:   t('form.step3.descVilla'),
+                        tour:    t('form.step3.descTour'),
+                        bikes:   t('form.step3.descBikes'),
                     };
                     const labelMap = {
-                        package: t('form.step3.labelPackage') || 'Шаг 3 — Стоимость и допуслуги',
-                        yacht:   t('form.step3.labelYacht')   || 'Шаг 3 — Стоимость чартера',
-                        villa:   t('form.step3.labelVilla')   || 'Шаг 3 — Стоимость виллы',
-                        tour:    t('form.step3.labelTour')    || 'Шаг 3 — Стоимость тура',
+                        package: t('form.step3.labelPackage'),
+                        yacht:   t('form.step3.labelYacht'),
+                        villa:   t('form.step3.labelVilla'),
+                        tour:    t('form.step3.labelTour'),
+                        bikes:   t('form.step3.labelBikes'),
                     };
-                    if (step3Title) step3Title.textContent = titleMap[formData.experienceType] || titleMap.package;
-                    if (step3Desc)  step3Desc.textContent  = descMap[formData.experienceType]  || descMap.package;
-                    if (step3Label) step3Label.textContent = labelMap[formData.experienceType] || labelMap.package;
+                    const stepCounter3 = getStepCounter();
+                    const step3LabelTxt = labelMap[formData.experienceType] || t('form.step3.label');
+                    if (step3Title) step3Title.textContent = titleMap[formData.experienceType] || t('form.step3.title');
+                    if (step3Desc)  step3Desc.textContent  = descMap[formData.experienceType]  || t('form.step3.desc');
+                    if (step3Label) step3Label.textContent = stepCounter3 ? `${stepCounter3} — ${step3LabelTxt.replace(/^Шаг \d+ — |^Step \d+ — /, '')}` : step3LabelTxt;
 
                     // Render the known item price with nights context
                     const priceAmountEl = document.getElementById('lead-step3-price-amount');
@@ -533,11 +587,11 @@
                         const nightsLabel = getNightsLabel();
                         if (formData.experienceType === 'tour') {
                             const guests = parseInt(formData.groupSize, 10) || 1;
-                            priceNoteEl.textContent = `${guests} ${t('form.step3.guestSuffix') || 'чел.'} × ${formatPrice(Math.round(estimatedPrice / guests))} ${t('form.step3.perPerson') || 'на человека'}`;
+                            priceNoteEl.textContent = `${guests} ${t('form.step3.guestSuffix')} × ${formatPrice(Math.round(estimatedPrice / guests))} ${t('form.step3.perPerson')}`;
                         } else if (formData.experienceType !== 'concierge') {
-                            priceNoteEl.textContent = nightsLabel ? `${nightsLabel} — ${t('form.step3.priceFixed') || 'цена фиксирована'}` : (t('form.step3.packagePriceNote') || 'Цена фиксирована. Ниже вы можете добавить допуслуги.');
+                            priceNoteEl.textContent = nightsLabel ? `${nightsLabel} — ${t('form.step3.priceFixed')}` : t('form.step3.packagePriceNote');
                         } else {
-                            priceNoteEl.textContent = t('form.step3.packagePriceNote') || 'Цена фиксирована. Ниже вы можете добавить допуслуги.';
+                            priceNoteEl.textContent = t('form.step3.packagePriceNote');
                         }
                     }
                 } else {
@@ -597,18 +651,17 @@
             }
         }
 
-        // Update progress segments
-        document.querySelectorAll('.lead-progress-segment').forEach((seg, i) => {
-            seg.classList.toggle('filled', i + 1 <= currentStep);
-        });
-        const storiesEl = document.querySelector('.lead-progress-stories');
-        if (storiesEl) storiesEl.setAttribute('aria-valuenow', currentStep);
+        // Fix #1: Dynamic progress bar driven by actual flow step count
+        updateProgressBar();
 
         // Dynamic step counter (X / Y)
         const counter = getStepCounter();
         document.querySelectorAll('.step-counter').forEach(el => {
-            if (counter) el.textContent = counter;
+            if (counter && !el.closest('#lead-step-cal')) el.textContent = counter;
         });
+
+        // Build step 5 summary when entering the confirm screen
+        if (currentStep === 5) buildStep5Summary();
 
         if (window.lucide) lucide.createIcons();
         syncFloatingLabels();
@@ -673,7 +726,7 @@
 
     window.nextStep = function () {
         if (!validateStep(currentStep)) return;
-        // Collect contact fields + fire API when leaving the contacts step (4)
+        // Collect contact fields when leaving the contacts step (4) — API fires on final WA send
         if (currentStep === 4) {
             const nameEl = document.getElementById('lead-name');
             const phoneEl = document.getElementById('lead-phone');
@@ -687,7 +740,7 @@
             formData.dateFrom = document.getElementById('lead-date-from')?.value || formData.dateFrom || '';
             formData.dateTo = document.getElementById('lead-date-to')?.value || formData.dateTo || '';
             formData.nights = document.getElementById('lead-nights')?.value || formData.nights || '1';
-            sendLeadToApi();
+            // NOTE: sendLeadToApi() now fires in submitLeadForm() to avoid double-send
         }
         const steps = getFlowSteps();
         const idx = steps.indexOf(currentStep);
@@ -704,6 +757,11 @@
             currentStep = steps[idx - 1];
             renderStep();
         }
+    };
+
+    window.goToStep = function (stepId) {
+        currentStep = stepId;
+        renderStep();
     };
 
     window.selectExperience = function (type, el) {
@@ -1108,6 +1166,70 @@
         setTimeout(() => { errEl.style.display = 'none'; }, 3000);
     }
 
+    // Fix #15: Build the order summary shown on step 5 (confirm screen)
+    function buildStep5Summary() {
+        const container = document.getElementById('lead-step5-summary-body');
+        if (!container) return;
+        container.innerHTML = '';
+
+        function addRow(label, value, cls) {
+            if (!value || value === '—') return;
+            const row = document.createElement('div');
+            row.className = 'lead-step5-summary__row';
+            row.innerHTML = `<span class="lead-step5-summary__label">${label}</span><span class="lead-step5-summary__value${cls ? ' ' + cls : ''}">${value}</span>`;
+            container.appendChild(row);
+        }
+
+        const itemName = getSummaryItemName();
+        if (itemName) addRow(t('form.step5.summaryItem') || 'Услуга', itemName);
+
+        if (formData.dateFrom) {
+            const [d1, m1, y1] = formData.dateFrom.split('.');
+            const fromD = new Date(parseInt(y1, 10), parseInt(m1, 10) - 1, parseInt(d1, 10));
+            let dateVal;
+            if (formData.experienceType === 'concierge') {
+                dateVal = `${formatDateSingle(fromD)} · ${formData.fastTrackTime || ''}`;
+            } else if (formData.dateTo && formData.dateTo !== formData.dateFrom) {
+                const [d2, m2, y2] = formData.dateTo.split('.');
+                const toD = new Date(parseInt(y2, 10), parseInt(m2, 10) - 1, parseInt(d2, 10));
+                dateVal = `${formatDateLong(fromD)} — ${formatDateLong(toD)}`;
+            } else {
+                dateVal = formatDateSingle(fromD);
+            }
+            addRow(t('form.step5.summaryDate') || 'Дата', dateVal);
+        }
+
+        const durationLabel = getNightsLabel();
+        if (durationLabel && formData.experienceType !== 'concierge') {
+            addRow(t('form.step5.summaryDuration') || 'Длительность', durationLabel);
+        }
+
+        const showGuests = !isSpecificPreset() || formData.experienceType === 'tour';
+        if (showGuests && formData.groupSize) {
+            addRow(t('form.step5.summaryGuests') || 'Гостей', String(formData.groupSize));
+        }
+
+        const estPrice = getEstimatedPrice();
+        if (typeof estPrice === 'number' && estPrice > 0) {
+            const addonsSum = Array.from(document.querySelectorAll('.addon-toggle-btn.selected'))
+                .map(b => calcAddonPrice(b.getAttribute('data-addon'))).reduce((a, b) => a + b, 0);
+            const total = estPrice + addonsSum;
+            addRow(t('form.step5.summaryPrice') || 'Стоимость', `${t('card.from') || 'от'} ${formatPrice(total)}`, 'lead-step5-summary__value--price');
+        } else if (formData.budget) {
+            const budgetMap = {
+                '150000': t('wa.budgetUp150'), '300000': t('wa.budget150_300'),
+                '1000000': t('wa.budget300_1m'), '9999999': t('wa.budget1mPlus')
+            };
+            if (budgetMap[formData.budget]) addRow(t('form.step5.summaryPrice') || 'Стоимость', budgetMap[formData.budget]);
+        }
+
+        const selectedAddons = Array.from(document.querySelectorAll('.addon-toggle-btn.selected'))
+            .map(b => b.querySelector('.addon-toggle-btn__label')?.textContent?.trim()).filter(Boolean);
+        if (selectedAddons.length) {
+            addRow(t('form.step5.summaryAddons') || 'Допуслуги', selectedAddons.join(', '));
+        }
+    }
+
     window.submitLeadForm = function () {
         // Collect final fields (may differ if user went back)
         const nameEl = document.getElementById('lead-name');
@@ -1126,7 +1248,7 @@
             showError(t('form.errorEnterNamePhone')); return;
         }
 
-        // Re-collect extras in case user went back and changed them
+        // Re-collect extras
         const addonBtns = document.querySelectorAll('.addon-toggle-btn.selected');
         const addonCheckboxes = document.querySelectorAll('.lead-extra:checked');
         formData.extras = addonBtns.length
@@ -1137,18 +1259,17 @@
         formData.dateTo = document.getElementById('lead-date-to')?.value || formData.dateTo || '';
         formData.nights = document.getElementById('lead-nights')?.value || formData.nights || '5';
 
-        // Close form modal (was incorrectly referencing non-existent closeLeadForm)
-        window.closeLeadModal();
+        // Fire API lead (moved here from nextStep to avoid double-send)
+        sendLeadToApi();
 
-        // Build WhatsApp message
+        // Build WhatsApp message and open
         const waMsg = buildWAMessage();
-
-        // Note: API lead was already fired on step 4 (contact step confirmation)
-        // Open WhatsApp after a brief delay so user sees the success state
+        window.closeLeadModal();
         setTimeout(() => {
             window.open(`https://wa.me/66635412949?text=${encodeURIComponent(waMsg)}`, '_blank');
-        }, 1200);
+        }, 300);
     };
+
 
     function buildWAMessage() {
         const expMap = {
@@ -1341,6 +1462,7 @@
                         locale: (window.i18n && window.i18n.lang) || 'ru',
                         clickOpens: false,  // we control open manually
                         allowInput: false,
+                        disableMobile: true, // we use custom mobile step view
                         appendTo: document.body,
                         position: 'below center',
                         onReady: function (_, __, fp) { syncYearArrows(fp); },
@@ -1353,79 +1475,161 @@
                         onChange: function (selectedDates) { handleDateSelection(selectedDates); }
                     });
 
-                    // ─── Mobile inline flatpickr (inside slide panel) ────────────────────
-                    let mobileCalPicker = null;
+                    // ─── Custom Vertical Mobile Calendar (replaces flatpickr) ───────────
+                    let mobileCalPanelCreated = false;
+
+                    function renderMobileCalendarBody(container) {
+                        container.innerHTML = '';
+                        const today = new Date();
+                        today.setHours(0,0,0,0);
+                        
+                        let currentSelDate = null;
+                        if (formData.dateFrom) {
+                            const [d, m, y] = formData.dateFrom.split('.');
+                            currentSelDate = new Date(y, m - 1, d);
+                            currentSelDate.setHours(0,0,0,0);
+                        }
+
+                        let monthNames = [
+                            'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+                            'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+                        ];
+                        let dayNames = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+                        
+                        if (window.flatpickr && flatpickr.l10ns) {
+                            const l10n = window.i18n.lang === 'ru' ? flatpickr.l10ns.ru : flatpickr.l10ns.default;
+                            if (l10n && l10n.months && l10n.months.longhand) {
+                                monthNames = l10n.months.longhand;
+                            }
+                            if (l10n && l10n.weekdays && l10n.weekdays.shorthand) {
+                                // Flatpickr weekdays usually start with Sunday (0), we need Mon-Sun
+                                dayNames = [...l10n.weekdays.shorthand.slice(1), l10n.weekdays.shorthand[0]];
+                            }
+                        }
+
+                        const calWrapper = document.createElement('div');
+                        calWrapper.className = 'custom-mobile-calendar';
+
+                        let startYear = today.getFullYear();
+                        let startMonth = today.getMonth();
+
+                        // Render 12 months
+                        for (let i = 0; i < 12; i++) {
+                            const y = startYear + Math.floor((startMonth + i) / 12);
+                            const m = (startMonth + i) % 12;
+                            
+                            const monthDiv = document.createElement('div');
+                            monthDiv.className = 'custom-cal-month';
+                            
+                            const title = document.createElement('div');
+                            title.className = 'custom-cal-month-title';
+                            title.textContent = `${monthNames[m]} ${y}`;
+                            monthDiv.appendChild(title);
+
+                            const weekdays = document.createElement('div');
+                            weekdays.className = 'custom-cal-weekdays';
+                            dayNames.forEach(dn => {
+                                const wd = document.createElement('div');
+                                wd.className = 'custom-cal-weekday';
+                                wd.textContent = dn;
+                                weekdays.appendChild(wd);
+                            });
+                            monthDiv.appendChild(weekdays);
+
+                            const daysGrid = document.createElement('div');
+                            daysGrid.className = 'custom-cal-days';
+
+                            const firstDay = new Date(y, m, 1);
+                            let startingDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1; // Mon=0
+                            const daysInMonth = new Date(y, m + 1, 0).getDate();
+
+                            // Pad start
+                            for (let p = 0; p < startingDay; p++) {
+                                const empty = document.createElement('div');
+                                daysGrid.appendChild(empty);
+                            }
+
+                            for (let d = 1; d <= daysInMonth; d++) {
+                                const btn = document.createElement('button');
+                                btn.type = 'button';
+                                btn.className = 'custom-cal-day';
+                                btn.textContent = d;
+                                
+                                const cellDate = new Date(y, m, d);
+                                cellDate.setHours(0,0,0,0);
+
+                                if (cellDate < today) {
+                                    btn.disabled = true;
+                                } else {
+                                    if (cellDate.getTime() === today.getTime()) btn.classList.add('today');
+                                    if (currentSelDate && cellDate.getTime() === currentSelDate.getTime()) btn.classList.add('selected');
+                                    
+                                    btn.addEventListener('click', (e) => {
+                                        e.preventDefault();
+                                        // Update state immediately for faster feedback
+                                        calWrapper.querySelectorAll('.custom-cal-day.selected').forEach(el => el.classList.remove('selected'));
+                                        btn.classList.add('selected');
+                                        
+                                        handleDateSelection([cellDate]);
+                                        if (leadDateRangePicker) {
+                                            leadDateRangePicker.setDate(cellDate, false);
+                                        }
+                                        setTimeout(closeMobileCalendar, 220);
+                                    });
+                                }
+                                daysGrid.appendChild(btn);
+                            }
+                            monthDiv.appendChild(daysGrid);
+                            calWrapper.appendChild(monthDiv);
+                        }
+                        container.appendChild(calWrapper);
+                    }
 
                     function openMobileCalendar() {
-                        // Lazy-create the panel
-                        let panel = document.getElementById('mobile-cal-panel');
-                        if (!panel) {
-                            const modalCard = document.querySelector('.lead-modal-card');
-                            if (!modalCard) return;
-                            panel = document.createElement('div');
-                            panel.id = 'mobile-cal-panel';
-                            panel.innerHTML = `
-                                <div class="mobile-cal-header">
-                                    <span class="mobile-cal-title">ВЫБЕРИТЕ ДАТУ</span>
-                                    <button type="button" class="mobile-cal-close" id="mobile-cal-close-btn">✕</button>
-                                </div>
-                                <div class="mobile-cal-body">
-                                    <input type="text" id="mobile-cal-input" style="position:absolute;opacity:0;pointer-events:none;width:1px;height:1px">
-                                </div>
-                            `;
-                            modalCard.appendChild(panel);
+                        const stepCal = document.getElementById('lead-step-cal');
+                        if (!stepCal) return;
 
-                            document.getElementById('mobile-cal-close-btn').addEventListener('click', () => {
-                                closeMobileCalendar();
-                            });
-
-                            // Init inline flatpickr inside the panel body
-                            const mobileInput = document.getElementById('mobile-cal-input');
-                            mobileCalPicker = flatpickr(mobileInput, {
-                                mode: 'single',
-                                inline: true,
-                                minDate: 'today',
-                                maxDate: maxDate,
-                                dateFormat: 'd.m.Y',
-                                locale: (window.i18n && window.i18n.lang) || 'ru',
-                                appendTo: panel.querySelector('.mobile-cal-body'),
-                                onChange: function (selectedDates) {
-                                    handleDateSelection(selectedDates);
-                                    // Sync to desktop picker so it shows the selected date
-                                    if (leadDateRangePicker && selectedDates[0]) {
-                                        leadDateRangePicker.setDate(selectedDates[0], false);
-                                    }
-                                    // Close panel after short delay (let user see highlight)
-                                    setTimeout(closeMobileCalendar, 220);
-                                }
-                            });
-                        }
-
-                        // Sync current date selection to mobile picker
-                        if (mobileCalPicker && formData.dateFrom) {
-                            const [d, m, y] = formData.dateFrom.split('.');
-                            mobileCalPicker.setDate(`${y}-${m}-${d}`, false);
-                        }
-
-                        // Update title
-                        const titleEl = panel.querySelector('.mobile-cal-title');
+                        // Update title based on experience type
+                        const titleEl = stepCal.querySelector('.mobile-cal-title');
                         if (titleEl) {
-                            const labels = {
-                                bikes: 'ДАТА НАЧАЛА АРЕНДЫ',
-                                tour: 'ДАТА ТУРА',
-                                villa: 'ДАТА ЗАЕЗДА',
-                                yacht: 'ДАТА АРЕНДЫ ЯХТЫ',
+                            const map = {
+                                bikes:     'form.step2.calTitleBikes',
+                                tour:      'form.step2.calTitleTour',
+                                villa:     'form.step2.calTitleVilla',
+                                yacht:     'form.step2.calTitleYacht',
+                                concierge: 'form.step2.calTitleConcierge'
                             };
-                            titleEl.textContent = labels[formData.experienceType] || 'ВЫБЕРИТЕ ДАТУ';
+                            const key = map[formData.experienceType] || 'form.step2.calTitleDefault';
+                            titleEl.setAttribute('data-i18n', key);
+                            titleEl.textContent = t(key);
                         }
 
-                        panel.classList.add('open');
+                        const bodyContainer = document.getElementById('custom-mobile-cal-body');
+                        if (bodyContainer) {
+                            renderMobileCalendarBody(bodyContainer);
+                        }
+
+                        goToStep('cal');
+
+                        if (bodyContainer) {
+                            setTimeout(() => {
+                                const selectedBtn = bodyContainer.querySelector('.custom-cal-day.selected');
+                                if (selectedBtn) {
+                                    selectedBtn.scrollIntoView({ behavior: 'auto', block: 'center' });
+                                } else {
+                                    bodyContainer.scrollTop = 0;
+                                }
+                            }, 10);
+                        }
                     }
 
                     function closeMobileCalendar() {
-                        const panel = document.getElementById('mobile-cal-panel');
-                        if (panel) panel.classList.remove('open');
+                        if (currentStep === 'cal') {
+                            goToStep(2);
+                        }
                     }
+                    
+                    window.openMobileCalendarInternal = openMobileCalendar;
 
                 } catch (e) {
                     console.warn('Flatpickr init failed (e.g. missing locale):', e);

@@ -17,36 +17,62 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс (в обе стороны)",
+      "Катер или катамаран (зависит от выбранного пакета)",
+      "Снаряжение для снорклинга: маска, трубка, ласты",
+      "Обед на борту",
+      "Русскоязычный гид (кроме пакета Эконом)",
+      "Страховка",
+      "Питьевая вода"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости бронирования — возврат невозможен",
+      "Отмена менее чем за 24 часа до экскурсии — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа до начала — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку бронирования",
+      "При форс-мажоре (погода, техника, опасные условия) предлагается альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем (SPF 50+)",
+      "Коралловые тапочки — защитят от порезов о рифы (очень рекомендуется)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные деньги (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Phi Phi Islands + Khai Islands",
     "description_en": "One-day sea tour to iconic Phi Phi Islands and Khai Island with swimming and snorkeling.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer (round trip)",
+      "Boat or catamaran (depends on chosen package)",
+      "Snorkeling gear: mask, snorkel, fins",
+      "Lunch on board",
+      "Russian-speaking guide (except Economy package)",
+      "Insurance",
+      "Drinking water"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen (SPF 50+)",
+      "Coral shoes — protect against reef cuts (highly recommended)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% of booking cost charged, no refund",
+      "Cancellation less than 24 hours before: no refund",
+      "Cancellation less than 72 hours before: 50% refund",
+      "Cancellation more than 72 hours before: 10% processing fee retained",
+      "In case of force majeure (weather, equipment, unsafe conditions) an alternative date or full refund will be offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -71,36 +97,62 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катер или катамаран",
+      "Снаряжение для снорклинга",
+      "Обед на борту",
+      "Русскоязычный гид (кроме Эконом)",
+      "Страховка",
+      "Питьевая вода"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Phi Phi + Bamboo Islands",
     "description_en": "Popular tour to Phi Phi and secluded Bamboo Island with excellent snorkeling.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Boat or catamaran",
+      "Snorkeling gear",
+      "Lunch on board",
+      "Russian-speaking guide (excl. Economy)",
+      "Insurance",
+      "Drinking water"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -125,36 +177,62 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катамаран с водной горкой",
+      "Снаряжение для снорклинга",
+      "Обед на борту",
+      "Гид",
+      "Страховка",
+      "Питьевая вода"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Phi Phi Islands + Water Slide",
     "description_en": "Fun Phi Phi tour with a large water slide for thrills and laughter.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Catamaran with water slide",
+      "Snorkeling gear",
+      "Lunch on board",
+      "Guide",
+      "Insurance",
+      "Drinking water"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -179,36 +257,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Лодка по заливу Пханг Нга",
+      "Каякинг среди мангровых лесов",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "James Bond Islands (Phang Nga Bay)",
     "description_en": "Classic Phang Nga Bay tour featuring James Bond Island and kayaking.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Phang Nga Bay boat",
+      "Kayaking through mangroves",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -233,36 +335,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Скоростной катер",
+      "Залив Пханг Нга + остров Хонг",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Phang Nga Bay (James Bond Islands) + Hong Island (Krabi)",
     "description_en": "Combined tour: Phang Nga Bay + Hong Island in Krabi.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Speedboat",
+      "Phang Nga Bay + Hong Island",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -287,36 +413,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Скоростной катер",
+      "Посещение 11 островов (Пхи Пхи, Краби, Джеймс Бонд)",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "11 Islands (Phi Phi — Krabi — James Bond)",
     "description_en": "Grand combined tour visiting 11 islands across three provinces.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Speedboat",
+      "11 island stops (Phi Phi, Krabi, James Bond)",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -341,36 +491,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Скоростной катер",
+      "3 главных направления: Пхи Пхи, Краби, залив Пханг Нга",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "3 Treasures of Andaman Sea (Phi Phi — Krabi — James Bond)",
     "description_en": "Popular combined tour to the three main gems of the Andaman Sea.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Speedboat",
+      "3 key destinations: Phi Phi, Krabi, Phang Nga",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -395,36 +569,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Лодка",
+      "Встреча рассвета на островах",
+      "Лёгкий завтрак/снек",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Paradise Islands Sunrise Tour",
     "description_en": "Early morning tour to paradise islands to watch the sunrise.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Boat",
+      "Sunrise on the islands",
+      "Light breakfast/snack",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -449,36 +647,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катер",
+      "Снасти для рыбалки",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Racha Yai + Coral Islands (Fishing)",
     "description_en": "Fishing + excursion to Racha Yai and Coral Islands.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Boat",
+      "Fishing gear",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -503,36 +725,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Скоростной катер",
+      "Снаряжение для снорклинга",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Mai Ton — Coral — Racha Yai Islands",
     "description_en": "One-day tour to three stunning islands with excellent snorkeling and pristine white beaches.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Speedboat",
+      "Snorkeling gear",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -557,36 +803,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катер",
+      "Снаряжение для снорклинга",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Coral Island",
     "description_en": "Easy and budget-friendly tour to Coral Island with great snorkeling.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Boat",
+      "Snorkeling gear",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -611,36 +881,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катер",
+      "Снаряжение для снорклинга",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Racha + Coral Islands",
     "description_en": "Combined tour to Racha and Coral Islands.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Boat",
+      "Snorkeling gear",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -665,36 +959,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катер",
+      "Снаряжение для снорклинга",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Raya Yai, Raya Noi & Mai Ton Islands (1 day)",
     "description_en": "Tour to three paradise islands: Raya Yai, Raya Noi and Mai Ton.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Boat",
+      "Snorkeling gear",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -719,36 +1037,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катер",
+      "Снаряжение для снорклинга",
+      "Обед",
+      "Страховка",
+      "Проживание на острове (для пакета 2 дня)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Racha Yai + Coral Islands (1 day & 2 days 1 night)",
     "description_en": "Racha Yai + Coral Islands tour with 1-day or overnight options.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Boat",
+      "Snorkeling gear",
+      "Lunch",
+      "Insurance",
+      "Island accommodation (2-day package)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -773,36 +1115,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катамаран Ombré",
+      "Снаряжение для снорклинга",
+      "Обед",
+      "Страховка (без русского гида)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Ombré Catamaran Tour (Racha Yai — Coral)",
     "description_en": "Premium catamaran tour on stylish Ombré (no Russian guide).",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Ombré catamaran",
+      "Snorkeling gear",
+      "Lunch",
+      "Insurance (no Russian guide)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -827,36 +1191,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катамаран Hype",
+      "Снаряжение для снорклинга",
+      "Обед",
+      "Страховка (без русского гида)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Hype Catamaran Tour (Racha Yai — Coral)",
     "description_en": "Premium Hype catamaran tour to Racha Yai & Coral (no Russian guide).",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Hype catamaran",
+      "Snorkeling gear",
+      "Lunch",
+      "Insurance (no Russian guide)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -881,36 +1267,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Скоростной катер",
+      "Снаряжение для снорклинга",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Ko Rok & Ko Haa Islands",
     "description_en": "Tour to remote Ko Rok and Ko Haa islands with world-class snorkeling.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Speedboat",
+      "Snorkeling gear",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -935,36 +1345,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катер",
+      "Снаряжение для снорклинга",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Tropical Paradise Krabi (Calm Islands + Sunset)",
     "description_en": "Relaxed Krabi islands tour with calm waters and beautiful sunset.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Boat",
+      "Snorkeling gear",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -989,36 +1423,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Скоростной катер",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Hong Island + Krabi on Speedboat",
     "description_en": "Fast speedboat tour to Hong Island and Krabi.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Speedboat",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1043,36 +1499,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катер или катамаран",
+      "Снаряжение для снорклинга",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Similan Islands",
     "description_en": "Tour to the world-famous Similan Islands — one of the best snorkeling destinations on the planet.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Boat or catamaran",
+      "Snorkeling gear",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1097,36 +1577,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер",
+      "Проживание на борту (1 ночь)",
+      "Все питание",
+      "Дайвинг (2 погружения)",
+      "Снаряжение для снорклинга",
+      "Страховка (без русского гида)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Similan Islands 2 Days 1 Night with Diving",
     "description_en": "2-day 1-night Similan Islands tour with diving — one of the world’s best diving destinations.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfers",
+      "Onboard accommodation (1 night)",
+      "All meals",
+      "Diving (2 dives)",
+      "Snorkeling gear",
+      "Insurance (no Russian guide)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1151,36 +1655,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер",
+      "Проживание на борту (1 ночь)",
+      "Все питание",
+      "Снаряжение для снорклинга",
+      "Страховка (без русского гида)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Similan Islands 2 Days 1 Night without Diving",
     "description_en": "2-day 1-night Similan Islands relaxation tour without diving.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfers",
+      "Onboard accommodation (1 night)",
+      "All meals",
+      "Snorkeling gear",
+      "Insurance (no Russian guide)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1205,36 +1731,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катер или катамаран",
+      "Снаряжение для снорклинга",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Surin Islands",
     "description_en": "Tour to the Surin Islands archipelago — one of the most beautiful and less crowded spots in the Andaman Sea.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Boat or catamaran",
+      "Snorkeling gear",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1259,36 +1809,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катер",
+      "Снаряжение для снорклинга",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Secret Beaches of Surin Islands",
     "description_en": "Tour to the secret beaches of the Surin Islands.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Boat",
+      "Snorkeling gear",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1313,36 +1887,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер",
+      "Проживание на острове",
+      "Все питание",
+      "Снаряжение для снорклинга",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Surin Islands 2 Days 1 Night & 3 Days 2 Nights",
     "description_en": "Multi-day Surin Islands tours with accommodation.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfers",
+      "Island accommodation",
+      "All meals",
+      "Snorkeling gear",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1367,36 +1963,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер",
+      "Проживание",
+      "Все питание",
+      "Экскурсии по программе",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "4 Gems of Andaman Sea 2 Days 1 Night",
     "description_en": "2-day 1-night tour to the 4 main gems of the Andaman Sea with accommodation.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfers",
+      "Accommodation",
+      "All meals",
+      "Program excursions",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1421,36 +2039,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер",
+      "Проживание",
+      "Все питание",
+      "Экскурсии по программе",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "5 Gems of Andaman Sea 2 Days 1 Night",
     "description_en": "Extended 2-day 1-night tour to the 5 gems of the Andaman Sea.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfers",
+      "Accommodation",
+      "All meals",
+      "Program excursions",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1475,36 +2115,56 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер Пхукет — Пхи Пхи и обратно",
+      "Проживание на острове (1 ночь)",
+      "Питание по программе",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Phi Phi Overnight — 2 Days 1 Night",
     "description_en": "Classic Phi Phi overnight tour with accommodation.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Phuket — Phi Phi transfer and return",
+      "Island accommodation (1 night)",
+      "Meals per program",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1529,36 +2189,56 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Ранний трансфер Пхукет — Пхи Пхи",
+      "Проживание на острове (1 ночь)",
+      "Питание по программе",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Early Departure Phi Phi Overnight — 2 Days 1 Night",
     "description_en": "Phi Phi overnight tour with early departure (daily).",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Early Phuket — Phi Phi transfer",
+      "Island accommodation (1 night)",
+      "Meals per program",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1583,36 +2263,52 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Билет на паром Пхукет ↔ Пхи Пхи (эконом-класс)",
+      "Место на борту"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Phuket ↔ Phi Phi Ferry Transfer (no Russian guide)",
     "description_en": "Regular ferry transfer between Phuket and Phi Phi Islands.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Phuket ↔ Phi Phi ferry ticket (economy)",
+      "Seat on board"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1637,36 +2333,50 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Билет на скоростной катер Пхукет ↔ Пхи Пхи"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Phuket ↔ Phi Phi Speedboat Transfer (no Russian guide)",
     "description_en": "Fast speedboat transfer Phuket — Phi Phi.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Phuket ↔ Phi Phi speedboat ticket"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1691,36 +2401,52 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Билет на паром в первом или премиум классе",
+      "Улучшенные места с дополнительными удобствами"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Phuket ↔ Phi Phi Ferry (Premium / First Class)",
     "description_en": "Comfortable ferry transfer in First or Premium class.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "First or Premium class ferry ticket",
+      "Upgraded seats with extra comfort"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1745,36 +2471,56 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер по основным достопримечательностям",
+      "Русскоязычный гид",
+      "Входные билеты (Большой Будда, Ват Чалонг)",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Phuket City Tour",
     "description_en": "Classic sightseeing tour of Phuket’s main attractions.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfer between main sights",
+      "Russian-speaking guide",
+      "Entrance fees (Big Buddha, Wat Chalong)",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1799,36 +2545,54 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер по достопримечательностям и рынку",
+      "Русскоязычный гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "City Tour + Sunday Market",
     "description_en": "Phuket city tour including the Sunday walking street market.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfer to sights and market",
+      "Russian-speaking guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1853,36 +2617,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Гид",
+      "Все активности (слоны, джунгли, горячие источники)",
+      "Обед",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Avatar World: Sunset, Jungle, Elephants & Hot Springs",
     "description_en": "Incredible “Avatar” world tour with jungle, elephants and natural hot springs.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "Guide",
+      "All activities (elephants, jungle, hot springs)",
+      "Lunch",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1907,36 +2693,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Рафтинг по горной реке",
+      "Слоновье СПА",
+      "Обед",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Rafting + Elephant SPA Tour",
     "description_en": "River rafting + Elephant SPA experience.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "River rafting",
+      "Elephant SPA",
+      "Lunch",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -1961,36 +2769,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Гид",
+      "Смотровая площадка Самет Нангше",
+      "Пляж с самолётами",
+      "Озеро с кувшинками Ma Doo Bua",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Sunrise Adventure: Samet Nangshe Viewpoint, James Bond Island, Airplane Beach & Ma Doo Bua Lotus Lake",
     "description_en": "Early morning adventure with sunrise at Samet Nangshe viewpoint and other highlights.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "Guide",
+      "Samet Nangshe viewpoint",
+      "Airplane beach",
+      "Ma Doo Bua lotus lake",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2015,36 +2847,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Гид",
+      "Стеклянный мост Самет Нангше",
+      "Пляж с самолётами",
+      "Озеро с кувшинками",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Sunrise Adventure: Samet Nangshe Glass Bridge, James Bond Island, Airplane Beach & Lotus Lake",
     "description_en": "Sunrise tour featuring the Samet Nangshe glass bridge.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "Guide",
+      "Samet Nangshe glass bridge",
+      "Airplane beach",
+      "Lotus lake",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2069,36 +2925,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Рафтинг",
+      "Сафари на слонах",
+      "Квадроциклы по джунглям",
+      "Обед",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Rafting + Elephant Safari + ATV Quad Bike Safari",
     "description_en": "Action-packed tour: rafting, elephant safari and ATV quad biking.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "River rafting",
+      "Elephant safari",
+      "Jungle ATV quad bikes",
+      "Lunch",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2123,36 +3003,54 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Рафтинг (программа по выбору)",
+      "Страховка (без русского гида)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Rafting Tour (no Russian guide)",
     "description_en": "Classic river rafting with multiple program options.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "Rafting (chosen program)",
+      "Insurance (no Russian guide)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2177,36 +3075,54 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Рафтинг на бамбуковых плотах (программа по выбору)",
+      "Страховка (без русского гида)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Bamboo Rafting (no Russian guide)",
     "description_en": "Relaxed bamboo rafting on traditional rafts.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "Bamboo rafting (chosen program)",
+      "Insurance (no Russian guide)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2231,36 +3147,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Гид",
+      "Сафари по нацпарку Кхао Лак",
+      "Купание и кормление слонов",
+      "Обед",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Safari in Khao Lak National Park + Bathing with Elephant",
     "description_en": "Khao Lak National Park safari with elephant bathing and feeding.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "Guide",
+      "Khao Lak NP safari",
+      "Elephant bathing & feeding",
+      "Lunch",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2285,36 +3225,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Прогулка на лодке по озеру Чаолан",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Chaolan Lake Tour (1 day)",
     "description_en": "One-day tour to the scenic Chaolan Lake.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "Chaolan Lake boat tour",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2339,36 +3301,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Прогулка на лодке по озеру Чеолан",
+      "Смотровая площадка Нангши Самет",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Chaolan Lake + Samet Nangshe Viewpoint Tour",
     "description_en": "Combined tour to Chaolan Lake and Samet Nangshe viewpoint.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "Chaolan Lake boat tour",
+      "Samet Nangshe viewpoint",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2393,36 +3379,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Гид",
+      "Посещение главных мест Краби",
+      "Обед",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Krabi Province Tour",
     "description_en": "Full-day tour of Krabi province’s main attractions.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "Guide",
+      "Visit to Krabi highlights",
+      "Lunch",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2447,36 +3455,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Лодка по заливу Пханг Нга",
+      "Каякинг",
+      "Обед",
+      "Гид",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Amazing Phang Nga",
     "description_en": "Packed Phang Nga Bay tour with optional glass bridge.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "Phang Nga Bay boat",
+      "Kayaking",
+      "Lunch",
+      "Guide",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2501,36 +3533,60 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер туда и обратно",
+      "Ночная лодка",
+      "Стеклянный мост",
+      "Спа-программа",
+      "Ужин",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Plankton Glow Tour: Glass Bridge, SPA & James Bond Views",
     "description_en": "Evening tour with bioluminescent plankton, glass bridge and James Bond views.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Round-trip transfer",
+      "Night boat",
+      "Glass bridge",
+      "Spa program",
+      "Dinner",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2555,36 +3611,56 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер до заповедника",
+      "Кормление и купание со слонами",
+      "Питание (по программе)",
+      "Страховка (без русского гида)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Chalong Elephant Retirement Sanctuary (no Russian guide)",
     "description_en": "Ethical elephant sanctuary in Chalong with feeding and bathing.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfer to sanctuary",
+      "Elephant feeding & bathing",
+      "Meals (per program)",
+      "Insurance (no Russian guide)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2609,36 +3685,54 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер до заповедника",
+      "Программа с elephants (2 или 4 часа)",
+      "Страховка (без русского гида)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Elephant WildLife Sanctuary (no Russian guide)",
     "description_en": "Ethical wildlife elephant sanctuary with 2-hour and 4-hour programs.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfer to sanctuary",
+      "Elephant program (2 or 4 hours)",
+      "Insurance (no Russian guide)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2663,36 +3757,54 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер до заповедника Phuket Elephant Care",
+      "Активности по программе",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Phuket Elephant Care Sanctuary",
     "description_en": "Ethical Phuket Elephant Care sanctuary.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfer to Phuket Elephant Care",
+      "Program activities",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2717,36 +3829,54 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер до фермы Phang Chang Kamala",
+      "Программа по выбору (A–E)",
+      "Страховка (без русского гида)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Phang Chang Kamala Elephant Farm (no Russian guide)",
     "description_en": "Popular elephant farm in Kamala with multiple programs.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfer to Phang Chang Kamala farm",
+      "Chosen program (A–E)",
+      "Insurance (no Russian guide)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2771,36 +3901,54 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер до фермы Phuchada Safari",
+      "Программа 30–60 минут",
+      "Страховка (без русского гида)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Phuchada Safari Elephant Farm (no Russian guide)",
     "description_en": "Phuchada Safari elephant farm with short 30–60 minute programs.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfer to Phuchada Safari farm",
+      "30–60 min elephant program",
+      "Insurance (no Russian guide)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2825,36 +3973,56 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер до зиплайн-парка",
+      "Зиплайн по выбранной программе",
+      "Инструктаж по безопасности",
+      "Страховка (без русского гида)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Hanuman World Zip Line / Flying Hanuman Zip Line",
     "description_en": "Thrilling zip line parks in Phuket.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfer to zip line park",
+      "Zip line (chosen program)",
+      "Safety briefing",
+      "Insurance (no Russian guide)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2879,36 +4047,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "2 погружения с аквалангом",
+      "Всё необходимое оборудование",
+      "Инструктор",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Diving",
     "description_en": "Sea diving from Phuket.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "2 scuba dives",
+      "Full diving equipment",
+      "Instructor",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2933,36 +4123,56 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер до трассы",
+      "Квадроцикл (30, 45 или 60 мин)",
+      "Инструктаж",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "ATV Quad Bike Safari",
     "description_en": "ATV quad bike jungle safari in Phuket.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Transfer to ATV track",
+      "Quad bike (30, 45 or 60 min)",
+      "Safety briefing",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -2987,36 +4197,54 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Полёт на самолёте или вертолёте (по выбору)",
+      "Пилот",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Scenic Airplane & Helicopter Flights",
     "description_en": "Aerial tours over Phuket and Phang Nga.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Scenic flight by plane or helicopter",
+      "Pilot",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -3041,36 +4269,56 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер отель ↔ пирс",
+      "Катер",
+      "Снасти и оборудование для рыбалки",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Sea Fishing",
     "description_en": "Sea fishing from Phuket (various programs and sunrise).",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Hotel ↔ pier transfer",
+      "Boat",
+      "Fishing gear and equipment",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -3095,36 +4343,52 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Входной билет в аквапарк (Splash Jungle или Andamanda)",
+      "Трансфер опционально"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Phuket Water Parks (Splash Jungle & Andamanda)",
     "description_en": "Visit to Splash Jungle and Andamanda Water Parks.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Water park entry ticket (Splash Jungle or Andamanda)",
+      "Transfer optional"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -3149,36 +4413,50 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Билет на стадион (Stadium или VIP/Ringside)"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Muay Thai",
     "description_en": "Professional Muay Thai fights at Bangla and Patong stadiums.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Stadium ticket (Stadium or VIP/Ringside)"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -3203,36 +4481,58 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Авиаперелёт или трансфер",
+      "Проживание (по программе)",
+      "Питание (по программе)",
+      "Экскурсионная программа",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Excursions to Neighboring Provinces & Countries",
     "description_en": "Multi-day tours to Bangkok, Chiang Mai, Kuala Lumpur, Singapore etc.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Flight or transfer",
+      "Accommodation (per program)",
+      "Meals (per program)",
+      "Tour program",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -3257,36 +4557,52 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Трансфер Пхукет — граница (Сатун или Ранонг) — Пхукет",
+      "Все пограничные процедуры"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Border Run (Visa Run)",
     "description_en": "Visa run to Satun or Ranong.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Phuket — border (Satun or Ranong) — Phuket transfer",
+      "All border procedures"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -3311,36 +4627,52 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Полное сопровождение при оформлении тайских прав",
+      "Помощь со сдачей экзаменов"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
-      "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Удобная обувь для ходьбы",
+      "Лёгкая дышащая одежда",
+      "Головной убор от солнца",
+      "Солнцезащитный крем SPF 50+",
+      "Репеллент от насекомых",
+      "Вода (не менее 1 литра)",
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Небольшой рюкзак"
     ],
     "title_en": "Thai Driver’s License",
     "description_en": "Obtaining a Thai driver’s license.",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Full assistance for Thai driver's license",
+      "Exam support"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
-      "Swimwear",
-      "Towel",
-      "Camera",
-      "Cash"
+      "Comfortable walking shoes",
+      "Light breathable clothing",
+      "Sun hat",
+      "Sunscreen SPF 50+",
+      "Insect repellent",
+      "Water (at least 1 litre)",
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Small backpack"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],
@@ -3365,36 +4697,56 @@
     "days": "По запросу",
     "itinerary": [],
     "notes": "Программа может меняться в связи с погодными условиями.",
-    "included": [],
+    "included": [
+      "Аренда судна (лодка, яхта или катамаран) на выбранный маршрут",
+      "Капитан и экипаж",
+      "Топливо",
+      "Страховка"
+    ],
     "cancellation": [
-      "При неявке — 100% без возврата",
-      "Отмена менее 24ч — возврат не осуществляется",
-      "Отмена менее 72ч — возврат 50%",
-      "Отмена более 72ч — удерживается 10%"
+      "При неявке взимается 100% стоимости — возврат невозможен",
+      "Отмена менее чем за 24 часа — возврат средств не осуществляется",
+      "Отмена менее чем за 72 часа — возврат 50% стоимости",
+      "Отмена более чем за 72 часа — удерживается 10% за обработку",
+      "При форс-мажоре (погода, техника) — альтернативная дата или полный возврат"
     ],
     "what_to_bring": [
-      "Солнцезащитный крем",
-      "Купальник",
+      "Солнцезащитный крем SPF 50+",
+      "Коралловые тапочки (защита от рифов)",
+      "Репеллент от комаров",
+      "Купальник / плавки",
       "Полотенце",
-      "Фотоаппарат",
-      "Наличные"
+      "Фотоаппарат или смартфон",
+      "Наличные (тайские баты)",
+      "Лёгкая одежда и головной убор",
+      "Очки от солнца"
     ],
     "title_en": "Private Boat / Yacht / Catamaran Rental",
     "description_en": "Private rental of boats, yachts and catamarans (on request).",
     "itinerary_en": [],
-    "included_en": [],
+    "included_en": [
+      "Vessel rental (boat, yacht or catamaran) for chosen route",
+      "Captain and crew",
+      "Fuel",
+      "Insurance"
+    ],
     "what_to_bring_en": [
-      "Sunscreen",
+      "Sunscreen SPF 50+",
+      "Coral shoes (reef protection)",
+      "Mosquito repellent",
       "Swimwear",
       "Towel",
-      "Camera",
-      "Cash"
+      "Camera or smartphone",
+      "Cash (Thai baht)",
+      "Light clothes and hat",
+      "Sunglasses"
     ],
     "cancellation_en": [
-      "No-show — 100% charged, no refund",
-      "Cancellation < 24h — no refund",
-      "Cancellation < 72h — 50% refund",
-      "Cancellation > 72h — 10% processing fee"
+      "No-show: 100% charged, no refund",
+      "Cancellation < 24h: no refund",
+      "Cancellation < 72h: 50% refund",
+      "Cancellation > 72h: 10% processing fee retained",
+      "Force majeure (weather/equipment): alternative date or full refund offered"
     ],
     "child_age_en": "",
     "extra_charges_en": [],

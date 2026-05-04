@@ -3,43 +3,43 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://azanovretreat.com/</loc>
-    <lastmod>2026-03-10</lastmod>
+    <loc>https://azanovtravel.com/</loc>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://azanovretreat.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://azanovretreat.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://azanovretreat.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azanovtravel.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://azanovtravel.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azanovtravel.com/"/>
   </url>
 
   <url>
-    <loc>https://azanovretreat.com/villas.html</loc>
-    <lastmod>2026-03-10</lastmod>
+    <loc>https://azanovtravel.com/villas.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://azanovretreat.com/villas.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://azanovretreat.com/villas.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://azanovretreat.com/villas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azanovtravel.com/villas.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://azanovtravel.com/villas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azanovtravel.com/villas.html"/>
   </url>
 
   <url>
-    <loc>https://azanovretreat.com/fleet.html</loc>
-    <lastmod>2026-03-10</lastmod>
+    <loc>https://azanovtravel.com/fleet.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://azanovretreat.com/fleet.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://azanovretreat.com/fleet.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://azanovretreat.com/fleet.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azanovtravel.com/fleet.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://azanovtravel.com/fleet.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azanovtravel.com/fleet.html"/>
   </url>
 
   <url>
-    <loc>https://azanovretreat.com/tours.html</loc>
-    <lastmod>2026-03-10</lastmod>
+    <loc>https://azanovtravel.com/tours.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://azanovretreat.com/tours.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://azanovretreat.com/tours.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://azanovretreat.com/tours.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azanovtravel.com/tours.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://azanovtravel.com/tours.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azanovtravel.com/tours.html"/>
   </url>
 
 </urlset>

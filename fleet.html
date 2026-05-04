@@ -56,8 +56,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65K46S1T7Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65K46S1T7Y');
+  </script>
+
   <!-- Site CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.min.css?v=16">
 
   <!-- Structured Data: ItemList of vessel types + BreadcrumbList -->
   <script type="application/ld+json">
@@ -454,6 +463,43 @@
               <div class="lead-step-2-dates-row">
                 <div class="lead-step-2-dates-main">
                   <div class="form-group">
+                    <!-- Bike Type Selector (shown only for bikes / auto) -->
+                    <div id="lead-step-2-bike-type" style="display:none;margin-bottom:1.25rem">
+                      <label class="form-label" data-i18n="form.step2.bikeTypeLabel">Тип транспорта</label>
+                      <div class="choice-grid choice-grid--sm bike-type-grid" style="margin-top:0.5rem">
+                        <button type="button" class="choice-btn choice-btn--sm bike-type-btn" data-bike-type="scooter" onclick="setBikeType('scooter', this)">
+                          <span class="bike-type-icon"><i data-lucide="bike"></i></span>
+                          <span data-i18n="form.step2.bikeScooter">Скутер</span>
+                        </button>
+                        <button type="button" class="choice-btn choice-btn--sm bike-type-btn" data-bike-type="motorbike" onclick="setBikeType('motorbike', this)">
+                          <span class="bike-type-icon"><i data-lucide="zap"></i></span>
+                          <span data-i18n="form.step2.bikeMotorbike">Мотобайк</span>
+                        </button>
+                        <button type="button" class="choice-btn choice-btn--sm bike-type-btn" data-bike-type="car" onclick="setBikeType('car', this)">
+                          <span class="bike-type-icon"><i data-lucide="car"></i></span>
+                          <span data-i18n="form.step2.bikeCar">Авто</span>
+                        </button>
+                        <button type="button" class="choice-btn choice-btn--sm bike-type-btn" data-bike-type="atv" onclick="setBikeType('atv', this)">
+                          <span class="bike-type-icon"><i data-lucide="mountain-snow"></i></span>
+                          <span data-i18n="form.step2.bikeAtv">ATV</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="lead-nights-section" id="lead-nights-section" style="margin-bottom:1.25rem">
+                      <label class="form-label" data-i18n="form.step2.durationTitle">Продолжительность</label>
+                      <div class="choice-grid choice-grid--sm lead-nights-chips" style="margin-top:0.75rem">
+                        <button type="button" class="choice-btn choice-btn--sm" data-nights="5"
+                          onclick="setNightsFromChip(5, this)" data-i18n="form.step2.package5nights">5 ночей</button>
+                        <button type="button" class="choice-btn choice-btn--sm" data-nights="7"
+                          onclick="setNightsFromChip(7, this)" data-i18n="form.step2.package7nights">7 ночей</button>
+                        <button type="button" class="choice-btn choice-btn--sm" data-nights="10"
+                          onclick="setNightsFromChip(10, this)" data-i18n="form.step2.package10nights">10 ночей</button>
+                        <button type="button" class="choice-btn choice-btn--sm" data-nights="14"
+                          onclick="setNightsFromChip(14, this)" data-i18n="form.step2.package2weeks">2 недели</button>
+                        <button type="button" class="choice-btn choice-btn--sm" data-nights="30"
+                          onclick="setNightsFromChip(30, this)" data-i18n="form.step2.packageMonth">Месяц+</button>
+                      </div>
+                    </div>
                     <label class="form-label" data-i18n="form.step2.datesLabel">Выберите даты</label>
                     <div class="date-field-trigger input-with-clear" id="lead-date-field-trigger" role="button"
                       tabindex="0" data-i18n-aria="aria.datesSelect" onclick="openLeadDatePicker(event)">
@@ -469,40 +515,8 @@
                       </span>
                     </div>
                     <p class="lead-date-summary" id="lead-date-summary" aria-live="polite"></p>
-                    <div class="lead-nights-section" id="lead-nights-section" style="margin-top:1.25rem">
-                      <label class="form-label" data-i18n="form.step2.durationTitle">Продолжительность</label>
-                      <div class="choice-grid choice-grid--sm lead-nights-chips" style="margin-top:0.75rem">
-                        <button type="button" class="choice-btn choice-btn--sm" data-nights="5"
-                          onclick="setNightsFromChip(5, this)" data-i18n="form.step2.package5nights">5 ночей</button>
-                        <button type="button" class="choice-btn choice-btn--sm" data-nights="7"
-                          onclick="setNightsFromChip(7, this)" data-i18n="form.step2.package7nights">7 ночей</button>
-                        <button type="button" class="choice-btn choice-btn--sm" data-nights="10"
-                          onclick="setNightsFromChip(10, this)" data-i18n="form.step2.package10nights">10 ночей</button>
-                        <button type="button" class="choice-btn choice-btn--sm" data-nights="14"
-                          onclick="setNightsFromChip(14, this)" data-i18n="form.step2.package2weeks">2 недели</button>
-                        <button type="button" class="choice-btn choice-btn--sm" data-nights="30"
-                          onclick="setNightsFromChip(30, this)" data-i18n="form.step2.packageMonth">Месяц+</button>
-                      </div>
-                    </div>
 
-                    <!-- Bike Type Selector -->
-                    <div id="lead-step-2-bike-type" style="display:none;margin-top:1.25rem">
-                      <label class="form-label" data-i18n="form.step2.bikeTypeLabel">Тип транспорта</label>
-                      <div class="choice-grid choice-grid--sm" style="margin-top:0.5rem">
-                        <button type="button" class="choice-btn choice-btn--sm" data-bike-type="scooter" onclick="setBikeType('scooter', this)">
-                          <span style="font-size:1.1em">🛵</span>&nbsp;<span data-i18n="form.step2.bikeScooter">Скутер</span>
-                        </button>
-                        <button type="button" class="choice-btn choice-btn--sm" data-bike-type="motorbike" onclick="setBikeType('motorbike', this)">
-                          <span style="font-size:1.1em">🏍️</span>&nbsp;<span data-i18n="form.step2.bikeMotorbike">Мотобайк</span>
-                        </button>
-                        <button type="button" class="choice-btn choice-btn--sm" data-bike-type="car" onclick="setBikeType('car', this)">
-                          <span style="font-size:1.1em">🚗</span>&nbsp;<span data-i18n="form.step2.bikeCar">Автомобиль</span>
-                        </button>
-                        <button type="button" class="choice-btn choice-btn--sm" data-bike-type="atv" onclick="setBikeType('atv', this)">
-                          <span style="font-size:1.1em">🏕️</span>&nbsp;<span data-i18n="form.step2.bikeAtv">Квадроцикл</span>
-                        </button>
-                      </div>
-                    </div>
+
                     <input type="hidden" id="lead-nights" value="5">
                     <input type="hidden" id="lead-date-from" value="">
                     <input type="hidden" id="lead-date-to" value="">
@@ -511,14 +525,17 @@
               </div>
             </div>
             <aside class="lead-step-2-sidebar" data-i18n-aria="aria.retreatSummary">
-              <div class="glass-card lead-step-2-summary" id="lead-step-2-summary" aria-live="polite">
-                <div class="lead-step-2-summary__title" data-i18n="form.step2.summary">Ваш тур</div>
-                <div class="lead-step-2-summary__line lead-step-2-summary__item" id="lead-summary-item">—</div>
-                <div class="lead-step-2-summary__line" id="lead-summary-guests">—</div>
-                <div class="lead-step-2-summary__line" id="lead-summary-nights">—</div>
-                <div class="lead-step-2-summary__line lead-step-2-summary__price" id="lead-summary-price"
-                  style="display:none">—</div>
-                <div class="lead-step-2-summary__line" id="lead-summary-dates">—</div>
+              <div class="glass-card lead-step-2-summary lead-step-2-summary--rich" id="lead-step-2-summary" aria-live="polite">
+                <img class="lead-sidebar-thumb" id="lead-sidebar-thumb" src="" alt="" style="display:none" loading="lazy">
+                <div class="lead-sidebar-content">
+                  <div class="lead-step-2-summary__title" data-i18n="form.step2.summary">Ваш тур</div>
+                  <div class="lead-step-2-summary__line lead-step-2-summary__item" id="lead-summary-item">—</div>
+                  <div class="lead-step-2-summary__line" id="lead-summary-guests">—</div>
+                  <div class="lead-step-2-summary__line" id="lead-summary-nights">—</div>
+                  <div class="lead-step-2-summary__line lead-step-2-summary__price" id="lead-summary-price"
+                    style="display:none">—</div>
+                  <div class="lead-step-2-summary__line" id="lead-summary-dates">—</div>
+                </div>
               </div>
             </aside>
           </div><div class="lead-nav">
@@ -705,7 +722,7 @@
           </div>
           <p class="body-sm muted" style="text-align:center;margin-top:1rem;font-size:0.78rem"
             data-i18n="form.step5.privacy">Нажимая кнопку, вы
-            соглашаетесь на обработку персональных данных для формирования индивидуального предложения.</p>
+            соглашаетесь на обработку <a href="privacy.html" target="_blank" style="color:var(--teal);text-decoration:underline">персональных данных</a> для формирования индивидуального предложения.</p>
         </div>
 </div>
       </div>
@@ -771,12 +788,14 @@
   <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/default.js" defer></script>
-  <script src="js/i18n.js" defer></script>
-  <script src="js/nav-mobile.js" defer></script>
-  <script src="js/image-utils.js" defer></script>
-  <script src="js/components.js" defer></script>
+  <script src="js/min/preloader.js" defer></script>
+  <script src="js/min/i18n.js" defer></script>
+  <script src="js/min/scroll-manager.js" defer></script>
+  <script src="js/min/nav-mobile.js" defer></script>
+  <script src="js/min/image-utils.js" defer></script>
+  <script src="js/min/components.js" defer></script>
   <script>window.LEAD_API_URL = '/api/send-lead';</script>
-  <script src="js/lead-form.js" defer></script>
+  <script src="js/lead-form.js?v=6" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
       await window.i18n.init();

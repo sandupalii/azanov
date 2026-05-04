@@ -93,8 +93,8 @@
       if (delta > 0 && el.speed) {
         var bps = delta / elapsed;
         el.speed.textContent = bps >= 500000
-          ? (bps / 1048576).toFixed(1) + ' МБ/с'
-          : bps >= 1000 ? Math.round(bps / 1024) + ' КБ/с' : '';
+          ? (bps / 1048576).toFixed(1) + ' MB/s'
+          : bps >= 1000 ? Math.round(bps / 1024) + ' KB/s' : '';
       }
     }, 300);
   }
@@ -104,7 +104,7 @@
     if (phase1Done) return;
     phase1Done = true;
     clearInterval(speedTimer);
-    if (el.status) el.status.textContent = 'Готово ✓';
+    if (el.status) el.status.textContent = 'Ready ✓';
     if (el.speed)  el.speed.textContent  = '';
 
     setTimeout(function () {
@@ -139,18 +139,18 @@
     var total = loaded + pending.length;
 
     if (total === 0 || pending.length === 0) {
-      setProgress(100, 'Фото загружены');
+      setProgress(100, 'Photos loaded');
       return;
     }
 
     function onLoad() {
       loaded++;
       setProgress(80 + Math.round((loaded / total) * 20),
-        'Фото ' + loaded + ' из ' + total);
-      if (loaded >= total) setProgress(100, 'Готово ✓');
+        'Photo ' + loaded + ' of ' + total);
+      if (loaded >= total) setProgress(100, 'Ready ✓');
     }
 
-    setProgress(80, 'Фото ' + loaded + ' из ' + total);
+    setProgress(80, 'Photo ' + loaded + ' of ' + total);
     pending.forEach(function (img) {
       if (img.complete && img.naturalWidth > 0) { onLoad(); return; }
       img.addEventListener('load',  onLoad, { once: true });
@@ -191,7 +191,7 @@
       '<div class="pl-bg__bar-wrap"><div class="pl-bg__bar" id="pl-bg-bar"></div></div>' +
       '<div class="pl-bg__label">' +
         '<span class="pl-bg__icon">📷</span>' +
-        '<span id="pl-bg-text">Подготовка...</span>' +
+        '<span id="pl-bg-text">Preparing...</span>' +
       '</div>';
     document.body.appendChild(pill);
 
@@ -206,7 +206,7 @@
     function updatePill() {
       var pct = total > 0 ? (loaded / total) * 100 : 100;
       if (bgBar) bgBar.style.width = pct.toFixed(1) + '%';
-      if (bgText) bgText.textContent = loaded + ' / ' + total + ' фото';
+      if (bgText) bgText.textContent = loaded + ' / ' + total + ' photos';
     }
 
     updatePill();
@@ -234,7 +234,7 @@
     }
 
     function donePill() {
-      if (bgText) bgText.textContent = 'Все фото готовы ✓';
+      if (bgText) bgText.textContent = 'All photos ready ✓';
       if (bgBar)  bgBar.style.width = '100%';
       setTimeout(function () {
         pill.classList.remove('pl-bg--visible');
@@ -355,7 +355,7 @@
     if (_langOverlay) {
       _langSetPct(70, labels.translating);
     } else {
-      setProgress(65, 'Строим компоненты...');
+      setProgress(65, 'Building components...');
     }
   };
 
@@ -367,20 +367,20 @@
   };
 
   window.__plDone = function () {
-    setProgress(80, 'Загружаем фото...');
+    setProgress(80, 'Loading photos...');
     setTimeout(trackCriticalImages, 100);
   };
 
   /* ── Boot ────────────────────────────────────────────────── */
-  setProgress(15, 'Загружаем шрифты...');
+  setProgress(15, 'Loading fonts...');
   startSpeedTracking();
 
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(function () {
-      setProgress(40, 'Загружаем переводы...');
+      setProgress(40, 'Loading translations...');
     });
   } else {
-    setTimeout(function () { setProgress(40, 'Загружаем переводы...'); }, 200);
+    setTimeout(function () { setProgress(40, 'Loading translations...'); }, 200);
   }
 
   // Global safety net

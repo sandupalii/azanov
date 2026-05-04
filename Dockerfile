@@ -10,10 +10,11 @@ WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules
 
-# Copy the whole project
-COPY . .
-
 RUN addgroup -S app && adduser -S app -G app
+
+# Copy the whole project with correct permissions
+COPY --chown=app:app . .
+
 USER app
 
 EXPOSE 3001

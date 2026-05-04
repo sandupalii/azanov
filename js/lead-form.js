@@ -1397,13 +1397,13 @@
 
     function buildWAMessage() {
         const expMap = {
-            villa: '🏡 ' + t('form.step1.villa'),
-            yacht: '⛵ ' + t('form.step1.yacht'),
-            bikes: '🏍️ ' + t('form.step1.bikes'),
-            retreat: '🌟 ' + t('form.step1.retreat'),
-            package: '📦 ' + t('form.step1.package'),
-            tour: '🎫 ' + t('form.step1.tour'),
-            concierge: '🛠️ ' + t('form.step1.concierge')
+            villa: t('form.step1.villa'),
+            yacht: t('form.step1.yacht'),
+            bikes: t('form.step1.bikes'),
+            retreat: t('form.step1.retreat'),
+            package: t('form.step1.package'),
+            tour: t('form.step1.tour'),
+            concierge: t('form.step1.concierge')
         };
         const budgetMap = {
             '150000': t('wa.budgetUp150'),
@@ -1412,43 +1412,43 @@
             '9999999': t('wa.budget1mPlus')
         };
         let msg = t('wa.greeting') + '\n\n';
-        msg += `👤 ${t('wa.name')}: ${formData.name}\n`;
-        msg += `📱 ${t('wa.phone')}: ${formData.phone}\n`;
-        if (formData.email) msg += `📧 Email: ${formData.email}\n`;
-        msg += `\n🎯 ${t('wa.experienceType')}: ${expMap[formData.experienceType] || formData.experienceType}\n`;
-        if (formData.packageName) msg += `📦 ${t('wa.package')}: ${formData.packageName}\n`;
-        if (formData.yachtPreset) msg += `⛵ ${t('wa.yacht')}: ${formData.yachtPreset}\n`;
-        if (formData.villaPreset) msg += `🏡 ${t('wa.villa')}: ${formData.villaPreset}\n`;
-        if (formData.tourPreset) msg += `🎫 ${t('wa.tour')}: ${formData.tourPreset}\n`;
-        if (formData.servicePreset && !formData.tourPreset) msg += `🛠️ ${t('wa.service')}: ${formData.servicePreset}\n`;
+        msg += `• ${t('wa.name')}: ${formData.name}\n`;
+        msg += `• ${t('wa.phone')}: ${formData.phone}\n`;
+        if (formData.email) msg += `• Email: ${formData.email}\n`;
+        msg += `\n• ${t('wa.experienceType')}: ${expMap[formData.experienceType] || formData.experienceType}\n`;
+        if (formData.packageName) msg += `• ${t('wa.package')}: ${formData.packageName}\n`;
+        if (formData.yachtPreset) msg += `• ${t('wa.yacht')}: ${formData.yachtPreset}\n`;
+        if (formData.villaPreset) msg += `• ${t('wa.villa')}: ${formData.villaPreset}\n`;
+        if (formData.tourPreset) msg += `• ${t('wa.tour')}: ${formData.tourPreset}\n`;
+        if (formData.servicePreset && !formData.tourPreset) msg += `• ${t('wa.service')}: ${formData.servicePreset}\n`;
         if (formData.experienceType === 'bikes' && formData.bikeType) {
-            const bikeLabels = { scooter: '🛵 Скутер', motorbike: '🏍️ Мотобайк', car: '🚗 Автомобиль', atv: '🏕️ Квадроцикл' };
-            msg += `🛵 ${t('wa.bikeType') || 'Тип ТС'}: ${bikeLabels[formData.bikeType] || formData.bikeType}\n`;
+            const bikeLabels = { scooter: 'Скутер', motorbike: 'Мотобайк', car: 'Автомобиль', atv: 'Квадроцикл' };
+            msg += `• ${t('wa.bikeType') || 'Тип ТС'}: ${bikeLabels[formData.bikeType] || formData.bikeType}\n`;
         }
         if (formData.groupSize && formData.experienceType !== 'concierge') {
-            msg += `\n👥 ${t('wa.guests')}: ${t('wa.guestsCount').replace('{n}', formData.groupSize)}\n`;
+            msg += `\n• ${t('wa.guests')}: ${t('wa.guestsCount').replace('{n}', formData.groupSize)}\n`;
         }
         if (formData.experienceType === 'concierge') {
-            msg += `🗓️ ${t('wa.arrival')}: ${formData.dateFrom || t('wa.tbd')}\n`;
-            msg += `🕐 ${t('wa.arrivalTime')}: ${formData.fastTrackTime || t('wa.tbd')}\n`;
+            msg += `• ${t('wa.arrival')}: ${formData.dateFrom || t('wa.tbd')}\n`;
+            msg += `• ${t('wa.arrivalTime')}: ${formData.fastTrackTime || t('wa.tbd')}\n`;
         } else if (formData.experienceType === 'bikes') {
-            msg += `📅 Начало аренды: ${formData.dateFrom || t('wa.tbd')}\n`;
-            msg += `📅 Возврат: ${formData.dateTo || formData.dateFrom || t('wa.tbd')}\n`;
+            msg += `• Начало аренды: ${formData.dateFrom || t('wa.tbd')}\n`;
+            msg += `• Возврат: ${formData.dateTo || formData.dateFrom || t('wa.tbd')}\n`;
             const bikeLabels = { 1: '1 день', 2: '2 дня', 3: '3 дня', 5: '5 дней', 7: '1 неделя', 30: 'Месяц' };
             const n = parseInt(formData.nights, 10);
-            msg += `⏱️ Срок: ${bikeLabels[n] || `${formData.nights} дн.`}\n`;
+            msg += `• Срок: ${bikeLabels[n] || `${formData.nights} дн.`}\n`;
         } else if (formData.experienceType === 'tour') {
-            msg += `📅 Дата тура: ${formData.dateFrom || t('wa.tbd')}\n`;
+            msg += `• Дата тура: ${formData.dateFrom || t('wa.tbd')}\n`;
             if (formData.tourDurationDays > 1) {
-                msg += `⏱️ Длительность: ${formData.tourDurationDays} дня\n`;
+                msg += `• Длительность: ${formData.tourDurationDays} дня\n`;
             }
         } else if (formData.experienceType === 'yacht') {
             const yachtLabels = { 0: t('form.step2.yacht1day'), 1: t('form.step2.yacht2days'), 2: t('form.step2.yacht3days'), 5: t('form.step2.yacht5nights'), 7: t('form.step2.yacht7nights') };
-            msg += `🗓️ Дата аренды: ${formData.dateFrom || t('wa.tbd')}\n`;
-            msg += `📅 ${t('wa.duration')}: ${yachtLabels[parseInt(formData.nights, 10)] ?? t('form.step2.nightsFormat').replace('{n}', formData.nights)}\n`;
+            msg += `• Дата аренды: ${formData.dateFrom || t('wa.tbd')}\n`;
+            msg += `• ${t('wa.duration')}: ${yachtLabels[parseInt(formData.nights, 10)] ?? t('form.step2.nightsFormat').replace('{n}', formData.nights)}\n`;
         } else {
-            msg += `🗓️ ${t('wa.checkIn')}: ${formData.dateFrom || t('wa.tbd')} → ${t('wa.checkOut')}: ${formData.dateTo || t('wa.tbd')}\n`;
-            msg += `🌙 ${t('wa.nights')}: ${formData.nights}\n`;
+            msg += `• ${t('wa.checkIn')}: ${formData.dateFrom || t('wa.tbd')} — ${t('wa.checkOut')}: ${formData.dateTo || t('wa.tbd')}\n`;
+            msg += `• ${t('wa.nights')}: ${formData.nights}\n`;
         }
         const estPrice = getEstimatedPrice();
         if (typeof estPrice === 'number' && estPrice > 0) {

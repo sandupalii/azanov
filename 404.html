@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | Azanov Travel</title>
+  <link rel="icon" type="image/svg+xml" href="assets/svg/favicon-colored.svg">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;0,700;1,400&family=PT+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;0,700;1,400&family=PT+Sans:wght@400;700&display=swap">
+  <style>
+    :root {
+      --bg: #001219;
+      --teal: #40E0D0;
+      --gold: #C9A84C;
+      --text: #F0F4F8;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'PT Sans', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .bg-gradient {
+      position: absolute;
+      width: 150vw;
+      height: 150vw;
+      background: radial-gradient(circle, rgba(64,224,208,0.05) 0%, rgba(0,18,25,0) 60%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      padding: 2rem;
+    }
+    h1 {
+      font-family: 'Cormorant', serif;
+      font-size: 8rem;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--gold) 0%, #E6C875 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--teal);
+      color: #001219;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .btn:hover {
+      background: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(64,224,208,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <div class="content">
+    <h1>404</h1>
+    <p>We couldn't find the page you're looking for. It seems you've drifted a bit off course. Let's get you back to paradise.</p>
+    <a href="/" class="btn">Return Home</a>
+  </div>
+</body>
+</html>

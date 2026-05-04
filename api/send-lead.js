@@ -11,7 +11,24 @@
  * ============================================================
  */
 
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { ENV, sendTelegram, esc, isAmoCrmConfigured, amoCrmUpsertContact, amoCrmCreateLead, amoCrmAddNote } from './config.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const LOG_DIR = path.join(__dirname, '..', 'logs');
+if (!fs.existsSync(LOG_DIR)) fs.mkdirSync(LOG_DIR, { recursive: true });
+
+function backupLeadLocally(leadData) {
+  try {
+    const logFile = path.join(LOG_DIR, 'leads_backup.jsonl');
+    const entry = JSON.stringify({ timestamp: new Date().toISOString(), data: leadData }) + '\n';
+    fs.appendFileSync(logFile, entry);
+  } catch (err) {
+    console.error('[send-lead] Failed to write local backup:', err);
+  }
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -19,6 +36,9 @@ export default async function handler(req, res) {
   }
 
   const body = req.body || {};
+
+  // ── Fail-Safe Backup ────────────────────────────────────────
+  backupLeadLocally(body);
 
   // ── Build Telegram message ──────────────────────────────────
   let text;

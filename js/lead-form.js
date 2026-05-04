@@ -112,11 +112,11 @@
 
     // Addon prices: { perNight: X } = X × nights, { fixed: X } = flat fee
     const ADDON_PRICES = {
-        photo:     { perNight: 12000 },
-        chef:      { perNight: 15000 },
-        fasttrack: { fixed: 8000 },
-        fishing:   { fixed: 25000 },
-        massage:   { perNight: 6000 },
+        photo:     { fixed: 9000 },    // ~9 000 ฿ за фотосессию (рынок 8–15k/сессия)
+        chef:      { perNight: 2500 }, // ~2 500 ฿/ночь лейбор (рынок 1 500–3 000/день)
+        fasttrack: { fixed: 3500 },    // ~3 500 ฿/группа (рынок 1 500–3 500 чел.)
+        fishing:   { fixed: 15000 },   // ~15 000 ฿ частный чартер (рынок 12–25k)
+        massage:   { perNight: 1500 }, // ~1 500 ฿/ночь (рынок 800–2 000/сессия)
     };
 
     function syncFloatingLabels() {
@@ -210,13 +210,43 @@
         const overlay = document.getElementById('lead-modal-overlay');
         if (overlay) {
             overlay.classList.add('open');
+            document.addEventListener('keydown', _handleLeadModalEsc);
+            // Push history state so browser back-button closes modal instead of navigating away
+            if (!window._leadModalHistoryPushed) {
+                history.pushState({ leadModal: true }, '');
+                window._leadModalHistoryPushed = true;
+            }
         }
     };
+
+    // ESC key handler for lead modal
+    function _handleLeadModalEsc(e) {
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            window.closeLeadModal();
+        }
+    }
+
+    // Browser back-button handler
+    window.addEventListener('popstate', function (e) {
+        const overlay = document.getElementById('lead-modal-overlay');
+        if (overlay && overlay.classList.contains('open')) {
+            overlay.classList.remove('open');
+            document.removeEventListener('keydown', _handleLeadModalEsc);
+            window._leadModalHistoryPushed = false;
+        }
+    });
 
     window.closeLeadModal = function () {
         const overlay = document.getElementById('lead-modal-overlay');
         if (overlay) {
             overlay.classList.remove('open');
+            document.removeEventListener('keydown', _handleLeadModalEsc);
+            // Pop the history state we pushed (only if we pushed one)
+            if (window._leadModalHistoryPushed) {
+                window._leadModalHistoryPushed = false;
+                history.back();
+            }
         }
     };
 
@@ -231,12 +261,10 @@
 
     window.openLeadDatePicker = function (e) {
         if (e) e.stopPropagation();
-        const isMobileDevice = () => window.innerWidth <= 768;
-        if (isMobileDevice()) {
-            const openMobileCalendar = window.openMobileCalendarInternal;
-            if (openMobileCalendar) {
-                openMobileCalendar();
-            }
+        // Use custom inline calendar step for ALL devices
+        const openMobileCalendar = window.openMobileCalendarInternal;
+        if (openMobileCalendar) {
+            openMobileCalendar();
         } else if (leadDateRangePicker) {
             leadDateRangePicker.open();
         }
@@ -383,7 +411,7 @@
 
                 // Toggle time selector for Fast Track + contextual date label by type
                 const ftTimeWrap = document.getElementById('lead-ft-time-wrap');
-                const datesLabel = activeEl.querySelector('.lead-step-2-dates-main .form-label');
+                const datesLabel = activeEl.querySelector('.lead-step-2-dates-main > .form-group > label.form-label');
                 if (isConcierge) {
                     if (ftTimeWrap) ftTimeWrap.style.display = 'block';
                     if (datesLabel) datesLabel.textContent = t('form.step2.arrivalDateLabel');
@@ -394,22 +422,48 @@
                     if (ftTimeWrap) ftTimeWrap.style.display = 'none';
                     // Context-aware date label
                     const dateLabelMap = {
-                        villa:     'Дата заезда — дата выезда',
-                        package:   'Дата заезда — дата выезда',
-                        retreat:   'Дата заезда — дата выезда',
-                        yacht:     'Дата аренды яхты',
-                        bikes:     'Дата начала аренды',
-                        tour:      'Дата тура (старт)',
+                        villa:     t('form.step2.dateLabelVilla'),
+                        package:   t('form.step2.dateLabelPackage'),
+                        retreat:   t('form.step2.dateLabelRetreat'),
+                        yacht:     t('form.step2.dateLabelYacht'),
+                        bikes:     t('form.step2.dateLabelBikes'),
+                        tour:      t('form.step2.dateLabelTour'),
                     };
-                    if (datesLabel) datesLabel.textContent = dateLabelMap[formData.experienceType] || 'Выберите даты';
+                    if (datesLabel) datesLabel.textContent = dateLabelMap[formData.experienceType] || t('form.step2.datesLabel') || 'Выберите даты';
                 }
 
                 // Show nights chips for package, yacht, bikes (different chip sets per type)
                 const nightsSection = document.getElementById('lead-nights-section');
                 const chipsContainer = document.querySelector('#lead-step-2 .lead-nights-chips');
+                const bikeTypeWrap = document.getElementById('lead-step-2-bike-type');
+                const isBikes = formData.experienceType === 'bikes';
+
+                // Show/hide bike type selector
+                if (bikeTypeWrap) {
+                    bikeTypeWrap.style.display = isBikes ? '' : 'none';
+                    if (isBikes && window.lucide) lucide.createIcons();
+                    // Sync selected state
+                    bikeTypeWrap.querySelectorAll('[data-bike-type]').forEach(btn => {
+                        btn.classList.toggle('selected', btn.getAttribute('data-bike-type') === formData.bikeType);
+                    });
+                }
+
                 if (nightsSection) {
-                    const showNights = (formData.experienceType === 'package' || formData.experienceType === 'yacht' || formData.experienceType === 'bikes') && !isConcierge;
+                    const showNights = (formData.experienceType === 'package' || formData.experienceType === 'villa' || formData.experienceType === 'yacht' || formData.experienceType === 'bikes') && !isConcierge;
                     nightsSection.classList.toggle('lead-nights-section--hidden', !showNights);
+
+                    // Update duration section title contextually
+                    const nightsLabel = nightsSection.querySelector('.form-label');
+                    if (nightsLabel) {
+                        const durationTitleMap = {
+                            yacht:   t('form.step2.durationYacht')   || t('form.step2.durationTitle'),
+                            bikes:   t('form.step2.durationBikes')   || t('form.step2.durationTitle'),
+                            package: t('form.step2.durationTitle'),
+                            villa:   t('form.step2.durationTitle'),
+                            retreat: t('form.step2.durationTitle'),
+                        };
+                        nightsLabel.textContent = durationTitleMap[formData.experienceType] || t('form.step2.durationTitle') || 'Duration';
+                    }
                 }
                 if (chipsContainer) {
                     if (formData.experienceType === 'yacht') {
@@ -428,7 +482,7 @@
                             btn.classList.toggle('selected', String(btn.getAttribute('data-nights')) === String(formData.nights));
                         });
                         if (window.lucide) lucide.createIcons();
-                    } else if (formData.experienceType === 'package') {
+                    } else if (formData.experienceType === 'package' || formData.experienceType === 'villa') {
                         chipsContainer.innerHTML = `
                             <button type="button" class="choice-btn choice-btn--sm" data-nights="5" onclick="setNightsFromChip(5, this)">${t('form.step2.package5nights')}</button>
                             <button type="button" class="choice-btn choice-btn--sm" data-nights="7" onclick="setNightsFromChip(7, this)">${t('form.step2.package7nights')}</button>
@@ -490,24 +544,16 @@
                         if (fromInput) fromInput.value = formData.dateFrom;
                         if (toInput) toInput.value = formData.dateTo;
                         leadDateRangePicker.setDate(today);
-                        // Display: single date for tour/concierge, range for others
-                        const isTour = formData.experienceType === 'tour';
-                        if (isConcierge || isTour) {
+                        // Display: single date for 0 nights (day charter/1-day tour), range for others
+                        const n = parseInt(formData.nights, 10) || 0;
+                        if (n === 0) {
                             if (dateRangeInput) dateRangeInput.value = formatDateSingle(today);
                         } else {
                             if (dateRangeInput) dateRangeInput.value = formatDateRangeDisplay(today, end);
                         }
                     }
                 }
-                // Show / hide bike-type selector
-                const bikeTypeWrap = document.getElementById('lead-step-2-bike-type');
-                if (bikeTypeWrap) {
-                    bikeTypeWrap.style.display = formData.experienceType === 'bikes' ? '' : 'none';
-                    // Sync selected state
-                    bikeTypeWrap.querySelectorAll('[data-bike-type]').forEach(btn => {
-                        btn.classList.toggle('selected', btn.getAttribute('data-bike-type') === formData.bikeType);
-                    });
-                }
+
 
                 const step2Next = document.getElementById('lead-step-2-next');
                 if (step2Next) {
@@ -667,9 +713,13 @@
         syncFloatingLabels();
     }
 
+    let _isSubmitting = false;
+
     function sendLeadToApi() {
         const apiUrl = window.LEAD_API_URL;
         if (!apiUrl || typeof apiUrl !== 'string' || !apiUrl.trim()) return;
+        if (_isSubmitting) return; // prevent double-submit
+        _isSubmitting = true;
 
         // Collect extras from both button-style (fleet/villas) and checkbox-style (index)
         const addonBtns = document.querySelectorAll('.addon-toggle-btn.selected');
@@ -716,17 +766,61 @@
         })
         .then(r => r.json())
         .then(r => {
-            if (!r.ok) console.warn('[lead-form] API returned not-ok:', r);
+            if (!r.ok) {
+                console.warn('[lead-form] API returned not-ok:', r);
+            } else {
+                // Trigger Marketing Conversions (Google Analytics, Yandex Metrika, Facebook Pixel)
+                try {
+                    if (typeof window.gtag === 'function') {
+                        window.gtag('event', 'generate_lead', {
+                            event_category: 'engagement',
+                            event_label: payload.experienceType,
+                            value: payload.estimatedPrice || 0
+                        });
+                    }
+                    if (typeof window.ym === 'function') {
+                        // Replace XXXXXXXX with actual Yandex Counter ID if used
+                        // window.ym(XXXXXXXX, 'reachGoal', 'lead_submitted');
+                    }
+                    if (typeof window.fbq === 'function') {
+                        window.fbq('track', 'Lead', {
+                            content_name: payload.experienceType,
+                            value: payload.estimatedPrice || 0,
+                            currency: 'THB'
+                        });
+                    }
+                } catch (e) {
+                    console.warn('[lead-form] Analytics tracking failed:', e);
+                }
+            }
         })
-        .catch((err) => console.warn('[lead-form] Lead API send failed:', err))
+        .catch((err) => {
+            console.warn('[lead-form] Lead API send failed:', err);
+            // Show user-facing error toast
+            showApiErrorToast();
+        })
         .finally(() => {
+            _isSubmitting = false;
             submitBtns.forEach(btn => { btn.disabled = false; });
         });
     }
 
+    function showApiErrorToast() {
+        // Don't block the flow — just inform the user
+        const existing = document.getElementById('lead-api-error-toast');
+        if (existing) existing.remove();
+        const toast = document.createElement('div');
+        toast.id = 'lead-api-error-toast';
+        toast.style.cssText = 'position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:rgba(255,107,107,0.95);color:#fff;padding:0.75rem 1.5rem;border-radius:12px;font-size:0.85rem;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.3);animation:slideUpSheet 0.3s ease;max-width:90vw;text-align:center;';
+        toast.textContent = t('form.apiError') || 'Не удалось отправить заявку. Попробуйте через WhatsApp.';
+        document.body.appendChild(toast);
+        setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity 0.5s'; }, 4000);
+        setTimeout(() => toast.remove(), 5000);
+    }
+
     window.nextStep = function () {
         if (!validateStep(currentStep)) return;
-        // Collect contact fields when leaving the contacts step (4) — API fires on final WA send
+        // Collect contact fields when leaving the contacts step (step 4 → step 5)
         if (currentStep === 4) {
             const nameEl = document.getElementById('lead-name');
             const phoneEl = document.getElementById('lead-phone');
@@ -740,7 +834,8 @@
             formData.dateFrom = document.getElementById('lead-date-from')?.value || formData.dateFrom || '';
             formData.dateTo = document.getElementById('lead-date-to')?.value || formData.dateTo || '';
             formData.nights = document.getElementById('lead-nights')?.value || formData.nights || '1';
-            // NOTE: sendLeadToApi() now fires in submitLeadForm() to avoid double-send
+            // Fire Telegram/API lead immediately on step 4 → 5 transition
+            sendLeadToApi();
         }
         const steps = getFlowSteps();
         const idx = steps.indexOf(currentStep);
@@ -936,7 +1031,10 @@
             const toInput = document.getElementById('lead-date-to');
             const dateRangeInput = document.getElementById('lead-date-range');
             if (toInput) toInput.value = formData.dateTo;
-            if (dateRangeInput) dateRangeInput.value = formatDateRangeDisplay(from, to);
+            if (dateRangeInput) {
+                const n = parseInt(formData.nights, 10) || 0;
+                dateRangeInput.value = n === 0 ? formatDateSingle(from) : formatDateRangeDisplay(from, to);
+            }
             leadDateRangePicker.setDate(from);
         }
         updateStep2Summary();
@@ -1039,15 +1137,67 @@
         const nightsEl = document.getElementById('lead-summary-nights');
         const priceEl = document.getElementById('lead-summary-price');
         const datesEl = document.getElementById('lead-summary-dates');
+        const thumbEl = document.getElementById('lead-sidebar-thumb');
         const itemName = getSummaryItemName();
         if (itemEl) {
             itemEl.textContent = itemName || '—';
             itemEl.classList.toggle('has-value', !!itemName);
         }
+
+        // Dynamically update the summary title (Type: Yacht, Villa, Tour, etc)
+        const summaryTitleEl = document.querySelector('.lead-step-2-summary__title');
+        if (summaryTitleEl) {
+            let summaryKey = 'form.step2.summary';
+            if (formData.experienceType === 'yacht') summaryKey = 'form.step2.summaryCharter';
+            else if (formData.experienceType === 'villa') summaryKey = 'form.step2.summaryVilla';
+            else if (formData.experienceType === 'tour') summaryKey = 'form.step2.summaryTour';
+            else if (formData.experienceType === 'package') summaryKey = 'form.step2.summaryOrder';
+            
+            summaryTitleEl.textContent = t(summaryKey) || t('form.step2.summary');
+            // Remove data-i18n so the translation system doesn't override our dynamic change on next render
+            summaryTitleEl.removeAttribute('data-i18n');
+        }
+
+        // ── Dynamic thumbnail injection ──────────────────────────
+        if (thumbEl) {
+            let imgSrc = null;
+            try {
+                if (formData.experienceType === 'yacht' && formData.yachtPreset) {
+                    const yacht = (window.FLEET || []).find(y => (y.name || '').trim() === (formData.yachtPreset || '').trim());
+                    if (yacht) imgSrc = yacht.img;
+                } else if (formData.experienceType === 'villa' && formData.villaPreset) {
+                    const villas = typeof VILLAS !== 'undefined' ? VILLAS : (window.VILLAS || []);
+                    const villa = villas.find(v => v.name === formData.villaPreset || v.code === formData.villaPreset);
+                    if (villa) imgSrc = villa.img;
+                } else if (formData.experienceType === 'tour' && formData.tourPreset) {
+                    const tours = typeof LOCATIONS !== 'undefined' ? LOCATIONS : (window.LOCATIONS || []);
+                    const tour = tours.find(t => t.name === formData.tourPreset || t.id === formData.tourPreset);
+                    if (tour) imgSrc = tour.img;
+                } else if (formData.experienceType === 'package' && formData.packageId) {
+                    const pkg = (window.PACKAGES || []).find(p => p.id === formData.packageId);
+                    if (pkg) imgSrc = pkg.img || (pkg.images && pkg.images[0]);
+                }
+            } catch (e) { /* graceful fallback */ }
+
+            if (imgSrc) {
+                const optimizedSrc = typeof ImgUtils !== 'undefined' ? ImgUtils.toThumb(imgSrc) : imgSrc;
+                if (thumbEl.src !== optimizedSrc && thumbEl.getAttribute('src') !== optimizedSrc) {
+                    thumbEl.src = optimizedSrc;
+                    thumbEl.alt = itemName || '';
+                }
+                thumbEl.style.display = '';
+            } else {
+                thumbEl.style.display = 'none';
+                thumbEl.src = '';
+            }
+        }
+
         const effectiveGuests = formData.experienceType === 'concierge' ? formData.fastTrackGuests : formData.groupSize;
         if (guestsEl) {
             const specificPreset = isSpecificPreset();
-            const guestsRow = guestsEl.closest('.lead-step-2-summary__row, li, p') || guestsEl.parentElement;
+            // IMPORTANT: Include .lead-step-2-summary__line to match the new rich sidebar structure
+            // Fallback to guestsEl itself, NEVER guestsEl.parentElement, otherwise we hide the entire .lead-sidebar-content
+            const guestsRow = guestsEl.closest('.lead-step-2-summary__line, .lead-step-2-summary__row, li, p') || guestsEl;
             if (specificPreset) {
                 guestsEl.textContent = '—';
                 if (guestsRow) guestsRow.style.display = 'none';
@@ -1069,8 +1219,9 @@
         if (priceEl) {
             // getPackageScaledPrice alias → getEstimatedPrice (was never defined, fixed)
             const scaledPrice = getEstimatedPrice();
-            if (scaledPrice != null && formData.experienceType === 'package') {
-                priceEl.textContent = `${t('card.from')} ${formatPrice(scaledPrice)}`;
+            if (scaledPrice != null && scaledPrice > 0) {
+                // Changed: Show price for ALL experience types if available, not just 'package'
+                priceEl.innerHTML = `<span style="font-size: 0.8em; color: var(--text-muted); font-weight: normal;">${t('card.from') || 'от'}</span> ${formatPrice(scaledPrice)}`;
                 priceEl.style.display = '';
             } else {
                 priceEl.style.display = 'none';
@@ -1231,36 +1382,9 @@
     }
 
     window.submitLeadForm = function () {
-        // Collect final fields (may differ if user went back)
-        const nameEl = document.getElementById('lead-name');
-        const phoneEl = document.getElementById('lead-phone');
-        const emailEl = document.getElementById('lead-email');
-        const notesEl = document.getElementById('lead-notes');
-        const privacyEl = document.getElementById('lead-privacy');
-
-        if (nameEl) formData.name = nameEl.value.trim();
-        if (phoneEl) formData.phone = phoneEl.value.trim();
-        if (emailEl) formData.email = emailEl.value.trim();
-        if (notesEl) formData.notes = notesEl.value.trim();
-        if (privacyEl) formData.agreePrivacy = privacyEl.checked;
-
-        if (!formData.name || !formData.phone) {
-            showError(t('form.errorEnterNamePhone')); return;
-        }
-
-        // Re-collect extras
-        const addonBtns = document.querySelectorAll('.addon-toggle-btn.selected');
-        const addonCheckboxes = document.querySelectorAll('.lead-extra:checked');
-        formData.extras = addonBtns.length
-            ? Array.from(addonBtns).map(el => el.getAttribute('data-addon')).filter(Boolean)
-            : Array.from(addonCheckboxes).map(el => el.value).filter(Boolean);
-        formData.groupSize = document.getElementById('lead-group-size')?.value || formData.groupSize;
-        formData.dateFrom = document.getElementById('lead-date-from')?.value || formData.dateFrom || '';
-        formData.dateTo = document.getElementById('lead-date-to')?.value || formData.dateTo || '';
-        formData.nights = document.getElementById('lead-nights')?.value || formData.nights || '5';
-
-        // Fire API lead (moved here from nextStep to avoid double-send)
-        sendLeadToApi();
+        // submitLeadForm() is called ONLY by the optional WhatsApp button on step 5.
+        // The lead has already been sent to Telegram/API when the user moved step 4 → 5.
+        // This function only builds and opens the WhatsApp deep-link.
 
         // Build WhatsApp message and open
         const waMsg = buildWAMessage();
@@ -1436,7 +1560,8 @@
                         const toInput = document.getElementById('lead-date-to');
                         if (fromInput) fromInput.value = formData.dateFrom;
                         if (toInput) toInput.value = formData.dateTo;
-                        const showSingle = formData.experienceType === 'concierge' || formData.experienceType === 'tour';
+                        const n = parseInt(formData.nights, 10) || 0;
+                        const showSingle = n === 0;
                         dateRangeInput.value = showSingle
                             ? formatDateSingle(checkIn)
                             : formatDateRangeDisplay(checkIn, checkOut);
@@ -1614,10 +1739,12 @@
                         if (bodyContainer) {
                             setTimeout(() => {
                                 const selectedBtn = bodyContainer.querySelector('.custom-cal-day.selected');
+                                const horizontalScroller = bodyContainer.querySelector('.custom-mobile-calendar');
                                 if (selectedBtn) {
-                                    selectedBtn.scrollIntoView({ behavior: 'auto', block: 'center' });
+                                    selectedBtn.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'center' });
                                 } else {
                                     bodyContainer.scrollTop = 0;
+                                    if (horizontalScroller) horizontalScroller.scrollLeft = 0;
                                 }
                             }, 10);
                         }

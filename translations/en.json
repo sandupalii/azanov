@@ -263,6 +263,12 @@
       "arrivalDateLabel": "Arrival date",
       "arrivalTimeLabel": "Arrival time",
       "arrivalDateLabelConcierge": "Arrival Date & Time",
+      "dateLabelVilla": "Check-in — Check-out date",
+      "dateLabelPackage": "Arrival — Departure date",
+      "dateLabelRetreat": "Arrival — Departure date",
+      "dateLabelYacht": "Yacht charter date",
+      "dateLabelBikes": "Rental start date",
+      "dateLabelTour": "Tour date (start)",
       "dateOrderLabel": "Order Date",
       "bikes1day": "1 day",
       "bikes2days": "2 days",
@@ -282,7 +288,9 @@
       "calTitleVilla": "CHECK-IN DATE",
       "calTitleYacht": "YACHT CHARTER DATE",
       "calTitleConcierge": "ARRIVAL DATE",
-      "durationTitle": "Duration"
+      "durationTitle": "Duration",
+      "durationYacht": "Charter duration",
+      "durationBikes": "Rental duration"
     },
     "step3": {
       "label": "Step 3 — Budget & Preferences",
@@ -338,8 +346,8 @@
       "notes": "Notes & questions"
     },
     "step5": {
-      "title": "Confirm Your Order",
-      "sub": "Review your details. Tapping the button will open WhatsApp with a ready message — a manager will reply within 15 minutes.",
+      "title": "Request Received!",
+      "sub": "Your request is already with us — a manager will reach out within 15 minutes. Or message us directly on WhatsApp.",
       "summaryTitle": "Your Order",
       "summaryItem": "Service",
       "summaryDate": "Date",
@@ -348,8 +356,8 @@
       "summaryPrice": "Price",
       "summaryAddons": "Add-ons",
       "whatsapp": "Open WhatsApp",
-      "submit": "Send request via WhatsApp",
-      "privacy": "By clicking, you agree to the processing of your personal data to prepare a custom proposal."
+      "submit": "Message on WhatsApp",
+      "privacy": "Tapping this button will open WhatsApp with a ready message for our manager."
     },
     "trust": {
       "confidential": "Confidential",

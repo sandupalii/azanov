@@ -2860,13 +2860,72 @@ html[lang="ru"] .hero__badge-row {
 
 .lead-step-2-sidebar {
   flex-shrink: 0;
-  width: 200px;
+  width: 220px;
 }
 
 .lead-step-2-summary {
   padding: 1rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
+}
+
+/* ---- Rich Preview Card (with thumbnail) ---- */
+.lead-step-2-summary--rich {
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(64, 224, 208, 0.2);
+  background: rgba(13, 30, 42, 0.85);
+  backdrop-filter: blur(16px) saturate(1.6);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(64, 224, 208, 0.08) inset;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.lead-step-2-summary--rich:hover {
+  border-color: rgba(64, 224, 208, 0.35);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(64, 224, 208, 0.12) inset,
+    0 0 24px rgba(64, 224, 208, 0.06);
+}
+
+.lead-sidebar-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  position: relative;
+  animation: sidebar-thumb-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes sidebar-thumb-in {
+  from { opacity: 0; transform: scale(1.04); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Shimmer overlay for premium feel */
+.lead-step-2-summary--rich .lead-sidebar-thumb + .lead-sidebar-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(64, 224, 208, 0.5), transparent);
+  animation: sidebar-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes sidebar-shimmer {
+  0%   { left: -100%; }
+  100% { left: 200%; }
+}
+
+.lead-sidebar-content {
+  padding: 0.85rem 1rem 1rem;
+  position: relative;
 }
 
 .lead-step-2-summary__title {
@@ -2894,6 +2953,16 @@ html[lang="ru"] .hero__badge-row {
 
 .lead-step-2-summary__line:last-child {
   margin-bottom: 0;
+}
+
+.lead-step-2-summary__price {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold, #C7A977);
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #lead-step-2 .form-group {
@@ -2928,6 +2997,41 @@ html[lang="ru"] .hero__badge-row {
   display: none !important;
 }
 
+/* Bike type selector buttons */
+.bike-type-btn {
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.4rem !important;
+  padding: 0.75rem 0.5rem !important;
+  text-align: center !important;
+}
+
+.bike-type-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+.bike-type-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.bike-type-grid {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
+@media (max-width: 480px) {
+  .bike-type-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
 .lead-step-2-summary__price {
   font-weight: 600;
   color: var(--teal);
@@ -2945,6 +3049,54 @@ html[lang="ru"] .hero__badge-row {
   .lead-step-2-sidebar {
     width: 100%;
     order: -1;
+  }
+
+  /* Mobile: horizontal compact card when image is shown */
+  .lead-step-2-summary--rich {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    border-radius: var(--radius-md);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .lead-step-2-summary--rich .lead-sidebar-thumb {
+    width: 80px;
+    min-height: 80px;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  .lead-step-2-summary--rich .lead-sidebar-content {
+    padding: 0.6rem 0.85rem;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .lead-step-2-summary--rich .lead-sidebar-content .lead-step-2-summary__title {
+    font-size: 0.65rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .lead-step-2-summary--rich .lead-sidebar-content .lead-step-2-summary__line {
+    font-size: 0.78rem;
+    margin-bottom: 0.15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .lead-step-2-summary--rich .lead-sidebar-content .lead-step-2-summary__price {
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+    padding-top: 0.25rem;
   }
 
   #lead-step-2 #lead-step-2-guests {
@@ -3318,30 +3470,32 @@ html[lang="ru"] .hero__badge-row {
   white-space: nowrap;
 }
 
-/* Addon toggle buttons (Step 4) */
+/* Addon toggle buttons (Step 3) */
 .addon-toggle-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
+  gap: 0.6rem;
 }
 
 @media (min-width: 640px) {
   .addon-toggle-group {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 .addon-toggle-btn {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1rem;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.75rem 0.6rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: var(--transition);
-  text-align: left;
+  text-align: center;
   font-family: inherit;
   color: var(--text);
 }
@@ -3364,8 +3518,8 @@ html[lang="ru"] .hero__badge-row {
 
 .addon-toggle-btn__icon {
   flex-shrink: 0;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3374,16 +3528,20 @@ html[lang="ru"] .hero__badge-row {
 }
 
 .addon-toggle-btn__label {
-  flex: 1;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .addon-toggle-btn__price {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--teal);
-  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .addon-toggle-btn.selected .addon-toggle-btn__price {
@@ -6152,7 +6310,6 @@ html[lang="ru"] .hero__badge-row {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Fix #3/#9: Sidebar hidden on mobile for specific-preset flows */
   .lead-step-2-sidebar--hidden-mobile {
     display: none !important;
   }
@@ -6355,8 +6512,8 @@ html[lang="ru"] .hero__badge-row {
 
 .addon-toggle-group {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
   margin-top: 0.5rem;
 }
 
@@ -7562,124 +7719,161 @@ span.flatpickr-weekday {
     pointer-events: all;
   }
 
-  /* Header: title + close button */
-  .mobile-cal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.25rem 20px 0.75rem;
-    border-bottom: 1px solid var(--border);
-  }
+}
 
-  .mobile-cal-title {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--teal);
-  }
+/* ─── Custom Native-Feel Calendar (Mobile & Desktop) ─── */
+.custom-mobile-calendar {
+  width: 100%;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--teal) rgba(255, 255, 255, 0.05);
+}
 
-  .mobile-cal-close {
-    background: rgba(255,255,255,0.07);
-    border: none;
-    color: var(--text);
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
+.custom-mobile-calendar::-webkit-scrollbar {
+  height: 6px;
+  display: block;
+}
 
-  .mobile-cal-close:hover {
-    background: rgba(255,255,255,0.14);
-  }
+.custom-mobile-calendar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
 
-  /* Body: scrollable area containing the calendar */
-  .mobile-cal-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1rem 20px 1.5rem;
-    overflow-y: auto;
-  }
+.custom-mobile-calendar::-webkit-scrollbar-thumb {
+  background: var(--teal);
+  border-radius: 10px;
+}
 
-  /* ─── Custom Vertical Native-Feel Calendar ─── */
-  .custom-mobile-calendar {
-    width: 100%;
-    padding-bottom: 2rem;
-  }
-  
+.custom-mobile-calendar::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+.custom-cal-month {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
   .custom-cal-month {
-    margin-bottom: 2rem;
+    flex: 0 0 calc(50% - 0.75rem);
+    scroll-snap-align: start;
   }
-  
-  .custom-cal-month-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    padding-left: 4px;
-    color: var(--text);
-  }
-  
-  .custom-cal-weekdays {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-  
-  .custom-cal-weekday {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
-  
-  .custom-cal-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-  }
-  
-  .custom-cal-day {
-    height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.95rem;
-    border-radius: 10px;
-    color: var(--text);
-    background: rgba(255, 255, 255, 0.08);
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s;
-  }
-  
-  .custom-cal-day:not(:disabled):hover,
-  .custom-cal-day:not(:disabled):active {
-    background: rgba(100, 220, 200, 0.12);
-  }
-  
-  .custom-cal-day.today {
-    border: 1.5px solid var(--teal);
-    color: var(--teal);
-  }
-  
-  .custom-cal-day.selected {
-    background: var(--teal);
-    color: var(--bg);
-    font-weight: 700;
-    border: none;
-  }
-  
-  .custom-cal-day:disabled {
-    opacity: 0.2;
-    cursor: not-allowed;
-    color: var(--text-muted);
-  }
+}
+
+.custom-cal-month-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-left: 4px;
+  color: var(--text);
+}
+
+.custom-cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.custom-cal-weekday {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.custom-cal-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.custom-cal-day {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.custom-cal-day:not(:disabled):hover,
+.custom-cal-day:not(:disabled):active {
+  background: rgba(100, 220, 200, 0.12);
+}
+
+.custom-cal-day.today {
+  border: 1.5px solid var(--teal);
+  color: var(--teal);
+}
+
+.custom-cal-day.selected {
+  background: var(--teal);
+  color: var(--bg);
+  font-weight: 700;
+  border: none;
+}
+
+.custom-cal-day:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  color: var(--text-muted);
+}
+
+/* Header: title + close button (Mobile & Desktop Step) */
+.mobile-cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0 0.75rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.mobile-cal-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.mobile-cal-close {
+  background: rgba(255,255,255,0.07);
+  border: none;
+  color: var(--text);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.mobile-cal-close:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+.mobile-cal-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1rem 0 1.5rem;
+  overflow-y: auto;
 }

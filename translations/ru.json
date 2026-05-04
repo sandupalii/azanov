@@ -263,6 +263,12 @@
       "arrivalDateLabel": "Дата прилета",
       "arrivalTimeLabel": "Время прилета",
       "arrivalDateLabelConcierge": "Дата и время прилёта",
+      "dateLabelVilla": "Дата заезда — дата выезда",
+      "dateLabelPackage": "Дата заезда — дата выезда",
+      "dateLabelRetreat": "Дата заезда — дата выезда",
+      "dateLabelYacht": "Дата аренды яхты",
+      "dateLabelBikes": "Дата начала аренды",
+      "dateLabelTour": "Дата тура (старт)",
       "dateOrderLabel": "Дата заказа",
       "bikes1day": "1 день",
       "bikes2days": "2 дня",
@@ -282,7 +288,9 @@
       "calTitleVilla": "ДАТА ЗАЕЗДА",
       "calTitleYacht": "ДАТА АРЕНДЫ ЯХТЫ",
       "calTitleConcierge": "ДАТА ПРИЕЗДА",
-      "durationTitle": "Продолжительность"
+      "durationTitle": "Продолжительность",
+      "durationYacht": "Продолжительность чартера",
+      "durationBikes": "Продолжительность аренды"
     },
     "step3": {
       "label": "Шаг 3 — Бюджет и предпочтения",
@@ -338,8 +346,8 @@
       "notes": "Пожелания и вопросы"
     },
     "step5": {
-      "title": "Подтвердите заказ",
-      "sub": "Проверьте детали. После нажатия кнопки откроется WhatsApp с готовым сообщением — менеджер ответит в течение 15 минут.",
+      "title": "Заявка принята!",
+      "sub": "Ваша заявка уже у нас — менеджер свяжется в течение 15 минут. Или напишите нам напрямую в WhatsApp.",
       "summaryTitle": "Ваш заказ",
       "summaryItem": "Услуга",
       "summaryDate": "Дата",
@@ -348,8 +356,8 @@
       "summaryPrice": "Стоимость",
       "summaryAddons": "Допуслуги",
       "whatsapp": "Открыть WhatsApp",
-      "submit": "Отправить заявку в WhatsApp",
-      "privacy": "Нажимая кнопку, вы соглашаетесь на обработку персональных данных для формирования индивидуального предложения."
+      "submit": "Написать в WhatsApp",
+      "privacy": "Нажимая кнопку, вы откроете WhatsApp с готовым сообщением для менеджера."
     },
     "trust": {
       "confidential": "Конфиденциально",

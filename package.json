@@ -6,13 +6,19 @@
     "main": "server.js",
     "scripts": {
         "start": "node server.js",
-        "dev": "PORT=4921 node --watch server.js"
+        "dev": "PORT=4921 node --watch server.js",
+        "build": "npm run build:css && npm run build:js",
+        "build:css": "npx esbuild css/styles.css --minify --outfile=css/styles.min.css",
+        "build:js": "npx esbuild js/i18n.js --minify --outfile=js/min/i18n.js && npx esbuild js/nav-mobile.js --minify --outfile=js/min/nav-mobile.js && npx esbuild js/image-utils.js --minify --outfile=js/min/image-utils.js && npx esbuild js/components.js --minify --outfile=js/min/components.js && npx esbuild js/scroll-manager.js --minify --outfile=js/min/scroll-manager.js && npx esbuild js/preloader.js --minify --outfile=js/min/preloader.js && npx esbuild js/review-form.js --minify --outfile=js/min/review-form.js && npx esbuild js/crypto-form.js --minify --outfile=js/min/crypto-form.js"
     },
     "dependencies": {
         "dotenv": "^16.4.5",
-        "express": "^4.18.2"
+        "express": "^4.18.2",
+        "express-rate-limit": "^8.4.1"
     },
     "devDependencies": {
-        "esbuild": "^0.27.4"
+        "esbuild": "^0.27.4",
+        "stylelint": "^17.10.0",
+        "stylelint-config-standard": "^40.0.0"
     }
 }
